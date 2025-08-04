@@ -1,0 +1,504 @@
+/* === GENERAL STYLING === */
+*{
+  font-family: "Marcellus", serif;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.marcellus-regular {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #875DA6;
+  background-color: #ffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* === GENERAL PAGE/DESIGN STYLING === */
+.fa-solid {
+  color: #AE83D2;
+}
+
+.btn-outline-secondary {
+  border-color: #875DA6 ;
+  color: #AE83D2;
+}
+
+.btn-outline-secondary:hover{
+  border: none;
+  color: #ffff;
+  background-color: #AE83D2;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Makes white icon appear black */
+}
+
+.carousel-indicators {
+  position: relative;
+}
+
+
+/* === HEADER STYLING === */
+.header-wrapper {
+  background-color: #F3ECF9;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.header-studio-logo{
+  width: 50px;
+  height: auto;
+}
+
+.icon i{
+  color: black !important;
+}
+
+#searchIconMobile,
+#searchIconDesktop {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#searchIconMobile:hover,
+#searchIconDesktop:hover {
+  transform: scale(1.1);
+}
+
+
+/* === INDEX PAGE STYLING === */
+/* Index Page - Hero Section */
+.index-content-1{
+  background-color: #F3ECF9 !important;
+}
+
+.index-header {
+  font-size: 70px;
+  width: 50%;
+  line-height: 1;
+  color: #875DA6 !important;
+}
+
+/* Index Page - CTA Buttons */
+.index-rug-button {
+  background-color: #e5d5f4;
+  color: #875DA6 ;
+}
+
+.index-rug-button:hover {
+  color: #fff;
+}
+
+.index-workshop-button {
+  background-color: #fff;
+}
+
+/* Index Page - About Section */
+.index-about {
+  background-color: #FAF7FD;
+}
+
+/* Index Page - Showcases Section */
+.index-showcases-scroll {
+  scroll-behavior: smooth;
+}
+
+.index-showcases-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.index-showcases-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.index-showcases-scroll::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.index-showcases-border {
+  width: 350px;
+}
+
+.index-showcases-seemore {
+  width: 200px;
+}
+
+.index-showcases img {
+  transition: transform 0.3s ease;
+}
+
+.index-showcases:hover img {
+  transform: scale(1.05);
+}
+
+.index-showcases-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  text-align: center;
+}
+
+.index-showcases:hover .index-showcases-overlay {
+  opacity: 1;
+}
+
+.index-seemore-btn {
+  width: 150px;
+  height: 150px;
+  background-color: #F3ECF9; 
+  border-radius: 50%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.index-seemore-btn:hover {
+  background-color: #e5d5f4;
+  text-decoration: none;
+}
+
+/* Index Page - Design Your Own Rug Section */
+.index-design-own {
+  background-color: #F3ECF9;
+}
+
+.index-design-cta {
+  background-color: #AE83D2;
+  border: none;
+  color: #fff;
+}
+
+.index-design-cta:hover {
+  background-color: #875DA6;
+  border: none;
+  color: #fff;
+}
+
+/* Index Page - Step Into Our Rug Workshop Section */
+.index-content-5 {
+  background-color: #ffff;
+}
+
+/* Index Page - Testimonials Section */
+.index-content-6 {
+  background-color: #ffff;
+}
+
+.index-testimonials-bg {
+  background-color: #FFF9CD;
+}
+
+.index-testimonials-p {
+  font-style: italic;
+}
+
+/* Index Page - Follow The Thread Section */
+.index-content-7 {
+  background-color: #ffff !important;
+}
+
+.index-thread-card {
+  width: 25rem;
+  border: none
+}
+
+/* Index Page - Quote Section */
+.index-content-8 {
+  background-color: #A5D8CC;
+}
+
+
+/* === ABOUT PAGE STYLING === */
+/* About Page - What We Do Section  */
+.about-soso-card{
+  background-color: #A5D8CC !important;
+}
+
+/* About Page - Story, Mission and Vision Slider */
+#tranding {
+  padding: 4rem 0;
+}
+
+#tranding .tranding-slider {
+  height: 48rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+/* Slider - Container */
+.tranding-slide {
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Slider - Image styling */
+.tranding-slide-img img {
+  width: 32rem;
+  height: 30rem;
+  border-radius: 2rem;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Slider - Content Below the Image */
+.tranding-slide .tranding-slide-content {
+  position: static;
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.tranding-slide .title-us {
+  position: absolute;
+  top: 4rem;                      
+  left: 50%;                      
+  transform: translateX(-50%);    
+  width: 90%;                     
+  text-align: center;            
+  font-size: 3em;
+  font-weight: bolder;
+  z-index: 2;
+}
+
+.tranding-slide .tranding-slide-content-bottom {
+  position: static;
+  margin-top: 1rem;
+}
+
+.about-text {
+  display: block;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark);
+}
+
+/* Control Slider and Pagination */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  bottom: 1rem;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* About Page - Studio Vibes Image */
+.studio-vibes-img {
+  overflow: visible;
+}
+
+
+/* === COMMISSION PAGE STYLING === */
+/* Commission Page - Hero Section */
+.commission-hero-bg{
+  background-color: #ffff;
+}
+
+/* Commission Page - How It Works and Form Section */
+.commission-content-2{
+  background-color: #ffff;
+}
+
+.commission-form{
+  background-color: #FAF7FD;
+  max-width: 1000px;
+}
+
+
+/* === CUSTOM PAGE STYLING === */
+.custom-tab{
+  background-color: #F3ECF9;
+  width: 500px;
+  height: 500px;
+}
+
+
+/* === WORKSHOP PAGE STYLING === */
+/* Workshop Page - Hero Section */
+.workshop-hero-img {
+  opacity: 95%;
+}
+
+/* Workshop Page - Image Hero */
+.workshop-card img {
+  opacity: 90%;
+}
+
+/* Workshop Page - Testimonials Section */
+.workshop-testimonials {
+  background-color: #FFF9CD;
+}
+
+.workshop-testimonials-p {
+  font-style: italic;
+}
+
+
+/* === GALLERY PAGE STYLING === */
+/* Gallery Page - Hero Section */
+.gallery-content-1 {
+  background-color: #F3ECF9;
+}
+
+/* Gallery Page - Image Display Section */
+.gallery-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.gallery-card:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+/* Gallery Page - Categories Section */
+.gallery-category-bg {
+  background-color: rgb(250, 247, 253);
+}
+
+/* Gallery Page - Testimonials Section */
+.gallery-testimonials {
+  background-color: #FFF9CD;
+}
+
+.gallery-testimonials-p {
+  font-style: italic;
+}
+
+
+/* === RUGCARE PAGE STYLING === */
+/* Rugcare Page - Hero Section */
+.rugcare-hero-p {
+  color: #875DA6;
+}
+
+/* Rugcare Page - Quick Everyday Tips Section */
+.rugcare-content-2{
+  background-color: #F3ECF9;
+}
+
+/* Rugcare Page - Care By Material Section */
+.rugcare-content-3{
+  background-color: #ffff;
+}
+
+.rugcare-materials{
+  background-color: #F3ECF9;
+}
+
+/* Rugcare Page - Video Section */
+.rugcare-content-4{
+  background-color: #F3ECF9;
+}
+
+/* Rugcare Page - Contact Section */
+.rugcare-content-6{
+  background-color: #F3ECF9;
+}
+
+
+/* === FAQ PAGE STYLING === */
+.faq-accordion-btn {
+  background-color: #f3e9ff; 
+  color: #4b0082; 
+}
+
+.faq-accordion-btn:not(.collapsed) {
+  background-color: #e0d0ff; 
+  color: #4b0082;
+}
+
+.accordion-body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* === FOOTER STYLING === */
+.footer-wrapper{
+  background-color: #875DA6;
+}
+
+.footer-font{
+  color: #ffff;
+}
+
+.fa-brands{
+  color: #ffff ;
+}
+
+.footer-link{
+  text-decoration: none;
+}
+
+.footer-link:hover{
+  text-decoration: underline;
+}
+
+
+/* === MOBILE DESIGN === */
+.navbar-toggler-icon i {
+  font-size: 24px;
+  color: #875DA6 !important;
+}
+
+
+/* === MOBILE RESPOSIVENESS === */
+
