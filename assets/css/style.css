@@ -243,7 +243,7 @@ html {
 
 /* About Page - Story, Mission and Vision Slider */
 #tranding {
-  padding: 4rem 0;
+  padding-top: 4rem;
 }
 
 #tranding .tranding-slider {
@@ -449,9 +449,15 @@ html {
   background-color: #F3ECF9;
 }
 
+/* Rugcare Page - PDF File Section */
+.rugcare-content-5{
+  margin-top: -60px;
+}
+
 /* Rugcare Page - Contact Section */
 .rugcare-content-6{
   background-color: #F3ECF9;
+  margin-top: -30px;
 }
 
 

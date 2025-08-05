@@ -54,7 +54,7 @@ get_header(); ?>
     <!-- Rugcare Page - Care by Material Section -->
     <!-- Material care will be updated -->
     <div class="rugcare-content-3 text-center">
-        <h2 class="mb-4 text-center">Care by Material</h2>
+        <h2 class="mb-4 text-center">What Not To Do</h2>
             <div class="container py-4">
                 <div class="row align-items-md-stretch g-3">
                 <div class="col-md-4">
@@ -102,19 +102,19 @@ get_header(); ?>
 
     <!-- Rugcare Page - PDF file for offline access -->
     <div class="rugcare-content-5 text-center">
-        <div class="container">
+        <div class="container pb-2">
             <h2 class="mb-4">Need a Handy Guide?</h2>
             <a href="assets/pdf/Assessment-1-SolutionReport.pdf" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener">
                 <i class="fa-solid fa-file-arrow-down me-2"></i>Download PDF
             </a>
         </div>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/style.png" class="img-fluid" alt="Image description">
     </div>
 
     <!-- Rugcare Page - Contact Button -->
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/style.png" class="img-fluid" alt="Image description">
     <div class="rugcare-content-6 text-center pb-5">
         <div class="container">
-            <h2 class="mb-3">Need More Help?</h2>
+            <h2 class="test mb-3">Need More Help?</h2>
             <p>Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
             <a href="" class="btn btn-outline-secondary">Contact Us</a>
         </div>

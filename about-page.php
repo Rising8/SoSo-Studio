@@ -14,7 +14,7 @@ get_header(); ?>
 
     <!-- About Page - About Us Video -->
     <div class="about-content-2">
-        <div class="d-flex justify-content-center py-5">
+        <div class="d-flex justify-content-center pt-5">
             <!-- Link will be changed later, most likely into an Instagram Reel -->
             <iframe width="800" height="450" 
                 src="https://www.youtube.com/embed/xpdkJGUYIYg?si=XIxvgjV8hLKPan3B" 
@@ -24,45 +24,6 @@ get_header(); ?>
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
             </iframe>
-        </div>
-    </div>
-
-    <!-- About Page - What We Do Section -->
-    <div class="about-content-3">
-        <div class="container px-4 py-2">
-            <h2 class="pb-2 ">What We Do?</h2>
-            <div class="row gx-4 gy-4">
-                <!-- Commission Service -->
-                <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Custom Rug Commissions</h5>
-                            <p class="card-text">We bring your vision to life. Whether it's a unique pattern, color, or size, we create handcrafted rugs tailored just for you.</p>
-                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary">Commission Request</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Workshops -->
-                <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Creative Workshops</h5>
-                            <p class="card-text">Join our hands-on workshops where we teach the basics of rug-making and textile arts in a friendly, welcoming space.</p>
-                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary">Explore Workshops</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Rug Care -->
-                <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Rug Care & Advice</h5>
-                            <p class="card-text">Keep your handmade rugs looking their best with our expert care tips and recommendations for long-lasting quality.</p>
-                            <a href="<?php echo site_url('/rugcare'); ?>" class="btn btn-primary">Rug Care Tips</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -125,6 +86,45 @@ get_header(); ?>
                 </div>
             </div>
         </section>
+    </div>
+
+        <!-- About Page - What We Do Section -->
+    <div class="about-content-3">
+        <div class="container px-4 pb-5">
+            <h2 class="pb-2 ">What We Do?</h2>
+            <div class="row gx-4 gy-4">
+                <!-- Commission Service -->
+                <div class="col-md-4">
+                    <div class="about-soso-card card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Custom Rug Commissions</h5>
+                            <p class="card-text">We bring your vision to life. Whether it's a unique pattern, color, or size, we create handcrafted rugs tailored just for you.</p>
+                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary">Commission Request</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Workshops -->
+                <div class="col-md-4">
+                    <div class="about-soso-card card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Creative Workshops</h5>
+                            <p class="card-text">Join our hands-on workshops where we teach the basics of rug-making and textile arts in a friendly, welcoming space.</p>
+                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary">Explore Workshops</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rug Care -->
+                <div class="col-md-4">
+                    <div class="about-soso-card card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Rug Care & Advice</h5>
+                            <p class="card-text">Keep your handmade rugs looking their best with our expert care tips and recommendations for long-lasting quality.</p>
+                            <a href="<?php echo site_url('/rugcare'); ?>" class="btn btn-primary">Rug Care Tips</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- About Page - Studio Vibes Image -->

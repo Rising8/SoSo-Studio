@@ -14,31 +14,21 @@ get_header(); ?>
             <a href="<?php echo site_url('/commission'); ?>">
                 <!-- CTA Button Left - Links to Commission Page -->
                 <button class="index-rug-button btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5" type="button">
-                    Get Rug
+                    Commission a Rug
                 </button>
             </a>
             <a href="<?php echo site_url('/workshop'); ?>">
                 <!-- CTA Button Right - Links to Workshop Page -->
                 <button class="index-workshop-button btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5" type="button">
-                    Explore Workshop
+                    Explore Workshops
                 </button>
             </a>
         </div>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/landing_page.png" class="img-fluid" alt="Image description">
     </div>
 
-    <!-- Index Page - About Section -->
-    <div class="index-content-2 px-5">
-        <div class="p-5 text-center index-about rounded-3">
-            <h2 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Welcome to SoSo Studio where every rug has a story</h2>
-            <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                Discover woven beauty with our handcrafted rugs—each piece blending culture, art, and nature to add warmth and style to modern homes. From bold statements to subtle elegance, there’s a rug for every space. 
-            </p>
-        </div>
-    </div>
-
     <!-- Index Page - Showcases Section -->
-    <div class="index-content-3 py-5">
+    <div class="index-content-3 px-5 pb-5">
         <div class="container">
             <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Showcases</h2>
             <div class="d-flex overflow-auto gap-4 px-2 index-showcases-scroll">
@@ -146,7 +136,7 @@ get_header(); ?>
                         
                         <div class="col d-flex flex-column gap-2"> 
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-start fs-4 rounded-3"> 
-                                <i class="fa-solid fa-web-awesome"></i>
+                                <i class="fa-solid fa-paintbrush"></i>
                             </div> 
                             <h4 class="mb-0 text-body-emphasis">Built to Last</h4>
                             <p class="text-body-secondary">Our rugs are designed to endure everyday use while keeping their beauty.</p>
@@ -167,94 +157,22 @@ get_header(); ?>
 
     <!-- Index Page - Workshop Section -->
     <div class="index-content-5">
-        <div class="container col-xxl-7 px-4 py-3">
+        <div class="container col-xxl-9 px-4 py-3">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-10 col-sm-8 col-lg-6">
+                <div class="col-10 col-sm-8 col-lg-5">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/workshop.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Step Into Our Rug Workshop</h3>
-                    <p class="lead fs-6 fs-md-5 fs-lg-4">
-                        Curious how our rugs come to life? Visit our workshop page to discover the heart of our craft. From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill, and tradition woven into every piece. See where creativity meets craftsmanship and find out how we bring your ideas to life.
+                <div class="col-lg-7 px-5">
+                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1 py-2">Step Into Our Rug Workshop</h3>
+                    <p class="lead fs-6 fs-md-5 fs-lg-4 py-2">
+                        Curious how our rugs come to life? <br> Visit our workshop page to discover the heart of our craft. From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill, and tradition woven into every piece. <br> See where creativity meets craftsmanship and find out how we bring your ideas to life.
                     </p>
                     <!-- Links to the workshop page for users to get started -->
                     <a href="<?php echo site_url('/workshop'); ?>">
-                        <button class="btn btn-outline-secondary btn-lg rounded-pill px-3 py-2 fs-6 fs-md-5" type="button">
-                            Workshop
+                        <button class="btn btn-outline-secondary btn-lg rounded-pill px-3 py-2 fs-6 fs-md-5 py-2" type="button">
+                            Discover the Process
                         </button>
                     </a> 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Index Page - Testimonials Section -->
-    <div class="index-content-6 px-5">
-        <div class="index-testimonials-bg p-5 text-center rounded-3">
-            <h2 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1 pb-3">Why They Chose Us</h2>
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Testimonial 1 -->
-                    <div class="carousel-item active">
-                        <p class="index-testimonials-p col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                            “I absolutely love the rug I bought! It added the perfect pop of color to my living room, and it’s so soft underfoot. It feels like walking on a cloud. I’ve already gotten compliments from guests!”
-                        </p>
-                        <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>— Sarah T., Austin, TX</p>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="carousel-item">
-                        <p class="index-testimonials-p col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                            “Great customer service and fast shipping! The rug looks exactly like the pictures, and the quality is top-notch.”
-                        </p>
-                        <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <p>— Michael R., Seattle, WA</p>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="carousel-item">
-                        <p class="index-testimonials-p col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                            “Beautiful, well-made rug. It arrived in perfect condition and really completes our dining room space. Highly recommend!”
-                        </p>
-                        <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <p>— Jessica M., New York, NY</p>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
-                <!-- Indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
             </div>
         </div>
@@ -305,16 +223,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Index Page - Quote Section -->
-    <div class="index-content-8">
-        <div class="p-5 text-center">
-            <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                “Creating rugs that reflect your style is our passion. Each piece is carefully crafted to bring warmth, comfort, and character to your home. We’re honored to be a part of your space.”
-            </p>
-            <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">~ Daniel</p>
-        </div>
-    </div>
-
+    
     <!-- Modal Showcases Rug 1 -->
     <div class="modal fade" id="modalRug1" tabindex="-1" aria-labelledby="modalRug1Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
