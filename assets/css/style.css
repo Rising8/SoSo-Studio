@@ -236,9 +236,60 @@ html {
 
 
 /* === ABOUT PAGE STYLING === */
-/* About Page - What We Do Section  */
-.about-soso-card{
-  background-color: #A5D8CC !important;
+/* About Page - What We Offer Section  */
+.about-content-3 {
+  background: #fff8fc;
+  padding: 2rem 0;
+}
+
+.about-content-3 h2 {
+  color: #a84282;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.about-soso-card {
+  background: #fff;
+  border: 2px solid #f0c8e2;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-soso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-soso-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #cc6699;
+  margin-bottom: 1rem;
+}
+
+.about-soso-card .card-text {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-soso-card .btn-primary {
+  color: #cc6699;
+  background-color: transparent;
+  border: 2px solid #cc6699;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.5rem 1.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.about-soso-card .btn-primary:hover {
+  background-color: #cc6699;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(204, 102, 153, 0.3);
 }
 
 /* About Page - Story, Mission and Vision Slider */
@@ -337,6 +388,47 @@ html {
 /* About Page - Studio Vibes Image */
 .studio-vibes-img {
   overflow: visible;
+}
+
+/* About Page - Contact Section */
+.about-content-6 {
+  background: linear-gradient(135deg, #fef6f9, #f6f0ff);
+  border-top: 3px #e0b7d0;
+  border-bottom: 3px #e0b7d0;
+}
+
+.about-content-6 .card-body {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.about-content-6 h3 {
+  font-size: 2rem;
+  color: #803c6c;
+}
+
+.about-content-6 p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.about-content-6 .btn-primary {
+  background-color: #cc6699;
+  border-color: #cc6699;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(204, 102, 153, 0.3);
+  transition: all 0.25s ease-in-out;
+}
+
+.about-content-6 .btn-primary:hover {
+  background-color: #b34d85;
+  border-color: #b34d85;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(204, 102, 153, 0.4);
 }
 
 

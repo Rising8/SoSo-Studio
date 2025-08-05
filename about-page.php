@@ -88,38 +88,38 @@ get_header(); ?>
         </section>
     </div>
 
-        <!-- About Page - What We Do Section -->
+    <!-- About Page - What We Offer Section -->
     <div class="about-content-3">
         <div class="container px-4 pb-5">
-            <h2 class="pb-2 ">What We Do?</h2>
+            <h2 class="pb-2 text-center">What We Offer</h2>
             <div class="row gx-4 gy-4">
-                <!-- Commission Service -->
+                <!-- Custom Rugs -->
                 <div class="col-md-4">
                     <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Custom Rug Commissions</h5>
-                            <p class="card-text">We bring your vision to life. Whether it's a unique pattern, color, or size, we create handcrafted rugs tailored just for you.</p>
-                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary">Commission Request</a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">✨ Custom Rugs</h5>
+                            <p class="card-text">Design and create one-of-a-kind rugs tailored to your style and space.</p>
+                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary">Commission a Rug</a>
                         </div>
                     </div>
                 </div>
                 <!-- Workshops -->
                 <div class="col-md-4">
                     <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Creative Workshops</h5>
-                            <p class="card-text">Join our hands-on workshops where we teach the basics of rug-making and textile arts in a friendly, welcoming space.</p>
-                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary">Explore Workshops</a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🧵 Workshops</h5>
+                            <p class="card-text">Join our friendly workshops to learn tufting techniques and unleash your creativity.</p>
+                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary">View Workshops</a>
                         </div>
                     </div>
                 </div>
-                <!-- Rug Care -->
+                <!-- Gallery -->
                 <div class="col-md-4">
                     <div class="about-soso-card card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Rug Care & Advice</h5>
-                            <p class="card-text">Keep your handmade rugs looking their best with our expert care tips and recommendations for long-lasting quality.</p>
-                            <a href="<?php echo site_url('/rugcare'); ?>" class="btn btn-primary">Rug Care Tips</a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🖼️ Gallery</h5>
+                            <p class="card-text">Explore the vibrant creations made in our studio by our amazing community.</p>
+                            <a href="<?php echo site_url('/gallery'); ?>" class="btn btn-primary">View Gallery</a>
                         </div>
                     </div>
                 </div>
@@ -132,13 +132,19 @@ get_header(); ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/about-page/vibes.png" alt="..." class="img-fluid scroll-image">
     </div>
 
-    <!-- About Page - Contact Button -->
+    <!-- About Page - Contact Section -->
     <div class="about-content-6">
         <div class="text-center">
             <div class="card-body py-5">
-                <h5 class="card-title">Need Help or Have a Question?</h5>
-                <p class="card-text">We're here to help with plant care tips, product info, or anything garden-related! Reach out to us anytime we’d love to hear from you.</p>
-                <button type="button" class="about-contact-btn btn btn-primary btn-lg px-4 me-md-2">Contact Us</button>
+                <h3 class="about-contact-heading fw-bold mb-4">
+                    Ready to Join Our Creative Journey?
+                </h3>
+                <p class="about-contact-text text-muted mb-4">
+                    Whether you're just curious or ready to make something, we’d love to hear from you.
+                </p>
+                <a href="<?php echo home_url('/contact'); ?>" class="about-contact-btn btn btn-primary btn-lg px-5">
+                    Get in Touch
+                </a>
             </div>
         </div>     
     </div>
