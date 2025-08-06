@@ -7,143 +7,185 @@ get_header(); ?>
 <div class="commission-wrapper">
     <!-- Commission Page - Hero Section -->
     <div class="commission-content-1">
-        <div class="commission-hero-bg p-5 text-center rounded-3">
-            <h1 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Commission Request Form</h1>
-            <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
-                Have a design, color, or mood in mind? We’ll help you turn it into a rug that’s truly yours. Whether it’s a rough sketch or just an idea
-                Fill out the form below to get started. 
-            </p>
-        </div>
+        <section class="commission-hero py-5 text-center">
+            <div class="container">
+                <h1 class="display-4 mb-3">🧶 Bring Your Dream to Life 🧶</h1>
+                <p class="lead text-muted">Design a custom rug that’s truly yours — soft, unique, and full of personality.</p>
+            </div>
+        </section>
     </div>
 
-    <!-- Commission Page - How It Works and Form -->
-    <!-- Will be possibly changed into two different sections later -->
-    <div class="commission-content-2 pb-5">
-        <div class="container">
-            <div class="row">
-                <!-- Column 1: How It Works -->
-                <div class="col-md-4 px-5">                            
-                    <h4 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1 px-2">How It Works</h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="d-flex"> 
-                                <i class="fa-solid fa-1 px-2"></i>
-                                <p>Choose How You Want to Order</p>
-                            </div> 
-                            <p>Fill out the Commission Form if you have a rug idea in mind but don’t want to design it yourself. Or, Design Your Own Rug using our Custom page with click this link below</p>  
-                            <a href="<?php echo site_url('/custom'); ?>" class="btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5">Custom Rug</a>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex"> 
-                                <i class="fa-solid fa-2 px-2"></i>
-                                <p> Submit Your Request</p>
-                            </div> 
-                            <p>If you chose the form, simply complete the fields and send it our way. If you chose the custom page, design your rug and click Submit when you’re done.</p>   
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex"> 
-                                <i class="fa-solid fa-3 px-2"></i>
-                                <p> We’ll Review and Get in Touch</p>
-                            </div> 
-                            <p>Our team will review your request or design and email you to confirm the details, pricing, and timeline.</p>   
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex"> 
-                                <i class="fa-solid fa-4 px-2"></i>
-                                <p> Production Begins</p>
-                            </div> 
-                            <p>Once everything is confirmed, we’ll start making your rug and keep you updated throughout the process!</p>   
-                        </li>
-                    </ul>
-                </div>
-                            
-                <!-- Column 2: Full Form -->
-                <div class="col-md-8 d-flex flex-column justify-content-between">
-                    <div class="custom-section mb-4">
-                        <div class="form-section">
-                            <div class="container commission-form p-5 border rounded-2">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Name</label>
-                                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="you@example.com" required>
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col-md-5">
-                                        <label for="" class="form-label">Rug Size</label>
-                                        <select class="form-select" id="country" required>
-                                            <!-- Values must be changed later -->
-                                            <option value="">Choose...</option>
-                                            <option value="US">Small (100x100)</option>
-                                            <option value="US">Medium (100x100)</option>
-                                            <option value="US">Big (100x100)</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a correct size
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="exampleFormControlInput1" class="form-label">Custom</label>
-                                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Custom (60x70)">
-                                    </div>
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col-md-5 pt-2">
-                                        <label for="" class="form-label">Texture</label>
-                                        <select class="form-select" id="country" required>
-                                            <!-- Options must be changed later -->
-                                            <option value="">Choose...</option>
-                                            <option value="US">Flatwave</option>
-                                            <option value="US">Shag</option>
-                                            <option value="US">Tufted </option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a valid style
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row g-3">
-                                    <div class="col-md-5 pt-2">
-                                        <label for="exampleFormControlInput1" class="form-label">Budget Range</label>
-                                        <!-- Prices may be changed later -->
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                                            <label class="form-check-label" for="radioDefault1">$50 - $100</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-                                            <label class="form-check-label" for="radioDefault1">$100 - $200</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-                                            <label class="form-check-label" for="radioDefault1">$200 above</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pt-2">
-                                        <label for="exampleFormControlInput1" class="form-label">Where will the rug be used?</label>
-                                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Bathroom">
-                                    </div>
-                                </div>
-                                <div class="col-md-5 pt-2">
-                                    <label for="exampleFormControlInput1" class="form-label">Colour</label>
-                                    <input type="name" class="form-control" id="exampleFormControlInput1">
-                                </div>
-                                <div class="col-md-5 pt-2">
-                                    <label for="formFile" class="form-label">Drop File</label>
-                                    <input class="form-control" type="file" id="formFile">
-                                </div>
-                                <div class="mb-3 pt-2">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Notes</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Let us know what's on your mind..."></textarea>
-                                </div>                    
+    <!-- Commission Page - How It Works Section -->
+    <div class="commission-content-2">
+        <section class="hiw-section py-5 bg-white">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-semibold">How It Works</h2>
+                <div class="row g-4">
+                    <?php
+                    $steps = [
+                        ['Design', 'Click below to use our design partner tool or skip this step.', 'https://www.customink.com/ndx/#/welcomeBack', 'Open Design Tool', '🎨'],
+                        ['Fill Out The Form', 'Tell us what you envision — you can upload your design or reference.', '', '', '📝'],
+                        ['Submit', 'We’ll review your request and be in touch for confirmation.', '', '', '📩'],
+                        ['Production Begins', 'After confirmation and deposit, your rug enters creation phase!', '', '', '🧵']
+                    ];
+                    foreach ($steps as $index => $step) :
+                    ?>
+                        <div class="col-md-3 d-flex">
+                            <div class="hiw-step-box w-100 h-100 d-flex flex-column align-items-center text-center bg-light p-4 rounded shadow-sm">
+                                <h4 class="fw-bold mb-3"><?= $step[4] ?> Step <?= $index + 1 ?>: <?= $step[0] ?></h4>
+                                <p class="text-muted flex-grow-1"><?= $step[1] ?></p>
+                                <?php if (!empty($step[2])) : ?>
+                                    <a href="<?= $step[2] ?>" target="_blank" class="btn design-tool-btn mt-2"><?= $step[3] ?></a>
+                                <?php endif; ?>
                             </div>
-                        </div>                                       
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Commission Page - Commission Form Section --> 
+    <div class="commission-content-3">
+        <section class="commission-form-section py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8">
+                        <h2 class="text-center mb-4 fw-semibold">Commission Request Form</h2>
+                        <p class="text-center text-muted mb-4">We can’t wait to hear your idea!</p>
+
+                        <form class="shadow p-4 rounded commission-form bg-white">
+                            <div class="row g-3">
+                                <!-- Name -->
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <!-- Rug Size -->
+                                <div class="col-md-6">
+                                    <label for="rug-size" class="form-label">Rug Size</label>
+                                    <select id="rug-size" name="rug-size" class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option value="Tiny">Tiny</option>
+                                        <option value="So-So">So-So</option>
+                                        <option value="Big">Big</option>
+                                        <option value="Custom">Custom (describe below)</option>
+                                    </select>
+                                </div>
+                                <!-- Texture -->
+                                <div class="col-md-6">
+                                    <label for="texture" class="form-label">Texture</label>
+                                    <select id="texture" name="texture" class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option value="Flatwave">Flatwave</option>
+                                        <option value="Shag">Shag</option>
+                                        <option value="Tufted">Tufted</option>
+                                    </select>
+                                </div>
+                                <!-- Budget -->
+                                <div class="col-md-6">
+                                    <label for="budget" class="form-label">Budget Range</label>
+                                    <input type="text" id="budget" name="budget" class="form-control" required>
+                                </div>
+                                <!-- Usage -->
+                                <div class="col-md-6">
+                                    <label for="usage" class="form-label">Where will the rug be used?</label>
+                                    <input type="text" id="usage" name="usage" class="form-control">
+                                </div>
+                                <!-- Colors -->
+                                <div class="col-md-6">
+                                    <label for="colors" class="form-label">Preferred Colors</label>
+                                    <input type="text" id="colors" name="colors" class="form-control">
+                                </div>
+                                <!-- Reference File -->
+                                <div class="col-12">
+                                    <label for="reference" class="form-label">Upload Reference Image</label>
+                                    <input type="file" id="reference" name="reference" class="form-control">
+                                </div>
+                                <!-- Notes -->
+                                <div class="col-12">
+                                    <label for="notes" class="form-label">Additional Notes</label>
+                                    <textarea id="notes" name="notes" rows="4" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn btn-primary w-100 mt-4">Submit Commission</button>
+
+                            <!-- Tips -->
+                            <div class="alert alert-info mt-4">
+                                <strong>Commissioning Tips:</strong>
+                                <ul class="mb-0 small">
+                                    <li>Use high-contrast colors for better clarity.</li>
+                                    <li>Include a sketch, reference photo, or moodboard.</li>
+                                    <li>Tell us where it’ll live — hallway, wall, lounge?</li>
+                                </ul>
+                            </div>
+                        </form>
                     </div>
                 </div>
-           </div>
-        </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Commission Page - FAQ Section -->
+    <div class="commission-content-4">
+        <section class="commission-faq-section pt-4 pb-2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h4 class="text-center mb-4 fw-semibold">Frequently Asked</h4>
+                        <div class="accordion" id="commissionFaq">
+                            <?php
+                            $faqs = [
+                                ['How long does a custom rug take?', 'Most commissions take 4–6 weeks depending on complexity and material.'],
+                                ['Can I request edits after submitting?', 'Absolutely! We’ll contact you first before production to confirm and refine your design.'],
+                                ['What materials do you use?', 'We primarily use high-quality acrylic or wool blends, chosen based on usage location and your preferences.']
+                            ];
+                            foreach ($faqs as $i => $faq) :
+                                $id = 'faq' . ($i + 1);
+                                $collapseId = 'collapse' . ($i + 1);
+                            ?>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="<?= $id ?>">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $collapseId ?>">
+                                            ❓ <?= $faq[0] ?>
+                                        </button>
+                                    </h2>
+                                    <div id="<?= $collapseId ?>" class="accordion-collapse collapse" data-bs-parent="#commissionFaq">
+                                        <div class="accordion-body text-muted"><?= $faq[1] ?></div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="commission-view-more-faqs mt-4 text-center">
+                            <a href="<?= home_url('/faq'); ?>" class="btn btn-outline-secondary mt-2">📚 View More FAQs</a>
+                            <p class="small text-muted mt-3"><i class="fa fa-shield-alt me-2"></i>Your design is safe with us. Every rug is crafted with care, privacy, and love.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Commission Page - Explore More Buttons -->
+    <div class="commission-content-5">
+        <section class="commission-continue-exploring text-center py-5">
+            <div class="container">
+                <h4 class="mb-4 fw-semibold">Continue Exploring</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="<?= home_url(); ?>" class="btn btn-outline-primary px-4 py-2">🏠 Back to Home</a>
+                    <a href="<?= home_url('/gallery'); ?>" class="btn btn-outline-primary px-4 py-2">🖼️ View Gallery</a>
+                    <a href="<?= home_url('/commission'); ?>" class="btn btn-outline-primary px-4 py-2">📝 Submit Another Request</a>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 

@@ -341,19 +341,188 @@ html {
 
 
 /* === COMMISSION PAGE STYLING === */
+/* Commission Page */
+.commission-wrapper {
+  color: #4a2064;
+  background-color: #fefcfe;
+}
+
 /* Commission Page - Hero Section */
-.commission-hero-bg{
-  background-color: #ffff;
+.commission-hero {
+  background: linear-gradient(to right, #fef6f9, #f6f0ff);
+  color: #6a317d;
 }
 
-/* Commission Page - How It Works and Form Section */
-.commission-content-2{
-  background-color: #ffff;
+.commission-hero h1 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  letter-spacing: -0.5px;
 }
 
-.commission-form{
-  background-color: #FAF7FD;
-  max-width: 1000px;
+.commission-hero p {
+  font-size: 1.25rem;
+}
+
+/* Commission Page - How It Works Section */
+.hiw-section h2 {
+  color: #6a317d;
+  letter-spacing: -0.5px;
+}
+
+.hiw-step-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.hiw-step-box:hover {
+  transform: translateY(-5px);
+  border: 1px solid #c7a2f5;
+  background: linear-gradient(to bottom right, #fff, #fdf8ff);
+}
+
+.hiw-step-box h4 {
+  font-size: 1.1rem;
+  color: #6a317d;
+  min-height: 3rem;
+}
+
+/* Commission Page - How It Works Section - Design Tool Button */
+.design-tool-btn {
+  background: linear-gradient(to right, #eac6ff, #fbefff);
+  color: #5d2b75;
+  border: none;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(106, 49, 125, 0.15);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.design-tool-btn:hover {
+  background: linear-gradient(to right, #f2d8ff, #fff4ff);
+  color: #4a2064;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(106, 49, 125, 0.25);
+}
+
+/* Commission Page - Form Section */
+.commission-form-section h2 {
+  color: #6a317d;
+  letter-spacing: -0.5px;
+}
+
+.commission-form-section p {
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.commission-form .form-label {
+  font-size: 0.95rem;
+  color: #4a2064;
+  font-weight: 600;
+}
+
+.commission-form .form-control,
+.commission-form .form-select {
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #4a2064;
+}
+
+.commission-form .form-control:focus,
+.commission-form .form-select:focus {
+  border-color: #cc6699;
+  box-shadow: 0 0 0 0.2rem rgba(204, 102, 153, 0.25);
+  outline: none;
+}
+
+/* Commission Form - Submit Button */
+.commission-form .btn-primary {
+  background: linear-gradient(to right, #6a317d, #9c4dc3);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 10px rgba(106, 49, 125, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.commission-form .btn-primary:hover {
+  background: linear-gradient(to right, #571a66, #8b3ab1);
+  box-shadow: 0 6px 14px rgba(106, 49, 125, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Commission Form - Commissioning Tips */
+.commission-form .alert-info {
+  background-color: #f3effc;
+  border-color: #d7ccf9;
+  color: #4d3e7a;
+  font-size: 0.9rem;
+}
+
+/* Commission Page - FAQ Section */
+.commission-faq-section {
+  color: #6a317d;
+  letter-spacing: -0.5px;
+}
+
+.commission-faq-section .accordion-button {
+  background-color: #fef6f9;
+  font-weight: 600;
+}
+
+.commission-faq-section .accordion-button:not(.collapsed) {
+  background-color: #eac6ff;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+
+.commission-faq-section .accordion-body {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+/* FAQ View More Button */
+.commission-faq-section .btn-outline-secondary {
+  border-color: #cc6699;
+  color: #cc6699;
+  border-radius: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s ease;
+}
+.commission-faq-section .btn-outline-secondary:hover {
+  background-color: #cc6699;
+  color: #fff;
+}
+
+/* Commission Page - Continue Exploring Section */
+.commission-continue-exploring {
+  background-color: #fdf9ff;
+}
+
+.commission-continue-exploring h4 {
+  color: #6a317d;
+  letter-spacing: -0.5px;
+}
+
+.commission-continue-exploring .btn-outline-primary {
+  border-radius: 2rem;
+  border: 2px solid #cc6699;
+  color: #cc6699;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.commission-continue-exploring .btn-outline-primary:hover {
+  background-color: #cc6699;
+  color: #fff;
 }
 
 
