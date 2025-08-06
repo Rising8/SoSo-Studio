@@ -79,7 +79,12 @@ get_header(); ?>
                                 </div>
                                 <!-- Texture -->
                                 <div class="col-md-6">
-                                    <label for="texture" class="form-label">Texture</label>
+                                    <label for="texture" class="form-label">
+                                        Texture
+                                        <a href="<?php echo site_url('/gallery'); ?>" target="_blank" class="texture-help-icon ms-2 text-decoration-none" title="View texture examples">
+                                            <i class="bi bi-question-circle-fill" style="font-size: 1rem;"></i>
+                                        </a>
+                                    </label>
                                     <select id="texture" name="texture" class="form-select" required>
                                         <option value="">Choose...</option>
                                         <option value="Flatwave">Flatwave</option>

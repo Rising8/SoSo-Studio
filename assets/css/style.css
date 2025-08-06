@@ -441,6 +441,18 @@ html {
   outline: none;
 }
 
+/* Commission Form - Texture Help Icon */
+.texture-help-icon {
+  display: inline-block;
+  font-size: 1rem;
+  color: #8a4dd2; 
+  transition: color 0.3s ease;
+}
+
+.texture-help-icon:hover {
+  color: #4a2064;
+}
+
 /* Commission Form - Submit Button */
 .commission-form .btn-primary {
   background: linear-gradient(to right, #6a317d, #9c4dc3);
