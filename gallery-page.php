@@ -15,93 +15,78 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Gallery Page - Image Display Section -->
-    <div class="gallery-content-2 pt-5">
-        <!-- Row 1 Display -->
+    <!-- Gallery Page - Dynamic Gallery Section -->
+    <div class="gallery-content-2 pt-2">
         <div class="container text-center justify-content-center">
-            <div class="row">
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig1.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Sun Flower</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal1">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig2.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Pink Love</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal2">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig3.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Cute One</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal3">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Filter Buttons -->
+            <div class="gallery-filter mb-4">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <?php
+                $terms = get_terms(['taxonomy' => 'rug_type', 'hide_empty' => false]);
+                if (!empty($terms) && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        echo '<button class="btn filter-btn" data-filter="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</button>';
+                    }
+                }
+                ?>
             </div>
-        </div>
 
-        <!-- Row 2 Display -->
-        <div class="container text-center justify-content-center">
-            <div class="row">
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig1.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Rug Name</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal1">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Dynamic Rug Grid -->
+            <div class="row g-4 mt-4">
+                <?php
+                $args = [
+                    'post_type' => 'rug',
+                    'posts_per_page' => -1
+                ];
+                $query = new WP_Query($args);
 
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig2.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Rug Name</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal2">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
 
-                <div class="col pb-4">
-                    <div class="gallery-card position-relative overflow-hidden" style="width: 25rem;">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig3.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="gallery-hover-overlay d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="text-white">Rug Name</h5>
-                            <button type="button" class="btn btn-light mt-2" data-bs-toggle="modal" data-bs-target="#rugModal3">
-                                View
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                        $tags = get_the_terms(get_the_ID(), 'rug_type');
+                        $tag_slugs = [];
+                        $tag_names = [];
+
+                        if ($tags && !is_wp_error($tags)) {
+                            foreach ($tags as $tag) {
+                                $tag_slugs[] = esc_attr($tag->slug);
+                                $tag_names[] = esc_html($tag->name);
+                            }
+                        }
+                        $data_tags = implode(' ', $tag_slugs);
+                        $tag_display = implode(', ', $tag_names);
+
+                        echo '<div class="col-md-4 gallery-item" data-tags="' . $data_tags . '">
+                                <a href="' . get_permalink() . '" class="gallery-card-link">
+                                    <div class="gallery-card shadow-sm">';
+
+                        if (has_post_thumbnail()) {
+                            echo get_the_post_thumbnail(null, 'rug-thumb', ['class' => 'img-fluid']);
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/assets/images/default-rug.jpg" class="img-fluid" alt="Default rug">';
+                        }
+
+                        echo        '<div class="gallery-overlay-caption">
+                                        <h5>' . get_the_title() . '</h5>
+                                        <p>' . wp_trim_words(get_the_excerpt(), 12) . '</p>
+                                    </div>
+                                    <span class="gallery-tag">' . $tag_display . '</span>
+                                </div>
+                            </a>
+                            </div>';
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>No rugs found.</p>';
+                endif;
+                ?>
             </div>
         </div>
     </div>
 
     <!-- Gallery Page - Categories Section -->
-    <div class="gallery-content-3 pt-2">
+    <div class="gallery-content-3 pt-5">
         <!-- Section Divider -->
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-style.png" class="img-fluid" alt="Image description">                
         <div class="row g-0">
@@ -141,70 +126,6 @@ get_header(); ?>
                 <div class="col-lg-8 ">
                     <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1"> Shag Rugs</h3>
                     <p class="lead fs-6 fs-md-5 fs-lg-4">Shag rugs are known for their soft, plush texture and deep pile that adds a cozy, luxurious feel to a room. They’re perfect for bedrooms or chill-out areas where comfort is a priority. Available in a variety of colors and textures, shag rugs make a bold statement and invite you to sink your feet into softness.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Rug Display Section Modals -->
-    <div class="modal fade" id="rugModal1" tabindex="-1" aria-labelledby="rugModalLabel1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rugModalLabel1">Hand-Tufted Rug</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig1.jpeg" class="img-fluid rounded mb-3" alt="Rug Image">
-                    <p><strong>Origin:</strong> Handmade in Perth, Australia by a local artisan couple.</p>
-                    <p><strong>Material:</strong> 100% New Zealand wool</p>
-                    <p><strong>Size:</strong> 120cm x 180cm</p>
-                    <p><strong>Description:</strong> This beautifully crafted rug is part of our bespoke collection, made with love and intention to bring warmth and creativity to any space.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-primary">Request This Rug</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="rugModal2" tabindex="-1" aria-labelledby="rugModalLabel2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rugModalLabel1">Hand-Tufted Rug</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig2.jpeg" class="img-fluid rounded mb-3" alt="Rug Image">
-                    <p><strong>Origin:</strong> Handmade in Perth, Australia by a local artisan couple.</p>
-                    <p><strong>Material:</strong> 100% New Zealand wool</p>
-                    <p><strong>Size:</strong> 120cm x 180cm</p>
-                    <p><strong>Description:</strong> This beautifully crafted rug is part of our bespoke collection, made with love and intention to bring warmth and creativity to any space.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-primary">Request This Rug</a>
-                </div>
-            </div>
-        </div>
-     </div>
-
-    <div class="modal fade" id="rugModal3" tabindex="-1" aria-labelledby="rugModalLabel3" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rugModalLabel1">Hand-Tufted Rug</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/ig3.jpeg" class="img-fluid rounded mb-3" alt="Rug Image">
-                    <p><strong>Origin:</strong> Handmade in Perth, Australia by a local artisan couple.</p>
-                    <p><strong>Material:</strong> 100% New Zealand wool</p>
-                    <p><strong>Size:</strong> 120cm x 180cm</p>
-                    <p><strong>Description:</strong> This beautifully crafted rug is part of our bespoke collection, made with love and intention to bring warmth and creativity to any space.</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-primary">Request This Rug</a>
                 </div>
             </div>
         </div>

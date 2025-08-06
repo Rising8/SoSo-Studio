@@ -110,7 +110,11 @@ get_header(); ?>
             <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 border">
                 <div class="col d-flex flex-column align-items-start gap-2"> 
                     <h3 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Can’t Find the Perfect Rug? Custom a Rug as Unique as Your Space</h3>
-                    <p class="text-body-secondary">Got an idea, a favorite color, or a vibe you love? Let’s turn it into a rug that’s completely yours. Whether it’s a sketch, a fabric you like, or just a feeling you want in your space you bring the inspiration, and we’ll handle the craft. Made by hand, made with heart, made for you.</p> 
+                    <p class="text-body-secondary">
+                        Have a favourite colour, idea, or a vibe you love? Let’s turn it into a rug that’s uniquely yours. 
+                        Whether it’s a sketch, a fabric you love, or simply a feeling you want in your space — you bring the inspiration, 
+                        and we’ll bring the craftsmanship. Made by hand, made with heart, made for you.
+                    </p> 
                     <!-- Links to the custom design page for users to design their own rugs -->
                     <a href="<?php echo site_url('/custom'); ?>" class="btn index-design-cta btn-lg">Custom Rug</a> 
                 </div> 
@@ -144,10 +148,10 @@ get_header(); ?>
 
                         <div class="col d-flex flex-column gap-2"> 
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-start fs-4 rounded-3"> 
-                                <i class="fa-solid fa-earth-americas"></i>
+                                <i class="fa-solid fa-location-dot"></i>
                             </div> 
-                            <h4 class="mb-0 text-body-emphasis">Eco-Friendly</h4>
-                            <p class="text-body-secondary">Sustainably made, our rugs are as kind to the planet as they are to your space.  </p>
+                            <h4 class="mb-0 text-body-emphasis">100% Australian Made</h4>
+                            <p class="text-body-secondary">Our rugs are proudly crafted in Australia, supporting local artisans and businesses.</p>
                         </div>                       
                     </div>
                 </div>
@@ -346,5 +350,3 @@ get_header(); ?>
 </div>
 
 <?php get_footer(); ?>
-
-

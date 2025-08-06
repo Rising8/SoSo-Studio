@@ -35,6 +35,9 @@ function sosostudio_enqueue_styles()
 
     // Search Toggle JS    
     wp_enqueue_script('search-toggle', get_template_directory_uri() . '/assets/js/search-toggle.js', array(), '1.0', true);
+
+    // Gallery Filter JS
+    wp_enqueue_script('gallery-js', get_template_directory_uri() . '/assets/js/gallery.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 
@@ -45,3 +48,41 @@ function add_favicon()
 }
 add_action('wp_head', 'add_favicon');
 
+// Register custom post type for Rugs
+function register_rug_post_type() {
+    register_post_type('rug', [
+        'labels' => [
+            'name' => 'Rugs',
+            'singular_name' => 'Rug',
+            'add_new_item' => 'Add New Rug',
+            'edit_item' => 'Edit Rug',
+            'new_item' => 'New Rug',
+            'view_item' => 'View Rug',
+            'search_items' => 'Search Rugs',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'rugs'],
+        'menu_icon' => 'dashicons-art',
+        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
+        'show_in_rest' => true,
+    ]);
+}
+add_action('init', 'register_rug_post_type');
+
+// Register taxonomy for rug types
+function register_rug_type_taxonomy() {
+    register_taxonomy('rug_type', 'rug', [
+        'label' => 'Rug Types',
+        'hierarchical' => false, 
+        'public' => true,
+        'rewrite' => ['slug' => 'rug-type'],
+        'show_admin_column' => true,
+        'show_in_rest' => true,
+    ]);
+}
+add_action('init', 'register_rug_type_taxonomy');
+
+// Enable featured images + size for gallery thumbs
+add_theme_support('post-thumbnails');
+add_image_size('rug-thumb', 500, 500, true);
