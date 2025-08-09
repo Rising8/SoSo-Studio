@@ -44,7 +44,7 @@ get_header(); ?>
                             <div class="container tranding-slide-content">
                                 <h3 class="title-us text-center">Our Story</h3>                                
                                 <div class="tranding-slide-content-bottom">                                
-                                    <p class="about-text">SoSo Studio began as a simple passion project—a space to explore the beauty of textile art and bring imaginative rug designs to life. What started as a hobby quickly grew into a creative hub where patterns, colors, and textures are used to tell stories.</p>
+                                    <p class="about-text lead">SoSo Studio began as a simple passion project a space to explore the beauty of textile art and bring imaginative rug designs to life. What started as a hobby quickly grew into a creative hub where patterns, colors, and textures are used to tell stories.</p>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ get_header(); ?>
                             <div class="container tranding-slide-content">
                                 <h3 class="title-us text-body-emphasis ">Our Mission</h3>                                
                                 <div class="tranding-slide-content-bottom">                                
-                                    <p class="about-text">At SoSo Studio, our mission is to celebrate creativity and self-expression through unique, handcrafted rug designs. We aim to provide a platform where artistic ideas are brought to life, turning every rug into a story woven with passion and personality.</p>
+                                    <p class="about-text lead">At SoSo Studio, our mission is to celebrate creativity and self-expression through unique, handcrafted rug designs. We aim to provide a platform where artistic ideas are brought to life, turning every rug into a story woven with passion and personality.</p>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ get_header(); ?>
                             <div class="container tranding-slide-content">
                                 <h3 class="title-us text-body-emphasis">Our Vision</h3>                                
                                 <div class="tranding-slide-content-bottom">                                
-                                    <p class="about-text">We envision a world where home décor becomes a canvas for creativity. SoSo Studio strives to become a go-to space for artists, hobbyists, and design lovers who seek original, meaningful, and visually inspiring rug pieces that spark joy and connection.</p>
+                                    <p class="about-text lead">We envision a world where home décor becomes a canvas for creativity. SoSo Studio strives to become a go-to space for artists, hobbyists, and design lovers who seek original, meaningful, and visually inspiring rug pieces that spark joy and connection.</p>
                                 </div>
                             </div>
                         </div>
@@ -89,37 +89,37 @@ get_header(); ?>
     </div>
 
     <!-- About Page - What We Offer Section -->
-    <div class="about-content-3">
+    <div class="about-content-3 p-3">
         <div class="container px-4 pb-5">
-            <h2 class="pb-2 text-center">What We Offer</h2>
+            <h2 class="py-4 text-center">What We Offer</h2>
             <div class="row gx-4 gy-4">
                 <!-- Custom Rugs -->
                 <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
+                    <div class="about-soso-card card h-100 p-4">
                         <div class="card-body text-center">
-                            <h5 class="card-title">✨ Custom Rugs</h5>
-                            <p class="card-text">Design and create one-of-a-kind rugs tailored to your style and space.</p>
-                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary">Commission a Rug</a>
+                            <h5 class="card-title py-2">Custom Rugs</h5>
+                            <p class="card-text py-2">Design and create one-of-a-kind rugs tailored to your style and space.</p>
+                            <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary rounded-pill px-3">Commission a Rug</a>
                         </div>
                     </div>
                 </div>
                 <!-- Workshops -->
                 <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
+                    <div class="about-soso-card card h-100 p-4">
                         <div class="card-body text-center">
-                            <h5 class="card-title">🧵 Workshops</h5>
-                            <p class="card-text">Join our friendly workshops to learn tufting techniques and unleash your creativity.</p>
-                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary">View Workshops</a>
+                            <h5 class="card-title py-2">Workshops</h5>
+                            <p class="card-text py-2">Join our friendly workshops to learn tufting techniques and unleash your creativity.</p>
+                            <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-primary rounded-pill px-3">View Workshops</a>
                         </div>
                     </div>
                 </div>
                 <!-- Gallery -->
                 <div class="col-md-4">
-                    <div class="about-soso-card card h-100 p-3">
+                    <div class="about-soso-card card h-100 p-4">
                         <div class="card-body text-center">
-                            <h5 class="card-title">🖼️ Gallery</h5>
-                            <p class="card-text">Explore the vibrant creations made in our studio by our amazing community.</p>
-                            <a href="<?php echo site_url('/gallery'); ?>" class="btn btn-primary">View Gallery</a>
+                            <h5 class="card-title py-2">Gallery</h5>
+                            <p class="card-text py-2">Explore the vibrant creations made in our studio by our amazing community.</p>
+                            <a href="<?php echo site_url('/gallery'); ?>" class="btn btn-primary rounded-pill px-3">View Gallery</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@ get_header(); ?>
                 <p class="about-contact-text text-muted mb-4">
                     Whether you're just curious or ready to make something, we’d love to hear from you.
                 </p>
-                <a href="<?php echo home_url('/contact'); ?>" class="about-contact-btn btn btn-primary btn-lg px-5">
+                <a href="<?php echo home_url('/contact'); ?>" class="about-contact-btn btn btn-lg px-5 rounded-pill">
                     Get in Touch
                 </a>
             </div>
