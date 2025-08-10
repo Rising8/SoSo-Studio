@@ -45,3 +45,14 @@ function add_favicon()
 }
 add_action('wp_head', 'add_favicon');
 
+// Function to register a workshop
+function register_workshop_post_type() {
+    register_post_type('workshop', [
+        'label' => 'Workshops',
+        'public' => true,
+        'menu_icon' => 'dashicons-hammer',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'has_archive' => true,
+    ]);
+}
+add_action('init', 'register_workshop_post_type');

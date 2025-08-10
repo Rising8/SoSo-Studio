@@ -367,22 +367,65 @@ html {
 
 /* === WORKSHOP PAGE STYLING === */
 /* Workshop Page - Hero Section */
+.workshop-hero h1 {
+  width: 80%;
+}
+
+.workshop-hero p {
+  width: 80%; 
+  color: #875DA6;
+}
+
 .workshop-hero-img {
   opacity: 95%;
 }
 
-/* Workshop Page - Image Hero */
-.workshop-card img {
-  opacity: 90%;
+/* Workshop Page - Workshop Section */
+.workshop-content-2 h1 {
+  text-shadow: 0 1px 3px rgba(98, 58, 123, 0.4);
 }
 
-/* Workshop Page - Testimonials Section */
-.workshop-testimonials {
-  background-color: #FFF9CD;
+.workshop-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
-.workshop-testimonials-p {
-  font-style: italic;
+.workshop-card:hover {
+  transform: translateY(-8px);
+}
+
+.workshop-card .card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.workshop-card .card-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.workshop-card .card-text {
+  margin-bottom: 1rem;
+}
+
+.workshop-meta li {
+  margin-bottom: 0.5rem;
+}
+
+.workshop-card .btn-primary {
+  background-color: #9e7cc2;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.workshop-card .btn-primary:hover {
+  background-color: #7b5399;
+  box-shadow: 0 6px 15px rgba(123, 83, 153, 0.6);
 }
 
 
