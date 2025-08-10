@@ -32,7 +32,7 @@ get_header(); ?>
                     ?>
                         <div class="col-md-3 d-flex">
                             <div class="hiw-step-box w-100 h-100 d-flex flex-column align-items-center text-center p-4 rounded shadow-sm">
-                                <h4 class="text-body-emphasis"><?= $step[4] ?> Step <?= $index + 1 ?>: <?= $step[0] ?></h4>
+                                <h4 class="text-body-emphasis">Step <?= $index + 1 ?>: <?= $step[0] ?></h4>
                                 <p class="text-body-secondary"><?= $step[1] ?></p>
                                 <?php if (!empty($step[2])) : ?>
                                     <a href="<?= $step[2] ?>" target="_blank" class="btn design-tool-btn mt-2"><?= $step[3] ?></a>
@@ -70,11 +70,16 @@ get_header(); ?>
                                     <label for="rug-size" class="form-label">Rug Size</label>
                                     <select id="rug-size" name="rug-size" class="form-select" required>
                                         <option value="">Choose...</option>
-                                        <option value="Tiny">Tiny</option>
-                                        <option value="So-So">So-So</option>
-                                        <option value="Big">Big</option>
-                                        <option value="Custom">Custom (describe below)</option>
+                                        <option value="Tiny">Tiny (10x20)</option>
+                                        <option value="So-So">So-So (20x30)</option>
+                                        <option value="Big">Big (40x50)</option>
+                                        <option value="Custom">Custom Size</option>
                                     </select>
+                                </div>
+                                <!-- Custom Rug Size -->
+                                <div class="col-md-6" id="custom-rug-size-desc-container" style="display:none;">
+                                    <label for="custom-rug-size-desc" class="form-label">Please describe your custom rug size</label>
+                                    <textarea id="custom-rug-size-desc" name="custom-rug-size-desc" rows="1" class="form-control"></textarea>
                                 </div>
                                 <!-- Texture -->
                                 <div class="col-md-6">

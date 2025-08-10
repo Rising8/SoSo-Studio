@@ -343,7 +343,6 @@ html {
 /* === COMMISSION PAGE STYLING === */
 /* Commission Page */
 .commission-wrapper {
-  /* color: #4a2064; */
   background-color: #fefcfe;
 }
 
@@ -354,10 +353,8 @@ html {
 
 /* Commission Page - How It Works Section */
 .hiw-step-box {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  /* background: #fff; */
   background-color: #FAF7FD;
-  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .hiw-step-box:hover {
@@ -366,6 +363,10 @@ html {
 }
 
 .hiw-step-box h4 {
+  min-height: 3.5rem;
+}
+
+.hiw-step-box p {
   min-height: 2rem;
 }
 
@@ -390,11 +391,11 @@ html {
 }
 
 /* Commission Page - Form Section */
-.commission-content-3{
+.commission-content-3 {
   background-color: #fff;
 }
 
-.commission-form{
+.commission-form {
   background-color: #FAFAFA;
 }
 
@@ -460,7 +461,7 @@ html {
 }
 
 /* Commission Page - FAQ Section */
-.commission-content-4{
+.commission-content-4 {
   background-color: #FAF7FD;
 }
 
@@ -485,7 +486,7 @@ html {
   border-radius: 2rem;
 }
 .commission-faq-section .btn-outline-secondary:hover {
-    background-color: #6f3b80;
+  background-color: #6f3b80;
 }
 
 /* Commission Page - Continue Exploring Section */
@@ -493,7 +494,7 @@ html {
   background-color: #8DC9BD;
 }
 
-.commission-content-5 h4{
+.commission-content-5 h4 {
   color: #fff;
 }
 
@@ -511,7 +512,7 @@ html {
 
 
 /* === CUSTOM PAGE STYLING === */
-.custom-tab{
+.custom-tab {
   background-color: #F3ECF9;
   width: 500px;
   height: 500px;
