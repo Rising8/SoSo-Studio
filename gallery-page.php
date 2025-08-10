@@ -18,6 +18,7 @@ get_header(); ?>
     <!-- Gallery Page - Dynamic Gallery Section -->
     <div class="gallery-content-2 pt-2">
         <div class="container text-center justify-content-center">
+            <p class="filter-instruction">Filter rugs by type — tap or click a button below</p>
 
             <!-- Filter Buttons -->
             <div class="gallery-filter mb-4">
@@ -31,6 +32,8 @@ get_header(); ?>
                 }
                 ?>
             </div>
+            
+            <p class="gallery-instruction text-center fst-italic">Tap or click on an image to see more details</p>
 
             <!-- Dynamic Rug Grid -->
             <div class="row g-4 mt-4">
