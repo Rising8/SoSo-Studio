@@ -92,3 +92,15 @@ add_action('init', 'register_rug_type_taxonomy');
 // Enable featured images + size for gallery thumbs
 add_theme_support('post-thumbnails');
 add_image_size('rug-thumb', 500, 500, true);
+
+// Function to register a workshop
+function register_workshop_post_type() {
+    register_post_type('workshop', [
+        'label' => 'Workshops',
+        'public' => true,
+        'menu_icon' => 'dashicons-hammer',
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'has_archive' => true,
+    ]);
+}
+add_action('init', 'register_workshop_post_type');
