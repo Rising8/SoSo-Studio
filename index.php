@@ -8,7 +8,8 @@ get_header(); ?>
     <!-- Index Page - Hero Section -->
     <div class="index-content-1 text-center">
         <h1 class="index-header display-5 text-body-emphasis text-center pt-5 pb-3 d-block mx-auto">
-            You Bring The Vibes We Bring The Rugs
+            You Bring The Vibes<br>
+            We Bring The Rugs
         </h1>
         <div class="d-flex gap-2 justify-content-center">
             <a href="<?php echo site_url('/commission'); ?>">
