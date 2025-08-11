@@ -8,7 +8,8 @@ get_header(); ?>
     <!-- Index Page - Hero Section -->
     <div class="index-content-1 text-center">
         <h1 class="index-header display-5 text-body-emphasis text-center pt-5 pb-3 d-block mx-auto">
-            You Bring The Vibes We Bring The Rugs
+            You Bring The Vibes<br>
+            We Bring The Rugs
         </h1>
         <div class="d-flex gap-2 justify-content-center">
             <a href="<?php echo site_url('/commission'); ?>">
@@ -109,11 +110,11 @@ get_header(); ?>
             <h2 class="text-center text-body-emphasis fs-3 fs-md-2 fs-lg-1 border-bottom index-design-own rounded-3 p-2">Design Your Own Rug</h2> 
             <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 border">
                 <div class="col d-flex flex-column align-items-start gap-2"> 
-                    <h3 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Can’t Find the Perfect Rug? Custom a Rug as Unique as Your Space</h3>
+                    <h3 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Can’t Find the Perfect Rug? Customize a Rug as Unique as Your Space</h3>
                     <p class="text-body-secondary">
-                        Have a favourite colour, idea, or a vibe you love? Let’s turn it into a rug that’s uniquely yours. 
-                        Whether it’s a sketch, a fabric you love, or simply a feeling you want in your space — you bring the inspiration, 
-                        and we’ll bring the craftsmanship. Made by hand, made with heart, made for you.
+                        Have a favourite colour, idea, or vibe you love? Let’s turn it into a rug that’s uniquely yours. 
+                        Whether it’s a sketch, a fabric you adore, or simply a feeling you want to bring to your space, you bring the inspiration
+                        and we’ll bring the craftsmanship. <em>Made by hand, made with heart, made for you.</em>
                     </p> 
                     <!-- Links to the custom design page for users to design their own rugs -->
                     <a href="<?php echo site_url('/custom'); ?>" class="btn index-design-cta btn-lg">Custom Rug</a> 
@@ -127,7 +128,7 @@ get_header(); ?>
                                 <i class="fa-solid fa-thumbs-up"></i>
                             </div> 
                             <h4 class="mb-0 text-body-emphasis">Handcrafted Quality</h4>
-                            <p class="text-body-secondary">Each rug is carefully handmade for unique design and superior craftsmanship.</p>
+                            <p class="text-body-secondary">Each rug is handmade with unique design and superior craftsmanship.</p>
                         </div>
                         
                         <div class="col d-flex flex-column gap-2"> 
@@ -135,7 +136,7 @@ get_header(); ?>
                                 <i class="fa-solid fa-star"></i>
                             </div> 
                             <h4 class="mb-0 text-body-emphasis">Premium Materials</h4>
-                            <p class="text-body-secondary">We use high-quality, sustainable materials for durability and comfort.</p>
+                            <p class="text-body-secondary">We use premium, sustainable materials for lasting durability and comfort.</p>
                         </div>
                         
                         <div class="col d-flex flex-column gap-2"> 
@@ -151,7 +152,7 @@ get_header(); ?>
                                 <i class="fa-solid fa-location-dot"></i>
                             </div> 
                             <h4 class="mb-0 text-body-emphasis">100% Australian Made</h4>
-                            <p class="text-body-secondary">Our rugs are proudly crafted in Australia, supporting local artisans and businesses.</p>
+                            <p class="text-body-secondary">Proudly crafted in Australia, supporting local artisans and businesses.</p>
                         </div>                       
                     </div>
                 </div>
@@ -226,7 +227,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-
     
     <!-- Modal Showcases Rug 1 -->
     <div class="modal fade" id="modalRug1" tabindex="-1" aria-labelledby="modalRug1Label" aria-hidden="true">
