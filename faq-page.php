@@ -9,8 +9,8 @@ get_header(); ?>
     <div class="faq-content-1">
         <div class="container">
             <div class="text-center mb-4">
-                <h1 class="fs-3 fs-md-2 fs-lg-1" style="color: #4b0082;">Frequently Asked Questions</h1>
-                <p class="text-muted">Answers to your most common curiosities, rug-related or not.</p>
+                <h1 class="display-5 text-body-emphasis text-center pb-2 d-block mx-auto">Frequently Asked Questions</h1>
+                <p class="lead text-muted">Answers to your most common curiosities, rug related or not.</p>
             </div>
 
             <!-- Tabs -->
@@ -18,13 +18,13 @@ get_header(); ?>
                 <!-- Category Tabs -->
                 <ul class="nav faq-nav-pills justify-content-center mb-4" id="faqTabs" role="tablist">
                     <li class="nav-item">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#general">🧺 General</button>
+                        <button class="nav-link active rounded-pill" data-bs-toggle="pill" data-bs-target="#general">General</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#shipping">📦 Shipping</button>
+                        <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#shipping">Shipping</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#care">🧼 Rug Care</button>
+                        <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#care">Rug Care</button>
                     </li>
                 </ul>
 
@@ -173,10 +173,10 @@ get_header(); ?>
                 </div>
                 
                 <!-- Contact CTA -->
-                <div class="text-center mt-5">
+                <div class="text-center pt-5">
                     <h2 class="mb-3" style="color:#4b0082;">Need More Help?</h2>
-                    <p class="text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
-                    <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline-secondary">Contact Us</a>
+                    <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
+                    <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
                 </div>
             </div>
         </div>

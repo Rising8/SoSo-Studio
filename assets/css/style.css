@@ -482,7 +482,6 @@ html {
 }
 
 .faq-nav-pills .nav-link {
-  border-radius: 999px;
   transition: background-color 0.2s ease;
 }
 
