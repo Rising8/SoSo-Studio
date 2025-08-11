@@ -811,8 +811,14 @@ html {
 
 /* === RUGCARE PAGE STYLING === */
 /* Rugcare Page - Hero Section */
-.rugcare-hero-p {
-  color: #875DA6;
+.download-pdf-button{
+  color: white;
+  background-color: #5a379e;
+}
+
+.download-pdf-button:hover{
+   color: white;
+  background-color: #875DA6;
 }
 
 /* Rugcare Page - Quick Everyday Tips Section */
@@ -820,28 +826,39 @@ html {
   background-color: #F3ECF9;
 }
 
-/* Rugcare Page - Care By Material Section */
-.rugcare-content-3{
-  background-color: #ffff;
+.everyday-tips-column{
+  width: 300px;
+  height: 350px;
 }
 
-.rugcare-materials{
-  background-color: #F3ECF9;
+/* Rugcare Page - Care By Material Section */
+.rugcare-content-3{
+  background-color: #fff;
+  margin-top: -30px;
+}
+
+.not-todo-content{
+  background-color: #fff;
+}
+
+.not-todo-img{
+  width: 80%;
+}
+
+.not-todo-column{
+  height: 110px;
+  background-color: #F3ECF9 !important;
 }
 
 /* Rugcare Page - Video Section */
 .rugcare-content-4{
   background-color: #F3ECF9;
-}
-
-/* Rugcare Page - PDF File Section */
-.rugcare-content-5{
-  margin-top: -60px;
+  margin-top: -30px;
 }
 
 /* Rugcare Page - Contact Section */
-.rugcare-content-6{
-  background-color: #F3ECF9;
+.rugcare-content-5{
+  background-color: #fff;
   margin-top: -30px;
 }
 
