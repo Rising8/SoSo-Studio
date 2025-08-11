@@ -235,9 +235,47 @@ html {
 
 
 /* === ABOUT PAGE STYLING === */
-/* About Page - What We Do Section  */
-.about-soso-card{
-  background-color: #A5D8CC !important;
+/* About Page - What We Offer Section  */
+.about-content-3 {
+  background-color: #D7EEE8;
+}
+
+.about-content-3 h2{
+  color: #7eb7ac;
+}
+
+.about-soso-card {
+  background: #fff;
+  border: 2px solid #8DC9BD;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-soso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-soso-card .card-title {
+  color:  #8DC9BD;
+}
+
+.about-soso-card .card-text {
+  color: #666;
+}
+
+.about-soso-card .btn-primary {
+  color:  #8DC9BD;
+  background-color: transparent;
+  border: 2px solid  #8DC9BD;
+  transition: all 0.2s ease-in-out;
+}
+
+.about-soso-card .btn-primary:hover {
+  background-color:  #8DC9BD;
+  color: white;
+  transform: scale(1.05);
 }
 
 /* About Page - Story, Mission and Vision Slider */
@@ -300,9 +338,7 @@ html {
   max-width: 450px;
   margin: 0 auto;
   padding: 0 1rem;
-  font-size: 1rem;
   line-height: 1.5;
-  color: var(--dark);
 }
 
 /* Control Slider and Pagination */
@@ -327,7 +363,7 @@ html {
 
 .tranding-slider-control {
   position: relative;
-  bottom: 2rem;
+  bottom: -1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,6 +372,34 @@ html {
 /* About Page - Studio Vibes Image */
 .studio-vibes-img {
   overflow: visible;
+}
+
+/* About Page - Contact Section */
+.about-content-6 {
+  background-color: #E4D8EE;
+}
+
+.about-contact-heading {
+  color: #6f3b80;
+}
+
+.about-contact-text{
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.about-contact-btn{
+  color:  #6f3b80;
+  background-color: transparent;
+  border: 2px solid  #6f3b80;
+  transition: all 0.25s ease-in-out;
+}
+
+.about-contact-btn:hover {
+  background-color: #6f3b80;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 
