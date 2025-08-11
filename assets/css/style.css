@@ -845,7 +845,6 @@ html {
   margin-top: -30px;
 }
 
-
 /* === FAQ PAGE STYLING === */
 .faq-accordion-btn {
   background-color: #f3e9ff; 
@@ -859,6 +858,20 @@ html {
 
 .accordion-body {
   font-family: 'Roboto', sans-serif;
+}
+
+.faq-nav-pills .nav-link.active {
+  background-color: #4b0082;
+  color: #fff;
+  font-weight: 600;
+}
+
+.faq-nav-pills .nav-link {
+  transition: background-color 0.2s ease;
+}
+
+.faq-nav-pills .nav-link:hover {
+  background-color: #e0d0ff;
 }
 
 
