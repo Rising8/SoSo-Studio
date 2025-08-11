@@ -392,21 +392,81 @@ html {
   background-color: #F3ECF9;
 }
 
-/* Gallery Page - Image Display Section */
-.gallery-hover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
+/* Gallery Page - Filter Buttons */
+.gallery-filter .filter-btn {
+  background-color: transparent;
+  border: 2px solid #4a2064;
+  color: #4a2064;
+  padding: 0.5rem 1.2rem;
+  margin: 0.3rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.gallery-card:hover .gallery-hover-overlay {
-  opacity: 1;
+.gallery-filter .filter-btn:hover {
+  background-color: #4a2064;
+  color: #fff;
+}
+
+.gallery-filter .filter-btn.active {
+  background-color: #4a2064;
+  color: #fff;
+}
+
+/* Gallery Page - Image Display Section */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.85);
+  color: #2a1b3d;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.gallery-card:hover .gallery-overlay-caption {
+  transform: translateY(0);
+}
+
+.gallery-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #b38bff;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 /* Gallery Page - Categories Section */
@@ -414,13 +474,78 @@ html {
   background-color: rgb(250, 247, 253);
 }
 
-/* Gallery Page - Testimonials Section */
-.gallery-testimonials {
-  background-color: #FFF9CD;
+
+/* === SINGLE RUG PAGE STYLING === */
+/* Single Rug Page - Back to Gallery Button */
+.single-rug .btn-outline-primary {
+  border-color: #6f42c1;
+  color: #6f42c1;
+  font-size: 1rem;
+  padding: 0.5rem 1.25rem;
 }
 
-.gallery-testimonials-p {
-  font-style: italic;
+.single-rug .btn-outline-primary:hover {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.single-rug h1 {
+  font-family: 'Marcellus', serif;
+  font-size: 2.75rem;
+  margin-bottom: 1.25rem;
+  color: #333;
+  text-align: center;
+}
+
+.single-rug .meta-details li {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.single-rug .meta-details strong {
+  color: #6f42c1;
+  font-weight: 600;
+}
+
+/* Single Rug Page - CTA Box */
+.single-rug .cta-box {
+  background-color: #f9f5ff;
+  border: 2px solid #c6aef5;
+  box-shadow: 0 10px 25px rgba(111, 66, 193, 0.05);
+  color: #333;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.single-rug .cta-box h3 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.8rem;
+  color: #6f42c1;
+}
+
+.single-rug .cta-box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Single Rug Page = Enquire CTA Button */
+.single-rug .btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  font-size: 1.15rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-rug .btn-primary:hover {
+  background-color: #5a379e;
+  border-color: #5a379e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(111, 66, 193, 0.2);
 }
 
 
