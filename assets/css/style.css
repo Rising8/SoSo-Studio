@@ -63,24 +63,61 @@ html {
   color: black;
 }
 
-.header-studio-logo{
-  width: 50px;
-  height: auto;
+/* Dropdown Menu Styling */
+.dropdown-menu{
+  --bs-dropdown-min-width: 16rem;
+  border: 0;
+  background: #F3ECF9;         
+  backdrop-filter: blur(6px);
+  padding: .5rem;
+}
+
+.dropdown-item{
+  padding:.6rem .75rem;
+  color: black;       
+  transition: background .2s ease, transform .12s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background: rgba(135,93,166,.12);
+  color:#000;
+  transform: translateX(2px);
+} 
+
+.nav-item .dropdown-toggle::after{
+  transition: transform .2s ease;
+}
+
+.nav-item.show .dropdown-toggle::after{
+  transform: rotate(180deg);
 }
 
 .icon i{
   color: black !important;
 }
 
-#searchIconMobile,
-#searchIconDesktop {
-  cursor: pointer;
-  transition: all 0.2s ease;
+.header-studio-logo{
+  width: 50px;
+  height: auto;
 }
 
-#searchIconMobile:hover,
-#searchIconDesktop:hover {
-  transform: scale(1.1);
+/* Contact Header Styling */
+.header-contact-btn {
+  background: linear-gradient(135deg, #875DA6, #8DC9BD);
+  color: #fff;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.header-contact-btn:hover {
+  background: linear-gradient(135deg, #8DC9BD, #875DA6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  color: #fff;
+  text-decoration: none;
 }
 
 

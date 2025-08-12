@@ -41,7 +41,6 @@
                         <nav class="navbar navbar-expand-md" data-bs-theme="dark">
                             <ul class="navbar-nav flex-row gap-3">
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-link">About</a></li>
-
                                 <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" id="customDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Commissions
@@ -51,17 +50,15 @@
                                         <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Create your own</a></li>
                                     </ul>
                                 </li>
-
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshop' ) ); ?>" class="nav-link">Workshops</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link">Gallery</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link">Rugcare</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-link">FAQ</a></li>
-                                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="nav-link">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- Icons (Right) -->
                         <div class="icon col-md-3 text-end d-flex justify-content-end align-items-center" style="cursor: pointer;">
-                            <i id="searchIconDesktop" class="fa-solid fa-magnifying-glass fs-4 mx-2"></i>
+                            <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">LET'S TALK</a>
                         </div>
                     </div>
             
@@ -93,13 +90,6 @@
                 </div>
             </header>
         </div>    
-
-        <div id="searchBar" class="container py-3 d-none">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <button class="btn btn-outline-secondary" type="button">Go</button>
-            </div>
-        </div>
         <?php wp_footer(); ?>
     </body>
 </html>
