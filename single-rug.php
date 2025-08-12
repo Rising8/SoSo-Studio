@@ -30,7 +30,13 @@
             <div class="cta-box mt-5">
                 <h3 class="mb-2">Love this rug?</h3>
                 <p class="mb-3">Contact us to reserve or ask questions — we'll reply within 24 hours!</p>
-                <a href="<?php echo site_url('/contact'); ?>" class="btn btn-primary px-4 py-2 rounded-pill cta-hover">Enquire About This Rug</a>
+                <a href="#" 
+                    class="btn btn-primary px-4 py-2 rounded-pill cta-hover" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#rugEnquireModal"
+                    data-rug-name="<?php echo esc_attr(get_the_title()); ?>">
+                    Enquire About This Rug
+                </a>
             </div>
         </div>
     </div>

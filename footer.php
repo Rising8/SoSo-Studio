@@ -61,5 +61,11 @@
 
 <?php wp_footer(); ?>
 
+<?php
+if (is_singular('rug')) {
+    get_template_part('modals/rug-enquiry');
+}
+?>
+
 </body>
 </html>
