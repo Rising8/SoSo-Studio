@@ -35,7 +35,7 @@ get_header(); ?>
             </div>
             <div class="col-auto">
                 <div class="p-3 border everyday-tips-box rounded-3">
-                    <i class="fa-solid fa-wine-glass fa-2x pt-3 px-2"></i>
+                    <i class="fa-solid fa-wine-glass mb-2 fa-2x pt-3 px-2"></i>
                     <h4 class="everyday-tips-heading pt-3 px-2">Act Fast <br> on Spills</h4>
                     <p class="text-muted pt-3 px-2">Blot spills right away with a clean, dry cloth to stop stains from setting. Quick action protects the fibers and keeps your rug looking its best.</p>
                 </div>
@@ -73,10 +73,10 @@ get_header(); ?>
                             <div class="bg-light border not-todo-box rounded-4 p-3">
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
-                                        <h5 class="mb-0 p-2">Don’t let <br> spills sit</h5>
+                                        <h5 class="mb-0 pt-2">Don’t let <br> spills sit</h5>
                                     </div>
                                     <div class="col-md-8">
-                                        <p class="text-muted mb-0">Wipe up liquids immediately to prevent stains from setting deep into the fibers</p>
+                                        <p class="text-muted mb-0 pt-2">Wipe up liquids immediately to prevent stains from setting deep into the fibers</p>
                                     </div>
                                 </div>
                             </div>
