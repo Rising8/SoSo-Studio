@@ -910,6 +910,22 @@ html {
   background-color: #e0d0ff;
 }
 
+.faq-commission-link {
+  color: #8e6fad; 
+  text-decoration: underline;
+  text-decoration-color: #c7b0dd; 
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.faq-commission-link:hover {
+  color: #7a5d99; 
+  text-decoration-color: #b49dcf;
+}
+
+
+
 
 /* === FOOTER STYLING === */
 .footer-wrapper{

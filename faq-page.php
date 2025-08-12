@@ -56,7 +56,7 @@ get_header(); ?>
                                 </h2>
                                 <div id="genA2" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
                                     <div class="accordion-body">
-                                        Absolutely! You can submit your design ideas via our <a href="<?php echo site_url('/commission'); ?>">Commission page</a> and we'll bring them to life.
+                                        Absolutely! You can submit your design ideas via our <a href="<?php echo site_url('/commission'); ?>" class="faq-commission-link">Commission page</a> and we'll bring them to life.
                                     </div>
                                 </div>
                             </div>
