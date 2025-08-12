@@ -45,9 +45,9 @@
                                     <a href="#" class="nav-link dropdown-toggle" id="customDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Commissions
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="customDropdown">
-                                        <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">Commission request form</a></li>
-                                        <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Create your own</a></li>
+                                    <ul class="dropdown-menu rounded-3" aria-labelledby="customDropdown">
+                                        <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">Commission request form</a></li>
+                                        <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Create your own</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshop' ) ); ?>" class="nav-link">Workshops</a></li>
