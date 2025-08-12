@@ -88,7 +88,7 @@ get_header(); ?>
     </div>
 
     <!-- Gallery Page - Categories Section -->
-    <div class="gallery-content-3 pt-5">
+    <div id="gallery-categories-section" class="gallery-content-3 pt-5">
         <!-- Section Divider -->
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-style.png" class="img-fluid" alt="Image description">                
         <div class="row g-0">
