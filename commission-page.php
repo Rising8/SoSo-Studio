@@ -85,7 +85,7 @@ get_header(); ?>
                                 <div class="col-md-6">
                                     <label for="texture" class="form-label">
                                         Texture
-                                        <a href="<?php echo site_url('/gallery'); ?>" target="_blank" class="texture-help-icon ms-2 text-decoration-none" title="View texture examples">
+                                        <a href="<?php echo site_url('/gallery#gallery-categories-section'); ?>" target="_blank" class="texture-help-icon ms-2 text-decoration-none" title="View texture examples">
                                             <i class="bi bi-question-circle-fill" style="font-size: 1rem;"></i>
                                         </a>
                                     </label>
