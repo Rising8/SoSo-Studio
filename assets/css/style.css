@@ -614,6 +614,12 @@ html {
   transform: translateY(-8px);
 }
 
+.workshop-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
 .workshop-card .card-body {
   padding: 1.5rem;
   text-align: center;
