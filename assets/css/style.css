@@ -46,6 +46,12 @@ html {
   position: relative;
 }
 
+/* Frosted Glass Backdrop for Contact and Enquiry Form */
+.modal-backdrop.show {
+  background-color: rgba(249, 244, 252, 0.6) !important;
+  backdrop-filter: blur(6px);
+}
+
 
 /* === HEADER STYLING === */
 .header-wrapper {
@@ -63,24 +69,160 @@ html {
   color: black;
 }
 
-.header-studio-logo{
-  width: 50px;
-  height: auto;
+.nav-link.active,
+.nav-link.show,
+.dropdown-item.active {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu{
+  --bs-dropdown-min-width: 14rem;
+  background: rgba(135,93,166,.12);        
+  backdrop-filter: blur(10px);
+  padding: 0 !important;
+}
+
+.dropdown-item{
+  padding:.6rem .75rem;
+  color: black;       
+  background: rgba(135,93,166,.12);
+  border: 1px solid #c2a6e4;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background: rgba(163, 150, 172, 0.12);
+  color:#000;
+} 
+
+.nav-item.dropdown .dropdown-menu {
+  left: 50% !important;      
+  transform: translateX(-50%); 
+}
+
+.nav-item .dropdown-toggle::after{
+  transition: transform .2s ease;
+}
+
+.nav-item.show .dropdown-toggle::after{
+  transform: rotate(180deg);
 }
 
 .icon i{
   color: black !important;
 }
 
-#searchIconMobile,
-#searchIconDesktop {
-  cursor: pointer;
-  transition: all 0.2s ease;
+.header-studio-logo{
+  width: 50px;
+  height: auto;
 }
 
-#searchIconMobile:hover,
-#searchIconDesktop:hover {
-  transform: scale(1.1);
+/* Contact Header Styling */
+.header-contact-btn {
+  background: linear-gradient(135deg, #875DA6, #8DC9BD);
+  color: #fff;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.header-contact-btn:hover {
+  background: linear-gradient(135deg, #8DC9BD, #875DA6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* === CONTACT MODAL STYLING === */
+#contactModal .modal-content {
+  border-radius: 15px;
+  border: none;
+  background-color: #f9f4fc; 
+  box-shadow: 0 10px 30px rgba(75, 0, 130, 0.2); 
+}
+
+#contactModal .modal-header {
+  border-bottom: none;
+  background: linear-gradient(90deg, #a88beb, #f8ceec); 
+  color: #4b0082;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#contactModal .modal-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+#contactModal .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Form Labels */
+#contactModal label {
+  font-weight: 500;
+  color: #4b0082; 
+}
+
+/* Form Inputs */
+#contactModal input,
+#contactModal select,
+#contactModal textarea {
+  border-radius: 8px;
+  border: 1px solid #d9c7ec;
+  background-color: #fffafc;
+  transition: 0.3s ease;
+}
+
+#contactModal input:focus,
+#contactModal select:focus,
+#contactModal textarea:focus {
+  border-color: #a88beb;
+  box-shadow: 0 0 0 0.25rem rgba(168, 139, 235, 0.3);
+}
+
+/* If valid input, green colour around border */
+#contactModal input:valid,
+#contactModal select:valid,
+#contactModal textarea:valid {
+  border-color: #6cc070; 
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
+/* If invalid input, red colour around border */
+#contactModal input:invalid:not(:focus):not(:placeholder-shown),
+#contactModal select:invalid:not(:focus),
+#contactModal textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #e03e2f; 
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
+}
+
+/* Soft Placeholder Colors */
+#contactModal input::placeholder,
+#contactModal textarea::placeholder {
+  color: #b594d6; 
+  opacity: 1; 
+}
+
+/* Submit Button */
+#contactModal button[type="submit"] {
+  background: linear-gradient(90deg, #a88beb, #f8ceec);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+#contactModal button[type="submit"]:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 

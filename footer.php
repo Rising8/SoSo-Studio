@@ -42,7 +42,7 @@
                 <div class="col-md-3 mb-4 text-center">
                     <h5 class="footer-font fw-bold mb-3 pt-5">Support</h5>
                     <ul class="list-unstyled footer-font footer-links text-center">
-                        <li><a href="" class="footer-link footer-font">Contact Us</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="footer-link footer-font">Contact Us</a></li>
                         <li><a href="<?php echo site_url('/faq'); ?>" class="footer-link footer-font">FAQs</a></li>
                         <li><a href="<?php echo site_url('/commission'); ?>" class="footer-link footer-font">Commission Request</a></li>
                         <li><a href="<?php echo site_url('/custom'); ?>" class="footer-link footer-font">Custom Request</a></li>
@@ -66,6 +66,8 @@ if (is_singular('rug')) {
     get_template_part('modals/rug-enquiry');
 }
 ?>
+
+<?php include 'modals/contact-form.php'; ?>
 
 </body>
 </html>

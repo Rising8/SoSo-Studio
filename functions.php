@@ -36,14 +36,14 @@ function sosostudio_enqueue_styles()
     // About JS
     wp_enqueue_script('about-js', get_template_directory_uri() . '/assets/js/about.js', array('swiper-js'), '1.0', true);  
 
-    // Search Toggle JS    
-    wp_enqueue_script('search-toggle', get_template_directory_uri() . '/assets/js/search-toggle.js', array(), '1.0', true);
-
     // Gallery Filter JS
     wp_enqueue_script('gallery-js', get_template_directory_uri() . '/assets/js/gallery.js', array(), '1.0', true);
 
     // Custom Size JS
     wp_enqueue_script('custom-size', get_template_directory_uri() . '/assets/js/custom-size.js', array(), '1.0', true);
+
+    // Custom Form JS
+    wp_enqueue_script('contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), '1.0', true);
 
     // Enquiry Form JS
     wp_enqueue_script('enquiry-form', get_template_directory_uri() . '/assets/js/enquiry-form.js', array(), '1.0', true);
