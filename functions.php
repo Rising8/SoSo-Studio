@@ -46,7 +46,7 @@ function sosostudio_enqueue_styles()
     wp_enqueue_script('custom-size', get_template_directory_uri() . '/assets/js/custom-size.js', array(), '1.0', true);
 
     // Custom Form JS
-    wp_enqueue_script('custom-form', get_template_directory_uri() . '/assets/js/custom-form.js', array(), '1.0', true);
+    wp_enqueue_script('contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 

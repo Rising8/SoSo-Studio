@@ -61,5 +61,7 @@
 
 <?php wp_footer(); ?>
 
+<?php include 'modals/contact-form.php'; ?>
+
 </body>
 </html>
