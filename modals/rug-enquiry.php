@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="rug-enquire-form shadow-lg p-4 rounded bg-body">
                 <div class="mb-3">
-                    <label for="rug-name" class="form-label">Rug</label>
+                    <label for="rug-name" class="form-label">Rug Name</label>
                     <input type="text" id="rug-name" name="rug_name" class="form-control" readonly>
                 </div>
                 <div class="mb-3">
