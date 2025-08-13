@@ -36,9 +36,6 @@ function sosostudio_enqueue_styles()
     // About JS
     wp_enqueue_script('about-js', get_template_directory_uri() . '/assets/js/about.js', array('swiper-js'), '1.0', true);  
 
-    // Search Toggle JS    
-    wp_enqueue_script('search-toggle', get_template_directory_uri() . '/assets/js/search-toggle.js', array(), '1.0', true);
-
     // Gallery Filter JS
     wp_enqueue_script('gallery-js', get_template_directory_uri() . '/assets/js/gallery.js', array(), '1.0', true);
 
