@@ -173,7 +173,7 @@ get_header(); ?>
                         Curious how our rugs come to life? <br> Visit our workshop page to discover the heart of our craft. From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill, and tradition woven into every piece. <br> See where creativity meets craftsmanship and find out how we bring your ideas to life.
                     </p>
                     <!-- Links to the workshop page for users to get started -->
-                    <a href="<?php echo site_url('/workshop'); ?>">
+                    <a href="<?php echo site_url('/workshops'); ?>">
                         <button class="btn btn-outline-secondary btn-lg rounded-pill px-3 py-2 fs-6 fs-md-5 py-2" type="button">
                             Discover the Process
                         </button>

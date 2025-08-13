@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Workshop Page
+ * Template Name: Workshops Page
  */
 get_header(); ?>
 

@@ -50,7 +50,7 @@
                                         <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Create your own</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshop' ) ); ?>" class="nav-link">Workshops</a></li>
+                                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshops' ) ); ?>" class="nav-link">Workshops</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link">Gallery</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link">Rugcare</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-link">FAQ</a></li>
@@ -80,7 +80,7 @@
                                         <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Create your own</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshop' ) ); ?>" class="nav-link">Workshops</a></li>
+                                <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshops' ) ); ?>" class="nav-link">Workshops</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link">Gallery</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-link">FAQ</a></li>
                                 <li class="nav-item"><a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link">Rugcare</a></li>
