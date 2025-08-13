@@ -58,7 +58,7 @@
                         </nav>
                         <!-- Icons (Right) -->
                         <div class="icon col-md-3 text-end d-flex justify-content-end align-items-center" style="cursor: pointer;">
-                            <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">LET'S TALK</a>
+                            <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S TALK</a>
                         </div>
                     </div>
             
@@ -93,3 +93,6 @@
         <?php wp_footer(); ?>
     </body>
 </html>
+
+
+

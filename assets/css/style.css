@@ -46,6 +46,12 @@ html {
   position: relative;
 }
 
+/* Frosted Glass Backdrop for Contact and Enquiry Form */
+.modal-backdrop.show {
+  background-color: rgba(249, 244, 252, 0.6) !important;
+  backdrop-filter: blur(6px);
+}
+
 
 /* === HEADER STYLING === */
 .header-wrapper {
@@ -129,6 +135,94 @@ html {
   transform: translateY(-2px);
   color: #fff;
   text-decoration: none;
+}
+
+
+/* === CONTACT MODAL STYLING === */
+#contactModal .modal-content {
+  border-radius: 15px;
+  border: none;
+  background-color: #f9f4fc; 
+  box-shadow: 0 10px 30px rgba(75, 0, 130, 0.2); 
+}
+
+#contactModal .modal-header {
+  border-bottom: none;
+  background: linear-gradient(90deg, #a88beb, #f8ceec); 
+  color: #4b0082;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#contactModal .modal-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+#contactModal .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Form Labels */
+#contactModal label {
+  font-weight: 500;
+  color: #4b0082; 
+}
+
+/* Form Inputs */
+#contactModal input,
+#contactModal select,
+#contactModal textarea {
+  border-radius: 8px;
+  border: 1px solid #d9c7ec;
+  background-color: #fffafc;
+  transition: 0.3s ease;
+}
+
+#contactModal input:focus,
+#contactModal select:focus,
+#contactModal textarea:focus {
+  border-color: #a88beb;
+  box-shadow: 0 0 0 0.25rem rgba(168, 139, 235, 0.3);
+}
+
+/* If valid input, green colour around border */
+#contactModal input:valid,
+#contactModal select:valid,
+#contactModal textarea:valid {
+  border-color: #6cc070; 
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
+/* If invalid input, red colour around border */
+#contactModal input:invalid:not(:focus):not(:placeholder-shown),
+#contactModal select:invalid:not(:focus),
+#contactModal textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #e03e2f; 
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
+}
+
+/* Soft Placeholder Colors */
+#contactModal input::placeholder,
+#contactModal textarea::placeholder {
+  color: #b594d6; 
+  opacity: 1; 
+}
+
+/* Submit Button */
+#contactModal button[type="submit"] {
+  background: linear-gradient(90deg, #a88beb, #f8ceec);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+#contactModal button[type="submit"]:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 
@@ -929,6 +1023,7 @@ html {
   color: white;
 }
 
+
 /* === FAQ PAGE STYLING === */
 .faq-accordion-btn {
   background-color: #f3e9ff; 
@@ -971,8 +1066,6 @@ html {
   color: #7a5d99; 
   text-decoration-color: #b49dcf;
 }
-
-
 
 
 /* === FOOTER STYLING === */
