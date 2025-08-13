@@ -1038,12 +1038,6 @@ html {
   transform: translateY(-2px);
 }
 
-/* Frosted Glass Backdrop */
-.modal-backdrop.show {
-  background-color: rgba(249, 244, 252, 0.6) !important;
-  backdrop-filter: blur(6px);
-}
-
 
 /* === RUGCARE PAGE STYLING === */
 /* Rugcare Page - Hero Section */
