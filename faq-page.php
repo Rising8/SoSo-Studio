@@ -176,7 +176,7 @@ get_header(); ?>
                 <div class="text-center pt-5">
                     <h2 class="mb-3" style="color:#4b0082;">Need More Help?</h2>
                     <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
-                    <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
                 </div>
             </div>
         </div>
