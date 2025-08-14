@@ -18,7 +18,7 @@ get_header(); ?>
                     Commission a Rug
                 </button>
             </a>
-            <a href="<?php echo site_url('/workshop'); ?>">
+            <a href="<?php echo site_url('/workshops'); ?>">
                 <!-- CTA Button Right - Links to Workshop Page -->
                 <button class="index-workshop-button btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5" type="button">
                     Explore Workshops
