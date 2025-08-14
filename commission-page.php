@@ -23,7 +23,7 @@ get_header(); ?>
                 <div class="row g-4">
                     <?php
                     $steps = [
-                        ['Design', 'Click below to use our design partner tool or skip this step.', 'https://www.customink.com/ndx/#/welcomeBack', 'Open Design Tool'],
+                        ['Design', 'Click below to use our design partner tool or skip this step.', site_url('/custom'), 'Open Design Tool'],
                         ['Fill Out The Form', 'Tell us what you envision you can upload your design or reference.', '', ''],
                         ['Submit', 'We’ll review your request and be in touch for confirmation.', '', ''],
                         ['Production Begins', 'After confirmation and deposit, your rug enters creation phase!', '', '']
