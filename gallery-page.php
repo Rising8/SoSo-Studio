@@ -100,17 +100,25 @@ get_header(); ?>
                     <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Flatweave Rugs</h3>
                     <p class="lead fs-6 fs-md-5 fs-lg-4">Flatweave rugs are lightweight, durable, and woven without any pile, making them perfect for high-traffic areas like hallways or living rooms. Their thin profile also makes them easy to clean and ideal for layering under furniture. With patterns often inspired by traditional designs, flatweave rugs bring a stylish and practical touch to any space.</p>
                 </div>
+                <!-- Scroll arrow -->
+                <a href="#tufted-rug" class="right-arrow">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="gallery-content-3">
+    <div class="gallery-content-3" id="tufted-rug">
         <div class="row g-0">
             <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
                 <div class="col-lg-8 ">
                     <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Tufted Rugs</h3>
                     <p class="lead fs-6 fs-md-5 fs-lg-4">Tufted rugs are created by punching yarn into a fabric base, resulting in a thick, cushioned feel underfoot. They offer a great balance between style and comfort, with a wide range of patterns and textures available. These rugs are ideal for adding a decorative element to living rooms or dining areas.</p>
                 </div>
+                <!-- Scroll arrow -->
+                <a href="#shag-rug" class="left-arrow">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
             </div>
 
             <div class="col-md-6">
@@ -119,7 +127,7 @@ get_header(); ?>
         </div>
     </div>
               
-    <div class="gallery-content-3">
+    <div class="gallery-content-3" id="shag-rug">
         <div class="row g-0">
             <div class="col-md-6">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/texture3.png" class="img-fluid w-100" alt="Left image">
@@ -129,6 +137,10 @@ get_header(); ?>
                     <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1"> Shag Rugs</h3>
                     <p class="lead fs-6 fs-md-5 fs-lg-4">Shag rugs are known for their soft, plush texture and deep pile that adds a cozy, luxurious feel to a room. They’re perfect for bedrooms or chill-out areas where comfort is a priority. Available in a variety of colors and textures, shag rugs make a bold statement and invite you to sink your feet into softness.</p>
                 </div>
+                 <!-- Scroll arrow -->
+                <a href="#next-section-id" class="right-arrow ">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
             </div>
         </div>
     </div>
