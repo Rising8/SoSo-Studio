@@ -70,7 +70,7 @@ get_header(); ?>
                                 <!-- Phone -->
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9+\-\s]+" required>
+                                    <input type="tel" id="phone" name="phone" class="form-control" pattern="^\+?\d{7,15}$" required>
                                     <div class="invalid-feedback">Please enter your phone number.</div>
                                 </div>
                                 <!-- Texture -->
