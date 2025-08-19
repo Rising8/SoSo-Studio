@@ -140,11 +140,11 @@ get_header(); ?>
                     Ready to Join Our Creative Journey?
                 </h3>
                 <p class="about-contact-text text-muted mb-4">
-                    Whether you're just curious or ready to make something, we’d love to hear from you.
+                    Whether you're curious or ready to build your dream, inspiration starts <em style="font-size: 2em; font-weight: bold">here</em>
                 </p>
-                <a href="<?php echo home_url('/contact'); ?>" class="about-contact-btn btn btn-lg px-5 rounded-pill">
-                    Get in Touch
-                </a>
+                <a href="https://www.instagram.com/so.so.studio/" class="about-contact-btn btn btn-lg px-5 rounded-pill" target="_blank" rel="noopener noreferrer">
+                    Follow Along
+                </a> 
             </div>
         </div>     
     </div>
