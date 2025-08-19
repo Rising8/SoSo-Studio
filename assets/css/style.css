@@ -1237,6 +1237,36 @@ html {
   text-decoration: underline;
 }
 
+/* Newsletter Form - Invalid Input */
+.newsletter-form .is-invalid {
+  border-color: #ff9ecd; 
+  box-shadow: 0 0 0 0.25rem rgba(255, 158, 205, 0.3); 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-form .invalid-feedback {
+  color: #ffb3d9;
+  font-size: 0.9rem; 
+  margin-top: 0.3rem;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+/* Newsletter Form - Valid Input */
+.newsletter-form .is-valid {
+  border-color: #f6e6ff; 
+  box-shadow: 0 0 0 0.25rem rgba(246, 230, 255, 0.4);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-form .valid-feedback {
+  color: #f6e6ff; 
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  opacity: 0.95;
+  transition: opacity 0.3s;
+}
+
 
 /* === MOBILE DESIGN === */
 .navbar-toggler-icon i {

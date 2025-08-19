@@ -22,12 +22,18 @@
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo" style="max-width: 160px;">
                     </a>
 
-                    <form class="mt-4 w-100 text-center" style="max-width: 350px;">
+                    <form class="mt-4 w-100 text-center newsletter-form" style="max-width: 350px;" novalidate>
                         <h6 class="footer-font mb-2">Subscribe to our newsletter</h6>
                         <p class="footer-font small">Monthly digest of what's new and exciting from us.</p>
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Email Address">
+                        <div class="input-group has-validation">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
                             <button class="btn btn-light" type="submit">Subscribe</button>
+                            <div class="invalid-feedback text-start">
+                                Please enter a valid email address.
+                            </div>
+                            <div class="valid-feedback text-start" style="display: none;">
+                                Thank you! You’ve successfully subscribed.
+                            </div>
                         </div>
                     </form>
                     
