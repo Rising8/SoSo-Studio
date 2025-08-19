@@ -32,6 +32,12 @@ function sosostudio_enqueue_styles()
     // Swiper JS
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), null, true);
 
+    // Snapshot of HTML and convert to images
+    wp_enqueue_script('html2canvas', 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js', array(), '1.4.1', true);
+
+    // Canvas where users can add/edit text, images, shapes
+    wp_enqueue_script('fabric-js', 'https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js', array(), '5.2.4', true);
+
     // === CUSTOM JS === //
     // About JS
     wp_enqueue_script('about-js', get_template_directory_uri() . '/assets/js/about.js', array('swiper-js'), '1.0', true);  
@@ -47,6 +53,9 @@ function sosostudio_enqueue_styles()
 
     // Enquiry Form JS
     wp_enqueue_script('enquiry-form', get_template_directory_uri() . '/assets/js/enquiry-form.js', array(), '1.0', true);
+
+    // Custom Page JS
+    wp_enqueue_script('custom-page', get_template_directory_uri() . '/assets/js/custom-page.js', array('html2canvas', 'fabric-js'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 

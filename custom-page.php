@@ -4,59 +4,82 @@
  */
 get_header(); ?>
 
-<div class="custom-wrapper">
-    <!-- Custom Page - Form Design -->
-    <!-- Page will be updated -->
-    <div class="custom-content-1">
-        <div class="container m-5">
-            <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <div>
-                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-upload" type="button" role="tab" aria-controls="v-pills-upload" aria-selected="true">
-                        <i class="fa-solid fa-cloud-arrow-up fa-2x px-1"></i>Upload</button>
+<div class="custom-wrapper py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Left Toolbox / Navigation -->
+            <div class="col-md-3 custom-toolbox">
+                <div class="nav flex-column nav-pills" id="custom-tools-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active mb-2" id="tab-upload" data-bs-toggle="pill" data-bs-target="#tool-upload" type="button" role="tab">
+                        <i class="fa-solid fa-cloud-arrow-up me-2"></i>Upload
+                    </button>
+                    <button class="nav-link mb-2" id="tab-text" data-bs-toggle="pill" data-bs-target="#tool-text" type="button" role="tab">
+                        <i class="fa-solid fa-font me-2"></i>Add Text
+                    </button>
+                    <button class="nav-link mb-2" id="tab-picture" data-bs-toggle="pill" data-bs-target="#tool-picture" type="button" role="tab">
+                        <i class="fa-solid fa-image me-2"></i>Add Pictures
+                    </button>
+                    <button class="nav-link mb-2" id="tab-color" data-bs-toggle="pill" data-bs-target="#tool-color" type="button" role="tab">
+                        <i class="fa-solid fa-palette me-2"></i>Colors
+                    </button>
+                    <button class="nav-link mb-2" id="tab-ai" data-bs-toggle="pill" data-bs-target="#tool-ai" type="button" role="tab">
+                        <i class="fa-solid fa-robot me-2"></i>AI Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview / Canvas -->
+            <div class="col-md-9">
+                <div class="canvas-wrapper">
+                    <!-- Top Actions -->
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-outline-danger me-2" id="delete-object"><i class="fa-solid fa-trash me-1"></i>Delete Selected</button>
+                        <button class="btn btn-outline-secondary me-2" id="reset-canvas"><i class="fa-solid fa-undo me-1"></i>Reset Canvas</button>
+                        <button class="btn btn-outline-primary me-2" id="download-design"><i class="fa-solid fa-download me-1"></i>Download</button>
+                        <button class="btn btn-primary" id="send-to-commission"><i class="fa-solid fa-paper-plane me-1"></i>Send to Commission</button>
                     </div>
-                    <div>
-                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-text" type="button" role="tab" aria-controls="v-pills-text" aria-selected="false">
-                        <i class="fa-solid fa-font fa-2x px-1"></i>Add Text</button>
-                    </div>
-                    <div>
-                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-picture" type="button" role="tab" aria-controls="v-pills-picture" aria-selected="false">
-                        <i class="fa-solid fa-image fa-2x px-1"></i>Add Pictures</button>
-                    </div>
-                    <div>
-                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-color" type="button" role="tab" aria-controls="v-pills-color" aria-selected="false">
-                        <i class="fa-solid fa-palette fa-2x px-1"></i>Colors</button>
-                    </div>
-                    <div>
-                        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ai" type="button" role="tab" aria-controls="v-pills-ai" aria-selected="false">
-                        <i class="fa-solid fa-spinner fa-2x px-1"></i>AI Search</button>
-                    </div>
+
+                    <!-- Canvas Area -->
+                    <canvas id="custom-canvas"></canvas>
+                    <p class="text-center text-muted mt-2">Your design preview will appear above</p>
                 </div>
 
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-upload" role="tabpanel" aria-labelledby="v-pills-upload-tab" tabindex="0">
-                        <div class="container custom-tab">
-                            <!-- <p>just try</p> -->
+                <!-- Tool Content -->
+                <div class="tab-content mt-3" id="custom-tools-tabContent">
+                    <!-- Upload -->
+                    <div class="tab-pane fade show active" id="tool-upload" role="tabpanel">
+                        <p>Drag & drop or upload images here</p>
+                        <input type="file" id="upload-file" multiple class="form-control">
+                    </div>
+                    <!-- Add Text -->
+                    <div class="tab-pane fade" id="tool-text" role="tabpanel">
+                        <p>Add text to your design</p>
+                        <input type="text" placeholder="Enter text..." class="form-control mb-2">
+                        <label>Font Size</label>
+                        <input type="number" class="form-control mb-2" value="24">
+                        <label>Color</label>
+                        <input type="color" class="form-control form-control-color mb-2" value="#4b0082">
+                    </div>
+                    <!-- Add Pictures -->
+                    <div class="tab-pane fade" id="tool-picture" role="tabpanel">
+                        <p>Select preloaded pictures or drag to canvas</p>
+                        <div class="d-flex flex-wrap">
+                            <img src="#" alt="sample" class="img-thumbnail m-1" style="width:80px; height:80px;">
+                            <img src="#" alt="sample" class="img-thumbnail m-1" style="width:80px; height:80px;">
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-text" role="tabpanel" aria-labelledby="v-pills-text-tab" tabindex="0">
-                        <div class="container custom-tab">
-                            <!-- <p>just try</p> -->
-                        </div>
+                    <!-- Colors -->
+                    <div class="tab-pane fade" id="tool-color" role="tabpanel">
+                        <p>Change background color</p>
+                        <input type="color" class="form-control form-control-color mb-2" value="#f9f4fc">
                     </div>
-                    <div class="tab-pane fade" id="v-pills-picture" role="tabpanel" aria-labelledby="v-pills-picture-tab" tabindex="0">
-                        <div class="container custom-tab">
-                            <!-- <p>just try</p> -->
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-color" role="tabpanel" aria-labelledby="v-pills-color-tab" tabindex="0">
-                        <div class="container custom-tab">
-                            <!-- <p>just try</p> -->
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-ai" role="tabpanel" aria-labelledby="v-pills-ai-tab" tabindex="0">
-                        <div class="container custom-tab">
-                            <!-- <p>just try</p> -->
+                    <!-- AI Search -->
+                    <div class="tab-pane fade" id="tool-ai" role="tabpanel">
+                        <p>Search for designs via AI</p>
+                        <input type="text" placeholder="Enter prompt..." class="form-control mb-2">
+                        <button class="btn btn-outline-secondary mb-2">Search</button>
+                        <div class="mt-2 d-flex flex-wrap">
+                            <img src="#" alt="AI result" class="img-thumbnail m-1" style="width:80px; height:80px;">
                         </div>
                     </div>
                 </div>
@@ -64,5 +87,10 @@ get_header(); ?>
         </div>
     </div>
 </div>
+
+<!-- Script to link to commission page (used for custom-page.js) -->
+<script>
+  const commissionPageURL = "<?php echo home_url('/commission'); ?>";
+</script>
 
 <?php get_footer(); ?>

@@ -707,7 +707,6 @@ html {
   color: #6a317d;
   border: 2px solid white;
   background-color: #fff;
-  
 }
 
 .commission-continue-exploring .btn-outline-primary:hover {
@@ -717,10 +716,113 @@ html {
 
 
 /* === CUSTOM PAGE STYLING === */
-.custom-tab {
-  background-color: #F3ECF9;
-  width: 500px;
-  height: 500px;
+/* Custom Page - Toolbox Nav */
+.custom-toolbox .nav {
+  margin-top: 60px; 
+}
+
+#custom-tools-tab .nav-link {
+  background: linear-gradient(90deg, #f8ceec, #a88beb);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#custom-tools-tab .nav-link.active,
+#custom-tools-tab .nav-link:hover {
+  background: linear-gradient(90deg, #a88beb, #f8ceec);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(75,0,130,0.2);
+}
+
+/* Custom Page - Canvas Styling */
+.canvas-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#custom-canvas {
+  border: 2px dashed #d9c7ec;
+  border-radius: 15px;
+  background-color: #f9f4fc;
+  min-height: 400px;
+  display: block;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-wrapper p {
+  color: #4b0082 !important;
+}
+
+/* Custom Page - Top Buttons */
+#delete-object,
+#reset-canvas,
+#download-design,
+#send-to-commission {
+  background-color: #f9f4fc;
+  color: #4b0082;
+  border: 2px solid #d9c7ec;
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+#delete-object:hover,
+#reset-canvas:hover,
+#download-design:hover,
+#send-to-commission:hover {
+  background-color: #a88beb;
+  border-color: #a88beb;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(168, 139, 235, 0.3);
+}
+
+/* Custom Page - Tool Content */
+.tab-content .tab-pane {
+  padding: 1rem;
+  background-color: #fffafc;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(75,0,130,0.1);
+  margin-top: 10px;
+}
+
+/* Custom Page - Tool Content Inputs */
+.tab-content input[type="text"],
+.tab-content input[type="number"],
+.tab-content input[type="color"],
+.tab-content input[type="file"],
+.tab-content textarea {
+  border: 1px solid #d9c7ec;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.tab-content input:focus,
+.tab-content textarea:focus {
+  outline: none;
+  border-color: #a88beb;
+  box-shadow: 0 0 5px rgba(168,139,235,0.3);
+}
+
+/* Custom Page - Image Thumbnails */
+.tab-content img.img-thumbnail {
+  border-radius: 10px;
+  border: 1px solid #d9c7ec;
+  transition: all 0.3s ease;
+}
+
+.tab-content img.img-thumbnail:hover {
+  border-color: #a88beb;
+  transform: scale(1.05);
 }
 
 
