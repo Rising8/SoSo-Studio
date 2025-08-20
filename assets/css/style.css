@@ -763,6 +763,8 @@ html {
 /* Custom Page - Top Buttons */
 #delete-object,
 #reset-canvas,
+#undo-btn,
+#redo-btn,
 #download-design,
 #send-to-commission {
   background-color: #f9f4fc;
@@ -776,6 +778,8 @@ html {
 
 #delete-object:hover,
 #reset-canvas:hover,
+#undo-btn:hover,
+#redo-btn:hover,
 #download-design:hover,
 #send-to-commission:hover {
   background-color: #a88beb;
@@ -811,6 +815,27 @@ html {
   outline: none;
   border-color: #a88beb;
   box-shadow: 0 0 5px rgba(168,139,235,0.3);
+}
+
+/* Custom Page - Shape Buttons */
+.shape-btn {
+  background: #f9f4fc;
+  color: #4b0082;
+  border: 2px solid #d9c7ec;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.shape-btn:hover {
+  background: linear-gradient(90deg, #a88beb, #f8ceec);
+  border-color: #a88beb;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(168, 139, 235, 0.3);
 }
 
 /* Custom Page - Image Thumbnails */
