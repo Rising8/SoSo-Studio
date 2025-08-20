@@ -531,17 +531,41 @@ html {
   margin: 0 auto 2rem auto;
 }
 
+.about-contact-text em {
+  color: #c8a2ff;
+  position: relative;
+}
+
+.about-contact-text em::after {
+  content: "⇩";
+  position: absolute;
+  left: 50%;
+  bottom: -1.2em;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #c8a2ff;
+  text-shadow: 0 0 6px rgba(200, 162, 255, 0.6);
+  animation: bouncehere 1.5s infinite;
+}
+
+@keyframes bouncehere {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
 .about-contact-btn{
   color:  #6f3b80;
   background-color: transparent;
   border: 2px solid  #6f3b80;
   transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 10px rgba(200, 162, 255, 0.4), 0 0 20px rgba(200, 162, 255, 0.2);
 }
 
 .about-contact-btn:hover {
   background-color: #6f3b80;
   color: #fff;
   transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(200, 162, 255, 0.8), 0 0 32px rgba(200, 162, 255, 0.6);
 }
 
 
