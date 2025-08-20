@@ -188,17 +188,22 @@ html {
 
 /* If valid input, green colour around border */
 #contactModal input:valid,
-#contactModal select:valid,
-#contactModal textarea:valid {
+#contactModal select:valid {
   border-color: #6cc070; 
   box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
 }
 
+/* Green border for textareas only after user types */
+#contactModal textarea:valid:not(:placeholder-shown) {
+  border-color: #6cc070;
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
 /* If invalid input, red colour around border */
-#contactModal input:invalid:not(:focus):not(:placeholder-shown),
-#contactModal select:invalid:not(:focus),
-#contactModal textarea:invalid:not(:focus):not(:placeholder-shown) {
-  border-color: #e03e2f; 
+#contactModal input.is-invalid,
+#contactModal select.is-invalid,
+#contactModal textarea.is-invalid {
+  border-color: #e03e2f;
   box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
 }
 
@@ -1078,6 +1083,27 @@ html {
   transform: translateY(-2px);
 }
 
+/* Green border for inputs & selects only after user has typed (not empty) */
+.rug-enquire-form input:valid:not(:placeholder-shown),
+.rug-enquire-form select:valid:not(:placeholder-shown) {
+  border-color: #6cc070;
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
+/* Green border for textareas only after typing */
+.rug-enquire-form textarea:valid:not(:placeholder-shown) {
+  border-color: #6cc070;
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
+/* Red border for fields marked invalid by JS */
+.rug-enquire-form input.is-invalid,
+.rug-enquire-form select.is-invalid,
+.rug-enquire-form textarea.is-invalid {
+  border-color: #e03e2f;
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
+}
+
 
 /* === RUGCARE PAGE STYLING === */
 /* Rugcare Page - Hero Section */
@@ -1209,6 +1235,36 @@ html {
 
 .footer-link:hover{
   text-decoration: underline;
+}
+
+/* Newsletter Form - Invalid Input */
+.newsletter-form .is-invalid {
+  border-color: #ff9ecd; 
+  box-shadow: 0 0 0 0.25rem rgba(255, 158, 205, 0.3); 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-form .invalid-feedback {
+  color: #ffb3d9;
+  font-size: 0.9rem; 
+  margin-top: 0.3rem;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+/* Newsletter Form - Valid Input */
+.newsletter-form .is-valid {
+  border-color: #f6e6ff; 
+  box-shadow: 0 0 0 0.25rem rgba(246, 230, 255, 0.4);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-form .valid-feedback {
+  color: #f6e6ff; 
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  opacity: 0.95;
+  transition: opacity 0.3s;
 }
 
 
