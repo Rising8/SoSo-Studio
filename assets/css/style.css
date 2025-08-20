@@ -628,6 +628,11 @@ html {
   background-color: #FAFAFA;
 }
 
+.required-note {
+  color: #a88beb;
+  margin-top: 5px;
+}
+
 .commission-form .form-label {
   font-size: 0.95rem;
   color: #4a2064;
@@ -649,6 +654,22 @@ html {
   border-color: #cc6699;
   box-shadow: 0 0 0 0.2rem rgba(204, 102, 153, 0.25);
   outline: none;
+}
+
+/* Valid = green */
+.commission-form input.was-validated:valid,
+.commission-form select.was-validated:valid,
+.commission-form textarea.was-validated:valid {
+  border-color: #6cc070;
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+}
+
+/* Invalid = red */
+.commission-form input.was-validated:invalid,
+.commission-form select.was-validated:invalid,
+.commission-form textarea.was-validated:invalid {
+  border-color: #e03e2f;
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
 }
 
 /* Commission Form - Texture Help Icon */

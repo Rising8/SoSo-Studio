@@ -51,40 +51,32 @@ get_header(); ?>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8">
-                        <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Commission Request Form</h2>
-                        <!-- <p class="lead text-muted text-center">We can’t wait to hear your idea!</p> -->
+                        <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Commission Request Form</h2>                 
                         <form class="shadow p-4 rounded commission-form rounded-4 border">
                             <div class="row g-3">
+                                <p class="required-note">* Required fields</p>
                                 <!-- Name -->
                                 <div class="col-md-6">
-                                    <label for="name" class="form-label">Your Name</label>
-                                    <input type="text" id="name" name="name" class="form-control" required>
+                                    <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z\s]+" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
                                 </div>
                                 <!-- Email -->
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label">Your Email</label>
+                                    <label for="email" class="form-label">Your Email <span class="text-danger">*</span></label>
                                     <input type="email" id="email" name="email" class="form-control" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
                                 </div>
-                                <!-- Rug Size -->
+                                <!-- Phone -->
                                 <div class="col-md-6">
-                                    <label for="rug-size" class="form-label">Rug Size</label>
-                                    <select id="rug-size" name="rug-size" class="form-select" required>
-                                        <option value="">Choose...</option>
-                                        <option value="Tiny">Tiny (10x20)</option>
-                                        <option value="So-So">So-So (20x30)</option>
-                                        <option value="Big">Big (40x50)</option>
-                                        <option value="Custom">Custom Size</option>
-                                    </select>
-                                </div>
-                                <!-- Custom Rug Size -->
-                                <div class="col-md-6" id="custom-rug-size-desc-container" style="display:none;">
-                                    <label for="custom-rug-size-desc" class="form-label">Please describe your custom rug size</label>
-                                    <textarea id="custom-rug-size-desc" name="custom-rug-size-desc" rows="1" class="form-control"></textarea>
+                                    <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" pattern="^\+?\d{7,15}$" required>
+                                    <div class="invalid-feedback">Please enter your phone number.</div>
                                 </div>
                                 <!-- Texture -->
                                 <div class="col-md-6">
                                     <label for="texture" class="form-label">
-                                        Texture
+                                        Texture <span class="text-danger">*</span>
                                         <a href="<?php echo site_url('/gallery#gallery-categories-section'); ?>" target="_blank" class="texture-help-icon ms-2 text-decoration-none" title="View texture examples">
                                             <i class="bi bi-question-circle-fill" style="font-size: 1rem;"></i>
                                         </a>
@@ -95,11 +87,37 @@ get_header(); ?>
                                         <option value="Shag">Shag</option>
                                         <option value="Tufted">Tufted</option>
                                     </select>
+                                    <div class="invalid-feedback">Please select a texture.</div>
                                 </div>
+                                <!-- Rug Size -->
+                                <div class="col-md-6">
+                                    <label for="rug-size" class="form-label">Rug Size <span class="text-danger">*</span></label>
+                                    <select id="rug-size" name="rug-size" class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option value="Tiny">Tiny (10cmx20cm)</option>
+                                        <option value="So-So">So-So (20cmx30cm)</option>
+                                        <option value="Big">Big (40cmx50cm)</option>
+                                        <option value="Custom">Custom Size</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a rug size.</div>
+                                </div>
+                                <!-- Custom Rug Size -->
+                                <div class="col-md-6" id="custom-rug-size-desc-container" style="display:none;">
+                                    <label for="custom-rug-desc-size" class="form-label">
+                                        Custom Size (Width x Height in cm) <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="number" id="custom-rug-width" name="custom-rug-width" class="form-control" placeholder="Width" min="1">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" id="custom-rug-height" name="custom-rug-height" class="form-control" placeholder="Height" min="1">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                    <div class="invalid-feedback">Please provide both width and height.</div>
+                                </div>                         
                                 <!-- Budget -->
                                 <div class="col-md-6">
                                     <label for="budget" class="form-label">Budget Range</label>
-                                    <input type="text" id="budget" name="budget" class="form-control" required>
+                                    <input type="text" id="budget" name="budget" class="form-control">
                                 </div>
                                 <!-- Usage -->
                                 <div class="col-md-6">
