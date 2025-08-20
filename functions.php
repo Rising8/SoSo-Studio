@@ -48,6 +48,9 @@ function sosostudio_enqueue_styles()
     // Contact Form JS
     wp_enqueue_script('contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), '1.0', true);
 
+    // Custom Page JS
+    wp_enqueue_script('custom-page', get_template_directory_uri() . '/assets/js/custom-page.js', array('html2canvas', 'fabric-js'), '1.0', true);
+
     // Custom Size JS
     wp_enqueue_script('custom-size', get_template_directory_uri() . '/assets/js/custom-size.js', array(), '1.0', true);
 
@@ -59,9 +62,6 @@ function sosostudio_enqueue_styles()
 
     // Gallery Filter JS
     wp_enqueue_script('gallery-js', get_template_directory_uri() . '/assets/js/gallery.js', array(), '1.0', true);
-
-    // Custom Page JS
-    wp_enqueue_script('custom-page', get_template_directory_uri() . '/assets/js/custom-page.js', array('html2canvas', 'fabric-js'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 
