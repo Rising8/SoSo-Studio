@@ -72,6 +72,28 @@ function add_favicon()
 }
 add_action('wp_head', 'add_favicon');
 
+// Register custom post type for Showcases
+function register_showcase_post_type() {
+    register_post_type('showcase', [
+        'labels' => [
+            'name' => 'Showcases',
+            'singular_name' => 'Showcase',
+            'add_new_item' => 'Add New Showcase',
+            'edit_item' => 'Edit Showcase',
+            'new_item' => 'New Showcase',
+            'view_item' => 'View Showcase',
+            'search_items' => 'Search Showcases',
+        ],
+        'public' => true,
+        'rewrite' => ['slug' => 'showcases'],
+        'menu_icon' => 'dashicons-images-alt2',
+        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
+        'show_in_rest' => true, 
+    ]);
+}
+add_action('init', 'register_showcase_post_type');
+
+
 // Register custom post type for Rugs
 function register_rug_post_type() {
     register_post_type('rug', [
