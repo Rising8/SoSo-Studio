@@ -33,69 +33,37 @@ get_header(); ?>
         <div class="container">
             <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Showcases</h2>
             <div class="d-flex overflow-auto gap-4 px-2 index-showcases-scroll">
-                <!-- Collection Items - Will be updated later with an ACF plugin -->
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug1.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">Purple Flower</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug1">View</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="showcases-rock d-flex gap-4">
+                    <?php
+                    $showcases = new WP_Query([
+                        'post_type' => 'showcase',
+                        'posts_per_page' => -1,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                    ]);
 
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug2.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">White Flower</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug2">View</a>
-                        </div>
-                    </div>
+                    if ($showcases->have_posts()):
+                        while ($showcases->have_posts()): $showcases->the_post();
+                            $post_id = get_the_ID();
+                            ?>
+                            <div class="index-showcases-border flex-shrink-0">
+                                <div class="index-showcases position-relative rounded overflow-hidden">
+                                    <?php if (has_post_thumbnail()): ?>
+                                        <img class="w-100 h-100 object-fit-cover" src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+                                    <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
+                                        <p class="fw-semibold mb-2"><?php the_title(); ?></p>
+                                        <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#showcase-<?php echo $post_id; ?>">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile;
+                        wp_reset_postdata();
+                    endif;
+                    ?>
                 </div>
-
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug3.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">Red Flower</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug3">View</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug4.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">Sun Flower</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug4">View</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug5.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">Red Mushroom</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug5">View</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="index-showcases-border flex-shrink-0">
-                    <div class="index-showcases position-relative rounded overflow-hidden">
-                        <img class="w-100 h-100 object-fit-cover" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug6.jpeg" alt="Rug 1">
-                        <div class="index-showcases-overlay d-flex flex-column justify-content-center align-items-center text-white">
-                            <p class="fw-semibold mb-2">Yellow Flower</p>
-                            <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalRug6">View</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- "See More" button which links to the gallery page -->
-                <div class="index-showcases-seemore flex-shrink-0 d-flex align-items-center justify-content-center">
+                <!-- "See More" button -->
+                <div class="flex-shrink-0 d-flex align-items-center justify-content-center">
                     <a href="<?php echo site_url('/gallery'); ?>" class="index-seemore-btn text-decoration-none text-dark">
                         See more
                     </a>
@@ -103,6 +71,68 @@ get_header(); ?>
             </div>
         </div>
     </div>
+
+    <!-- Modals for each showcase -->
+    <?php
+    $showcases = new WP_Query([
+        'post_type' => 'showcase',
+        'posts_per_page' => -1,
+    ]);
+    if ($showcases->have_posts()):
+        while ($showcases->have_posts()): $showcases->the_post();
+            $post_id = get_the_ID(); 
+            ?>
+            <div class="modal fade showcase-modal" id="showcase-<?php echo $post_id; ?>" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><?php the_title(); ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column flex-md-row align-items-start gap-4">
+                            <?php if (has_post_thumbnail()): ?>
+                                <div class="showcase-modal-image flex-shrink-0">
+                                    <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid rounded shadow">
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="showcase-modal-text">
+                                <?php 
+                                    $description = get_field('description');
+                                    $size = get_field('size');
+                                    $material = get_field('material');
+                                ?>
+
+                                <?php if($description): ?>
+                                    <p><?php echo esc_html($description); ?></p>
+                                <?php endif; ?>
+
+                                <ul class="showcase-meta list-unstyled d-flex flex-wrap gap-2">
+                                    <?php if($size): ?>
+                                        <li><strong>Size:</strong> <?php echo esc_html($size); ?></li>
+                                    <?php endif; ?>
+                                    <?php if($material): ?>
+                                        <li><strong>Material:</strong> <?php echo esc_html($material); ?></li>
+                                    <?php endif; ?>
+                                </ul>
+
+                                <!-- CTA Buttons -->
+                                <div class="showcases-cta-button d-flex flex-column flex-sm-row gap-3 mt-3">
+                                    <a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" 
+                                        class="btn btn-outline-primary flex-fill rounded-pill px-4 py-2">
+                                        View More Information
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
 
     <!-- Index Page - Design Your Own Rug Section -->
     <div class="index-content-4">
@@ -234,126 +264,6 @@ get_header(); ?>
                             <a href="#" class="card-link">Instagram  link</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Showcases Rug 1 -->
-    <div class="modal fade" id="modalRug1" tabindex="-1" aria-labelledby="modalRug1Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug1Label">Purple Flower Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug1.jpeg" class="img-fluid rounded mb-3" alt="Handcrafted Wool Rug">
-                    <p><strong>Size:</strong> 150cm x 220cm (Approx. 5ft x 7ft)</p>
-                    <p><strong>Material:</strong> 100% Australian Merino Wool</p>
-                    <p><strong>Craftsmanship:</strong> Each rug is handwoven with care, using traditional techniques passed down through generations.</p>
-                    <p><strong>Care Instructions:</strong> Vacuum regularly with gentle setting. Spot clean using mild natural detergents. Avoid prolonged direct sunlight.</p>
-                    <p>This warm, durable wool rug brings authentic Aussie charm and artisanal quality to your home.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Showcases Rug 2 -->
-    <div class="modal fade" id="modalRug2" tabindex="-1" aria-labelledby="modalRug2Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug2Label">White Flower Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug2.jpeg" class="img-fluid rounded mb-3" alt="Modern Design Rug">
-                    <p><strong>Size:</strong> 120cm x 180cm (Approx. 4ft x 6ft)</p>
-                    <p><strong>Material:</strong> Mixed natural fibers sourced locally</p>
-                    <p><strong>Craftsmanship:</strong> Contemporary patterns handwoven with eco-friendly dyes and natural materials.</p>
-                    <p><strong>Care Instructions:</strong> Gentle vacuum and spot clean only. Keep dry and avoid harsh sunlight.</p>
-                    <p>A beautiful blend of modern style and traditional handmade craftsmanship, perfect for any contemporary home.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Showcases Rug 3 -->
-    <div class="modal fade" id="modalRug3" tabindex="-1" aria-labelledby="modalRug3Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug3Label">Red Flower Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug3.jpeg" class="img-fluid rounded mb-3" alt="Cozy Handwoven Rug">
-                    <p><strong>Size:</strong> 180cm x 270cm (Approx. 6ft x 9ft)</p>
-                    <p><strong>Material:</strong> 100% Natural Wool with Cotton Backing</p>
-                    <p><strong>Craftsmanship:</strong> Handwoven with traditional looms, ensuring softness and durability.</p>
-                    <p><strong>Care Instructions:</strong> Professional cleaning recommended. Spot clean carefully with natural cleaners.</p>
-                    <p>A warm and inviting rug that adds a handmade touch of Australian heritage to your living space.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Showcases Rug 4 -->
-    <div class="modal fade" id="modalRug4" tabindex="-1" aria-labelledby="modalRug4Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug4Label">Sun Flower Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug4.jpeg" class="img-fluid rounded mb-3" alt="Eco-Friendly Jute Rug">
-                    <p><strong>Size:</strong> 150cm x 240cm (Approx. 5ft x 8ft)</p>
-                    <p><strong>Material:</strong> 100% Sustainable Jute Fiber</p>
-                    <p><strong>Craftsmanship:</strong> Handcrafted with eco-conscious methods, perfect for natural home decor lovers.</p>
-                    <p><strong>Care Instructions:</strong> Vacuum regularly. Avoid moisture. Spot clean with a dry cloth.</p>
-                    <p>A sustainable and stylish choice for eco-friendly homes, made with love by Australian artisans.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Showcases Rug 5 -->
-    <div class="modal fade" id="modalRug5" tabindex="-1" aria-labelledby="modalRug5Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug5Label">Red Mushroom Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug5.jpeg" class="img-fluid rounded mb-3" alt="Soft Plush Rug">
-                    <p><strong>Size:</strong> 120cm x 180cm (Approx. 4ft x 6ft)</p>
-                    <p><strong>Material:</strong> High-quality Polyester Blend</p>
-                    <p><strong>Craftsmanship:</strong> Carefully crafted for ultimate softness and comfort, ideal for bedrooms and cozy corners.</p>
-                    <p><strong>Care Instructions:</strong> Machine washable. Use gentle cycle and air dry.</p>
-                    <p>A plush, cozy rug that brings warmth and softness, created with care by local artisans.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Showcases Rug 6 -->
-    <div class="modal fade" id="modalRug6" tabindex="-1" aria-labelledby="modalRug6Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalRug6Label">Yellow Flower Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/rug6.jpeg" class="img-fluid rounded mb-3" alt="Classic Cotton Rug">
-                    <p><strong>Size:</strong> 90cm x 150cm (Approx. 3ft x 5ft)</p>
-                    <p><strong>Material:</strong> 100% Organic Cotton</p>
-                    <p><strong>Craftsmanship:</strong> Handwoven with natural dyes for a soft, breathable rug perfect for any room.</p>
-                    <p><strong>Care Instructions:</strong> Machine washable with mild detergent. Tumble dry low or air dry.</p>
-                    <p>A lightweight and durable rug with classic design, perfect for adding a natural touch to your home.</p>
                 </div>
             </div>
         </div>
