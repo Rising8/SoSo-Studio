@@ -716,82 +716,59 @@ html {
 }
 
 
+
+
 /* === CUSTOM PAGE STYLING === */
-.custom-tab {
-  background-color: #F3ECF9;
-  width: 500px;
-  height: 500px;
+/* === CUSTOM PAGE (Bootstrap 前提) === */
+:root{
+  --shape-icon: 64px;     /* 形アイコンの大きさ */
+  --shape-min-h: 140px;   /* 形カードの高さ */
 }
 
+/* 共通UI */
+.hero-box{background:#f3f0fa;border:1px solid #dcd3ff;border-radius:16px;padding:28px 24px;text-align:center;margin-bottom:28px}
+.step-card{background:#fff;border:1px solid #e3e3ea;border-radius:16px;padding:22px;margin-bottom:22px}
+.step-title{font-weight:700;margin-bottom:6px;font-size:18px}
+.upload-drop{border:2px dashed #d0cde7;border-radius:16px;padding:40px;text-align:center;background:#faf9ff}
+.upload-drop.dragover{background:#f1eeff}
+.preview-box{border:1px solid #e1e1ea;border-radius:12px;overflow:hidden;display:none}
+.preview-box img{width:100%;display:block}
+.note-small{color:#6b6b75;font-size:.9rem}
+.btn-cta{border-radius:999px;font-weight:700}
 
-/* === WORKSHOP PAGE STYLING === */
-/* Workshop Page - Hero Section */
-.workshop-hero h1 {
-  width: 80%;
+/* 感情ボタン */
+.feel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.feel-btn{height:72px;border:1px solid #ddd;border-radius:12px;background:#f6f6f9;font-weight:700;letter-spacing:.5px;cursor:pointer}
+.feel-btn.active{outline:3px solid #b7a7ff}
+
+/* 形セレクタ（Tabler Webfont） */
+.shape-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.shape-radio{position:absolute;opacity:0;pointer-events:none}
+.shape-item{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  padding:22px 12px;min-height:var(--shape-min-h);
+  border:1px solid #e6e3f3;border-radius:14px;background:#f8f7fb;color:#57576a;
+  cursor:pointer;text-align:center;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+}
+.shape-item i{font-size:var(--shape-icon);line-height:1}
+.shape-label{font-size:14px}
+
+.shape-item:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.shape-radio:focus + .shape-item{box-shadow:0 0 0 3px rgba(107,87,255,.18)}
+.shape-radio:checked + .shape-item{
+  outline:3px solid #b7a7ff;border-color:#b7a7ff;background:#fff;color:#6b57ff
 }
 
-.workshop-hero p {
-  width: 80%; 
-  color: #875DA6;
+/* レスポンシブ */
+@media (max-width:576px){
+  :root{--shape-icon:56px;--shape-min-h:128px}
+  .shape-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1280px){
+  :root{--shape-icon:72px;--shape-min-h:150px}
 }
 
-.workshop-hero-img {
-  opacity: 95%;
-}
-
-/* Workshop Page - Workshop Section */
-.workshop-content-2 h1 {
-  text-shadow: 0 1px 3px rgba(98, 58, 123, 0.4);
-}
-
-.workshop-card {
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.workshop-card:hover {
-  transform: translateY(-8px);
-}
-
-.workshop-card .card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.workshop-card .card-body {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.workshop-card .card-title {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.workshop-card .card-text {
-  margin-bottom: 1rem;
-}
-
-.workshop-meta li {
-  margin-bottom: 0.5rem;
-}
-
-.workshop-card .btn-primary {
-  background-color: #9e7cc2;
-  border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-}
-
-.workshop-card .btn-primary:hover {
-  background-color: #7b5399;
-  box-shadow: 0 6px 15px rgba(123, 83, 153, 0.6);
-}
 
 
 /* === GALLERY PAGE STYLING === */

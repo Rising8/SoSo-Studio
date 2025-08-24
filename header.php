@@ -27,6 +27,8 @@
                         <div class="icon d-flex justify-content-center align-items-center" style="cursor: pointer;">
                             <i id="searchIconMobile" class="fa-solid fa-magnifying-glass fs-4 mx-2"></i>
                         </div>
+
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
                     </div>
 
                     <!-- Desktop Header Row -->
