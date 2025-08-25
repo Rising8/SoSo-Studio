@@ -257,6 +257,47 @@ html {
   background-color: #fff;
 }
 
+/* Index Page - Hero Images */
+.hero-background {
+  position: absolute;
+  margin-top: -250px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;    
+  z-index: 0;       
+}
+
+.hero-img-section .hero-img {
+  position: relative;
+  z-index: 1;       
+}
+
+.gap-custom{
+  gap: 12px;
+}
+
+.hero-img {
+  box-shadow: 0px 0px 25px 2px rgba(135, 93, 166, 0.31);
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+
+.hero-img-big {
+  width: 240px;
+}
+
+.hero-img-medium {
+  width: 200px;
+}
+
+.hero-img-small {
+  width: 160px;
+}
+
 /* Index Page - About Section */
 .index-about {
   background-color: #FAF7FD;

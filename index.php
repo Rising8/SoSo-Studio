@@ -25,11 +25,22 @@ get_header(); ?>
                 </button>
             </a>
         </div>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/landing_page.png" class="img-fluid" alt="Image description">
+        <!-- Index Page - Hero Images -->
+        <div class="hero-img-section text-center py-5">
+            <div class="d-flex flex-wrap justify-content-center gap-custom align-items-center pt-3 pb-5">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-1.png" class="hero-img hero-img-small rounded-5" alt="Image description">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-2.png" class="hero-img hero-img-medium rounded-5" alt="Image description">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-3.png" class="hero-img hero-img-big rounded-5" alt="Image description">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-4.png" class="hero-img hero-img-medium rounded-5" alt="Image description">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-5.png" class="hero-img hero-img-small rounded-5" alt="Image description">
+            </div>
+            <!-- background image -->
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-background.png" alt="Background" class="hero-background img-fluid">
+        </div>
     </div>
 
     <!-- Index Page - Showcases Section -->
-    <div class="index-content-3 px-5 pb-5">
+    <div class="index-content-3 px-5 pb-5 mt-5">
         <div class="container">
             <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Showcases</h2>
             <div class="d-flex overflow-auto gap-4 px-2 index-showcases-scroll">
