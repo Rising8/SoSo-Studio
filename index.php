@@ -27,7 +27,7 @@ get_header(); ?>
         </div>
         <!-- Index Page - Hero Images -->
         <div class="hero-img-section text-center py-5">
-            <div class="d-flex flex-wrap justify-content-center gap-custom align-items-center pt-3 pb-5">
+            <div class="d-flex flex-wrap justify-content-center index-hero-layout align-items-center pt-3 pb-5">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-1.png" class="hero-img hero-img-small rounded-5" alt="Image description">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-2.png" class="hero-img hero-img-medium rounded-5" alt="Image description">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-3.png" class="hero-img hero-img-big rounded-5" alt="Image description">
@@ -40,7 +40,7 @@ get_header(); ?>
     </div>
 
     <!-- Index Page - Showcases Section -->
-    <div class="index-content-3 px-5 pb-5 mt-5">
+    <div class="index-content-2 px-5 pb-5 mt-5">
         <div class="container">
             <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Showcases</h2>
             <div class="d-flex overflow-auto gap-4 px-2 index-showcases-scroll">
@@ -146,7 +146,7 @@ get_header(); ?>
     ?>
 
     <!-- Index Page - Design Your Own Rug Section -->
-    <div class="index-content-4">
+    <div class="index-content-3">
         <div class="container px-4 py-2"> 
             <h2 class="text-center text-body-emphasis fs-3 fs-md-2 fs-lg-1 border-bottom index-design-own rounded-3 p-2">Design Your Own Rug</h2> 
             <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 border">
@@ -202,7 +202,7 @@ get_header(); ?>
     </div>
 
     <!-- Index Page - Workshop Section -->
-    <div class="index-content-5 py-5">
+    <div class="index-content-4 py-5">
         <div class="container col-xxl-9 px-4 py-3">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">    
                 <!-- Image -->
@@ -236,7 +236,7 @@ get_header(); ?>
     </div>
 
     <!-- Index Page - Follow The Thread Section -->
-    <div class="index-content-7 pb-5">
+    <div class="index-content-5 pb-5">
         <div class="p-2 text-center">
             <h1 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Follow the Thread</h1>
             <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">

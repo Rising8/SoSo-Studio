@@ -28,7 +28,7 @@ get_header(); ?>
     </div>
 
     <!-- About Page - Story, Mission and Vision Slider -->
-    <div class="about-content-4">
+    <div class="about-content-3">
         <section id="tranding">
             <div class="container">
                 <h2 class="text-center">Let's Get To Know Us</h2>
@@ -89,7 +89,7 @@ get_header(); ?>
     </div>
 
     <!-- About Page - What We Offer Section -->
-    <div class="about-content-3 p-3">
+    <div class="about-content-4 p-3">
         <div class="container px-4 pb-5">
             <h2 class="py-4 text-center">What We Offer</h2>
             <div class="row gx-4 gy-4">

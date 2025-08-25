@@ -272,7 +272,7 @@ html {
   z-index: 1;       
 }
 
-.gap-custom{
+.index-hero-layout {
   gap: 12px;
 }
 
@@ -485,9 +485,6 @@ html {
   align-items: center;
 }
 
-/* CTA Button Container */
-
-
 /* Individual CTA Button */
 .showcase-modal .modal-body .showcases-cta-button .btn {
   font-weight: 600;
@@ -528,7 +525,7 @@ html {
 }
 
 /* Index Page - Step Into Our Rug Workshop Section */
-.index-content-5 {
+.index-content-4 {
   background: white;
   color: #2a2a40;
   font-family: "Poppins", sans-serif;
@@ -536,7 +533,7 @@ html {
   padding: 80px 20px;
 }
 
-.index-content-5 .workshop-animate img {
+.index-content-4 .workshop-animate img {
   animation: workshopimgfloat 6s ease-in-out infinite; 
   transition: transform 0.6s ease, box-shadow 0.6s ease;
   border-radius: 16px;
@@ -551,23 +548,23 @@ html {
 }
 
 /* Scroll Animation - When users scroll to this section */
-.index-content-5 .workshop-animate {
+.index-content-4 .workshop-animate {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.9s ease;
 }
 
-.index-content-5 .workshop-animate.active {
+.index-content-4 .workshop-animate.active {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Delay helpers */
-.index-content-5 .delay-1 { transition-delay: 0.2s; }
-.index-content-5 .delay-2 { transition-delay: 0.5s; }
-.index-content-5 .delay-3 { transition-delay: 0.8s; }
+.index-content-4 .delay-1 { transition-delay: 0.2s; }
+.index-content-4 .delay-2 { transition-delay: 0.5s; }
+.index-content-4 .delay-3 { transition-delay: 0.8s; }
 
-.index-content-5 .btn {
+.index-content-4 .btn {
   background: linear-gradient(90deg, #ff6ec7, #a55eea);
   border: none;
   font-weight: 600;
@@ -577,19 +574,19 @@ html {
   box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
-.index-content-5 .btn:hover {
+.index-content-4 .btn:hover {
   box-shadow: 0 0 20px rgba(255, 105, 180, 0.9),
               0 0 35px rgba(138, 43, 226, 0.8);
   transform: scale(1.05);
 }
 
 /* Index Page - Follow The Thread Section */
-.index-content-7 {
+.index-content-5 {
   background: white;
   padding: 4rem 0; 
 }
 
-.index-content-7 p {
+.index-content-5 p {
   margin-bottom: 2rem;
   line-height: 1.6;
   color: #5a4c6d !important;
@@ -692,49 +689,6 @@ html {
 
 
 /* === ABOUT PAGE STYLING === */
-/* About Page - What We Offer Section  */
-.about-content-3 {
-  background-color: #D7EEE8;
-}
-
-.about-content-3 h2{
-  color: #7eb7ac;
-}
-
-.about-soso-card {
-  background: #fff;
-  border: 2px solid #8DC9BD;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-soso-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-soso-card .card-title {
-  color:  #8DC9BD;
-}
-
-.about-soso-card .card-text {
-  color: #666;
-}
-
-.about-soso-card .btn-primary {
-  color:  #8DC9BD;
-  background-color: transparent;
-  border: 2px solid  #8DC9BD;
-  transition: all 0.2s ease-in-out;
-}
-
-.about-soso-card .btn-primary:hover {
-  background-color:  #8DC9BD;
-  color: white;
-  transform: scale(1.05);
-}
-
 /* About Page - Story, Mission and Vision Slider */
 #tranding {
   padding-top: 4rem;
@@ -824,6 +778,49 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* About Page - What We Offer Section  */
+.about-content-4 {
+  background-color: #D7EEE8;
+}
+
+.about-content-4 h2{
+  color: #7eb7ac;
+}
+
+.about-soso-card {
+  background: #fff;
+  border: 2px solid #8DC9BD;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-soso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-soso-card .card-title {
+  color:  #8DC9BD;
+}
+
+.about-soso-card .card-text {
+  color: #666;
+}
+
+.about-soso-card .btn-primary {
+  color:  #8DC9BD;
+  background-color: transparent;
+  border: 2px solid  #8DC9BD;
+  transition: all 0.2s ease-in-out;
+}
+
+.about-soso-card .btn-primary:hover {
+  background-color:  #8DC9BD;
+  color: white;
+  transform: scale(1.05);
 }
 
 /* About Page - Studio Vibes Image */
@@ -1227,7 +1224,7 @@ html {
 }
 
 /* Workshop Page - Workshop Section */
-.workshop-content-2 h1 {
+.workshop-content-2 h2 {
   text-shadow: 0 1px 3px rgba(98, 58, 123, 0.4);
 }
 
@@ -1610,7 +1607,7 @@ html {
   background-color: #fff;
 }
 
-/* Rugcare Page - Care By Material Section */
+/* Rugcare Page - What Not To Do Section */
 .rugcare-content-3{
   background-color: #fff;
   margin-top: -30px;
@@ -1631,7 +1628,7 @@ html {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Rugcare Page - Video Section */
+/* Rugcare Page - Cleaning Tips Video Section */
 .cleaning-tips-box{
   background-color: #FAF7FD;
 }
@@ -1695,6 +1692,11 @@ html {
 .faq-commission-link:hover {
   color: #7a5d99; 
   text-decoration-color: #b49dcf;
+}
+
+/* FAQ Page - Contact Section */
+.faq-contact-section h2 {
+  color:#4b0082;
 }
 
 
