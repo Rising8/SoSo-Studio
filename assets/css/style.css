@@ -367,7 +367,7 @@ html {
 
 /* Index Page - Follow The Thread Section */
 .index-content-7 {
-  background: linear-gradient(180deg, #f9f4fc 0%, #f9f4fc 70%, #ffffff 100%);
+  background: white;
   padding: 4rem 0; 
 }
 
@@ -398,22 +398,24 @@ html {
 }
 
 /* Individual Instagram Post */
-.sbi .sbi_item {
+#sb_instagram #sbi_images {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 70%;
+  gap: 30px !important;
+  margin: 0 auto; 
+}
+
+.sbi_item {
   border-radius: 20px;
-  position: relative;
-  overflow: hidden !important;
-  transition: all 0.3s ease !important;
+  justify-content: center;
 }
 
 .sbi .sbi_item:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Image inside the post */
-.sbi .sbi_photo {
-  width: 100%;
-  border-radius: 20px;
 }
 
 /* Load More Button */
