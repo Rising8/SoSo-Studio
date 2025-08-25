@@ -305,70 +305,209 @@ html {
 
 /* Index Page - Showcases Section */
 .index-showcases-scroll {
+  padding-bottom: 1rem;
   scroll-behavior: smooth;
 }
 
+/* Rocking animation */
+.showcases-rock .index-showcases-border {
+  display: inline-block;
+  animation: cardRock 2s ease-in-out infinite alternate;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+@keyframes cardRock {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Pause rocking on hover */
+.showcases-rock .index-showcases-border:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(194, 163, 255, 0.4);
+}
+
+/* Scrollbar styles */
 .index-showcases-scroll::-webkit-scrollbar {
-  height: 8px;
+  height: 10px;
 }
-
 .index-showcases-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+  background: #c69ce8;
+  border-radius: 5px;
 }
-
 .index-showcases-scroll::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background: #fdfaff;
 }
 
-.index-showcases-border {
-  width: 350px;
-}
-
-.index-showcases-seemore {
-  width: 200px;
+.index-showcases {
+  aspect-ratio: 4 / 5;  /* all cards same ratio */
+  width: 300px;
 }
 
 .index-showcases img {
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
-
 .index-showcases:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(-1deg);
+  filter: brightness(1.1);
 }
 
+/* Overlay effect */
 .index-showcases-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(194, 163, 255, 0.6);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
   padding: 1rem;
   text-align: center;
+  border-radius: 15px;
+  backdrop-filter: blur(3px);
 }
 
 .index-showcases:hover .index-showcases-overlay {
   opacity: 1;
 }
 
+.index-showcases-overlay p {
+  font-size: 1rem;
+}
+
+.index-showcases-overlay .btn {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 25px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.index-showcases-overlay .btn:hover {
+  background: #c2a3ff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* See more button */
 .index-seemore-btn {
   width: 150px;
   height: 150px;
-  background-color: #F3ECF9; 
+  background: linear-gradient(135deg, #fdfaff, #e6d9ff);
   border-radius: 50%;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(194, 163, 255, 0.3);
+}
+.index-seemore-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #e6d9ff, #d8bfff);
 }
 
-.index-seemore-btn:hover {
-  background-color: #e5d5f4;
-  text-decoration: none;
+/* Index Page - Showcase Section - Showcase Modal Styles */
+.showcase-modal .modal-content {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 20px 50px rgba(168, 139, 235, 0.3);
+  background: linear-gradient(135deg, #fdfaff, #f0e6ff);
+  transition: transform 0.3s ease;
+}
+
+.showcase-modal.show .modal-content {
+  transform: scale(1.02);
+}
+
+.showcase-modal .modal-header {
+  border-bottom: none;
+  background: linear-gradient(135deg, #d8bfff, #c2a3ff);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.showcase-modal .modal-header .btn-close {
+  filter: brightness(0.9);
+  transition: transform 0.2s ease;
+}
+
+.showcase-modal .modal-header .btn-close:hover {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.showcase-modal .modal-body {
+  background: #fff;
+  padding: 2rem 2rem 3rem 2rem;
+  color: #4a3e66;
+  font-family: 'Poppins', sans-serif;
+}
+
+.showcase-modal .showcase-meta {
+  margin-top: 1.5rem;
+}
+
+.showcase-modal .showcase-meta li {
+  list-style: none;
+  font-weight: 500;
+  background: #e6d9ff;
+  color: #5a3e99;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(168,139,235,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcase-modal .showcase-meta li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(168,139,235,0.25);
+}
+
+.showcase-modal-image {
+  width: 300px;        
+  height: 350px;     
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.showcase-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  align-items: center;
+}
+
+/* CTA Button Container */
+
+
+/* Individual CTA Button */
+.showcase-modal .modal-body .showcases-cta-button .btn {
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 15px rgba(168, 139, 235, 0.3);
+}
+
+/* Outline CTA Gradient */
+.showcase-modal .modal-body .showcases-cta-button .btn-outline-primary {
+  background: #fff;
+  color: #8a5cff;
+  border: 2px solid #c2a3ff;
+}
+
+.showcase-modal .modal-body .showcases-cta-button .btn-outline-primary:hover {
+  background: #f3e8ff;
+  color: #5a3e99;
+  transform: translateY(-2px);
+  border-color: #a677ff;
 }
 
 /* Index Page - Design Your Own Rug Section */
