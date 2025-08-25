@@ -25,9 +25,9 @@ get_header(); ?>
     <!-- Workshop Page - Workshop Session Section -->
     <div class="workshop-content-2 pb-5">
         <div class="container">
-            <h1 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1 p-5 text-center">
+            <h2 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1 p-5 text-center">
                 Experience the Joy of Making Something Real
-            </h1>
+            </h2>
             <div class="row g-4">
                 <?php
                 $workshops = new WP_Query([
