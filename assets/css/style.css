@@ -411,10 +411,6 @@ html {
   100% { transform: translateY(0px) rotate(0deg) scale(1); }
 }
 
-.index-content-5 h3 {
-  text-align: center;
-}
-
 /* Scroll Animation - When users scroll to this section */
 .index-content-5 .workshop-animate {
   opacity: 0;
