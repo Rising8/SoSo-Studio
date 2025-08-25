@@ -88,62 +88,89 @@ get_header(); ?>
     </div>
 
     <!-- Gallery Page - Categories Section -->
+    <?php
+    // Query Rug Categories - orders by title alphabetically
+    $args = array(
+        'post_type'      => 'rug_category',
+        'posts_per_page' => -1,
+        'orderby'        => array('menu_order' => 'ASC', 'title' => 'ASC'),
+        'order'          => 'ASC',
+    );
+
+    $rug_query = new WP_Query($args);
+
+    // Section divider before the list
+    ?>
     <div id="gallery-categories-section" class="gallery-content-3 pt-5">
-        <!-- Section Divider -->
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-style.png" class="img-fluid" alt="Image description">                
-        <div class="row g-0">
-            <div class="col-md-6">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/texture1.png" class="img-fluid w-100" alt="Left image">
-            </div>
-            <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
-                <div class="col-lg-8 ">
-                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Flatweave Rugs</h3>
-                    <p class="lead fs-6 fs-md-5 fs-lg-4">Flatweave rugs are lightweight, durable, and woven without any pile, making them perfect for high-traffic areas like hallways or living rooms. Their thin profile also makes them easy to clean and ideal for layering under furniture. With patterns often inspired by traditional designs, flatweave rugs bring a stylish and practical touch to any space.</p>
-                </div>
-                <!-- Scroll arrow -->
-                <a href="#tufted-rug" class="right-arrow">
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-            </div>
-        </div>
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/line-style.png' ); ?>" class="img-fluid" alt="">
     </div>
 
-    <div class="gallery-content-3" id="tufted-rug">
-        <div class="row g-0">
-            <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
-                <div class="col-lg-8 ">
-                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Tufted Rugs</h3>
-                    <p class="lead fs-6 fs-md-5 fs-lg-4">Tufted rugs are created by punching yarn into a fabric base, resulting in a thick, cushioned feel underfoot. They offer a great balance between style and comfort, with a wide range of patterns and textures available. These rugs are ideal for adding a decorative element to living rooms or dining areas.</p>
-                </div>
-                <!-- Scroll arrow -->
-                <a href="#shag-rug" class="left-arrow">
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-            </div>
+    <?php
+    if ( $rug_query->have_posts() ):
+        // Preloads posts for the "next section" arrow logic
+        $posts = $rug_query->posts;
+        $total = $rug_query->post_count;
 
-            <div class="col-md-6">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/texture2.png" class="img-fluid w-100" alt="Left image">
-            </div>
-        </div>
-    </div>
-              
-    <div class="gallery-content-3" id="shag-rug">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/texture3.png" class="img-fluid w-100" alt="Left image">
-            </div>
-            <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
-                <div class="col-lg-8 ">
-                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1"> Shag Rugs</h3>
-                    <p class="lead fs-6 fs-md-5 fs-lg-4">Shag rugs are known for their soft, plush texture and deep pile that adds a cozy, luxurious feel to a room. They’re perfect for bedrooms or chill-out areas where comfort is a priority. Available in a variety of colors and textures, shag rugs make a bold statement and invite you to sink your feet into softness.</p>
+        // Loops over each rug
+        for ( $i = 0; $i < $total; $i++ ):
+            $p = $posts[$i];
+            setup_postdata( $p );
+
+            // Generates variables for each rug
+            $slug     = $p->post_name; // Unique section ID
+            $title    = get_the_title( $p->ID ); // Rug title
+            $content  = apply_filters( 'the_content', $p->post_content ); // Rug description
+            $is_even  = ($i % 2 === 0); // Used for alternating layout, like a checkered box system
+            $has_next = ($i + 1 < $total); // Checks if there is a next rug
+            // Gets featured image, if none exists, it will fallback to placeholder
+            $img_html = has_post_thumbnail( $p->ID )
+                ? get_the_post_thumbnail( $p->ID, 'large', array(
+                    'class' => 'img-fluid w-100',
+                    'alt'   => esc_attr( $title ),
+                ))
+                // Fallback image if featured image not set (replace path if you have a better default)
+                : '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/img/placeholder.jpg' ) . '" class="img-fluid w-100" alt="">';
+            ?>
+
+            <!-- Rug section -->            
+            <div class="gallery-content-3" id="<?php echo esc_attr( $slug ); ?>">
+                <div class="row g-0">
+
+                    <?php if ( $is_even ): // Image on the left for even rows ?>
+                        <div class="col-md-6">
+                            <?php echo $img_html; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Text Content Column -->
+                    <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Rug Title -->
+                            <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">
+                                <?php echo esc_html( $title ); ?> 
+                            </h3>
+                            <!-- Rug Description -->
+                            <div class="lead fs-6 fs-md-5 fs-lg-4"><?php echo $content; ?></div>
+                        </div>
+
+                        <!-- If a next section exists, there will be an arrow to the next section -->
+                        <?php if ( $has_next ): 
+                            $next_slug = $posts[$i + 1]->post_name; ?>
+                            <a href="#<?php echo esc_attr( $next_slug ); ?>" class="<?php echo $is_even ? 'right-arrow' : 'left-arrow'; ?>">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php if ( ! $is_even ): // Image on the right for odd rows ?>
+                        <div class="col-md-6">
+                            <?php echo $img_html; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
-                 <!-- Scroll arrow -->
-                <a href="#next-section-id" class="right-arrow ">
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
             </div>
-        </div>
-    </div>
+        <?php endfor; wp_reset_postdata(); ?>
+    <?php endif; ?>
 </div>
 
 <?php get_footer(); ?>

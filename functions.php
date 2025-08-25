@@ -122,3 +122,18 @@ function register_workshop_post_type() {
     ]);
 }
 add_action('init', 'register_workshop_post_type');
+
+// Register custom post type for Rug Categories
+function register_rug_category() {
+    register_post_type('rug_category', array(
+        'labels' => array(
+            'name' => 'Rug Categories',
+            'singular_name' => 'Rug Category',
+        ),
+        'public' => true,
+        'has_archive' => false,
+        'menu_icon' => 'dashicons-images-alt2',
+        'supports'    => array('title', 'editor', 'thumbnail', 'page-attributes'),
+    ));
+}
+add_action('init', 'register_rug_category');
