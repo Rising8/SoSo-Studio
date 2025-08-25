@@ -1634,20 +1634,8 @@ html {
 }
 
 /* Rugcare Page - Contact Section */
-.rugcare-content-5{
-  background-color: #8DC9BD;
-}
-
-.rugcare-content-5 .btn{
-  border: 2px solid white;
-  background-color: #fff;
-  color: #875DA6;
-}
-
-.rugcare-content-5 .btn:hover{
-  border: 2px solid white;
-  background-color: #8DC9BD;
-  color: white;
+.rugcare-contact-section h2 {
+  color:#4b0082;
 }
 
 
