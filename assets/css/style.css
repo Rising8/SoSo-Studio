@@ -1053,17 +1053,17 @@ html {
 
 /* Commission Page - Continue Exploring Section */
 .commission-content-5{
-  background-color: #8DC9BD;
+  background-color: #FAF7FD;
 }
 
 .commission-content-5 h4 {
-  color: #fff;
+  /* color: #fff; */
 }
 
 .commission-continue-exploring .btn-outline-primary {
-  color: #6a317d;
-  border: 2px solid white;
-  background-color: #fff;
+  border: none !important;
+  background: linear-gradient(to right, #eac6ff, #fbefff);
+  color: #5d2b75;
 }
 
 .commission-continue-exploring .btn-outline-primary:hover {
