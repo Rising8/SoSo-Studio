@@ -287,7 +287,7 @@ html {
   height: 10px;
 }
 .index-showcases-scroll::-webkit-scrollbar-thumb {
-  background: #c2a3ff;
+  background: #c69ce8;
   border-radius: 5px;
 }
 .index-showcases-scroll::-webkit-scrollbar-track {
@@ -436,12 +436,11 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover; 
+  align-items: center;
 }
 
 /* CTA Button Container */
-.showcases-cta-button {
-  flex-wrap: wrap;
-}
+
 
 /* Individual CTA Button */
 .showcase-modal .modal-body .showcases-cta-button .btn {

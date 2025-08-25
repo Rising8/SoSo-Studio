@@ -83,15 +83,15 @@ get_header(); ?>
             $post_id = get_the_ID(); 
             ?>
             <div class="modal fade showcase-modal" id="showcase-<?php echo $post_id; ?>" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title"><?php the_title(); ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body d-flex flex-column flex-md-row align-items-start gap-4">
+                        <div class="modal-body modal-body d-flex flex-column gap-4 justify-content-center align-items-center text-center">
                             <?php if (has_post_thumbnail()): ?>
-                                <div class="showcase-modal-image flex-shrink-0">
+                                <div class="showcase-modal-image flex-shrink-0 ">
                                     <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" class="img-fluid rounded shadow">
                                 </div>
                             <?php endif; ?>
@@ -117,7 +117,7 @@ get_header(); ?>
                                 </ul>
 
                                 <!-- CTA Buttons -->
-                                <div class="showcases-cta-button d-flex flex-column flex-sm-row gap-3 mt-3">
+                                <div class="showcases-cta-button gap-3 mt-3">
                                     <a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" 
                                         class="btn btn-outline-primary flex-fill rounded-pill px-4 py-2">
                                         View More Information
