@@ -390,20 +390,62 @@ html {
 
 /* Index Page - Step Into Our Rug Workshop Section */
 .index-content-5 {
-  background-color: #ffff;
+  background: white;
+  color: #2a2a40;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  padding: 80px 20px;
 }
 
-/* Index Page - Testimonials Section */
-.index-content-6 {
-  background-color: #ffff;
+.index-content-5 .workshop-animate img {
+  animation: workshopimgfloat 6s ease-in-out infinite; 
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  border-radius: 16px;
 }
 
-.index-testimonials-bg {
-  background-color: #FFF9CD;
+@keyframes workshopimgfloat {
+  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
+  25%  { transform: translateY(-15px) rotate(-1deg) scale(1.02); }
+  50%  { transform: translateY(0px) rotate(0deg) scale(1); }
+  75%  { transform: translateY(15px) rotate(1deg) scale(1.02); }
+  100% { transform: translateY(0px) rotate(0deg) scale(1); }
 }
 
-.index-testimonials-p {
-  font-style: italic;
+.index-content-5 h3 {
+  text-align: center;
+}
+
+/* Scroll Animation - When users scroll to this section */
+.index-content-5 .workshop-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s ease;
+}
+
+.index-content-5 .workshop-animate.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay helpers */
+.index-content-5 .delay-1 { transition-delay: 0.2s; }
+.index-content-5 .delay-2 { transition-delay: 0.5s; }
+.index-content-5 .delay-3 { transition-delay: 0.8s; }
+
+.index-content-5 .btn {
+  background: linear-gradient(90deg, #ff6ec7, #a55eea);
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+}
+
+.index-content-5 .btn:hover {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.9),
+              0 0 35px rgba(138, 43, 226, 0.8);
+  transform: scale(1.05);
 }
 
 /* Index Page - Follow The Thread Section */
@@ -414,11 +456,6 @@ html {
 .index-thread-card {
   width: 25rem;
   border: none
-}
-
-/* Index Page - Quote Section */
-.index-content-8 {
-  background-color: #A5D8CC;
 }
 
 
@@ -1489,4 +1526,10 @@ html {
 
 
 /* === MOBILE RESPOSIVENESS === */
+
+
+
+
+
+
 

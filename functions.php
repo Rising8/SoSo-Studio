@@ -62,6 +62,9 @@ function sosostudio_enqueue_styles()
 
     // Gallery Filter JS
     wp_enqueue_script('gallery-js', get_template_directory_uri() . '/assets/js/gallery.js', array(), '1.0', true);
+
+    // Index Page Workshop Section JS
+    wp_enqueue_script('index-workshop-js', get_template_directory_uri() . '/assets/js/index-workshop.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 
