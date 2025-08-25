@@ -349,7 +349,7 @@ html {
 
 /* Index Page - Step Into Our Rug Workshop Section */
 .index-content-5 {
-  background: linear-gradient(to bottom, #ffffff, #e6d9ff);
+  background: white;
   color: #2a2a40;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -371,10 +371,7 @@ html {
 }
 
 .index-content-5 h3 {
-  color: #4a3ca0 !important;
   text-align: center;
-  text-shadow: 0 0 8px rgba(255, 105, 180, 0.6),
-               0 0 15px rgba(138, 43, 226, 0.5);
 }
 
 /* Scroll Animation - When users scroll to this section */
