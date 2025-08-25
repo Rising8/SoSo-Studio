@@ -205,48 +205,25 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Index Page - Follow The Thread Section (similar to blogs) -->
+    <!-- Index Page - Follow The Thread Section -->
     <div class="index-content-7 pb-5">
-        <div class="p-5 text-center">
+        <div class="p-2 text-center">
             <h1 class="text-body-emphasis fs-3 fs-md-2 fs-lg-1">Follow the Thread</h1>
             <p class="col-lg-8 mx-auto text-muted fs-6 fs-md-5 fs-lg-4">
                 Join us on Instagram for daily inspiration, handcrafted textures, and custom rug creations you won’t see anywhere else. 
             </p>
         </div>
 
-        <div class="container text-center justify-content-center">
-            <div class="row">
-                <div class="col">
-                    <div class="index-thread-card card">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/ig1.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">From thread to texture — here’s a glimpse into how our rugs are made. Every weave tells a story.</h5>         
-                            <!-- Placeholder Link - Must be updated -->
-                            <a href="https://www.instagram.com/p/DJysRs7PKXs/?img_index=1" target="__blank" rel="noopener noreferrer" class="card-link">Instagram  link</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="index-thread-card card">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/ig2.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Inspired by a seaside sunset, this custom rug brings warmth and calm to the space. Have an idea you’d love to see woven? Let’s make it happen.</h5>
-                            <a href="#" class="card-link">Instagram link</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="index-thread-card card">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/ig3.jpeg" class="card-img-top w-100" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">What a difference a rug makes! Swipe to see how this space went from plain to polished with just one handcrafted piece.</h5>
-                            <a href="#" class="card-link">Instagram  link</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+            <!-- Follow Us Button -->
+            <div class="text-center mt-0 mb-4">
+                <a href="https://www.instagram.com/so.so.studio/" target="_blank" rel="noopener noreferrer" class="btn-follow">
+                    Follow @so.so.studio
+                </a>
             </div>
+
+            <!-- Smash Balloon Instagram Feed -->
+            <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
         </div>
     </div>
     
