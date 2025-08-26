@@ -1280,6 +1280,66 @@ html {
   background-color: #F3ECF9;
 }
 
+.gallery-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-row img {
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery Page - Row Styling */
+.row-1 {
+  justify-content: center; 
+  gap: 210px;
+}
+
+.row-2 {
+  justify-content: center; 
+  gap: 210px;
+  margin-top: -140px;
+}
+
+.row-3 {
+  justify-content: center;
+  gap: 600px;
+  margin-top: -210px;
+}
+
+.row-4 {
+  justify-content: center;
+  gap: 1000px;
+  margin-top: -130px;
+}
+
+/* Gallery Page - Heading */
+.gallery-hero-heading {
+  margin-top: -160px;
+}
+
+/* Gallery Page - Background */
+.gallery-hero-background {
+  width: 100%;
+}
+
 /* Gallery Page - Filter Buttons */
 .gallery-filter .filter-btn {
   background-color: transparent;

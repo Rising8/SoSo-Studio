@@ -7,16 +7,46 @@ get_header(); ?>
 <div class="gallery-wrapper p-0">
     <!-- Gallery Page - Hero Section -->
     <div class="gallery-content-1">
-        <h1 class="landing-heading display-5 text-body-emphasis text-center pt-5 pb-2 d-block mx-auto">
-            Step Into Our World of Threads!
-        </h1>
-        <div class="img-mobile">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/gallery-page.png" class="img-fluid scroll-image" alt="Image description">
+        <!-- Gallery Hero Images -->
+        <div class="gallery-layout pt-5">
+            <!-- Row 1 -->
+            <div class="gallery-row row-1">
+                <!-- This row 1 (image 1 and 2) -->
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img1.jpeg" alt="Rug 2">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img2.jpeg" alt="Rug 4">
+            </div>
+
+            <!-- Row 2 -->
+            <div class="gallery-row row-2">
+                <!-- This row 2 (image 4) -->
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img4.jpeg" alt="Rug 3">
+            </div>
+
+            <!-- Row 3 -->
+            <div class="gallery-row row-3">
+                <!-- This row 3 (image 3 and 5) -->
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img3.jpeg" alt="Rug 1">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img5.jpeg" alt="Rug 5">
+            </div>
+
+            <!-- Row 4 -->
+            <div class="gallery-row row-4">
+                <!-- This row 4 (image 6 and 7) -->
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img6.jpeg" alt="Rug 6">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-img7.jpeg" alt="Rug 7">
+            </div>
         </div>
+        <!-- Gallery Hero Heading -->
+        <h1 class="gallery-hero-heading index-header display-5 text-body-emphasis text-center pt-5 pb-3 d-block mx-auto">
+            Step Into Our <br>
+            World of Threads!
+        </h1>
+        <!-- Background Image (Wave) -->
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/hero-background.png" alt="Background" class="gallery-hero-background img-fluid">
     </div>
 
     <!-- Gallery Page - Dynamic Gallery Section -->
-    <div class="gallery-content-2 pt-2">
+    <div class="gallery-content-2">
         <div class="container text-center justify-content-center">
             
             <!-- Filter Buttons -->
