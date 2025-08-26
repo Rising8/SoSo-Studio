@@ -1300,34 +1300,41 @@ html {
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   object-fit: cover;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .gallery-row img:hover {
   transform: scale(1.05);
+  z-index: 10;
 }
 
 /* Gallery Page - Row Styling */
 .row-1 {
   justify-content: center; 
   gap: 210px;
+  height: 180px;
 }
 
 .row-2 {
   justify-content: center; 
   gap: 210px;
   margin-top: -140px;
+  height: 239.91px;
 }
 
 .row-3 {
   justify-content: center;
   gap: 600px;
   margin-top: -210px;
+  height: 239.91px;
 }
 
 .row-4 {
   justify-content: center;
   gap: 1000px;
   margin-top: -130px;
+  height: 239.91px;
 }
 
 /* Gallery Page - Heading */

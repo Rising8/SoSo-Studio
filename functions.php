@@ -162,3 +162,127 @@ function register_rug_category() {
     ));
 }
 add_action('init', 'register_rug_category');
+
+// Register custom post type for Gallery Images
+function register_gallery_images() {
+    $labels = array(
+        'name' => __('Gallery Images'),
+        'singular_name' => __('Gallery Image'),
+        'add_new' => __('Add New Gallery Image'),
+        'add_new_item' => __('Add New Gallery Image'),
+        'edit_item' => __('Edit Gallery Image'),
+        'new_item' => __('New Gallery Image'),
+        'view_item' => __('View Gallery Image'),
+        'all_items' => __('All Gallery Images'),
+        'search_items' => __('Search Gallery Images'),
+        'not_found' => __('No Gallery Images found.'),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => false,
+        'supports' => array('title', 'thumbnail'),
+        'menu_position' => 21,
+        'show_in_rest' => true,
+    );
+
+    register_post_type('gallery_image', $args);
+}
+add_action('init', 'register_gallery_images');
+
+// Enable drag-and-drop ordering (with Post Types Order plugin)
+add_filter('pto_post_types', function($post_types) {
+    $post_types[] = 'gallery_image';
+    return $post_types;
+});
+
+// Render the images in the gallery hero section 
+function render_gallery_images() {
+    $args = array(
+        'post_type'      => 'gallery_image',
+        'posts_per_page' => 7, // 7 images
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+    );
+
+    $gallery_query = new WP_Query($args);
+
+    if ($gallery_query->have_posts()) {
+        $images = [];
+        while ($gallery_query->have_posts()) {
+            $gallery_query->the_post();
+            $images[] = array(
+                'url' => get_the_post_thumbnail_url(get_the_ID(), 'full'),
+                'alt' => get_the_title(),
+            );
+        }
+        wp_reset_postdata();
+
+        echo '<div class="gallery-content-1">';
+        echo '<div class="gallery-layout pt-5">';
+
+        // Row 1
+        echo '<div class="gallery-row row-1">';
+        if (!empty($images[0])) echo '<img src="' . esc_url($images[0]['url']) . '" alt="' . esc_attr($images[0]['alt']) . '">';
+        if (!empty($images[1])) echo '<img src="' . esc_url($images[1]['url']) . '" alt="' . esc_attr($images[1]['alt']) . '">';
+        echo '</div>';
+
+        // Row 2
+        echo '<div class="gallery-row row-2">';
+        if (!empty($images[2])) echo '<img src="' . esc_url($images[2]['url']) . '" alt="' . esc_attr($images[2]['alt']) . '">';
+        echo '</div>';
+
+        // Row 3
+        echo '<div class="gallery-row row-3">';
+        if (!empty($images[3])) echo '<img src="' . esc_url($images[3]['url']) . '" alt="' . esc_attr($images[3]['alt']) . '">';
+        if (!empty($images[4])) echo '<img src="' . esc_url($images[4]['url']) . '" alt="' . esc_attr($images[4]['alt']) . '">';
+        echo '</div>';
+
+        // Row 4
+        echo '<div class="gallery-row row-4">';
+        if (!empty($images[5])) echo '<img src="' . esc_url($images[5]['url']) . '" alt="' . esc_attr($images[5]['alt']) . '">';
+        if (!empty($images[6])) echo '<img src="' . esc_url($images[6]['url']) . '" alt="' . esc_attr($images[6]['alt']) . '">';
+        echo '</div>';
+
+        echo '</div>'; // .gallery-layout
+
+        // Heading hard-coded
+        echo '<h1 class="gallery-hero-heading index-header display-5 text-body-emphasis text-center pt-5 pb-3 d-block mx-auto">';
+        echo 'Step Into Our <br> World of Threads!';
+        echo '</h1>';
+
+        // Background hard-coded
+        echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/gallery-page/hero-background.png" alt="Background" class="gallery-hero-background img-fluid">';
+
+        echo '</div>'; // .gallery-content-1
+    }
+}
+add_shortcode('gallery_images', 'render_gallery_images');
+
+// Add instructions to Gallery Images CPT
+function gallery_images_instructions_meta_box() {
+    add_meta_box(
+        'gallery_images_instructions',         // ID
+        'Gallery Images Instructions',         // Title
+        'gallery_images_instructions_content', // Callback function
+        'gallery_image',                        // CPT
+        'side',                                 // Context (side column)
+        'high'                                  // Priority
+    );
+}
+add_action('add_meta_boxes', 'gallery_images_instructions_meta_box');
+
+// Content of the instructions box
+function gallery_images_instructions_content($post) {
+    echo '<p><strong>Instructions:</strong></p>';
+    echo '<ul style="padding-left: 18px;">';
+    echo '<li>Upload 7 images.</li>';
+    echo '<li>Order them using drag-and-drop (Post Types Order plugin).</li>';
+    echo '<li><strong>Row 1 → images 1 & 2</strong></li>';
+    echo '<li><strong>Row 2 → image 3</strong></li>';
+    echo '<li><strong>Row 3 → images 4 & 5</strong></li>';
+    echo '<li><strong>Row 4 → images 6 & 7</strong></li>';
+    echo '</ul>';
+    echo '<p>Make sure all slots are filled for proper layout.</p>';
+}
