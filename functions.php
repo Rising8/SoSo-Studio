@@ -231,3 +231,29 @@ function render_index_hero_images() {
 }
 // Adds a shortcode to display Hero Images in index.php 
 add_shortcode('hero_images', 'render_index_hero_images');
+
+// Add instructions to Index Hero Images CPT
+function hero_images_instructions_meta_box() {
+    add_meta_box(
+        'hero_images_instructions',        // ID
+        'Hero Images Instructions',        // Title
+        'hero_images_instructions_content', // Callback function
+        'hero_image',                       // CPT
+        'side',                             // Context (side column)
+        'high'                              // Priority
+    );
+}
+add_action('add_meta_boxes', 'hero_images_instructions_meta_box');
+
+// Content of the instructions box
+function hero_images_instructions_content($post) {
+    echo '<p><strong>Instructions:</strong></p>';
+    echo '<ul style="padding-left: 18px;">';
+    echo '<li>Upload up to <strong>5 images</strong>.</li>';
+    echo '<li>Order them using drag-and-drop (Post Types Order plugin).</li>';
+    echo '<li>Each image should have a featured image set.</li>';
+    echo '<li>Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.</li>';
+    echo '<li>The first image will appear on the far left, followed by the next in order.</li>';
+    echo '</ul>';
+    echo '<p>Tip: Keep images consistent in style for the best visual layout.</p>';
+}
