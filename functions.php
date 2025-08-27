@@ -247,13 +247,16 @@ add_action('add_meta_boxes', 'hero_images_instructions_meta_box');
 
 // Content of the instructions box
 function hero_images_instructions_content($post) {
-    echo '<p><strong>Instructions:</strong></p>';
-    echo '<ul style="padding-left: 18px;">';
-    echo '<li>Upload up to <strong>5 images</strong>.</li>';
-    echo '<li>Order them using drag-and-drop (Post Types Order plugin).</li>';
-    echo '<li>Each image should have a featured image set.</li>';
-    echo '<li>Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.</li>';
-    echo '<li>The first image will appear on the far left, followed by the next in order.</li>';
-    echo '</ul>';
-    echo '<p>Tip: Keep images consistent in style for the best visual layout.</p>';
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Upload up to <strong>5 images</strong>.</li>
+    <li>Order them using drag-and-drop (Post Types Order plugin).</li>
+    <li>Each image should have a featured image set.</li>
+    <li>Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.</li>
+    <li>The first image will appear on the far left, followed by the next in order.</li>
+</ul>
+<p>Tip: Keep images consistent in style for the best visual layout.</p>
+HTML;
+    echo $content;
 }
