@@ -275,14 +275,17 @@ add_action('add_meta_boxes', 'gallery_images_instructions_meta_box');
 
 // Content of the instructions box
 function gallery_images_instructions_content($post) {
-    echo '<p><strong>Instructions:</strong></p>';
-    echo '<ul style="padding-left: 18px;">';
-    echo '<li>Upload 7 images.</li>';
-    echo '<li>Order them using drag-and-drop (Post Types Order plugin).</li>';
-    echo '<li><strong>Row 1 → images 1 & 2</strong></li>';
-    echo '<li><strong>Row 2 → image 3</strong></li>';
-    echo '<li><strong>Row 3 → images 4 & 5</strong></li>';
-    echo '<li><strong>Row 4 → images 6 & 7</strong></li>';
-    echo '</ul>';
-    echo '<p>Make sure all slots are filled for proper layout.</p>';
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Upload 7 images.</li>
+    <li>Order them using drag-and-drop (Post Types Order plugin).</li>
+    <li><strong>Row 1 → images 1 & 2</strong></li>
+    <li><strong>Row 2 → image 3</strong></li>
+    <li><strong>Row 3 → images 4 & 5</strong></li>
+    <li><strong>Row 4 → images 6 & 7</strong></li>
+</ul>
+<p>Make sure all slots are filled for proper layout.</p>
+HTML;
+    echo $content;
 }
