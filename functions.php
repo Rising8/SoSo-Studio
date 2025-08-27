@@ -148,6 +148,36 @@ function register_workshop_post_type() {
 }
 add_action('init', 'register_workshop_post_type');
 
+// Add instructions to Workshops CPT
+function workshop_instructions_meta_box() {
+    add_meta_box(
+        'workshop_instructions',          // ID
+        'Workshop Instructions',          // Title
+        'workshop_instructions_content',  // Callback function
+        'workshop',                       // CPT
+        'side',                            // Context (side column)
+        'high'                             // Priority
+    );
+}
+add_action('add_meta_boxes', 'workshop_instructions_meta_box');
+
+// Content of the instructions box
+function workshop_instructions_content($post) {
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Give each workshop a clear and descriptive title (e.g., "Intro to Rug Weaving").</li>
+    <li>Use the editor to add a small description about the workshop.</li>
+    <li>Upload a featured image to visually represent the workshop.</li>
+    <li>Use custom fields to add additional data like duration, location and price.</li>
+    <li>Ensure you link your ClassBento workshop URL to the "Booking URL" custom field.</li>
+    <li>Reorder workshops using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
+</ul>
+<p>Tip: Keep titles and summaries concise for easier display on the front end.</p>
+HTML;
+    echo $content;
+}
+
 // Register custom post type for Rug Categories
 function register_rug_category() {
     register_post_type('rug_category', array(
