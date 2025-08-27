@@ -96,6 +96,34 @@ function register_showcase_post_type() {
 }
 add_action('init', 'register_showcase_post_type');
 
+// Add instructions to Showcases CPT
+function showcase_instructions_meta_box() {
+    add_meta_box(
+        'showcase_instructions',           // ID
+        'Showcase Instructions',           // Title
+        'showcase_instructions_content',   // Callback function
+        'showcase',                        // CPT
+        'side',                            // Context (side column)
+        'high'                             // Priority
+    );
+}
+add_action('add_meta_boxes', 'showcase_instructions_meta_box');
+
+// Content of the instructions box
+function showcase_instructions_content($post) {
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Give each showcase rug a descriptive title (e.g., "Mushroom Party").</li>
+    <li>Use the editor to add a description about the individual rug.</li>
+    <li>Upload a featured image to represent the showcase visually.</li>
+    <li>Use custom fields to add additional data like size and material.</li>
+    <li>Reorder showcases using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
+</ul>
+<p>Tip: Keep titles consistent for easier filtering and display on the front end.</p>
+HTML;
+    echo $content;
+}
 
 // Register custom post type for Rugs
 function register_rug_post_type() {
