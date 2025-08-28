@@ -96,7 +96,6 @@ function register_showcase_post_type() {
 }
 add_action('init', 'register_showcase_post_type');
 
-
 // Register custom post type for Rugs
 function register_rug_post_type() {
     register_post_type('rug', [
@@ -131,6 +130,69 @@ function register_rug_type_taxonomy() {
     ]);
 }
 add_action('init', 'register_rug_type_taxonomy');
+
+// Add instructions to Rugs CPT
+function rug_instructions_meta_box() {
+    add_meta_box(
+        'rug_instructions',                // ID
+        'Rug Instructions',                // Title
+        'rug_instructions_content',        // Callback function
+        'rug',                             // CPT
+        'side',                            // Context (side column)
+        'high'                             // Priority
+    );
+}
+add_action('add_meta_boxes', 'rug_instructions_meta_box');
+
+// Content of the instructions box
+function rug_instructions_content($post) {
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Upload a featured image for each rug.</li>
+    <li>Use the fields below to add rug details (size, material, etc.).</li>
+    <li>You can categorize rugs using the <strong>Rug Types</strong> taxonomy.</li>
+    <li>Reorder rugs using drag-and-drop (Post Types Order plugin) in the reorder tab.</li>
+</ul>
+<p>Tip: Keep rug titles descriptive (e.g. “Sunflower Rug”) for easier searching.</p>
+HTML;
+    echo $content;
+}
+
+// Add instructions to the Rug Types taxonomy add page
+function rug_type_add_page_instructions($taxonomy) {
+    $content = <<<HTML
+<div class="notice notice-info inline" style="margin: 10px 0; padding: 10px;">
+    <p><strong>Instructions for Rug Types:</strong></p>
+    <ul style="padding-left:18px; margin:0;">
+        <li>Use descriptive names for rug types (e.g., "Flatweave", "Shag", "Tufted").</li>
+        <li>You can assign multiple rugs to the same type.</li>
+        <li>Reorder rugs within each type using the Post Types Order plugin.</li>
+    </ul>
+</div>
+HTML;
+    echo $content;
+}
+add_action('rug_type_add_form_fields', 'rug_type_add_page_instructions');
+
+// Add instructions to the Rug Types taxonomy edit page
+function rug_type_edit_page_instructions($term, $taxonomy) {
+    $content = <<<HTML
+<tr class="form-field">
+    <th scope="row"><label>Instructions</label></th>
+    <td>
+        <p><strong>Tips for editing Rug Types:</strong></p>
+        <ul style="padding-left:18px;">
+            <li>Keep the name short and descriptive.</li>
+            <li>The slug is used in the URL (keep it simple and lowercase).</li>
+            <li>You can safely reorder rugs in this type using drag-and-drop.</li>
+        </ul>
+    </td>
+</tr>
+HTML;
+    echo $content;
+}
+add_action('rug_type_edit_form_fields', 'rug_type_edit_page_instructions', 10, 2);
 
 // Enable featured images + size for gallery thumbs
 add_theme_support('post-thumbnails');
