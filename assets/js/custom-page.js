@@ -1,10 +1,134 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the fabric.js canvas 
     const canvas = new fabric.Canvas('custom-canvas', {
-        backgroundColor: '#f9f4fc',
+        backgroundColor: '#f9f9f9',
         width: 800,
         height: 400
     });
+
+    function changeCanvasShape(shape) {
+        const maxW = canvas.width * 0.9;
+        const maxH = canvas.height * 0.9;
+        const size = Math.min(maxW, maxH);
+
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        let clip;
+
+    switch (shape) {
+        case 'rectangle':
+            clip = new fabric.Rect({
+                width: maxW,
+                height: maxH,
+                originX: 'center',
+                originY: 'center',
+                left: centerX,
+                top: centerY,
+                absolutePositioned: true
+            });
+            break;
+
+        case 'circle':
+            clip = new fabric.Circle({
+                radius: size / 2,
+                originX: 'center',
+                originY: 'center',
+                left: centerX,
+                top: centerY,
+                absolutePositioned: true
+            });
+            break;
+
+        case 'oval':
+            clip = new fabric.Ellipse({
+                rx: maxW / 2,
+                ry: maxH / 2,
+                originX: 'center',
+                originY: 'center',
+                left: centerX,
+                top: centerY,
+                absolutePositioned: true
+            });
+            break;
+
+        case 'triangle':
+            clip = new fabric.Triangle({
+                width: size,
+                height: size,
+                originX: 'center',
+                originY: 'center',
+                left: centerX,
+                top: centerY,
+                absolutePositioned: true
+            });
+            break;
+
+        case 'pentagon':
+            clip = new fabric.Polygon([
+                {x:0, y:-1}, {x:0.95, y:-0.3}, {x:0.6, y:1},
+                {x:-0.6, y:1}, {x:-0.95, y:-0.3}
+            ].map(p => ({
+                x: centerX + p.x * size/2,
+                y: centerY + p.y * size/2
+            })), { absolutePositioned: true });
+            break;
+
+        case 'hexagon':
+            clip = new fabric.Polygon([
+                {x:0, y:-1}, {x:0.87, y:-0.5}, {x:0.87, y:0.5},
+                {x:0, y:1}, {x:-0.87, y:0.5}, {x:-0.87, y:-0.5}
+            ].map(p => ({
+                x: centerX + p.x * size/2,
+                y: centerY + p.y * size/2
+            })), { absolutePositioned: true });
+            break;
+
+        case 'star':
+            clip = new fabric.Polygon([
+                {x:0, y:-1}, {x:0.2, y:-0.3}, {x:0.95, y:-0.3},
+                {x:0.35, y:0.1}, {x:0.6, y:1}, {x:0, y:0.4},
+                {x:-0.6, y:1}, {x:-0.35, y:0.1}, {x:-0.95, y:-0.3}, {x:-0.2, y:-0.3}
+            ].map(p => ({
+                x: centerX + p.x * size/2,
+                y: centerY + p.y * size/2
+            })), { absolutePositioned: true });
+            break;
+
+        case 'trapezoid':
+            clip = new fabric.Polygon([
+                {x:-0.6, y:-1}, {x:0.6, y:-1}, {x:1, y:1}, {x:-1, y:1}
+            ].map(p => ({
+                x: centerX + p.x * maxW/2,
+                y: centerY + p.y * maxH/2
+            })), { absolutePositioned: true });
+            break;
+
+        case 'diamond':
+            clip = new fabric.Polygon([
+                {x:0, y:-1}, {x:1, y:0}, {x:0, y:1}, {x:-1, y:0}
+            ].map(p => ({
+                x: centerX + p.x * size/2,
+                y: centerY + p.y * size/2
+            })), { absolutePositioned: true });
+            break;
+    }
+
+
+        if (clip) {
+            canvas.clipPath = clip; 
+            canvas.renderAll();
+        }
+    }
+
+    // Shape buttons
+    document.querySelectorAll('.shape-option').forEach(button => {
+        button.addEventListener('click', () => {
+            const shape = button.getAttribute('data-shape');
+            changeCanvasShape(shape);
+        });
+    });
+
 
     // Image upload input
     const uploadInput = document.querySelector('#upload-file');
@@ -208,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawBtn.addEventListener('click', () => {
         // Switch between draw and not drawing mode
         canvas.isDrawingMode = !canvas.isDrawingMode;
-        drawBtn.textContent = canvas.isDrawingMode ? "Disable Draw Mode" : "Enable Draw Mode";
+        // drawBtn.textContent = canvas.isDrawingMode ? "Disable Draw Mode" : "Enable Draw Mode";
 
         if (canvas.isDrawingMode) {
             ensureBrush();
