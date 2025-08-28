@@ -1209,17 +1209,16 @@ html {
 
 /* === WORKSHOP PAGE STYLING === */
 /* Workshop Page - Hero Section */
-.workshop-hero h1 {
-  width: 80%;
+.workshop-hero{
+  color: #875DA6 !important;
 }
 
-.workshop-hero p {
-  width: 80%; 
-  color: #875DA6;
+.workshop-hero-img{
+  width: 600px;
 }
 
-.workshop-hero-img {
-  opacity: 95%;
+.workshop-hero-img:hover{
+  cursor: pointer;
 }
 
 /* Workshop Page - Workshop Section */
