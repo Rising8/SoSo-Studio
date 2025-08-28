@@ -449,3 +449,31 @@ function gallery_images_instructions_content($post) {
 HTML;
     echo $content;
 }
+
+// Add instructions to Rug Categories CPT
+function rug_category_instructions_meta_box() {
+    add_meta_box(
+        'rug_category_instructions',        // ID
+        'Rug Category Instructions',        // Title
+        'rug_category_instructions_content', // Callback function
+        'rug_category',                     // CPT
+        'side',                             // Context (side column)
+        'high'                              // Priority
+    );
+}
+add_action('add_meta_boxes', 'rug_category_instructions_meta_box');
+
+// Content of the instructions box
+function rug_category_instructions_content($post) {
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Give each rug category a descriptive title (e.g., "Flatweave Rugs", "Shag Rugs").</li>
+    <li>Use the editor to add any description or notes about this category.</li>
+    <li>Upload a featured image to visually represent the category.</li>
+    <li>Reorder categories using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
+</ul>
+<p>Tip: Keep category titles consistent for easier management and filtering.</p>
+HTML;
+    echo $content;
+}
