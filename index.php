@@ -26,17 +26,7 @@ get_header(); ?>
             </a>
         </div>
         <!-- Index Page - Hero Images -->
-        <div class="hero-img-section text-center py-5">
-            <div class="d-flex flex-wrap justify-content-center index-hero-layout align-items-center pt-3 pb-5">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-1.png" class="hero-img hero-img-small rounded-5" alt="Image description">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-2.png" class="hero-img hero-img-medium rounded-5" alt="Image description">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-3.png" class="hero-img hero-img-big rounded-5" alt="Image description">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-4.png" class="hero-img hero-img-medium rounded-5" alt="Image description">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-img-5.png" class="hero-img hero-img-small rounded-5" alt="Image description">
-            </div>
-            <!-- background image -->
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/hero-background.png" alt="Background" class="hero-background img-fluid">
-        </div>
+        <?php echo do_shortcode('[hero_images]'); ?>
     </div>
 
     <!-- Index Page - Showcases Section -->

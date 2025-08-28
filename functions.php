@@ -162,3 +162,101 @@ function register_rug_category() {
     ));
 }
 add_action('init', 'register_rug_category');
+
+// Register custom post type for Index Hero images
+function register_index_hero_images() {
+    $labels = array(
+        'name' => __('Hero Images'),
+        'singular_name' => __('Hero Image'),
+        'add_new' => __('Add New Hero Image'),
+        'add_new_item' => __('Add New Hero Image'),
+        'edit_item' => __('Edit Hero Image'),
+        'new_item' => __('New Hero Image'),
+        'view_item' => __('View Hero Image'),
+        'all_items' => __('All Hero Images'),
+        'search_items' => __('Search Hero Images'),
+        'not_found' => __('No Hero Images found.'),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => false,
+        'supports' => array('title', 'thumbnail'),
+        'menu_position' => 20,
+        'show_in_rest' => true,
+    );
+
+    register_post_type('hero_image', $args);
+}
+add_action('init', 'register_index_hero_images');
+
+// Enables drag and drop ordering for index hero images through the Post Types Order plugin 
+add_filter('pto_post_types', function($post_types) {
+    $post_types[] = 'hero_image';
+    return $post_types;
+});
+
+// Render the images in the index hero section 
+function render_index_hero_images() {
+    $args = array(
+        'post_type' => 'hero_image',
+        'posts_per_page' => 5, // Max 5 images displayed
+        'orderby' => 'menu_order', // Drag-and-drop ordering
+        'order' => 'ASC',
+    );
+
+    $hero_query = new WP_Query($args);
+
+    if ($hero_query->have_posts()) {
+        echo '<div class="hero-img-section text-center py-5">';
+        echo '<div class="d-flex flex-wrap justify-content-center index-hero-layout align-items-center pt-3 pb-5">';
+        
+        while ($hero_query->have_posts()) {
+            $hero_query->the_post();
+            $size = get_field('image_size'); // ACF: Small/Medium/Big
+            $size_class = 'hero-img-' . strtolower($size);
+            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            $alt = get_the_title();
+
+            // Output each hero image with the appropriate size class
+            echo '<img src="' . esc_url($image_url) . '" class="hero-img ' . esc_attr($size_class) . ' rounded-5" alt="' . esc_attr($alt) . '">';
+        }
+
+        echo '</div>';
+        echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/landing-page/hero-background.png" alt="Background" class="hero-background img-fluid">';
+        echo '</div>';
+        wp_reset_postdata();
+    }
+}
+// Adds a shortcode to display Hero Images in index.php 
+add_shortcode('hero_images', 'render_index_hero_images');
+
+// Add instructions to Index Hero Images CPT
+function hero_images_instructions_meta_box() {
+    add_meta_box(
+        'hero_images_instructions',        // ID
+        'Hero Images Instructions',        // Title
+        'hero_images_instructions_content', // Callback function
+        'hero_image',                       // CPT
+        'side',                             // Context (side column)
+        'high'                              // Priority
+    );
+}
+add_action('add_meta_boxes', 'hero_images_instructions_meta_box');
+
+// Content of the instructions box
+function hero_images_instructions_content($post) {
+    $content = <<<HTML
+<p><strong>Instructions:</strong></p>
+<ul style="padding-left: 18px;">
+    <li>Upload up to <strong>5 images</strong>.</li>
+    <li>Order them using drag-and-drop (Post Types Order plugin).</li>
+    <li>Each image should have a featured image set.</li>
+    <li>Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.</li>
+    <li>The first image will appear on the far left, followed by the next in order.</li>
+</ul>
+<p>Tip: Keep images consistent in style for the best visual layout.</p>
+HTML;
+    echo $content;
+}
