@@ -1,7 +1,6 @@
 <?php
 
-function sosostudio_enqueue_styles() 
-{
+function sosostudio_enqueue_styles() {
     // Main stylesheet of the theme
     wp_enqueue_style('sosostudio-style', get_stylesheet_uri());
 
@@ -69,17 +68,20 @@ function sosostudio_enqueue_styles()
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 
 // Favicon function (we can change this later)
-function add_favicon() 
-{
+function add_favicon() {
     echo '<link rel="shortcut icon" type="image/x-icon" href="'.get_template_directory_uri().'/favicon.jpg" />';
 }
 add_action('wp_head', 'add_favicon');
+
+// Enable featured images + image size for gallery thumbs
+add_theme_support('post-thumbnails');
+add_image_size('rug-thumb', 500, 500, true);
 
 // Register custom post type for Showcases
 function register_showcase_post_type() {
     register_post_type('showcase', [
         'labels' => [
-            'name' => 'Showcases',
+            'name' => 'Index Showcases',
             'singular_name' => 'Showcase',
             'add_new_item' => 'Add New Showcase',
             'edit_item' => 'Edit Showcase',
@@ -95,35 +97,6 @@ function register_showcase_post_type() {
     ]);
 }
 add_action('init', 'register_showcase_post_type');
-
-// Add instructions to Showcases CPT
-function showcase_instructions_meta_box() {
-    add_meta_box(
-        'showcase_instructions',           // ID
-        'Showcase Instructions',           // Title
-        'showcase_instructions_content',   // Callback function
-        'showcase',                        // CPT
-        'side',                            // Context (side column)
-        'high'                             // Priority
-    );
-}
-add_action('add_meta_boxes', 'showcase_instructions_meta_box');
-
-// Content of the instructions box
-function showcase_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Give each showcase rug a descriptive title (e.g., "Mushroom Party").</li>
-    <li>Use the editor to add a description about the individual rug.</li>
-    <li>Upload a featured image to represent the showcase visually.</li>
-    <li>Use custom fields to add additional data like size and material.</li>
-    <li>Reorder showcases using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
-</ul>
-<p>Tip: Keep titles consistent for easier filtering and display on the front end.</p>
-HTML;
-    echo $content;
-}
 
 // Register custom post type for Rugs
 function register_rug_post_type() {
@@ -160,73 +133,6 @@ function register_rug_type_taxonomy() {
 }
 add_action('init', 'register_rug_type_taxonomy');
 
-// Add instructions to Rugs CPT
-function rug_instructions_meta_box() {
-    add_meta_box(
-        'rug_instructions',                // ID
-        'Rug Instructions',                // Title
-        'rug_instructions_content',        // Callback function
-        'rug',                             // CPT
-        'side',                            // Context (side column)
-        'high'                             // Priority
-    );
-}
-add_action('add_meta_boxes', 'rug_instructions_meta_box');
-
-// Content of the instructions box
-function rug_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Upload a featured image for each rug.</li>
-    <li>Use the fields below to add rug details (size, material, etc.).</li>
-    <li>You can categorize rugs using the <strong>Rug Types</strong> taxonomy.</li>
-    <li>Reorder rugs using drag-and-drop (Post Types Order plugin) in the reorder tab.</li>
-</ul>
-<p>Tip: Keep rug titles descriptive (e.g. “Sunflower Rug”) for easier searching.</p>
-HTML;
-    echo $content;
-}
-
-// Add instructions to the Rug Types taxonomy add page
-function rug_type_add_page_instructions($taxonomy) {
-    $content = <<<HTML
-<div class="notice notice-info inline" style="margin: 10px 0; padding: 10px;">
-    <p><strong>Instructions for Rug Types:</strong></p>
-    <ul style="padding-left:18px; margin:0;">
-        <li>Use descriptive names for rug types (e.g., "Flatweave", "Shag", "Tufted").</li>
-        <li>You can assign multiple rugs to the same type.</li>
-        <li>Reorder rugs within each type using the Post Types Order plugin.</li>
-    </ul>
-</div>
-HTML;
-    echo $content;
-}
-add_action('rug_type_add_form_fields', 'rug_type_add_page_instructions');
-
-// Add instructions to the Rug Types taxonomy edit page
-function rug_type_edit_page_instructions($term, $taxonomy) {
-    $content = <<<HTML
-<tr class="form-field">
-    <th scope="row"><label>Instructions</label></th>
-    <td>
-        <p><strong>Tips for editing Rug Types:</strong></p>
-        <ul style="padding-left:18px;">
-            <li>Keep the name short and descriptive.</li>
-            <li>The slug is used in the URL (keep it simple and lowercase).</li>
-            <li>You can safely reorder rugs in this type using drag-and-drop.</li>
-        </ul>
-    </td>
-</tr>
-HTML;
-    echo $content;
-}
-add_action('rug_type_edit_form_fields', 'rug_type_edit_page_instructions', 10, 2);
-
-// Enable featured images + size for gallery thumbs
-add_theme_support('post-thumbnails');
-add_image_size('rug-thumb', 500, 500, true);
-
 // Function to register a workshop
 function register_workshop_post_type() {
     register_post_type('workshop', [
@@ -238,36 +144,6 @@ function register_workshop_post_type() {
     ]);
 }
 add_action('init', 'register_workshop_post_type');
-
-// Add instructions to Workshops CPT
-function workshop_instructions_meta_box() {
-    add_meta_box(
-        'workshop_instructions',          // ID
-        'Workshop Instructions',          // Title
-        'workshop_instructions_content',  // Callback function
-        'workshop',                       // CPT
-        'side',                            // Context (side column)
-        'high'                             // Priority
-    );
-}
-add_action('add_meta_boxes', 'workshop_instructions_meta_box');
-
-// Content of the instructions box
-function workshop_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Give each workshop a clear and descriptive title (e.g., "Intro to Rug Weaving").</li>
-    <li>Use the editor to add a small description about the workshop.</li>
-    <li>Upload a featured image to visually represent the workshop.</li>
-    <li>Use custom fields to add additional data like duration, location and price.</li>
-    <li>Ensure you link your ClassBento workshop URL to the "Booking URL" custom field.</li>
-    <li>Reorder workshops using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
-</ul>
-<p>Tip: Keep titles and summaries concise for easier display on the front end.</p>
-HTML;
-    echo $content;
-}
 
 // Register custom post type for Rug Categories
 function register_rug_category() {
@@ -287,7 +163,7 @@ add_action('init', 'register_rug_category');
 // Register custom post type for Index Hero images
 function register_index_hero_images() {
     $labels = array(
-        'name' => __('Hero Images'),
+        'name' => __('Index Hero Images'),
         'singular_name' => __('Hero Image'),
         'add_new' => __('Add New Hero Image'),
         'add_new_item' => __('Add New Hero Image'),
@@ -311,12 +187,6 @@ function register_index_hero_images() {
     register_post_type('hero_image', $args);
 }
 add_action('init', 'register_index_hero_images');
-
-// Enables drag and drop ordering for index hero images through the Post Types Order plugin 
-add_filter('pto_post_types', function($post_types) {
-    $post_types[] = 'hero_image';
-    return $post_types;
-});
 
 // Render the images in the index hero section 
 function render_index_hero_images() {
@@ -353,39 +223,10 @@ function render_index_hero_images() {
 // Adds a shortcode to display Hero Images in index.php 
 add_shortcode('hero_images', 'render_index_hero_images');
 
-// Add instructions to Index Hero Images CPT
-function hero_images_instructions_meta_box() {
-    add_meta_box(
-        'hero_images_instructions',        // ID
-        'Hero Images Instructions',        // Title
-        'hero_images_instructions_content', // Callback function
-        'hero_image',                       // CPT
-        'side',                             // Context (side column)
-        'high'                              // Priority
-    );
-}
-add_action('add_meta_boxes', 'hero_images_instructions_meta_box');
-
-// Content of the instructions box
-function hero_images_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Upload up to <strong>5 images</strong>.</li>
-    <li>Order them using drag-and-drop (Post Types Order plugin).</li>
-    <li>Each image should have a featured image set.</li>
-    <li>Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.</li>
-    <li>The first image will appear on the far left, followed by the next in order.</li>
-</ul>
-<p>Tip: Keep images consistent in style for the best visual layout.</p>
-HTML;
-    echo $content;
-}
-
 // Register custom post type for Gallery Images
 function register_gallery_images() {
     $labels = array(
-        'name' => __('Gallery Images'),
+        'name' => __('Gallery Hero Images'),
         'singular_name' => __('Gallery Image'),
         'add_new' => __('Add New Gallery Image'),
         'add_new_item' => __('Add New Gallery Image'),
@@ -409,12 +250,6 @@ function register_gallery_images() {
     register_post_type('gallery_image', $args);
 }
 add_action('init', 'register_gallery_images');
-
-// Enable drag-and-drop ordering (with Post Types Order plugin)
-add_filter('pto_post_types', function($post_types) {
-    $post_types[] = 'gallery_image';
-    return $post_types;
-});
 
 // Render the images in the gallery hero section 
 function render_gallery_images() {
@@ -479,60 +314,132 @@ function render_gallery_images() {
 }
 add_shortcode('gallery_images', 'render_gallery_images');
 
-// Add instructions to Gallery Images CPT
-function gallery_images_instructions_meta_box() {
+// Add instructions meta box to any CPT
+function add_cpt_instructions_meta_box($cpt_slug, $title, $instructions = [], $tip = '') {
     add_meta_box(
-        'gallery_images_instructions',         // ID
-        'Gallery Images Instructions',         // Title
-        'gallery_images_instructions_content', // Callback function
-        'gallery_image',                        // CPT
-        'side',                                 // Context (side column)
-        'high'                                  // Priority
+        "{$cpt_slug}_instructions",
+        $title,
+        function() use ($instructions, $tip) {
+            echo '<p><strong>Instructions:</strong></p>';
+            echo '<ul style="padding-left: 18px;">';
+            foreach ($instructions as $instruction) {
+                echo "<li>{$instruction}</li>";
+            }
+            echo '</ul>';
+            if ($tip) {
+                echo "<p><em>Tip:</em> {$tip}</p>";
+            }
+        },
+        $cpt_slug,
+        'side',
+        'high'
     );
 }
-add_action('add_meta_boxes', 'gallery_images_instructions_meta_box');
 
-// Content of the instructions box
-function gallery_images_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Upload 7 images.</li>
-    <li>Order them using drag-and-drop (Post Types Order plugin).</li>
-    <li><strong>Row 1 → images 1 & 2</strong></li>
-    <li><strong>Row 2 → image 3</strong></li>
-    <li><strong>Row 3 → images 4 & 5</strong></li>
-    <li><strong>Row 4 → images 6 & 7</strong></li>
-</ul>
-<p>Make sure all slots are filled for proper layout.</p>
-HTML;
-    echo $content;
+// Register all CPT instructions at once
+function register_cpt_instructions() {
+    // Hero Images
+    add_cpt_instructions_meta_box('hero_image', 'Hero Images Instructions', [
+        'Upload <strong>5 images</strong>.',
+        'Order them using drag-and-drop (Post Types Order plugin).',
+        'Each image should have a featured image set.',
+        'Use the <strong>Image Size</strong> field (Small/Medium/Big) to control layout.',
+        'The first image will appear on the far left, followed by the next in order.',
+    ], 'Keep images consistent in style for the best visual layout.');
+
+    // Gallery Images
+    add_cpt_instructions_meta_box('gallery_image', 'Gallery Images Instructions', [
+        'Upload 7 images.',
+        'Order them using drag-and-drop (Post Types Order plugin).',
+        '<strong>Row 1 → images 1 & 2</strong>',
+        '<strong>Row 2 → image 3</strong>',
+        '<strong>Row 3 → images 4 & 5</strong>',
+        '<strong>Row 4 → images 6 & 7</strong>',
+    ], 'Make sure all slots are filled for proper layout.');
+
+    // Showcases
+    add_cpt_instructions_meta_box('showcase', 'Rug Showcases Instructions', [
+        'Give each showcase rug a descriptive title (e.g., "Mushroom Party").',
+        'Use the editor to add a description about the individual rug.',
+        'Upload a featured image to represent the showcase visually.',
+        'Use custom fields to add additional data like size and material.',
+        'Reorder showcases using drag-and-drop (Post Types Order plugin) on the reorder tab.',
+    ], 'Keep titles consistent for easier filtering and display on the front end.');
+
+    // Rugs
+    add_cpt_instructions_meta_box('rug', 'Rug Instructions', [
+        'Upload a featured image for each rug.',
+        'Use the fields below to add rug details (size, material, etc.).',
+        'You can categorize rugs using the <strong>Rug Types</strong> taxonomy.',
+        'Reorder rugs using drag-and-drop (Post Types Order plugin) in the reorder tab.',
+    ], 'Keep rug titles descriptive (e.g. “Sunflower Rug”) for easier searching.');
+
+    // Rug Categories
+    add_cpt_instructions_meta_box('rug_category', 'Rug Categories Instructions', [
+        'Give each rug category a descriptive title (e.g., "Flatweave Rugs", "Shag Rugs").',
+        'Use the editor to add any description or notes about this category.',
+        'Upload a featured image to visually represent the category.',
+        'Reorder categories using drag-and-drop (Post Types Order plugin) on the reorder tab.',
+    ], 'Keep category titles consistent for easier management and filtering.');
+
+    // Workshops
+    add_cpt_instructions_meta_box('workshop', 'Workshop Instructions', [
+        'Give each workshop a clear and descriptive title (e.g., "Intro to Rug Weaving").',
+        'Use the editor to add a small description about the workshop.',
+        'Upload a featured image to visually represent the workshop.',
+        'Use custom fields to add additional data like duration, location and price.',
+        'Ensure you link your ClassBento workshop URL to the "Booking URL" custom field.',
+        'Reorder workshops using drag-and-drop (Post Types Order plugin) on the reorder tab.',
+    ], 'Keep titles and summaries concise for easier display on the front end.');
+}
+add_action('add_meta_boxes', 'register_cpt_instructions');
+
+// Add instructions to a taxonomy term form (add/edit) 
+ function add_taxonomy_instructions($taxonomy_slug, $add_instructions = [], $edit_instructions = []) {
+
+    // Add form
+    if ($add_instructions) {
+        add_action("{$taxonomy_slug}_add_form_fields", function() use ($add_instructions) {
+            echo '<div class="notice notice-info inline" style="margin:10px 0;padding:10px;">';
+            echo '<ul style="padding-left:18px;margin:0;">';
+            foreach ($add_instructions as $item) {
+                echo "<li>{$item}</li>";
+            }
+            echo '</ul>';
+            echo '</div>';
+        });
+    }
+
+    // Edit form
+    if ($edit_instructions) {
+        add_action("{$taxonomy_slug}_edit_form_fields", function($term) use ($edit_instructions) {
+            echo '<tr class="form-field">';
+            echo '<th scope="row"><label>Instructions</label></th>';
+            echo '<td>';
+            echo '<ul style="padding-left:18px;margin:0;">';
+            foreach ($edit_instructions as $item) {
+                echo "<li>{$item}</li>";
+            }
+            echo '</ul>';
+            echo '</td></tr>';
+        }, 10, 2);
+    }
 }
 
-// Add instructions to Rug Categories CPT
-function rug_category_instructions_meta_box() {
-    add_meta_box(
-        'rug_category_instructions',        // ID
-        'Rug Category Instructions',        // Title
-        'rug_category_instructions_content', // Callback function
-        'rug_category',                     // CPT
-        'side',                             // Context (side column)
-        'high'                              // Priority
+// Register Rug Types instructions
+function register_rug_type_instructions() {
+    add_taxonomy_instructions(
+        'rug_type',
+        [ // Add form instructions
+            'Use descriptive names for rug types (e.g., "Flatweave", "Shag", "Tufted").',
+            'You can assign multiple rugs to the same type.',
+            'Reorder rugs within each type using the Post Types Order plugin.'
+        ],
+        [ // Edit form instructions
+            'Keep the name short and descriptive.',
+            'The slug is used in the URL (keep it simple and lowercase).',
+            'You can safely reorder rugs in this type using drag-and-drop.'
+        ]
     );
 }
-add_action('add_meta_boxes', 'rug_category_instructions_meta_box');
-
-// Content of the instructions box
-function rug_category_instructions_content($post) {
-    $content = <<<HTML
-<p><strong>Instructions:</strong></p>
-<ul style="padding-left: 18px;">
-    <li>Give each rug category a descriptive title (e.g., "Flatweave Rugs", "Shag Rugs").</li>
-    <li>Use the editor to add any description or notes about this category.</li>
-    <li>Upload a featured image to visually represent the category.</li>
-    <li>Reorder categories using drag-and-drop (Post Types Order plugin) on the reorder tab.</li>
-</ul>
-<p>Tip: Keep category titles consistent for easier management and filtering.</p>
-HTML;
-    echo $content;
-}
+add_action('admin_init', 'register_rug_type_instructions');
