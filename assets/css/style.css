@@ -376,6 +376,79 @@ html {
 }
 
 
+/* Add */
+
+/* === Parallax hero (single background image) === */
+.index-parallax{
+  position: relative;
+  min-height: 68vh;                 /* Height is about 60–70% of the viewport */
+  background-size: cover;           /* Display only one image covering the area */
+  background-position: center center;
+  background-repeat: no-repeat;     /* Prevent image repetition */
+  background-attachment: fixed;     /* Simple parallax effect */
+  isolation: isolate;               /* For overlay layering control */
+}
+
+/* Slight dark overlay (improves text readability) */
+.index-parallax::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,.35) 0%,
+    rgba(0,0,0,.30) 40%,
+    rgba(0,0,0,.35) 100%);
+  z-index:0;
+}
+
+/* Centered layout */
+.parallax-inner{
+  position:relative; z-index:1;
+  display:grid; place-items:center;
+  min-height:inherit;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+/* Glass-style card (slightly transparent so the background is visible) */
+.parallax-card{
+  max-width: 820px;
+  width: min(92vw, 820px);
+  padding: clamp(20px, 3.5vw, 36px);
+  border-radius: 18px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+.parallax-title{
+  font-size: clamp(28px, 4.2vw, 44px);
+  line-height: 1.15;
+  margin: 0 0 .5rem;
+  text-shadow: 0 1px 12px rgba(0,0,0,.35);
+}
+
+.parallax-lead{
+  font-size: clamp(15px, 1.2vw + 12px, 20px);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  color: rgba(255,255,255,.92);
+}
+
+/* Button styling: white outline for better visibility */
+.index-parallax .btn-outline-light{
+  border-width: 2px;
+  background: rgba(255,255,255,.08);
+}
+.index-parallax .btn-outline-light:hover{
+  background: rgba(255,255,255,.22);
+  color:#fff;
+  transform: translateY(-1px);
+}
+
+
+
 /* === ABOUT PAGE STYLING === */
 /* About Page - What We Offer Section  */
 .about-content-3 {
@@ -719,56 +792,127 @@ html {
 
 
 /* === CUSTOM PAGE STYLING === */
-/* === CUSTOM PAGE (Bootstrap 前提) === */
+
 :root{
-  --shape-icon: 64px;     /* 形アイコンの大きさ */
-  --shape-min-h: 140px;   /* 形カードの高さ */
+  --shape-icon: 64px;     /* Size of the shape icon */
+  --shape-min-h: 140px;   /* Height of the shape card */
 }
 
-/* 共通UI */
-.hero-box{background:#f3f0fa;border:1px solid #dcd3ff;border-radius:16px;padding:28px 24px;text-align:center;margin-bottom:28px}
-.step-card{background:#fff;border:1px solid #e3e3ea;border-radius:16px;padding:22px;margin-bottom:22px}
-.step-title{font-weight:700;margin-bottom:6px;font-size:18px}
-.upload-drop{border:2px dashed #d0cde7;border-radius:16px;padding:40px;text-align:center;background:#faf9ff}
+/* Common UI */
+.hero-box{
+  background:#f3f0fa;
+  border:1px solid #dcd3ff;
+  border-radius:16px;
+  padding:28px 24px;
+  text-align:center;
+  margin-bottom:28px
+}
+.step-card{
+  background:#fff;
+  border:1px solid #e3e3ea;
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:22px
+}
+.step-title{
+  font-weight:700;
+  margin-bottom:6px;
+  font-size:18px
+}
+.upload-drop{
+  border:2px dashed #d0cde7;
+  border-radius:16px;
+  padding:40px;
+  text-align:center;
+  background:#faf9ff
+}
 .upload-drop.dragover{background:#f1eeff}
-.preview-box{border:1px solid #e1e1ea;border-radius:12px;overflow:hidden;display:none}
-.preview-box img{width:100%;display:block}
-.note-small{color:#6b6b75;font-size:.9rem}
-.btn-cta{border-radius:999px;font-weight:700}
+.preview-box{
+  border:1px solid #e1e1ea;
+  border-radius:12px;
+  overflow:hidden;
+  display:none
+}
+.preview-box img{
+  width:100%;
+  display:block
+}
+.note-small{
+  color:#6b6b75;
+  font-size:.9rem
+}
+.btn-cta{
+  border-radius:999px;
+  font-weight:700
+}
 
-/* 感情ボタン */
-.feel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.feel-btn{height:72px;border:1px solid #ddd;border-radius:12px;background:#f6f6f9;font-weight:700;letter-spacing:.5px;cursor:pointer}
-.feel-btn.active{outline:3px solid #b7a7ff}
+/* Feeling buttons */
+.feel-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px
+}
+.feel-btn{
+  height:72px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  background:#f6f6f9;
+  font-weight:700;
+  letter-spacing:.5px;
+  cursor:pointer
+}
+.feel-btn.active{
+  outline:3px solid #b7a7ff
+}
 
-/* 形セレクタ（Tabler Webfont） */
-.shape-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.shape-radio{position:absolute;opacity:0;pointer-events:none}
+/* Shape selector (Tabler Webfont) */
+.shape-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px
+}
+.shape-radio{
+  position:absolute;
+  opacity:0;
+  pointer-events:none
+}
 .shape-item{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-  padding:22px 12px;min-height:var(--shape-min-h);
-  border:1px solid #e6e3f3;border-radius:14px;background:#f8f7fb;color:#57576a;
-  cursor:pointer;text-align:center;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-}
-.shape-item i{font-size:var(--shape-icon);line-height:1}
-.shape-label{font-size:14px}
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:22px 12px;
+  min-height:var(--shape-min-h);
+  border:1px solid #e6e3f3;
+  border-radius:14px;
+  background:#f8f7fb;
+  color:#57576a;
+  cursor:pointer;
+  text-align:center;
 
-.shape-item:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.shape-radio:focus + .shape-item{box-shadow:0 0 0 3px rgba(107,87,255,.18)}
+}
+.shape-item i{
+  font-size:var(--shape-icon);
+  line-height:1
+}
+.shape-label{
+  font-size:14px
+}
+
+.shape-item:hover{
+  transform:translateY(-1px);
+  box-shadow:0 2px 8px rgba(0,0,0,.06)
+}
+.shape-radio:focus + .shape-item{
+  box-shadow:0 0 0 3px rgba(107,87,255,.18)
+}
 .shape-radio:checked + .shape-item{
-  outline:3px solid #b7a7ff;border-color:#b7a7ff;background:#fff;color:#6b57ff
+  outline:3px solid #b7a7ff;
+  border-color:#b7a7ff;
+  background:#fff;
+  color:#6b57ff
 }
-
-/* レスポンシブ */
-@media (max-width:576px){
-  :root{--shape-icon:56px;--shape-min-h:128px}
-  .shape-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (min-width:1280px){
-  :root{--shape-icon:72px;--shape-min-h:150px}
-}
-
 
 
 /* === GALLERY PAGE STYLING === */

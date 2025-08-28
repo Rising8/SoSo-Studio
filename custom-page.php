@@ -17,7 +17,7 @@ get_header();
     <div class="commission-content-1">
         <section class="commission-hero py-5 text-center">
             <div class="container">
-                <h1 class="landing-heading display-5 text-body-emphasis text-center d-block mx-auto">Request with Image</h1>
+                <h1 class="landing-heading display-5 text-body-emphasis text-center d-block mx-auto">Request from Your Idea</h1>
                 <p class="lead text-muted">Upload a sketch or reference, pick a shape & feeling, then submit your commission.</p>
             </div>
         </section>
@@ -31,7 +31,35 @@ get_header();
           alt="Give Us Your Inspiration"
           class="img-fluid w-100 rounded-4 shadow-sm">
     </div>
-
+    <!-- Commission Page - How It Works Section -->
+    <div class="commission-content-2">
+        <section class="hiw-section pb-5 bg-white">
+            <div class="container">
+                <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">How It Works</h2>
+                <div class="row g-4">
+                    <?php
+                    $steps = [
+                        ['Design', 'Click below to use our design partner tool or skip this step.', 'https://www.customink.com/ndx/#/welcomeBack', 'Open Design Tool'],
+                        ['Fill Out The Form', 'Tell us what you envision you can upload your design or reference.', '', ''],
+                        ['Submit', 'We’ll review your request and be in touch for confirmation.', '', ''],
+                        ['Production Begins', 'After confirmation and deposit, your rug enters creation phase!', '', '']
+                    ];
+                    foreach ($steps as $index => $step) :
+                    ?>
+                        <div class="col-md-3 d-flex">
+                            <div class="hiw-step-box w-100 h-100 d-flex flex-column align-items-center text-center p-4 rounded shadow-sm">
+                                <h4 class="text-body-emphasis">Step <?= $index + 1 ?>: <?= $step[0] ?></h4>
+                                <p class="text-body-secondary"><?= $step[1] ?></p>
+                                <?php if (!empty($step[2])) : ?>
+                                    <a href="<?= $step[2] ?>" target="_blank" class="btn design-tool-btn mt-2"><?= $step[3] ?></a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    </div>
   <!-- Step 0 -->
   <div class="step-card">
     <div class="step-title">0. Sketch your idea</div>
