@@ -387,7 +387,7 @@ function register_cpt_instructions() {
         'Give each workshop a clear and descriptive title (e.g., "Intro to Rug Weaving").',
         'Use the editor to add a small description about the workshop.',
         'Upload a featured image to visually represent the workshop.',
-        'Use custom fields to add additional data like duration, location and price.',
+        'Use custom fields to add additional data like date (e.g. 12 September 2025), duration, location and price.',
         'Ensure you link your ClassBento workshop URL to the "Booking URL" custom field.',
         'Reorder workshops using drag-and-drop (Post Types Order plugin) on the reorder tab.',
     ], 'Keep titles and summaries concise for easier display on the front end.');
