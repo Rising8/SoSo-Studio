@@ -202,18 +202,26 @@ function render_index_hero_images() {
     if ($hero_query->have_posts()) {
         echo '<div class="hero-img-section text-center py-5">';
         echo '<div class="d-flex flex-wrap justify-content-center index-hero-layout align-items-center pt-3 pb-5">';
-        
+
+        // Array to define size by slot
+        $sizes_by_slot = ['small', 'medium', 'big', 'medium', 'small'];
+
+        $i = 0;
         while ($hero_query->have_posts()) {
             $hero_query->the_post();
-            $size = get_field('image_size'); // ACF: Small/Medium/Big
-            $size_class = 'hero-img-' . strtolower($size);
+
+            // Determine size based on the slot
+            $size = $sizes_by_slot[$i];
+            $size_class = 'hero-img-' . $size;
+
             $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
             $alt = get_the_title();
 
             // Output each hero image with the appropriate size class
             echo '<img src="' . esc_url($image_url) . '" class="hero-img ' . esc_attr($size_class) . ' rounded-5" alt="' . esc_attr($alt) . '">';
-        }
 
+            $i++;
+        }
         echo '</div>';
         echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/landing-page/hero-background.png" alt="Background" class="hero-background img-fluid">';
         echo '</div>';
