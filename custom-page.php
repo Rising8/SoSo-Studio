@@ -4,12 +4,9 @@
  */
 get_header(); ?>
 
-<div class="custom-wrapper pb-5 pt-2">
+<div class="custom-wrapper mt-4 pb-5 pt-2">
     <div class="px-5">
         <div class="row">
-            <h1 class="landing-heading display-5 text-body-emphasis text-center d-block mx-auto py-3">
-                <!-- Design Your Own Rug! -->
-            </h1>
             <!-- Left -->
             <div class="col-md-2">
                 <div class="d-flex justify-content-center gap-2 py-2">
@@ -20,7 +17,7 @@ get_header(); ?>
                         <i class="fa-solid fa-arrow-rotate-right"></i>
                     </button>
                 </div>
-            
+
                 <div class="d-flex flex-column gap-2 align-items-center">
                     <button class="btn-actions btn btn-outline-danger" id="delete-object">
                     <i class="fa-solid fa-trash me-1"></i>
@@ -42,7 +39,6 @@ get_header(); ?>
 
             <!-- Middle -->
             <div class="col-md-8">
-
                 <!-- Canvas Area -->
                 <div class="canvas-wrapper d-flex justify-content-center">
                     <canvas id="custom-canvas"></canvas>
@@ -52,7 +48,6 @@ get_header(); ?>
                 <div class="d-flex justify-content-center">
                     <!-- Tool Content -->
                     <div class="tab-content pt-3 " id="custom-tools-tabContent">
-
                         <!-- Change Canvas Shape -->
                         <div class="tab-pane fade show active" id="tool-change-shapes" role="tabpanel">
                             <div class="d-flex flex-wrap gap-2">
@@ -70,7 +65,6 @@ get_header(); ?>
 
                         <!-- Upload -->
                         <div class="tab-pane fade" id="tool-upload" role="tabpanel">
-                            <!-- <p>Drag & drop or upload images here</p> -->
                             <input type="file" id="upload-file" multiple class="form-control">
                         </div>
 
@@ -89,19 +83,6 @@ get_header(); ?>
                                     <input type="color" class="form-control form-control-color">
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Add Shapes -->
-                        <div class="tab-pane fade" id="tool-shapes" role="tabpanel">
-                            <p>Add a shape</p>
-                            <!-- Shape Color Picker -->
-                            <div class="mb-2">
-                                <label for="shape-color">Shape Color</label>
-                                <input type="color" id="shape-color" class="form-control form-control-color mb-2" value="#4b0082">
-                            </div>
-                            <button class="shape-btn btn btn-outline-primary mb-2" id="add-rect">Rectangle</button>
-                            <button class="shape-btn btn btn-outline-primary mb-2" id="add-circle">Circle</button>
-                            <button class="shape-btn btn btn-outline-primary mb-2" id="add-triangle">Triangle</button>                        
                         </div>
 
                        <!-- Draw -->
@@ -127,22 +108,10 @@ get_header(); ?>
                             </div>
                         </div>
 
-
-                        <!-- Colors -->
+                        <!-- Background -->
                         <div class="tab-pane fade" id="tool-color" role="tabpanel">
-                            <!-- <p>Change background color</p> -->
                             <input type="color" class="form-control form-control-color mb-2" value="#f9f4fc">
-                        </div>
-                        
-                        <!-- AI Search -->
-                        <div class="tab-pane fade" id="tool-ai" role="tabpanel">
-                            <p>Search for designs via AI</p>
-                            <input type="text" placeholder="Enter prompt..." class="form-control mb-2">
-                            <button class="btn btn-outline-secondary mb-2">Search</button>
-                            <div class="mt-2 d-flex flex-wrap">
-                                <img src="#" alt="AI result" class="img-thumbnail m-1" style="width:80px; height:80px;">
-                            </div>
-                        </div>
+                        </div>      
                     </div>  
                 </div>
             </div>
@@ -157,7 +126,7 @@ get_header(); ?>
 
                 <!-- Collapsible Tips -->
                 <div class="collapse mt-2" id="rugTips">
-                    <div class="alert custom-tug-tips">
+                    <div class="alert custom-rug-tips">
                         <ul class="mb-0 small">
                             <li>Design your rug using the tools.</li>
                             <li>When you’re happy with it, click <strong>Download</strong> to save your design.</li>
@@ -170,6 +139,11 @@ get_header(); ?>
         
         <!-- Toolbox / Navigation -->
         <div class="col-12 custom-toolbox">
+            <!-- Canvas Size Display -->
+            <div class="edit-shape-size col-12 mt-2 px-2">
+                <label for="shape-size" class="form-label small mb-1">Canvas Size</label>
+                <input type="range" id="shape-size" min="10" max="100" value="90" class="form-range" style="height: 6px;">
+            </div>
             <div class="nav nav-pills d-flex justify-content-center flex-wrap gap-3" id="custom-tools-tab" role="tablist">
                 <button class="nav-link active" id="tab-change-shapes" data-bs-toggle="pill" data-bs-target="#tool-change-shapes" type="button" role="tab">
                     <i class="fa-solid fa-shapes me-2"></i>Change Canvas Shape
@@ -187,13 +161,13 @@ get_header(); ?>
                     <i class="fa-solid fa-palette me-2"></i>Background
                 </button>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 
 <!-- Script to link to commission page (used for custom-page.js) -->
 <script>
-  const commissionPageURL = "<?php echo home_url('/commission'); ?>";
+    const commissionPageURL = "<?php echo home_url('/commission'); ?>";
 </script>
 
 <?php get_footer(); ?>
