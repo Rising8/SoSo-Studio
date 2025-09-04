@@ -45,7 +45,7 @@ get_header(); ?>
                 </div>
 
                 <!-- Preview / Canvas -->
-                <div class="d-flex justify-content-center">
+                <div class="custom-design d-flex justify-content-center">
                     <!-- Tool Content -->
                     <div class="tab-content pt-3 " id="custom-tools-tabContent">
                         <!-- Change Canvas Shape -->

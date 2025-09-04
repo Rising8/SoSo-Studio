@@ -1098,7 +1098,7 @@ html {
 }
 
 /* Custom Page - Tool Content */
-.tab-content .tab-pane {
+.custom-design .tab-content .tab-pane {
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(75,0,130,0.1);

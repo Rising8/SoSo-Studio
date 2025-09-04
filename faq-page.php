@@ -175,7 +175,7 @@ get_header(); ?>
         </div>
     </div>
 
-     <div class="faq-content-1">
+    <div class="faq-content-2">
         <!-- Contact Section -->
         <div class="faq-contact-section text-center pt-5">
             <h2 class="mb-3">Need More Help?</h2>
