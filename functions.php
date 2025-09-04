@@ -64,6 +64,9 @@ function sosostudio_enqueue_styles() {
 
     // Index Page Workshop Section JS
     wp_enqueue_script('index-workshop-js', get_template_directory_uri() . '/assets/js/index-workshop.js', array(), '1.0', true);
+
+    // Workshop Page JS
+    wp_enqueue_script('workshop-page-js', get_template_directory_uri() . '/assets/js/workshop-page.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'sosostudio_enqueue_styles');
 

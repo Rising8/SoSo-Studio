@@ -307,11 +307,6 @@ html {
 }
 
 /* Index Page - Showcases Section */
-.index-showcases-scroll {
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-}
-
 /* Rocking animation */
 .showcases-rock .index-showcases-border {
   display: inline-block;
@@ -332,6 +327,11 @@ html {
 }
 
 /* Scrollbar styles */
+.index-showcases-scroll {
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
 .index-showcases-scroll::-webkit-scrollbar {
   height: 10px;
 }
@@ -1233,7 +1233,27 @@ html {
   text-shadow: none;
 }
 
-/* Workshop Card */
+/* Workshop Page - Scroll styling */
+.workshop-scroll-container {
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+/* Horizontal scrollbar */
+.workshop-scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.workshop-scroll-container::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 5px;
+}
+
+.workshop-scroll-container::-webkit-scrollbar-track {
+  background: #f9f5ff;
+}
+
+/* Workshop Cards */
 .workshop-card {
   background: #fff;
   overflow: hidden;
@@ -1247,7 +1267,7 @@ html {
 }
 
 .workshop-card .card-img-top {
-  height: 260px;
+  height: 200px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -1270,32 +1290,70 @@ html {
 }
 
 .workshop-card .card-body {
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
 .workshop-card .card-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #4b2e83;
   margin-bottom: 0.5rem;
 }
 
-.workshop-card .card-text {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+.workshop-full-text {
+  max-height: 0;
+  display: none;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.workshop-full-text.show {
+  max-height: 500px;
+  opacity: 1;
+  display: block;
+}
+
+.workshop-card-text .workshop-see-more {
+  display: inline-block;
+  font-weight: 600;
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.workshop-card-text .workshop-see-more::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card-text .workshop-see-more:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .workshop-meta {
   background: #f9f5ff;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .workshop-meta li {
@@ -1315,10 +1373,10 @@ html {
 .btn-book {
   background: linear-gradient(45deg, #7c3aed, #a855f7);
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.8rem;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #fff !important;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
