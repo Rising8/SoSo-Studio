@@ -1961,24 +1961,49 @@ html {
 
 
 /* === FOOTER STYLING === */
-.footer-wrapper{
-  background-color: #875DA6;
+.footer-wrapper {
+  background-color: #6F587A;
 }
 
-.footer-font{
+.footer-font {
   color: #ffff;
 }
 
-.fa-brands{
+.fa-brands {
   color: #ffff ;
 }
 
-.footer-link{
+.footer-link {
   text-decoration: none;
+  color: white !important;
 }
 
-.footer-link:hover{
+.footer-link:hover {
   text-decoration: underline;
+}
+
+.instagram-btn {
+  width: 100px;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+  text-decoration: none; 
+}
+
+.instagram-btn i {
+  transform: translateX(0);
+  transition: transform 0.4s ease;
+  color: white;
+}
+
+.instagram-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.instagram-btn:hover i {
+  transform: translateX(50px); 
 }
 
 /* Newsletter Form - Invalid Input */
@@ -2009,6 +2034,10 @@ html {
   margin-top: 0.3rem;
   opacity: 0.95;
   transition: opacity 0.3s;
+}
+
+.newsletter-p{
+  color: white;
 }
 
 
