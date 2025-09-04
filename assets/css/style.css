@@ -1072,75 +1072,27 @@ html {
 
 
 /* === CUSTOM PAGE STYLING === */
-/* Custom Page - Toolbox Nav */
-.custom-toolbox .nav {
-  margin-top: 60px; 
-}
-
-#custom-tools-tab .nav-link {
-  background: linear-gradient(90deg, #f8ceec, #a88beb);
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-#custom-tools-tab .nav-link.active,
-#custom-tools-tab .nav-link:hover {
-  background: linear-gradient(90deg, #a88beb, #f8ceec);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(75,0,130,0.2);
-}
-
-/* Custom Page - Canvas Styling */
-.canvas-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-#custom-canvas {
-  border: 2px dashed #d9c7ec;
-  border-radius: 15px;
-  background-color: #f9f4fc;
-  min-height: 400px;
-  display: block;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-}
-
-.custom-wrapper p {
-  color: #4b0082 !important;
-}
-
-/* Custom Page - Top Buttons */
-#delete-object,
-#reset-canvas,
+/* Custom Page - Left Buttons */
 #undo-btn,
 #redo-btn,
+#delete-object,
+#reset-canvas,
 #download-design,
 #send-to-commission {
   background-color: #f9f4fc;
   color: #4b0082;
   border: 2px solid #d9c7ec;
   border-radius: 30px;
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
+  width: 70%;
   transition: all 0.3s ease;
 }
 
-#delete-object:hover,
-#reset-canvas:hover,
 #undo-btn:hover,
 #redo-btn:hover,
+#delete-object:hover,
+#reset-canvas:hover,
 #download-design:hover,
 #send-to-commission:hover {
-  background-color: #a88beb;
-  border-color: #a88beb;
-  color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 12px rgba(168, 139, 235, 0.3);
 }
@@ -1148,17 +1100,17 @@ html {
 /* Custom Page - Tool Content */
 .tab-content .tab-pane {
   padding: 1rem;
-  background-color: #fffafc;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(75,0,130,0.1);
   margin-top: 10px;
+  height: 100px;
 }
 
 /* Custom Page - Tool Content Inputs */
+.tab-content input[type="file"],
 .tab-content input[type="text"],
 .tab-content input[type="number"],
 .tab-content input[type="color"],
-.tab-content input[type="file"],
 .tab-content textarea {
   border: 1px solid #d9c7ec;
   border-radius: 8px;
@@ -1173,37 +1125,178 @@ html {
   box-shadow: 0 0 5px rgba(168,139,235,0.3);
 }
 
-/* Custom Page - Shape Buttons */
-.shape-btn {
-  background: #f9f4fc;
+/* Custom Page - Shape Canvas */
+.shape-option {
+  width: 70px;
+  height: 70px;
+  background: #d1c4e9; 
+  transition: 0.2s;
+  border: none;          
+  outline: none;         
+}
+
+.shape-option:hover {
+  background: #f4e4fe;
+  box-shadow: 0 0 5px rgba(75, 0, 130, 0.6);
+}
+
+.shape-option.active {
+  background: #b39ddb;  
+}
+
+/* Rectangle */
+.shape-rectangle { 
+  clip-path: inset(0); 
+}
+
+/* Circle */
+.shape-circle { 
+  clip-path: circle(50% at 50% 50%); 
+}
+
+/* Oval */
+.shape-oval { 
+  clip-path: ellipse(45% 35% at 50% 50%); 
+}
+
+/* Triangle */
+.shape-triangle { 
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+}
+
+/* Pentagon */
+.shape-pentagon { 
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+/* Hexagon */
+.shape-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Star */
+.shape-star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2% 35%, 39% 35%);
+}
+
+/* Trapezoid */
+.shape-trapezoid { 
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* Diamond */
+.shape-diamond { 
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Custom Page - Rug Tips Button */
+.rug-tips-button {
+  background-color: #f9f4fc;
   color: #4b0082;
   border: 2px solid #d9c7ec;
-  border-radius: 12px;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  width: 100%;
-  text-align: left;
+  border-radius: 30px;
   transition: all 0.3s ease;
+  animation: pulseGlow 2s infinite;
 }
 
-.shape-btn:hover {
-  background: linear-gradient(90deg, #a88beb, #f8ceec);
-  border-color: #a88beb;
-  color: white;
+.rug-tips-button:hover {
+  background-color: #f9f4fc;
+  color: #4b0082;
+  border: 2px solid #d9c7ec;
+  border-radius: 30px;
   transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(168, 139, 235, 0.3);
+  animation: none;
 }
 
-/* Custom Page - Image Thumbnails */
-.tab-content img.img-thumbnail {
-  border-radius: 10px;
-  border: 1px solid #d9c7ec;
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(75, 0, 130, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(75, 0, 130, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(75, 0, 130, 0.4);
+  }
+}
+
+/* Stops pulsing when collapse is open */
+.rug-tips-button[aria-expanded="true"] {
+  animation: none !important;
+}
+
+/* Custom Rug Tips Dropdown */
+.custom-rug-tips {
+  background: #fff;          
+  border-radius: 15px;       
+  color: #333 !important;    
+  padding: 10px 16px;        
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Custom Page - Toolbox Nav */
+.custom-toolbox .nav {
+  margin-top: 20px; 
+}
+
+.custom-toolbox .nav-pills {
+  gap: 0 !important;
+  height: 50px;
+}
+
+.custom-toolbox .nav-link {
+  background: #fff;          
+  border-radius: 15px;       
+  color: #333 !important;    
+  padding: 10px 16px;        
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 80px;
+}
+
+#custom-tools-tab .nav-link.active,
+#custom-tools-tab .nav-link:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(75,0,130,0.2);
+} 
+
+/* Active tab */
+.custom-toolbox .nav-link.active {
   transition: all 0.3s ease;
 }
 
-.tab-content img.img-thumbnail:hover {
-  border-color: #a88beb;
-  transform: scale(1.05);
+/* Change Default Toggle Brush Color */
+#toggle-draw.form-check-input:checked {
+  background-color: #4b0082;  
+  border-color: #4b0082;
+}
+
+/* Custom Page - Edit Shape Size */
+.edit-shape-size {
+  max-width: 300px; 
+  margin: 0 auto;
+}
+
+.edit-shape-size .form-label {
+  color: #333;
+  font-size: 0.85rem;
+}
+
+.edit-shape-size .form-range::-webkit-slider-thumb {
+  background-color: #6c63ff; 
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Firefox styling */
+.edit-shape-size .form-range::-moz-range-thumb {
+  background-color: #6c63ff;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
 
