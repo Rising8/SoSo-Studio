@@ -307,11 +307,6 @@ html {
 }
 
 /* Index Page - Showcases Section */
-.index-showcases-scroll {
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-}
-
 /* Rocking animation */
 .showcases-rock .index-showcases-border {
   display: inline-block;
@@ -332,6 +327,11 @@ html {
 }
 
 /* Scrollbar styles */
+.index-showcases-scroll {
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
 .index-showcases-scroll::-webkit-scrollbar {
   height: 10px;
 }
@@ -1314,27 +1314,72 @@ html {
   cursor: pointer;
 }
 
-/* Workshop Page - Workshop Section */
-.workshop-content-2 h2 {
-  text-shadow: 0 1px 3px rgba(98, 58, 123, 0.4);
+/* Workshop Section */
+.workshop-content-2 {
+  position: relative;
+  padding: 5rem 0;
 }
 
+.workshop-content-2 h2 {
+  margin-bottom: 3rem;
+  color: #3b0764 !important; 
+  text-shadow: none;
+}
+
+/* Workshop Page - Scroll styling */
+.workshop-scroll-container {
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+/* Horizontal scrollbar */
+.workshop-scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.workshop-scroll-container::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 5px;
+}
+
+.workshop-scroll-container::-webkit-scrollbar-track {
+  background: #f9f5ff;
+}
+
+/* Workshop Cards */
 .workshop-card {
-  border-radius: 1rem;
+  background: #fff;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .workshop-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .workshop-card .card-img-top {
   height: 200px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.4s ease;
+}
+
+.workshop-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.workshop-date-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(124, 58, 237, 0.9);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .workshop-card .card-body {
@@ -1343,29 +1388,98 @@ html {
 }
 
 .workshop-card .card-title {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4b2e83;
   margin-bottom: 0.5rem;
 }
 
-.workshop-card .card-text {
-  margin-bottom: 1rem;
+.workshop-full-text {
+  max-height: 0;
+  display: none;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.workshop-full-text.show {
+  max-height: 500px;
+  opacity: 1;
+  display: block;
+}
+
+.workshop-card-text .workshop-see-more {
+  display: inline-block;
+  font-weight: 600;
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.workshop-card-text .workshop-see-more::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card-text .workshop-see-more:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.workshop-meta {
+  background: #f9f5ff;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .workshop-meta li {
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.workshop-card .btn-primary {
-  background-color: #9e7cc2;
+.workshop-meta li i {
+  margin-right: 0.5rem;
+  color: #7c3aed;
+  font-size: 1.1rem;
+}
+
+.btn-book {
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
   border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff !important;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);
+  display: inline-block;
 }
 
-.workshop-card .btn-primary:hover {
-  background-color: #7b5399;
-  box-shadow: 0 6px 15px rgba(123, 83, 153, 0.6);
+.btn-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.45);
 }
 
 
