@@ -1073,47 +1073,34 @@ html {
 
 /* === CUSTOM PAGE STYLING === */
 /* Custom Page - Toolbox Nav */
-.custom-toolbox .nav {
-  margin-top: 60px; 
+#custom-all {
+  background-color: #eac6ff;
 }
 
-#custom-tools-tab .nav-link {
-  background: linear-gradient(90deg, #f8ceec, #a88beb);
-  color: white;
-  border-radius: 10px;
+#custom-canvas-buttons {
   display: flex;
+  justify-content: center;
+}
+
+#custom-toolbox-area {
+  display: flex;
+  justify-content: end;
   align-items: center;
-  justify-content: flex-start;
-  font-weight: 600;
-  transition: all 0.3s ease;
 }
 
-#custom-tools-tab .nav-link.active,
-#custom-tools-tab .nav-link:hover {
-  background: linear-gradient(90deg, #a88beb, #f8ceec);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(75,0,130,0.2);
-}
-
-/* Custom Page - Canvas Styling */
-.canvas-wrapper {
+#custom-toolbox {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  justify-content: center;
+
+  background-color: rgba(220, 220, 220, 0.5);
+  height: 400px;
 }
 
-#custom-canvas {
-  border: 2px dashed #d9c7ec;
-  border-radius: 15px;
-  background-color: #f9f4fc;
-  min-height: 400px;
-  display: block;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-}
+#custom-toolbox i {
+  color: white;
 
-.custom-wrapper p {
-  color: #4b0082 !important;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Custom Page - Top Buttons */

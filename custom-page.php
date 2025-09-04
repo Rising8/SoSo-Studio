@@ -4,13 +4,78 @@
  */
 get_header(); ?>
 
-<div class="custom-wrapper py-5">
-    <div class="container">
-        <div class="row">
+<div id="custom-wrapper" class="py-5">
+    <div id="custom-all" class="container py-5">
+        <!-- Top Actions -->
+        <div id="custom-canvas-buttons" class="mb-4">
+            <button class="btn btn-outline-danger me-2" id="delete-object"><i class="fa-solid fa-trash me-1"></i>Delete Selected</button>
+            <button class="btn btn-outline-secondary me-2" id="reset-canvas"><i class="fa-solid fa-undo me-1"></i>Reset Canvas</button>
+            <button class="btn btn-outline-secondary me-2" id="undo-btn"><i class="fa-solid fa-arrow-rotate-left me-1"></i>Undo</button>
+            <button class="btn btn-outline-secondary me-2" id="redo-btn"><i class="fa-solid fa-arrow-rotate-right me-1"></i>Redo</button>
+            <button class="btn btn-outline-primary me-2" id="download-design"><i class="fa-solid fa-download me-1"></i>Download</button>
+            <button class="btn btn-primary" id="send-to-commission"><i class="fa-solid fa-paper-plane me-1"></i>Send to Commission</button>
+        </div>
+    
+        <div id="custom-main" class="row g-0">
             <!-- Left Toolbox / Navigation -->
-            <div class="col-md-3 custom-toolbox">
-                <div class="nav flex-column nav-pills" id="custom-tools-tab" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link active mb-2" id="tab-upload" data-bs-toggle="pill" data-bs-target="#tool-upload" type="button" role="tab">
+            <div id="custom-toolbox-area" class="col-md-3">
+                <div id="custom-toolbox" class="ps-5">
+                    <div class="row g-0 mb-5">
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="palette" type="button">
+                                <i class="bi bi-palette"></i>
+                            </button>
+                        </div>
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="brush" type="button">
+                                <i class="bi bi-brush ms-5 me-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                
+                    <div class="row g-0 mb-5">
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="pencil" type="button">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        </div>
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="shape" type="button">
+                                <i class="bi bi-square ms-5 me-4"></i>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="row g-0">
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="fill" type="button">
+                                <i class="bi bi-paint-bucket"></i>
+                            </button>
+                        </div>
+                        <div class="col-3 mb-2 fs-1">
+                            <button class="nav-link" id="move" type="button">
+                                <i class="bi bi-arrows-move ms-5 me-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="custom-canvas-wrapper" class="col-md-9">
+                <!-- Canvas Area -->
+                <canvas id="custom-canvas"></canvas>
+            </div>
+        </div>
+        
+        <p class="text-center text-muted mt-4">Your design preview will appear above</p>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="nav flex-column nav-pills" id="custom-tools-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active mb-2" id="tab-upload" data-bs-toggle="pill" data-bs-target="#tool-upload" type="button" role="tab">
                         <i class="fa-solid fa-cloud-arrow-up me-2"></i>Upload Image
                     </button>
                     <button class="nav-link mb-2" id="tab-text" data-bs-toggle="pill" data-bs-target="#tool-text" type="button" role="tab">
@@ -29,12 +94,11 @@ get_header(); ?>
                         <i class="fa-solid fa-robot me-2"></i>AI Search
                     </button>
                 </div>
-            </div>
 
-            <!-- Preview / Canvas -->
+            Preview / Canvas
             <div class="col-md-9">
                 <div class="canvas-wrapper">
-                    <!-- Top Actions -->
+                    Top Actions
                     <div class="d-flex justify-content-end mb-3">
                         <button class="btn btn-outline-danger me-2" id="delete-object"><i class="fa-solid fa-trash me-1"></i>Delete Selected</button>
                         <button class="btn btn-outline-secondary me-2" id="reset-canvas"><i class="fa-solid fa-undo me-1"></i>Reset Canvas</button>
@@ -44,19 +108,19 @@ get_header(); ?>
                         <button class="btn btn-primary" id="send-to-commission"><i class="fa-solid fa-paper-plane me-1"></i>Send to Commission</button>
                     </div>
 
-                    <!-- Canvas Area -->
+                    Canvas Area
                     <canvas id="custom-canvas"></canvas>
                     <p class="text-center text-muted mt-2">Your design preview will appear above</p>
                 </div>
 
-                <!-- Tool Content -->
+                Tool Content
                 <div class="tab-content mt-3" id="custom-tools-tabContent">
-                    <!-- Upload -->
+                    Upload
                     <div class="tab-pane fade show active" id="tool-upload" role="tabpanel">
                         <p>Drag & drop or upload images here</p>
                         <input type="file" id="upload-file" multiple class="form-control">
                     </div>
-                    <!-- Add Text -->
+                    Add Text
                     <div class="tab-pane fade" id="tool-text" role="tabpanel">
                         <p>Add text to your design</p>
                         <input type="text" placeholder="Enter text..." class="form-control mb-2">
@@ -65,10 +129,10 @@ get_header(); ?>
                         <label>Color</label>
                         <input type="color" class="form-control form-control-color mb-2" value="#4b0082">
                     </div>
-                    <!-- Add Shapes -->
+                    Add Shapes
                     <div class="tab-pane fade" id="tool-shapes" role="tabpanel">
                         <p>Add a shape</p>
-                        <!-- Shape Color Picker -->
+                        Shape Color Picker
                         <div class="mb-2">
                             <label for="shape-color">Shape Color</label>
                             <input type="color" id="shape-color" class="form-control form-control-color mb-2" value="#4b0082">
@@ -77,7 +141,7 @@ get_header(); ?>
                         <button class="shape-btn btn btn-outline-primary mb-2" id="add-circle">Circle</button>
                         <button class="shape-btn btn btn-outline-primary mb-2" id="add-triangle">Triangle</button>                        
                     </div>
-                    <!-- Draw -->
+                    Draw
                     <div class="tab-pane fade" id="tool-draw" role="tabpanel">
                         <p>Freehand drawing mode</p>
                         <button class="btn btn-outline-secondary mb-2" id="toggle-draw">Enable Draw Mode</button>
@@ -88,12 +152,12 @@ get_header(); ?>
                             <input type="number" id="brush-size" class="form-control mb-2" value="5" min="1" max="50">
                         </div>
                     </div>
-                    <!-- Colors -->
+                    Colors
                     <div class="tab-pane fade" id="tool-color" role="tabpanel">
                         <p>Change background color</p>
                         <input type="color" class="form-control form-control-color mb-2" value="#f9f4fc">
                     </div>
-                    <!-- AI Search -->
+                    AI Search
                     <div class="tab-pane fade" id="tool-ai" role="tabpanel">
                         <p>Search for designs via AI</p>
                         <input type="text" placeholder="Enter prompt..." class="form-control mb-2">
@@ -101,12 +165,7 @@ get_header(); ?>
                         <div class="mt-2 d-flex flex-wrap">
                             <img src="#" alt="AI result" class="img-thumbnail m-1" style="width:80px; height:80px;">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+-->
 
 <!-- Script to link to commission page (used for custom-page.js) -->
 <script>
