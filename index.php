@@ -192,23 +192,22 @@ get_header(); ?>
     </div>
 
     <!-- Index Page - Workshop Section (Parallax) -->
-<!-- Index Page - Workshop Section (Parallax, single image) -->
-<div class="index-content-5 index-parallax"
-     style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/landing-page/workshop1.png' ); ?>');">
-  <div class="parallax-inner">
-    <div class="parallax-card">
-      <h3 class="parallax-title">Step Into Our Rug Workshop</h3>
-      <p class="parallax-lead">
-        Curious how our rugs come to life? Visit our workshop page to discover the heart of our craft.
-        From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill,
-        and tradition woven into every piece. See where creativity meets craftsmanship and how we bring your ideas to life.
-      </p>
-      <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-outline-light btn-lg rounded-pill px-4">
-        Discover the Process
-      </a>
+    <div class="index-content-4 mt-3"
+        style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/landing-page/workshop-section.png' ); ?>');">
+        <div class="parallax-inner">
+            <div class="parallax-card">
+                <h3 class="parallax-title">Step Into Our Rug Workshop</h3>
+                <p class="q">
+                    Curious how our rugs come to life? Visit our workshop page to discover the heart of our craft.
+                    From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill,
+                    and tradition woven into every piece. See where creativity meets craftsmanship and how we bring your ideas to life.
+                </p>
+                <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                    Discover the Process
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <!-- Index Page - Follow The Thread Section -->
