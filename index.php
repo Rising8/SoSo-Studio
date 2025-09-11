@@ -148,7 +148,7 @@ get_header(); ?>
                         and we’ll bring the craftsmanship. <em>Made by hand, made with heart, made for you.</em>
                     </p> 
                     <!-- Links to the custom design page for users to design their own rugs -->
-                    <a href="<?php echo site_url('/custom'); ?>" class="btn index-design-cta btn-lg">Custom Rug</a> 
+                    <a href="<?php echo site_url('/custom'); ?>" class="btn index-design-cta btn-lg">Customize a Rug</a> 
                 </div> 
 
                 <!-- Persuade users to purchase rugs -->
