@@ -142,8 +142,8 @@ get_header(); ?>
                 <p class="about-contact-text text-muted mb-4">
                     Whether you're curious or ready to build your dream, inspiration starts <span class="fw-bold"> here </span>
                 </p>
-                <div class="anim-container py-5">
-                    <a href="https://www.instagram.com/so.so.studio/" class="bouncing" target="_blank" rel="noopener noreferrer">
+                <div class="about-instagram-container py-5">
+                    <a href="https://www.instagram.com/so.so.studio/" class="about-instagram-bounce" target="_blank" rel="noopener noreferrer">
                         <i class="bi bi-instagram fs-1"></i>
                     </a> 
                 </div>
