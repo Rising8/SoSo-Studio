@@ -1,3 +1,10 @@
+/* ANIMATION GLOBALS */
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+      transition: opacity .10s linear;
+  }
+}
+
 /* === GENERAL STYLING === */
 *{
   font-family: "Marcellus", serif;
@@ -137,7 +144,6 @@ html {
   text-decoration: none;
 }
 
-
 /* === CONTACT MODAL STYLING === */
 #contactModal .modal-content {
   border-radius: 15px;
@@ -148,8 +154,8 @@ html {
 
 #contactModal .modal-header {
   border-bottom: none;
-  background: linear-gradient(90deg, #a88beb, #f8ceec); 
-  color: #4b0082;
+  background-color: #AE83D2;
+  /* background: linear-gradient(90deg, #a88beb, #f8ceec); */
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -157,6 +163,7 @@ html {
 #contactModal .modal-title {
   font-weight: bold;
   font-size: 1.4rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
 #contactModal .btn-close {
@@ -164,9 +171,9 @@ html {
 }
 
 /* Form Labels */
-#contactModal label {
+#contactModalLabel {
   font-weight: 500;
-  color: #4b0082; 
+  color: #fffafc;
 }
 
 /* Form Inputs */
@@ -179,6 +186,12 @@ html {
   transition: 0.3s ease;
 }
 
+/* Fixed textarea Sizing */
+#query {
+  resize: none;
+  height: 140px;
+}
+
 #contactModal input:focus,
 #contactModal select:focus,
 #contactModal textarea:focus {
@@ -187,23 +200,16 @@ html {
 }
 
 /* If valid input, green colour around border */
-#contactModal input:valid,
-#contactModal select:valid {
+#contactModal input:valid {
   border-color: #6cc070; 
   box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
 }
 
-/* Green border for textareas only after user types */
-#contactModal textarea:valid:not(:placeholder-shown) {
-  border-color: #6cc070;
-  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
-}
-
 /* If invalid input, red colour around border */
-#contactModal input.is-invalid,
-#contactModal select.is-invalid,
-#contactModal textarea.is-invalid {
-  border-color: #e03e2f;
+#contactModal input:invalid:not(:focus):not(:placeholder-shown),
+#contactModal select:invalid:not(:focus),
+#contactModal textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #e03e2f; 
   box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
 }
 
@@ -216,13 +222,15 @@ html {
 
 /* Submit Button */
 #contactModal button[type="submit"] {
-  background: linear-gradient(90deg, #a88beb, #f8ceec);
+  /* background: linear-gradient(90deg, #a88beb, #f8ceec); */
+  background-color: #AE83D2;
   border: none;
   color: white;
   font-weight: bold;
   border-radius: 30px;
   padding: 0.75rem;
   transition: all 0.3s ease;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 }
 
 #contactModal button[type="submit"]:hover {
@@ -230,6 +238,11 @@ html {
   transform: translateY(-2px);
 }
 
+.modal-footer {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
 
 /* === INDEX PAGE STYLING === */
 /* Index Page - Hero Section */
