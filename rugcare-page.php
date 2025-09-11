@@ -57,7 +57,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Rugcare Page - Care by Material Section -->
+    <!-- Rugcare Page - What Not To Do Section -->
     <div class="rugcare-content-3 py-5">
         <div class="container">
             <h2 class="text-center pb-2">What Not To Do</h2>
@@ -123,7 +123,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Rugcare Page - Video on how to clean -->
+    <!-- Rugcare Page - Cleaning Tips Video Section -->
     <div class="rugcare-content-4 pt-5">
         <h2 class="pt-3 text-center">Cleaning Tips You Can’t Miss</h2>
         <div class="container py-5">
@@ -159,11 +159,12 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Rugcare Page - Contact Button -->
-    <div class="rugcare-content-5 text-center py-5">
-        <div class="container">
+    <!-- Rugcare Page - Contact Section -->
+    <div class="rugcare-content-5 mb-5">
+        <!-- Contact Section -->
+        <div class="rugcare-contact-section text-center pt-5">
             <h2 class="mb-3">Need More Help?</h2>
-            <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>                
+            <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
             <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
         </div>
     </div>
