@@ -191,39 +191,24 @@ get_header(); ?>
         </div>
     </div>
 
-    <!-- Index Page - Workshop Section -->
-    <div class="index-content-4 py-5">
-        <div class="container col-xxl-9 px-4 py-3">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">    
-                <!-- Image -->
-                <div class="col-10 col-sm-8 col-lg-5 workshop-animate delay-2">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/landing-page/workshop.png" 
-                        class="d-block mx-lg-auto img-fluid" 
-                        alt="Workshop Rug" width="700" height="500" loading="lazy">
-                </div>
-                
-                <!-- Text -->
-                <div class="col-lg-7 px-5">
-                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1 py-2 workshop-animate delay-1">
-                    Step Into Our Rug Workshop
-                    </h3>
-                    <p class="lead fs-6 fs-md-5 fs-lg-4 py-2 workshop-animate delay-2">
-                    Curious how our rugs come to life? <br>
-                    Visit our workshop page to discover the heart of our craft. From design sketches to handwoven finishes, 
-                    you’ll get a behind-the-scenes look at the passion, skill, and tradition woven into every piece. <br>
-                    See where creativity meets craftsmanship and find out how we bring your ideas to life.
-                    </p>
-                    
-                    <!-- Button -->
-                    <a href="<?php echo site_url('/workshops'); ?>" class="workshop-animate delay-3">
-                    <button class="btn btn-outline-secondary btn-lg rounded-pill px-3 py-2 fs-6 fs-md-5" type="button">
-                        Discover the Process
-                    </button>
-                    </a>
-                </div>   
+    <!-- Index Page - Workshop Section (Parallax) -->
+    <div class="index-content-4 mt-3"
+        style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/landing-page/workshop-section.png' ); ?>');">
+        <div class="parallax-inner">
+            <div class="parallax-card">
+                <h3 class="parallax-title">Step Into Our Rug Workshop</h3>
+                <p class="q">
+                    Curious how our rugs come to life? Visit our workshop page to discover the heart of our craft.
+                    From design sketches to handwoven finishes, you’ll get a behind-the-scenes look at the passion, skill,
+                    and tradition woven into every piece. See where creativity meets craftsmanship and how we bring your ideas to life.
+                </p>
+                <a href="<?php echo site_url('/workshops'); ?>" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                    Discover the Process
+                </a>
             </div>
         </div>
     </div>
+
 
     <!-- Index Page - Follow The Thread Section -->
     <div class="index-content-5 pb-5">
