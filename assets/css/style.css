@@ -1356,8 +1356,7 @@ html {
 }
 
 .workshop-scroll-container::-webkit-scrollbar-thumb {
-  background: #a855f7;
-  border-radius: 5px;
+  background: #8e6fad;
 }
 
 .workshop-scroll-container::-webkit-scrollbar-track {
@@ -1391,7 +1390,7 @@ html {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: rgba(124, 58, 237, 0.9);
+  background: rgba(153, 119, 212, 0.9);
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
@@ -1482,7 +1481,7 @@ html {
 }
 
 .btn-book {
-  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  background: linear-gradient(45deg, #8e6fad, #f2d8ff);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 0.8rem;
@@ -1497,7 +1496,7 @@ html {
 
 .btn-book:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.45);
+  box-shadow: 0 10px 22px rgba(152, 110, 225, 0.45);
 }
 
 
