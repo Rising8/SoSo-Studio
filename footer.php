@@ -27,11 +27,10 @@
                 </div>
                 
                 <!-- Column 2 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 pt-4">
                     <h5 class="footer-font fw-bold mb-3">Information</h5>
                     <ul class="list-unstyled footer-font footer-links">
                         <li><a href="<?php echo site_url('/about'); ?>" class="footer-link">About Us</a></li>
-                        <li><a href="#" class="footer-link">Blogs</a></li>
                         <li><a href="#" class="footer-link">Terms & Conditions</a></li>
                         <li><a href="#" class="footer-link">Privacy Policy</a></li>
                         <li><a href="#" class="footer-link">Cookie Statement</a></li>
@@ -39,14 +38,13 @@
                 </div>
 
                 <!-- Column 3 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 pt-4">
                     <h5 class="footer-font fw-bold mb-3">Support</h5>
                     <ul class="list-unstyled footer-font footer-links">
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="footer-link">Contact Us</a></li>
-                        <li><a href="<?php echo site_url('/faq'); ?>" class="footer-link">FAQs</a></li>
                         <li><a href="<?php echo site_url('/commission'); ?>" class="footer-link">Commission Request</a></li>
                         <li><a href="<?php echo site_url('/custom'); ?>" class="footer-link">Custom Request</a></li>
-                        <li><a href="#" class="footer-link">News</a></li>
+                        <li><a href="<?php echo site_url('/faq'); ?>" class="footer-link">FAQs</a></li>
                     </ul>
                 </div>
         </div>
