@@ -1835,7 +1835,8 @@ html {
 }
 
 /* Submit Button */
-#rugEnquireModal button[type="submit"] {
+.rug-enquiry-button input[type="submit"] {
+  width: 100%;
   background: linear-gradient(90deg, #a88beb, #f8ceec);
   border: none;
   color: white;
@@ -1846,7 +1847,7 @@ html {
   cursor: pointer;
 }
 
-#rugEnquireModal button[type="submit"]:hover {
+.rug-enquiry-button input[type="submit"]:hover {
   opacity: 0.85;
   transform: translateY(-2px);
 }
