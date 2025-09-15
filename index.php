@@ -153,7 +153,7 @@ get_header(); ?>
 
                 <!-- Persuade users to purchase rugs -->
                 <div class="col">
-                    <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    <div class="customize-rug row row-cols-1 row-cols-sm-2 g-4">
                         <div class="col d-flex flex-column gap-2"> 
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-start  fs-4 rounded-3"> 
                                 <i class="fa-solid fa-thumbs-up"></i>
