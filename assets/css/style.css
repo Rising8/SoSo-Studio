@@ -215,8 +215,9 @@ html {
 }
 
 /* Submit Button */
-#contactModal button[type="submit"] {
+.contact-form-7 input[type="submit"] {
   background: linear-gradient(90deg, #a88beb, #f8ceec);
+  width: 200px;
   border: none;
   color: white;
   font-weight: bold;
@@ -225,7 +226,7 @@ html {
   transition: all 0.3s ease;
 }
 
-#contactModal button[type="submit"]:hover {
+.contact-form-7 input[type="submit"]:hover {
   opacity: 0.85;
   transform: translateY(-2px);
 }
