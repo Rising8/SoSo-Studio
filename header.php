@@ -36,7 +36,7 @@
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="d-inline-flex align-items-start text-decoration-none">
                                 <img class="header-studio-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
                                 <div class="logo-text text-center px-2">
-                                    <span class="logo-soso">SOSO <br></span>
+                                    <span class="logo-soso">SO SO <br></span>
                                     <span class="logo-studio">Studio </span>
                                 </div>
                             </a>

@@ -9,7 +9,10 @@
                         <a href="<?php echo site_url('/'); ?>" class="me-2">
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo" style="max-width: 50px;">
                         </a>
-                        <div class="footer-font fs-5 fw-bold mb-0">SoSo Studio</div>
+                        <div class="logo-text text-center px-2">
+                            <span class="logo-soso-footer">SO SO <br></span>
+                            <span class="logo-studio-footer">Studio </span>
+                        </div>
                     </div>
                     <div class="col-md-9">
                         <h5 class="footer-font fw-bold mb-3">Newsletter</h5>
