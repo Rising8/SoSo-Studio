@@ -33,10 +33,14 @@
                     <div class="d-none d-md-flex align-items-center justify-content-between">
                         <!-- Logo (Desktop Only) -->
                         <div class="col-md-3">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="d-inline-flex link-body-emphasis text-decoration-none">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="d-inline-flex align-items-start text-decoration-none">
                                 <img class="header-studio-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
+                                <div class="logo-text text-center px-2">
+                                    <span class="logo-soso">SOSO <br></span>
+                                    <span class="logo-studio">Studio </span>
+                                </div>
                             </a>
-                        </div>          
+                        </div>        
                         <!-- Navigation Menu -->
                         <nav class="navbar navbar-expand-md" data-bs-theme="dark">
                             <ul class="navbar-nav flex-row gap-3">
