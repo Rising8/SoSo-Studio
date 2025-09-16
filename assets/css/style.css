@@ -159,6 +159,10 @@ html {
   font-size: 1.4rem;
 }
 
+#contactModal .modal-body {
+  padding-bottom: 0.25rem;
+}
+
 #contactModal .btn-close {
   filter: brightness(0) invert(1);
 }
