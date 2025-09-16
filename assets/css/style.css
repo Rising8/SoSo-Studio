@@ -63,13 +63,13 @@ html {
 
 /* Logo Styling */
 @font-face {
-  font-family: 'NF-Le petit cochon' !important;
-  src: url('assets/fonts/NF-Lepetitcochon-Regular.woff2') format('woff2'),
-       url('assets/fonts/NF-Lepetitcochon-Regular.woff') format('woff');
+  font-family: 'NF-Le petit cochon';
+  src: url('../fonts/NF-Lepetitcochon-Regular.woff2') format('woff2'),
+       url('../fonts/NF-Lepetitcochon-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} 
 
 .logo-text {
   line-height: 0.8;
@@ -81,7 +81,7 @@ html {
 }
 
 .logo-soso {
-  color: #4a2064;
+  color: #875DA6;
   font-size: 1.6em;
 }
 
