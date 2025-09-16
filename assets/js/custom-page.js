@@ -114,12 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function changeCanvasShape(shape) {
-        const scalePercent = parseInt(shapeSizeInput.value, 10) / 100; // 0.1 to 1
-        const maxW = canvas.width * scalePercent;
-        const maxH = canvas.height * scalePercent;
+        // Input value (10 → 100)
+        const inputValue = parseInt(shapeSizeInput.value, 10);
+
+        // Remap 10–100 → 0–1
+        const scalePercent = (inputValue - 10) / 90; // 0 → 1
+
+        // Calculate pixel size for shapes
+        const maxW = canvas.width * (0.1 + scalePercent * 0.9);
+        const maxH = canvas.height * (0.1 + scalePercent * 0.9);
         const size = Math.min(maxW, maxH);
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
+
         let clip;
 
         switch (shape) {
@@ -167,8 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.renderAll();
             saveState();
 
-            const widthCM = (maxW / 8).toFixed(1);  // conversion factor: 800px = 100cm
-            const heightCM = (maxH / 4).toFixed(1); // conversion factor: 400px = 100cm
+            // Canvas Size 40cm - 200cm (can be updated later)
+            const widthCM = (40 + scalePercent * 160).toFixed(1);
+            const heightCM = (40 + scalePercent * 160).toFixed(1);
+            
             document.querySelector('.edit-shape-size label').textContent = `Canvas Size: ${widthCM}cm × ${heightCM}cm`;
         }
     }
