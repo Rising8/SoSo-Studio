@@ -179,6 +179,7 @@ html {
   transition: 0.3s ease;
 }
 
+/* Focus effect */
 #contactModal input:focus,
 #contactModal select:focus,
 #contactModal textarea:focus {
@@ -186,25 +187,23 @@ html {
   box-shadow: 0 0 0 0.25rem rgba(168, 139, 235, 0.3);
 }
 
-/* If valid input, green colour around border */
-#contactModal input:valid,
-#contactModal select:valid {
-  border-color: #6cc070; 
-  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+/* Red border for invalid fields */
+#contactModal input.is-invalid,
+#contactModal select.is-invalid {
+  border-color: #e03e2f;
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
 }
 
-/* Green border for textareas only after user types */
-#contactModal textarea:valid:not(:placeholder-shown) {
+/* Green border for valid fields */
+#contactModal input.is-valid,
+#contactModal select.is-valid {
   border-color: #6cc070;
   box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
 }
 
-/* If invalid input, red colour around border */
-#contactModal input.is-invalid,
-#contactModal select.is-invalid,
-#contactModal textarea.is-invalid {
-  border-color: #e03e2f;
-  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
+#contactModal textarea {
+  border-color: #d9c7ec;
+  box-shadow: none;
 }
 
 /* Soft Placeholder Colors */
@@ -214,18 +213,20 @@ html {
   opacity: 1; 
 }
 
-/* Submit Button */
+/* CF7 Submit Button Styling */
+#contactModal .wpcf7-submit,
 .contact-form-7 input[type="submit"] {
   background: linear-gradient(90deg, #a88beb, #f8ceec);
-  width: 200px;
-  border: none;
+  border: none; 
   color: white;
   font-weight: bold;
   border-radius: 30px;
   padding: 0.75rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
+#contactModal .wpcf7-submit:hover,
 .contact-form-7 input[type="submit"]:hover {
   opacity: 0.85;
   transform: translateY(-2px);
