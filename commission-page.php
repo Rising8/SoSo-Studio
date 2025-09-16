@@ -94,10 +94,10 @@ get_header(); ?>
                                     <label for="rug-size" class="form-label">Rug Size <span class="text-danger">*</span></label>
                                     <select id="rug-size" name="rug-size" class="form-select" required>
                                         <option value="">Choose...</option>
-                                        <option value="Tiny">Tiny (10cmx20cm)</option>
-                                        <option value="So-So">So-So (20cmx30cm)</option>
-                                        <option value="Big">Big (40cmx50cm)</option>
-                                        <option value="Custom">Custom Size</option>
+                                        <option value="Tiny">Tiny (40cmx40cm)</option>
+                                        <option value="So-So">So-So (80cmx80cm)</option>
+                                        <option value="Big">Big (180cmx180cm)</option>
+                                        <option value="Custom">Something Different</option>
                                     </select>
                                     <div class="invalid-feedback">Please select a rug size.</div>
                                 </div>
