@@ -61,6 +61,52 @@ html {
   z-index: 1000;
 }
 
+/* Logo Styling */
+@font-face {
+  font-family: 'NF-Le petit cochon';
+  src: url('../fonts/NF-Lepetitcochon-Regular.woff2') format('woff2'),
+       url('../fonts/NF-Lepetitcochon-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
+
+.logo-text {
+  line-height: 0.8;
+  padding-top: 10px;
+}
+
+.logo-text span {
+  font-family: 'NF-Le petit cochon', sans-serif;
+}
+
+.logo-soso {
+  color: #875DA6;
+  font-size: 1.6em;
+}
+
+.logo-studio {
+  color: white;
+  -webkit-text-stroke: 0.5px #000;
+  font-size: 1.1em;
+}
+
+.logo-soso-footer {
+  color: white;
+  font-size: 1.6em;
+}
+
+.logo-studio-footer {
+  color: white;
+  font-size: 1.1em;
+}
+
+.header-studio-logo {
+  width: 50px;
+  height: auto;
+}
+
+/* Navigation Link Styling */
 .nav-link {
   color: black;
 }
@@ -112,11 +158,6 @@ html {
 
 .icon i{
   color: black !important;
-}
-
-.header-studio-logo{
-  width: 50px;
-  height: auto;
 }
 
 /* Contact Header Styling */

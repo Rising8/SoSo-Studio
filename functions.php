@@ -76,6 +76,16 @@ function add_favicon() {
 }
 add_action('wp_head', 'add_favicon');
 
+// Fonts function 
+function mytheme_enqueue_assets() {
+    wp_enqueue_style('mytheme-style', get_stylesheet_uri());
+    wp_enqueue_style(
+        'mytheme-fonts',
+        get_stylesheet_directory_uri() . '/assets/css/fonts'
+    );
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
+
 // Enable featured images + image size for gallery thumbs
 add_theme_support('post-thumbnails');
 add_image_size('rug-thumb', 500, 500, true);
