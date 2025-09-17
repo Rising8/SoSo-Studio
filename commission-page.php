@@ -17,32 +17,46 @@ get_header(); ?>
 
     <!-- Commission Page - How It Works Section -->
     <div class="commission-content-2">
-        <section class="hiw-section pb-5 bg-white">
-            <div class="container">
-                <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">How It Works</h2>
-                <div class="row g-4">
-                    <?php
-                    $steps = [
-                        ['Design', 'Click below to use our design partner tool or skip this step.', site_url('/custom'), 'Open Design Tool'],
-                        ['Fill Out The Form', 'Tell us what you envision you can upload your design or reference.', '', ''],
-                        ['Submit', 'We’ll review your request and be in touch for confirmation.', '', ''],
-                        ['Production Begins', 'After confirmation and deposit, your rug enters creation phase!', '', '']
-                    ];
-                    foreach ($steps as $index => $step) :
-                    ?>
-                        <div class="col-md-3 d-flex">
-                            <div class="hiw-step-box w-100 h-100 d-flex flex-column align-items-center text-center p-4 rounded shadow-sm">
-                                <h4 class="text-body-emphasis">Step <?= $index + 1 ?>: <?= $step[0] ?></h4>
-                                <p class="text-body-secondary"><?= $step[1] ?></p>
-                                <?php if (!empty($step[2])) : ?>
-                                    <a href="<?= $step[2] ?>" target="_blank" class="btn design-tool-btn mt-2"><?= $step[3] ?></a>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+    <section class="ss-stepper py-5" aria-labelledby="ss-hiw-heading">
+        <div class="container">
+        <h2 id="ss-hiw-heading" class="text-center mb-2">How It Works</h2>
+        <p class="text-center text-muted mb-4">Four simple steps — quick and easy.</p>
+
+        <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-1">
+            <div class="ss-badge" aria-hidden="true">1</div>
+            <div class="ss-content">
+            <h3 id="ss-step-title-1">Design</h3>
+            <p class="ss-desc">Try the design tool or sketch your idea.</p>
+            <p class="mt-2"><a href="/custom" class="ss-btn">Open Design Tool</a></p>
             </div>
-        </section>
+        </div>
+
+        <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-2">
+            <div class="ss-badge" aria-hidden="true">2</div>
+            <div class="ss-content">
+            <h3 id="ss-step-title-2">Form</h3>
+            <p class="ss-desc">Fill the form and add any photos or sketches.</p>
+            </div>
+        </div>
+
+        <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-3">
+            <div class="ss-badge" aria-hidden="true">3</div>
+            <div class="ss-content">
+            <h3 id="ss-step-title-3">Review</h3>
+            <p class="ss-desc">We check your request and reply with next steps.</p>
+            </div>
+        </div>
+
+        <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-4">
+            <div class="ss-badge" aria-hidden="true">4</div>
+            <div class="ss-content">
+            <h3 id="ss-step-title-4">Make</h3>
+            <p class="ss-desc">After you confirm, we start making your rug.</p>
+            </div>
+        </div>
+
+        </div>
+    </section>
     </div>
 
     <!-- Commission Page - Commission Form Section --> 
