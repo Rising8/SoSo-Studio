@@ -1834,6 +1834,10 @@ html {
   border-top-right-radius: 15px;
 }
 
+#rugEnquireModal .modal-body {
+  padding-bottom: 0.25rem; /* smaller bottom spacing */
+}
+
 #rugEnquireModal .modal-title {
   font-weight: 700;
   font-size: 1.5rem;
@@ -1852,17 +1856,19 @@ html {
 
 /* Form Inputs */
 #rugEnquireModal input,
-#rugEnquireModal textarea {
+#rugEnquireModal textarea,
+#rugEnquireModal select {
   border-radius: 8px;
   border: 1px solid #d9c7ec;
   background-color: #fffafc;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
 }
 
 #rugEnquireModal input:focus,
-#rugEnquireModal textarea:focus {
+#rugEnquireModal textarea:focus,
+#rugEnquireModal select:focus {
   border-color: #a88beb;
   box-shadow: 0 0 0 0.25rem rgba(168, 139, 235, 0.3);
   outline: none;
@@ -1881,42 +1887,39 @@ html {
   min-height: 120px;
 }
 
-/* Submit Button */
-#rugEnquireModal button[type="submit"] {
+/* Rug Enquiry Submit Button Styling */
+#rugEnquireModal .rug-enquire-form .wpcf7-submit {
   background: linear-gradient(90deg, #a88beb, #f8ceec);
   border: none;
   color: white;
   font-weight: 700;
   border-radius: 30px;
   padding: 0.75rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: block;
 }
 
-#rugEnquireModal button[type="submit"]:hover {
+#rugEnquireModal .rug-enquire-form .wpcf7-submit:hover {
   opacity: 0.85;
   transform: translateY(-2px);
 }
 
-/* Green border for inputs & selects only after user has typed (not empty) */
-.rug-enquire-form input:valid:not(:placeholder-shown),
-.rug-enquire-form select:valid:not(:placeholder-shown) {
-  border-color: #6cc070;
-  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
+/* Green border for valid fields */
+.rug-enquire-form input.is-valid,
+.rug-enquire-form textarea.is-valid,
+.rug-enquire-form select.is-valid {
+  border-color: #6cc070 !important;
+  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7) !important;
 }
 
-/* Green border for textareas only after typing */
-.rug-enquire-form textarea:valid:not(:placeholder-shown) {
-  border-color: #6cc070;
-  box-shadow: 0 0 5px rgba(108, 192, 112, 0.7);
-}
-
-/* Red border for fields marked invalid by JS */
+/* Red border for invalid fields */
 .rug-enquire-form input.is-invalid,
-.rug-enquire-form select.is-invalid,
-.rug-enquire-form textarea.is-invalid {
-  border-color: #e03e2f;
-  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7);
+.rug-enquire-form textarea.is-invalid,
+.rug-enquire-form select.is-invalid {
+  border-color: #e03e2f !important;
+  box-shadow: 0 0 5px rgba(224, 62, 47, 0.7) !important;
 }
 
 
