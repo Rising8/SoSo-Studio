@@ -754,143 +754,235 @@ html {
   box-shadow: none !important;
   padding: 0 !important;
 }
+/* ===========================
+ /* ===== About Page - Cards ===== */
 
+/* Section */
+#vt-trending { padding-top: 3.5rem; }
 
-/* === ABOUT PAGE STYLING === */
-/* About Page - Story, Mission and Vision Slider */
-#tranding {
-  padding-top: 4rem;
-}
-
-#tranding .tranding-slider {
-  height: 48rem;
-  padding: 2rem 0;
-  position: relative;
-}
-
-/* Slider - Container */
-.tranding-slide {
-  width: 37rem;
-  height: 42rem;
-  position: relative;
+/* Layout wrapper */
+.vt-wrap {
+  position: relative; /* dots base */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  overflow: visible;
 }
 
-/* Slider - Image styling */
-.tranding-slide-img img {
-  width: 32rem;
-  height: 30rem;
-  border-radius: 2rem;
-  object-fit: cover;
-  opacity: 0.7;
-}
-
-/* Slider - Content Below the Image */
-.tranding-slide .tranding-slide-content {
-  position: static;
+/* Card container */
+.vt-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: start;
+  max-width: 1100px;
   width: 100%;
-  margin-top: 1.5rem;
-  text-align: center;
-}
-
-.tranding-slide .title-us {
-  position: absolute;
-  top: 4rem;                      
-  left: 50%;                      
-  transform: translateX(-50%);    
-  width: 90%;                     
-  text-align: center;            
-  font-size: 3em;
-  font-weight: bolder;
-  z-index: 2;
-}
-
-.tranding-slide .tranding-slide-content-bottom {
-  position: static;
-  margin-top: 1rem;
-}
-
-.about-text {
-  display: block;
-  max-width: 450px;
   margin: 0 auto;
-  padding: 0 1rem;
-  line-height: 1.5;
-}
-
-/* Control Slider and Pagination */
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-}
-
-.tranding-slider-control .swiper-pagination {
+  padding: 2rem 1rem 4.6rem;
+  box-sizing: border-box;
   position: relative;
-  bottom: 1rem;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
-.swiper-slide-shadow-left,
-.swiper-slide-shadow-right {
-  display: none;
-}
-
-.tranding-slider-control {
+/* Card */
+.vt-card {
+  width: 33%;
+  min-width: 260px;
+  border-radius: 1.25rem;
+  padding: 0.75rem 1rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.95;
+  transition: transform .32s cubic-bezier(.2,.9,.2,1),
+              box-shadow .32s ease,
+              opacity .28s ease;
   position: relative;
-  bottom: -1rem;
-  display: flex;
+}
+
+/* Media */
+.vt-media {
+  width: 100%;
+  height: 280px;
+  border-radius: 1.25rem;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+  filter: saturate(.98) brightness(.95);
+  transition: transform .55s cubic-bezier(.2,.9,.2,1), filter .3s ease;
+}
+
+/* Title */
+.vt-title {
+  margin: 0.6rem 0 0.8rem;
+  font-size: 2rem;
+  color: rgba(0,0,0,0.85);
+  pointer-events: none;
+}
+
+/* Copy text (always visible, fade by state) */
+.vt-copy {
+  max-width: 34rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 0.98rem;
+  transition: opacity .3s ease;
+}
+.vt-card.active .vt-copy { opacity: 1; color: #222; }
+.vt-card:not(.active) .vt-copy { opacity: 0.4; color: #666; }
+
+/* Active card */
+.vt-card.active {
+  transform: translateY(-12px) scale(1.06);
+  z-index: 40;
+  box-shadow: 0 22px 46px rgba(16,24,40,0.16);
+  opacity: 1;
+}
+.vt-card.active .vt-media {
+  transform: scale(1.06);
+  filter: saturate(1.02) brightness(1);
+}
+
+/* Inactive card */
+.vt-card:not(.active) {
+  transform: scale(.95);
+  opacity: 0.48;
+  filter: grayscale(.08) contrast(.95);
+}
+.vt-card:not(.active):hover,
+.vt-card:not(.active):focus-within {
+  opacity: 0.86;
+  filter: none;
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(16,24,40,0.08);
+  z-index: 30;
+}
+
+/* Nav buttons */
+.vt-btn {
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  z-index: 50;
 }
 
-/* About Page - What We Offer Section  */
-.about-content-4 {
-  background-color: #D7EEE8;
+/* Dots */
+.vt-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1.6rem;
+  display: flex;
+  gap: .6rem;
+  z-index: 60;
+}
+.vt-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  border: none;
+  cursor: pointer;
+  transition: transform .22s ease, background .22s ease;
+}
+.vt-dot.active { background: #222; transform: scale(1.12); }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .vt-wrap { flex-direction: column; }
+  .vt-cards { flex-direction: column; padding-bottom: 0.8rem; }
+  .vt-card { width: 100%; }
+  .vt-title { margin-top: -3.5rem; font-size: 1.6rem; }
+  .vt-media { height: 220px; }
+  .vt-dots {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+    justify-content: center;
+  }
 }
 
-.about-content-4 h2{
-  color: #7eb7ac;
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .vt-card, .vt-media, .vt-copy, .vt-dot { transition: none !important; }
 }
 
-.about-soso-card {
-  background: #fff;
-  border: 2px solid #8DC9BD;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ===== Fix: keep dots inside .vt-cards ===== */
+
+/* card container = positioning context */
+.vt-cards {
+  position: relative !important;
+  /* extra bottom padding so dots/shadows don’t overlap next section */
+  padding-bottom: 6.8rem !important; /* ↑ adjust this number if needed */
 }
 
-.about-soso-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+/* dots placed absolutely inside .vt-cards */
+.vt-dots {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: 0.6rem !important; /* adjust if needed */
+  display: flex !important;
+  gap: .6rem !important;
+  z-index: 60 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.about-soso-card .card-title {
-  color:  #8DC9BD;
+/* Mobile: revert dots to normal flow */
+@media (max-width: 980px) {
+  .vt-cards { padding-bottom: 0.8rem !important; }
+  .vt-dots {
+    position: static !important;
+    transform: none !important;
+    bottom: auto !important;
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
 }
 
-.about-soso-card .card-text {
-  color: #666;
+/* Inactive cards: faded look, still clickable */
+.vt-card:not(.active) {
+  opacity: 0.48;
+  filter: grayscale(.08) contrast(.95);
+  transform: translateY(0) scale(.96);
+  transition: transform .28s ease, opacity .28s ease, filter .28s ease;
 }
 
-.about-soso-card .btn-primary {
-  color:  #8DC9BD;
-  background-color: transparent;
-  border: 2px solid  #8DC9BD;
-  transition: all 0.2s ease-in-out;
+/* Hover/focus: show interactivity */
+.vt-card:not(.active):hover,
+.vt-card:not(.active):focus-within {
+  opacity: 0.86;
+  filter: grayscale(0) contrast(1);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(16,24,40,0.08);
+  z-index: 30;
+  cursor: pointer;
 }
 
-.about-soso-card .btn-primary:hover {
-  background-color:  #8DC9BD;
-  color: white;
-  transform: scale(1.05);
+/* Active cards: fully emphasized */
+.vt-card.active {
+  opacity: 1 !important;
+  filter: none !important;
 }
 
+/* Keyboard focus outline (accessibility) */
+.vt-card:focus {
+  outline: 3px solid rgba(125,185,170,0.18);
+  outline-offset: 6px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .vt-card, .vt-card:not(.active):hover, .vt-card:not(.active):focus-within {
+    transition: none !important;
+    transform: none !important;
+  }
+}
 /* About Page - Studio Vibes Image */
 .studio-vibes-img {
   overflow: visible;
@@ -2244,7 +2336,59 @@ html {
 
 
 /* === MOBILE RESPOSIVENESS === */
+@media (max-width: 560px) {
+  /* Index Page */
+  .index-header {
+    font-size: 40px;
+    padding-top: 0 !important;
+  }
 
+  .index-rug-button {
+    padding: 10px !important;
+  }
+  .index-workshop-button {
+    padding: 10px !important;
+  }
+  
+  .index-hero-layout{
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+  }
+
+  .hero-img {
+    width: 20%;  
+    height: auto;
+  }
+
+  .customize-rug{
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .index-content-4 { 
+    margin-left: 15px;  
+    margin-right: 15px; 
+  }
+
+  .parallax-card {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  #sb_instagram #sbi_images {
+    width: 90%;
+    gap: 10px !important;
+    margin: 0 auto; 
+  }
+
+  /* Footer */
+  .footer-bottom{
+    margin: 0 !important;
+  }
+}
 
 
 
