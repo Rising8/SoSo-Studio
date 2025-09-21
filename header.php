@@ -14,18 +14,25 @@
             <header class="py-3">
                 <div class="container">
                     <!-- Mobile Header Row -->
-                    <div class="d-flex d-md-none align-items-center justify-content-between p-2" data-bs-theme="dark">
-                        <!-- Toggle Button (Left) -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-                        </button>          
-                        <!-- Center Logo (Mobile Only) -->
-                        <a href="/" class="mx-auto d-md-none">
+                    <div class="d-flex d-md-none flex-column px-4" data-bs-theme="dark">
+                        <!-- Top row (logo and button) -->
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <!-- Logo -->
+                            <a href="/" class="p-2">
                             <img class="header-studio-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
-                        </a>         
-                        <!-- Icons (Right) -->
-                        <div class="icon d-flex justify-content-center align-items-center" style="cursor: pointer;">
-                            <i id="searchIconMobile" class="fa-solid fa-magnifying-glass fs-4 mx-2"></i>
+                            </a>
+
+                            <!-- Button -->
+                            <div class="icon d-flex justify-content-center align-items-center">
+                            <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">LET'S TALK</a>
+                            </div>
+                        </div>
+
+                        <!-- Hamburger icon -->
+                        <div class="d-flex justify-content-start py-3 px-3">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                            </button>
                         </div>
                     </div>
 
@@ -33,10 +40,14 @@
                     <div class="d-none d-md-flex align-items-center justify-content-between">
                         <!-- Logo (Desktop Only) -->
                         <div class="col-md-3">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="d-inline-flex link-body-emphasis text-decoration-none">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="d-inline-flex align-items-start text-decoration-none">
                                 <img class="header-studio-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
+                                <div class="logo-text text-center px-2">
+                                    <span class="logo-soso">SO SO <br></span>
+                                    <span class="logo-studio">Studio </span>
+                                </div>
                             </a>
-                        </div>          
+                        </div>        
                         <!-- Navigation Menu -->
                         <nav class="navbar navbar-expand-md" data-bs-theme="dark">
                             <ul class="navbar-nav flex-row gap-3">

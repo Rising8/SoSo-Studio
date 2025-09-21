@@ -70,7 +70,7 @@ get_header(); ?>
 </div>
 
     <!-- About Page - What We Offer Section -->
-    <div class="about-content-3 p-3">
+    <div class="about-content-4 p-3">
         <div class="container px-4 pb-5">
             <h2 class="py-4 text-center">What We Offer</h2>
             <div class="row gx-4 gy-4">
@@ -121,11 +121,11 @@ get_header(); ?>
                     Ready to Join Our Creative Journey?
                 </h3>
                 <p class="about-contact-text text-muted mb-4">
-                    Whether you're just curious or ready to make something, we’d love to hear from you.
+                    Whether you're curious or ready to build your dream, inspiration starts <em style="font-size: 2em; font-weight: bold">here</em>
                 </p>
-                <a href="<?php echo home_url('/contact'); ?>" class="about-contact-btn btn btn-lg px-5 rounded-pill">
-                    Get in Touch
-                </a>
+                <a href="https://www.instagram.com/so.so.studio/" class="about-contact-btn btn btn-lg px-5 rounded-pill" target="_blank" rel="noopener noreferrer">
+                    Follow Along
+                </a> 
             </div>
         </div>     
     </div>
