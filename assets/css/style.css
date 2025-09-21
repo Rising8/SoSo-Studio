@@ -981,6 +981,28 @@ html {
 
 /* Commission Page - How It Works Section - Design Tool Button */
 
+/* Leftside line */
+.ss-stepper {
+  position: relative;
+  padding-left: 40px; 
+}
+
+.ss-stepper::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  width: 2px;
+  height: calc(100% - 60px);
+  background: linear-gradient(to bottom, #e4d9f5, #f6f0fb);
+  z-index: 0;
+}
+
+.ss-step {
+  position: relative;
+  margin-bottom: 40px;
+  z-index: 1;
+}
 /* variables */
 :root{
   --ss-bg-start: #fffafc;
