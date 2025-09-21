@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('vtCards');
   if (!container) {
@@ -53,25 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // data-index を保証（ドットにも自動割当）
+  // Ensure data-index (also auto-assign to dots)
   cards.forEach((c, i) => { 
     c.dataset.index = i; 
-    c.setAttribute('role','group'); // アクセシビリティ補助
+    c.setAttribute('role','group'); // accessibility helper
     c.setAttribute('aria-expanded', 'false');
   });
 
   if (dots.length && dots.length !== cards.length) {
     console.warn('Number of .vt-dot elements differs from number of .vt-card elements.');
   }
-  // ドットがあるならインデックス付与
+  // Add index to dots if they exist
   dots.forEach((d, i) => { d.dataset.index = i; d.setAttribute('role','tab'); });
 
-  // 初期現在位置を「中央」にする
+  // Start with the middle card active
   let current = Math.floor(cards.length / 2);
 
-  // 安全なラップ付きで .active を切り替える
+  // Switch .active with safe wrap
   function applyActive(index) {
-    index = ((index % cards.length) + cards.length) % cards.length; // 安全なラップ
+    index = ((index % cards.length) + cards.length) % cards.length; // safe wrap
     cards.forEach((c, i) => {
       const isActive = (i === index);
       c.classList.toggle('active', isActive);
@@ -90,37 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // カードクリック（デリゲーション）
+  // Card click (delegation)
   container.addEventListener('click', (e) => {
     const card = e.target.closest('.vt-card');
     if (!card) return;
     const idx = Number(card.dataset.index);
     if (!Number.isFinite(idx)) return;
-    if (idx === current) return; // 既に active なら何もしない（折りたたむ仕様にする場合は変更可）
+    if (idx === current) return; // do nothing if already active
     setActive(idx);
   });
 
-  // ドットクリック
+  // Dot click
   dots.forEach(d => {
-    d.addEventListener('click', (e) => {
+    d.addEventListener('click', () => {
       const idx = Number(d.dataset.index);
       if (!Number.isFinite(idx)) return;
       setActive(idx);
     });
   });
 
-  // 矢印
+  // Arrow buttons
   if (prevBtn) prevBtn.addEventListener('click', () => setActive(current - 1));
   if (nextBtn) nextBtn.addEventListener('click', () => setActive(current + 1));
 
-  // キーボード操作（左右）
+  // Keyboard (left / right)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') setActive(current - 1);
     if (e.key === 'ArrowRight') setActive(current + 1);
   });
 
-  // 初期表示（中央のカードを active にする）
+  // Initial state (set middle card active)
   applyActive(current);
-
-
 });
