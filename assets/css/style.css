@@ -1072,25 +1072,153 @@ html {
 }
 
 /* Commission Page - How It Works Section - Design Tool Button */
-.design-tool-btn {
-  background: linear-gradient(to right, #eac6ff, #fbefff);
-  color: #5d2b75;
-  border: none;
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(106, 49, 125, 0.15);
-  transition: all 0.2s ease;
+
+/* Leftside line */
+.ss-stepper {
+  position: relative;
+  padding-left: 40px; 
+}
+
+.ss-stepper::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  width: 2px;
+  height: calc(100% - 60px);
+  background: linear-gradient(to bottom, #e4d9f5, #f6f0fb);
+  z-index: 0;
+}
+
+.ss-step {
+  position: relative;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+/* variables */
+:root{
+  --ss-bg-start: #fffafc;
+  --ss-bg-end: #ffffff;
+  --ss-accent-1: #d9b3ff;
+  --ss-accent-2: #ffdff4;
+  --ss-text: #24121f;
+  --ss-muted: #6b6b6b;
+  --ss-badge-size: 54px;
+  --ss-container-max: 1100px;
+  --ss-radius: 10px;
+  --ss-gap: 1rem;
+}
+
+/* container limit to avoid full-width spread */
+.ss-stepper .container {
+  max-width: var(--ss-container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* base section */
+.ss-stepper {
+  background: linear-gradient(180deg, var(--ss-bg-start) 0%, var(--ss-bg-end) 100%);
+  padding: 3rem 0;
+  font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ss-text);
+}
+
+/* headings */
+.ss-stepper h2 {
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
+  margin: 0 0 .25rem;
+}
+.ss-stepper p.text-muted { color: var(--ss-muted); margin-bottom: 1.5rem; }
+
+/* step block (shared) */
+.ss-step {
+  display: flex;
+  gap: var(--ss-gap);
+  align-items: center;
+  justify-content: center; /* center the badge+content unit */
+  padding: 1.25rem 0;
+  border-radius: var(--ss-radius);
+}
+
+/* badge */
+.ss-badge {
+  flex: 0 0 var(--ss-badge-size);
+  width: var(--ss-badge-size);
+  height: var(--ss-badge-size);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ss-accent-1) 0%, var(--ss-accent-2) 100%);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #3b1b3b;
+  box-shadow: 0 8px 18px rgba(100,55,120,0.08);
+}
+
+/* text content */
+.ss-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 560px; /* control line length */
+}
+.ss-content h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-text);
+}
+.ss-desc {
+  margin: 0;
+  color: var(--ss-muted);
+  line-height: 1.45;
+  font-size: 0.97rem;
+}
+
+/* small action button */
+.ss-btn {
   display: inline-block;
+  padding: .42rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(120,86,150,0.08);
+  background: rgba(186,129,255,0.08);
+  color: #3b1b3b;
+  text-decoration: none;
+  font-weight: 600;
 }
-
-.design-tool-btn:hover {
-  background: linear-gradient(to right, #f2d8ff, #fff4ff);
-  color: #4a2064;
+.ss-btn:hover,
+.ss-btn:focus {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(106, 49, 125, 0.25);
+  box-shadow: 0 10px 24px rgba(120,80,160,0.08);
 }
 
+/* focus outline for accessibility */
+.ss-step:focus-within {
+  outline: 3px solid rgba(185,131,255,0.12);
+  border-radius: calc(var(--ss-radius) + 2px);
+}
+
+/* --- Zig-zag effect for larger screens ---
+   Use ordering instead of row-reverse so the group stays centered.
+*/
+@media (min-width: 768px) {
+  .ss-step { align-items: flex-start; padding-top: 1.75rem; padding-bottom: 1.75rem; }
+
+  /* default (odd) : badge first, left-aligned text */
+  .ss-step:nth-child(odd)  .ss-badge { order: 0; margin-right: 1rem; }
+  .ss-step:nth-child(odd)  .ss-content { order: 1; text-align: left; padding-left: .5rem; }
+
+  /* even steps : badge on right, right-aligned text, but still centered as a group */
+  .ss-step:nth-child(even) .ss-badge { order: 2; margin-left: 1rem; }
+  .ss-step:nth-child(even) .ss-content { order: 1; text-align: right; padding-right: .5rem; }
+}
+
+/* Mobile: stacked simple rows */
+@media (max-width: 767.98px) {
+  .ss-step { flex-direction: row; text-align: left; padding: 1rem 0; }
+  .ss-badge { width: 48px; height: 48px; font-size: 0.95rem; margin-right: .8rem; }
+  .ss-content { max-width: none; }
+}
 /* Commission Page - Form Section */
 .commission-content-3 {
   background-color: #fff;
