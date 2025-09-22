@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Ensure data-index (also auto-assign to dots)
+  // Assign index to each card and set accessibility attributes
   cards.forEach((c, i) => { 
     c.dataset.index = i; 
     c.setAttribute('role','group'); // accessibility helper
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (dots.length && dots.length !== cards.length) {
     console.warn('Number of .vt-dot elements differs from number of .vt-card elements.');
   }
-  // Add index to dots if they exist
+  // Assign index to dots
   dots.forEach((d, i) => { d.dataset.index = i; d.setAttribute('role','tab'); });
 
   // Start with the middle card active
