@@ -47,15 +47,16 @@
 
                         <!-- Desktop dropdown -->
                         <li class="nav-item dropdown">
-                            <a href="<?php echo esc_url( home_url( '/commission' ) ); ?>" class="nav-link dropdown-toggle" id="commissionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a href="<?php echo esc_url( home_url( '/commission' ) ); ?>" class="nav-link dropdown-toggle">
                                 Commissions
                             </a>
                             <ul class="dropdown-menu rounded-3" aria-labelledby="commissionDropdown">
-                                <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Design Your Rug</a></li>
-                                <li><a class="dropdown-item" href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>">Request a Custom Rug</a></li>
+                                <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">How It Works</a></li>
+                                <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>">Commission Request Form</a></li>
+                                <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Design Your Own Rug</a></li>
                             </ul>
                         </li>
-
+                        
                         <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshops' ) ); ?>" class="nav-link">Workshops</a></li>
                         <li class="nav-item"><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link">Gallery</a></li>
                         <li class="nav-item"><a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link">Rugcare</a></li>

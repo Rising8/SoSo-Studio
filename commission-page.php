@@ -10,10 +10,16 @@ get_header(); ?>
         <section class="commission-hero py-5 text-center">
             <div class="container">
                 <h1 class="landing-heading display-5 text-body-emphasis text-center d-block mx-auto">
-                    Bring Your Dream to Life
+                    Bring Your 
+                    <span class="commission-hero-d">D </span>
+                    <span class="commission-hero-r">r </span>
+                    <span class="commission-hero-e">e </span>
+                    <span class="commission-hero-a">a </span>
+                    <span class="commission-hero-m">m </span>
+                        to Life
                 </h1>
                 <p class="lead text-muted">
-                    Design a custom rug that’s truly yours—soft, unique, and full of personality.
+                    Design a custom rug that’s truly yours. Soft, unique and full of personality.
                 </p>
             </div>
         </section>
@@ -24,14 +30,14 @@ get_header(); ?>
         <section class="ss-stepper py-5" aria-labelledby="ss-hiw-heading">
             <div class="container">
                 <h2 id="ss-hiw-heading" class="text-center mb-2">How It Works</h2>
-                <p class="text-center text-muted mb-4">Four simple steps — quick and easy.</p>
+                <p class="text-center text-muted mb-4">Four simple steps quick and easy.</p>
 
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-1">
                     <div class="ss-badge" aria-hidden="true">1</div>
                     <div class="ss-content">
-                        <h3 id="ss-step-title-1">Design</h3>
-                        <p class="ss-desc">Use our design tool or sketch your idea.</p>
-                        <p class="mt-2">
+                        <h3>Design</h3>
+                        <p class="ss-desc">Use our design tool and sketch your marvellous creations.</p>
+                        <p class="mt-3">
                             <a href="<?php echo esc_url( home_url( '/custom' ) ); ?>" class="ss-btn">
                                 Start Designing
                             </a>
@@ -42,11 +48,11 @@ get_header(); ?>
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-2">
                     <div class="ss-badge" aria-hidden="true">2</div>
                     <div class="ss-content">
-                        <h3 id="ss-step-title-2">Submit Request</h3>
-                        <p class="ss-desc">Complete the request form and upload any photos or sketches.</p>
-                        <p class="mt-2">
+                        <h3>Submit Request</h3>
+                        <p class="ss-desc">Complete the request form and upload any designs or references.</p>
+                        <p class="mt-3">
                         <a href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>" class="ss-btn">
-                            Go to Request Form
+                            Request Form
                         </a>
                         </p>
                     </div>
@@ -55,16 +61,16 @@ get_header(); ?>
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-3">
                     <div class="ss-badge" aria-hidden="true">3</div>
                     <div class="ss-content">
-                        <h3 id="ss-step-title-3">Review</h3>
-                        <p class="ss-desc">We’ll review your request and provide feedback with next steps.</p>
+                        <h3>Review</h3>
+                        <p class="ss-desc">We’ll review your request and provide feedback along with further instructions.</p>
                     </div>
                 </div>
 
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-4">
                     <div class="ss-badge" aria-hidden="true">4</div>
                     <div class="ss-content">
-                        <h3 id="ss-step-title-4">Make</h3>
-                        <p class="ss-desc">Once you approve, we begin crafting your rug with care.</p>
+                        <h3>Crafting Process</h3>
+                        <p class="ss-desc">With confirmation, your envisioned rug moves into craftsmanship.</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +78,7 @@ get_header(); ?>
     </div>
 
     <!-- Commission Page - FAQ Section -->
-    <div class="commission-content-4">
+    <div class="commission-content-3">
         <section class="commission-faq-section pt-4 pb-2">
             <div class="container">
                 <div class="row justify-content-center">
@@ -116,7 +122,7 @@ get_header(); ?>
     </div>
 
     <!-- Commission Page - Explore More Buttons -->
-    <div class="commission-content-5">
+    <div class="commission-content-4">
         <section class="commission-continue-exploring text-center py-5">
             <div class="container">
                 <h4 class="mb-4 fw-semibold pb-3">Continue Exploring</h4>

@@ -7,8 +7,8 @@ get_header(); ?>
   
   
   <!-- Commission Page - Commission Form Section --> 
-    <div class="commission-content-3">
-        <section class="commission-form-section pb-5 pt-3">
+    <div class="commission-form-content-1">
+        <section class="commission-form-section pb-5 pt-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8">
@@ -18,13 +18,13 @@ get_header(); ?>
                                 <p class="required-note">* Required fields</p>
                                 <!-- Name -->
                                 <div class="col-md-6">
-                                    <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                                     <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z\s]+" required>
                                     <div class="invalid-feedback">Please enter your name.</div>
                                 </div>
                                 <!-- Email -->
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label">Your Email <span class="text-danger">*</span></label>
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                     <input type="email" id="email" name="email" class="form-control" required>
                                     <div class="invalid-feedback">Please enter a valid email address.</div>
                                 </div>
