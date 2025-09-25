@@ -122,6 +122,12 @@ html {
   background-color: transparent !important;
 }
 
+/* Prevent white flash when clicking links */
+.nav-link:active,
+.nav-link:focus {
+  color: inherit;
+}
+
 /* Dropdown Menu Styling */
 .dropdown-menu {
   --bs-dropdown-min-width: 14rem;
