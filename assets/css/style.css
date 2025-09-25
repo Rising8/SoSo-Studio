@@ -123,14 +123,19 @@ html {
 }
 
 /* Dropdown Menu Styling */
-.dropdown-menu{
+.dropdown-menu {
   --bs-dropdown-min-width: 14rem;
   background: rgba(135,93,166,.12);        
   backdrop-filter: blur(10px);
   padding: 0 !important;
 }
 
-.dropdown-item{
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-item {
   padding:.6rem .75rem;
   color: black;       
   background: rgba(135,93,166,.12);
@@ -138,7 +143,7 @@ html {
 }
 
 .dropdown-item:hover,
-.dropdown-item:focus{
+.dropdown-item:focus {
   background: rgba(163, 150, 172, 0.12);
   color:#000;
 } 
@@ -148,16 +153,12 @@ html {
   transform: translateX(-50%); 
 }
 
-.nav-item .dropdown-toggle::after{
+.nav-item .dropdown-toggle::after {
   transition: transform .2s ease;
 }
 
-.nav-item.show .dropdown-toggle::after{
+.nav-item.show .dropdown-toggle::after {
   transform: rotate(180deg);
-}
-
-.icon i{
-  color: black !important;
 }
 
 /* Contact Header Styling */
@@ -960,47 +961,205 @@ html {
   background-color: #ffff;
 }
 
-/* Commission Page - How It Works Section */
-.hiw-step-box {
+/* Commission Page - Hero Dream Header */
+.commission-hero-d,
+.commission-hero-r,
+.commission-hero-e,
+.commission-hero-a {
+  letter-spacing: -6px;
+}
+
+.commission-hero-d,
+.commission-hero-r,
+.commission-hero-e,
+.commission-hero-a,
+.commission-hero-m {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.commission-hero-d {
+  color: red;
+}
+
+.commission-hero-r {
+  color: yellow;
+}
+
+.commission-hero-e {
+  color: green;
+}
+
+.commission-hero-a {
+  color: blue;
+}
+
+.commission-hero-m {
+  color: violet;
+}
+
+/* Commission Page - Stepper Section Styles */
+/* CSS variables for easy theme control - commission page */
+:root {
+  --ss-bg-start: #fffafc;
+  --ss-bg-end: #ffffff;
+  --ss-accent-1: #d9b3ff;
+  --ss-accent-2: #ffdff4;
+  --ss-text: #24121f;
+  --ss-muted: #6b6b6b;
+  --ss-badge-size: 54px;
+  --ss-container-max: 1100px;
+  --ss-radius: 10px;
+  --ss-gap: 1rem;
+}
+
+.ss-stepper {
+  position: relative;
+  background: linear-gradient(to bottom, white, #faf7fd);
+  padding: 3rem 0;
+  color: var(--ss-text);
+}
+
+.ss-stepper::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  width: 2px;
+  height: calc(100% - 60px);
+  background-color: white;
+  z-index: 0;
+}
+
+.ss-stepper .container {
+  max-width: var(--ss-container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ss-step {
+  position: relative;
+  display: flex;
+  gap: var(--ss-gap);
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0;
+  margin-bottom: 40px;
+  border-radius: var(--ss-radius);
+  z-index: 1;
+}
+
+.ss-badge {
+  flex: 0 0 var(--ss-badge-size);
+  width: var(--ss-badge-size);
+  height: var(--ss-badge-size);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ss-accent-1) 0%, var(--ss-accent-2) 100%);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #3b1b3b;
+  box-shadow: 0 8px 18px rgba(100,55,120,0.08);
+}
+
+.ss-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 560px;
+}
+
+.ss-content h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-text);
+}
+
+.ss-desc {
+  margin: 0;
+  color: var(--ss-muted);
+  line-height: 1.45;
+  font-size: 0.97rem;
+}
+
+.ss-btn {
+  display: inline-block;
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(120,86,150,0.08);
+  background: rgba(186,129,255,0.08);
+  color: #3b1b3b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ss-btn:hover,
+.ss-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(120,80,160,0.08);
+}
+
+/* Mobile Design - Stepper Section Commission Page - Move to bottom later */
+@media (min-width: 768px) {
+  .ss-step { align-items: flex-start; padding-top: 1.75rem; padding-bottom: 1.75rem; }
+
+  /* Odd steps: badge left, text left */
+  .ss-step:nth-child(odd) .ss-badge { order: 0; margin-right: 1rem; }
+  .ss-step:nth-child(odd) .ss-content { order: 1; text-align: left; padding-left: 0.5rem; }
+
+  /* Even steps: badge right, text right */
+  .ss-step:nth-child(even) .ss-badge { order: 2; margin-left: 1rem; }
+  .ss-step:nth-child(even) .ss-content { order: 1; text-align: right; padding-right: 0.5rem; }
+}
+
+/* Commission Page - FAQ Section */
+.commission-content-3 {
   background-color: #FAF7FD;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
 }
 
-.hiw-step-box:hover {
-  transform: translateY(-5px);
-  border: 1px solid #c7a2f5;
+.commission-faq-section .accordion-button {
+  background-color: #f3e9ff;
+  color: #4b0082;
 }
 
-.hiw-step-box h4 {
-  min-height: 3.5rem;
+.commission-faq-section .accordion-button:not(.collapsed) {
+  background-color: #f3e9ff;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
 }
 
-.hiw-step-box p {
-  min-height: 2rem;
+.commission-faq-section .accordion-body {
+  background-color: #fff;
 }
 
-/* Commission Page - How It Works Section - Design Tool Button */
-.design-tool-btn {
+/* FAQ View More Button */
+.commission-faq-section .btn-outline-secondary {
+  color: #fff;
+  background-color: #6a317d;
+  border-radius: 2rem;
+}
+.commission-faq-section .btn-outline-secondary:hover {
+  background-color: #6f3b80;
+}
+
+/* Commission Page - Continue Exploring Section */
+.commission-content-4 { 
+  background-color: #FAF7FD;
+}
+
+.commission-continue-exploring .btn-outline-primary {
+  border: none !important;
   background: linear-gradient(to right, #eac6ff, #fbefff);
   color: #5d2b75;
-  border: none;
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(106, 49, 125, 0.15);
-  transition: all 0.2s ease;
-  display: inline-block;
 }
 
-.design-tool-btn:hover {
-  background: linear-gradient(to right, #f2d8ff, #fff4ff);
-  color: #4a2064;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(106, 49, 125, 0.25);
+.commission-continue-exploring .btn-outline-primary:hover {
+  background-color: #8DC9BD;
+  color: #fff;
 }
 
-/* Commission Page - Form Section */
-.commission-content-3 {
+
+/* === COMMISSION FORM PAGE STYLING === */
+.commission-form-content-1 {
   background-color: #fff;
 }
 
@@ -1088,51 +1247,6 @@ html {
   border-color: #d7ccf9;
   color: #4d3e7a;
   font-size: 0.9rem;
-}
-
-/* Commission Page - FAQ Section */
-.commission-content-4 {
-  background-color: #FAF7FD;
-}
-
-.commission-faq-section .accordion-button {
-  background-color: #f3e9ff;
-  color: #4b0082;
-}
-
-.commission-faq-section .accordion-button:not(.collapsed) {
-  background-color: #f3e9ff;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
-}
-
-.commission-faq-section .accordion-body {
-  background-color: #fff;
-}
-
-/* FAQ View More Button */
-.commission-faq-section .btn-outline-secondary {
-  color: #fff;
-  background-color: #6a317d;
-  border-radius: 2rem;
-}
-.commission-faq-section .btn-outline-secondary:hover {
-  background-color: #6f3b80;
-}
-
-/* Commission Page - Continue Exploring Section */
-.commission-content-5{
-  background-color: #FAF7FD;
-}
-
-.commission-continue-exploring .btn-outline-primary {
-  border: none !important;
-  background: linear-gradient(to right, #eac6ff, #fbefff);
-  color: #5d2b75;
-}
-
-.commission-continue-exploring .btn-outline-primary:hover {
-  background-color: #8DC9BD;
-  color: #fff;
 }
 
 
