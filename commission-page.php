@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Commission Main (How It Works + FAQ)
+ * Template Name: Commission Page
  */
 get_header(); ?>
 
