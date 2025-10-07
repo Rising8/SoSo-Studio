@@ -130,7 +130,7 @@ get_header(); ?>
                         <ul class="mb-0 small">
                             <li>Design your rug using the tools.</li>
                             <li>When you’re happy with it, click <strong>Download</strong> to save your design.</li>
-                            <li>Or, submit it directly through the <strong>Commission Page</strong> if you’d like us to make it for you.</li>
+                            <li>Or, submit it directly through the <strong><a href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>" class="custom-commission-link">Commission Form</a></strong> if you’d like us to make it for you.</li>
                         </ul>
                     </div>
                 </div>

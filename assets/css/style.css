@@ -1469,6 +1469,11 @@ html {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Custom Page - Commission Form Button */
+.custom-commission-link {
+  color: #b39ddb;
+}
+
 /* Custom Page - Toolbox Nav */
 .custom-toolbox .nav {
   margin-top: 20px; 
