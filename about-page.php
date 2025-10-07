@@ -140,11 +140,13 @@ get_header(); ?>
                     Ready to Join Our Creative Journey?
                 </h3>
                 <p class="about-contact-text text-muted mb-4">
-                    Whether you're curious or ready to build your dream, inspiration starts <em style="font-size: 2em; font-weight: bold">here</em>
+                    Whether you're curious or ready to build your dream, inspiration starts <span class="fw-bold"> here </span>
                 </p>
-                <a href="https://www.instagram.com/so.so.studio/" class="about-contact-btn btn btn-lg px-5 rounded-pill" target="_blank" rel="noopener noreferrer">
-                    Follow Along
-                </a> 
+                <div class="about-instagram-container py-5">
+                    <a href="https://www.instagram.com/so.so.studio/" class="about-instagram-bounce" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-instagram fs-1"></i>
+                    </a> 
+                </div>
             </div>
         </div>     
     </div>
