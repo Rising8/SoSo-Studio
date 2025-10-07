@@ -141,6 +141,12 @@ html {
   margin-top: 0;
 }
 
+.nav-item.dropdown .dropdown-toggle-split {
+  color: inherit;       
+  border: none;     
+  background: transparent; 
+}
+
 .dropdown-item {
   padding:.6rem .75rem;
   color: black;       
@@ -2342,9 +2348,3 @@ html {
     margin: 0 !important;
   }
 }
-
-
-
-
-
-

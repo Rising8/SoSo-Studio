@@ -46,12 +46,23 @@
                         <li class="nav-item"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-link">About</a></li>
 
                         <!-- Desktop dropdown -->
-                        <li class="nav-item dropdown">
-                            <a href="<?php echo esc_url( home_url( '/commission' ) ); ?>" class="nav-link dropdown-toggle">
+                        <li class="nav-item dropdown position-relative">
+                            <!-- Primary link: navigates to /commission -->
+                            <a class="nav-link d-inline-flex align-items-center" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">
                                 Commissions
                             </a>
+
+                            <!-- Split toggle: only this toggles the dropdown -->
+                            <button class="btn btn-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                                    id="commissionDropdown"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    aria-label="Open Commissions menu">
+                                <span class="visually-hidden">Toggle Commissions menu</span>
+                            </button>
+
                             <ul class="dropdown-menu rounded-3" aria-labelledby="commissionDropdown">
-                                <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">How It Works</a></li>
                                 <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>">Commission Request Form</a></li>
                                 <li><a class="dropdown-item rounded-3" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Design Your Own Rug</a></li>
                             </ul>
