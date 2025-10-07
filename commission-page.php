@@ -35,8 +35,12 @@ get_header(); ?>
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-1">
                     <div class="ss-badge" aria-hidden="true">1</div>
                     <div class="ss-content">
-                        <h3>Design</h3>
-                        <p class="ss-desc">Use our design tool and sketch your marvellous creations.</p>
+                        <h3>Design (Optional)</h3>
+                        <p class="ss-desc">Feeling creative? Use our design tool to sketch your marvellous creations.
+                            Or, just skip this step and simply upload inspiration images in the 
+                            <strong><a href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>" class="custom-commission-link">commission form</a></strong>. 
+                            No design skills needed!
+                        </p>
                         <p class="mt-3">
                             <a href="<?php echo esc_url( home_url( '/custom' ) ); ?>" class="ss-btn">
                                 Start Designing
@@ -49,7 +53,7 @@ get_header(); ?>
                     <div class="ss-badge" aria-hidden="true">2</div>
                     <div class="ss-content">
                         <h3>Submit Request</h3>
-                        <p class="ss-desc">Complete the request form and upload any designs or references.</p>
+                        <p class="ss-desc">Complete the request form and upload any designs, photos or inspirations you like. We'll help bring your ideas to life.</p>
                         <p class="mt-3">
                         <a href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>" class="ss-btn">
                             Request Form
@@ -62,7 +66,7 @@ get_header(); ?>
                     <div class="ss-badge" aria-hidden="true">3</div>
                     <div class="ss-content">
                         <h3>Review</h3>
-                        <p class="ss-desc">We’ll review your request and provide feedback along with further instructions.</p>
+                        <p class="ss-desc">We’ll review your request, discuss details and provide a quote or recommendations before crafting begins.</p>
                     </div>
                 </div>
 
@@ -70,7 +74,7 @@ get_header(); ?>
                     <div class="ss-badge" aria-hidden="true">4</div>
                     <div class="ss-content">
                         <h3>Crafting Process</h3>
-                        <p class="ss-desc">With confirmation, your envisioned rug moves into craftsmanship.</p>
+                        <p class="ss-desc">Once confirmed, our artisans begin handcrafting your custom rug, turning your vision into a finished masterpiece.</p>
                     </div>
                 </div>
             </div>
