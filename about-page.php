@@ -28,7 +28,7 @@ get_header(); ?>
     </div>
 
     <!-- About Page - Story / Mission / Vision using View Transition API -->
-    <div class="about-content-4">
+    <div class="about-content-3">
     <section id="vt-trending">
         <div class="vt-heading container">
         <h2 class="text-center">Let's Get To Know Us</h2>
