@@ -10,7 +10,7 @@ get_header(); ?>
         <div class="container">
             <div class="text-center mb-4">
                 <h1 class="display-5 text-body-emphasis text-center pb-2 d-block mx-auto">Frequently Asked Questions</h1>
-                <p class="lead text-muted">Answers to your most common curiosities, rug related or not.</p>
+                <p class="lead text-muted text-center d-block mx-auto">Answers to your most common curiosities, rug related or not.</p>
             </div>
 
             <!-- Tabs -->

@@ -96,7 +96,7 @@ get_header(); ?>
         // Section divider before the list
         ?>
         <div id="gallery-categories-section" class="gallery-content-3 pt-5">
-            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/line-style.png' ); ?>" class="img-fluid" alt="">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/line-style.png' ); ?>" class="img-fluid mobile-section-divider d-block" alt="">
         </div>
 
         <?php

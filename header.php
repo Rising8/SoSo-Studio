@@ -13,18 +13,30 @@
     <header class="py-3">
         <div class="container">
             <!-- Mobile Header Row -->
-            <div class="d-flex d-md-none align-items-center justify-content-between p-2" data-bs-theme="dark">
-                <!-- Toggle Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
-                </button>
-                <!-- Center Logo -->
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mx-auto d-md-none">
-                    <img class="header-studio-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
-                </a>
-                <!-- Right Icons -->
-                <div class="icon d-flex justify-content-center align-items-center" style="cursor: pointer;">
-                    <i id="searchIconMobile" class="fa-solid fa-magnifying-glass fs-4 mx-2"></i>
+            <div class="d-flex d-md-none flex-column px-4" data-bs-theme="dark">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center">
+                        <!-- Hamburger Icon -->
+                        <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile"  aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                        </button>
+                        <!-- Logo -->
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-2 d-flex align-items-center text-decoration-none">
+                            <img class="header-studio-logo"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png"
+                                alt="Logo">
+                            <div class="logo-text text-start ps-2">
+                                <span class="logo-soso">SO SO <br></span>
+                                <span class="logo-studio">Studio</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Button -->
+                    <div class="icon d-flex align-items-center">
+                        <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            LET'S TALK
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -69,46 +81,42 @@
                 </div>
             </div>
 
-                <!-- Offcanvas Mobile Menu -->
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+            <!-- ================= MOBILE OFFCANVAS MENU ================= -->
+            <div class="offcanvas offcanvas-start offcanvas-mobile" tabindex="-1" id="offcanvasMobile" aria-labelledby="offcanvasLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="<?php echo home_url('/about'); ?>" class="nav-link">About</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_front_page()) echo 'active-nav'; ?>"> Home </a>
+                            <a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_page('about')) echo 'active-nav'; ?>"> About </a>
+                        </li>
 
-                    <!-- Commissions accordion -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo esc_url( home_url( '/commission' ) ); ?>">
-                        Commissions
-                        </a>
-                        <button class="btn w-100 text-start px-3 py-2"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#commissionsSubmenu"
-                                aria-expanded="false"
-                                aria-controls="commissionsSubmenu">
-                        ▼
-                        </button>
-                        <div class="collapse" id="commissionsSubmenu">
-                        <ul class="list-unstyled ps-3">
-                            <li><a class="nav-link" href="<?php echo esc_url( home_url( '/custom' ) ); ?>">Design Your Rug</a></li>
-                            <li><a class="nav-link" href="<?php echo esc_url( home_url( '/commission-form' ) ); ?>">Request a Custom Rug</a></li>
-                        </ul>
-                        </div>
-                    </li>
+                        <!-- Accordion submenu -->
+                        <li class="nav-item">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a class="nav-link d-flex align-items-center justify-content-between nav-offcanvas" href="<?php echo esc_url(home_url('/commission')); ?>" data-bs-toggle="collapse" data-bs-target="#commissionsSubmenu" aria-expanded="false" aria-controls="commissionsSubmenu">
+                                    Commissions <span class="ms-1">▼</span>
+                                </a>
+                            </div>
 
-                    <li class="nav-item"><a href="<?php echo esc_url( home_url( '/workshops' ) ); ?>" class="nav-link">Workshops</a></li>
-                    <li class="nav-item"><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link">Rugcare</a></li>
-                    <li class="nav-item"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-link">FAQ</a></li>
+                            <div class="collapse" id="commissionsSubmenu">
+                                <ul class="list-unstyled ps-3">
+                                    <li><a class="nav-link nav-offcanvas <?php if (is_page('commission')) echo 'active-nav'; ?>" href="<?php echo esc_url(home_url('/commission')); ?>">How It Works</a></li>
+                                    <li><a class="nav-link nav-offcanvas <?php if (is_page('commission-form')) echo 'active-nav'; ?>" href="<?php echo esc_url(home_url('/commission-form')); ?>">Commission Request</a></li>
+                                    <li><a class="nav-link nav-offcanvas <?php if (is_page('custom')) echo 'active-nav'; ?>" href="<?php echo esc_url(home_url('/custom')); ?>">Design Your Rug</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <a href="<?php echo esc_url( home_url( '/workshops' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_page('workshops')) echo 'active-nav'; ?>"> Workshops </a>
+                        <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_page('gallery')) echo 'active-nav'; ?>"> Gallery </a>
+                        <a href="<?php echo esc_url( home_url( '/rugcare' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_page('rugcare')) echo 'active-nav'; ?>"> Rugcare </a>
+                        <a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-link nav-offcanvas <?php if (is_page('faq')) echo 'active-nav'; ?>"> FAQ </a>
                     </ul>
                 </div>
-                </div>
+            </div>
         </div>
     </header>
 </div>

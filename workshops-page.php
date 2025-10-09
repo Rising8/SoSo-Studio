@@ -51,7 +51,7 @@ get_header(); ?>
 
             if ($workshop_query->have_posts()) : ?>
                 <div class="container">
-                    <div class="workshop-scroll-container d-flex flex-nowrap gap-4 overflow-auto pb-3">
+                    <div class="workshop-scroll-container d-flex flex-wrap flex-md-nowrap gap-4 overflow-auto pb-3">
                         <?php while ($workshop_query->have_posts()) : $workshop_query->the_post(); 
                             $date       = get_field('workshop_date') ?: '';
                             $duration   = get_field('workshop_duration') ?: '';
@@ -60,7 +60,7 @@ get_header(); ?>
                             $price      = $price_raw ? preg_replace('/^\$?/', '$', trim($price_raw)) : '';
                             $bookingUrl = esc_url(get_field('workshop_booking_url'));
                         ?>
-                            <div class="flex-shrink-0" style="width: 50%; min-width: 50%;">
+                            <div class="flex-shrink-0 workshop-item">
                                 <div class="workshop-card card border-0 shadow-sm rounded-4 h-100">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <div class="workshop-image position-relative">

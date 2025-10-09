@@ -32,7 +32,7 @@ get_header(); ?>
     <!-- Index Page - Showcases Section -->
     <div class="index-content-2 px-5 pb-5 mt-5">
         <div class="container">
-            <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Showcases</h2>
+            <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center pt-2">Showcases</h2>
             <div class="d-flex overflow-auto gap-4 px-2 index-showcases-scroll">
                 <div class="showcases-rock d-flex gap-4">
                     <?php
