@@ -35,7 +35,7 @@
                     <ul class="list-unstyled footer-font footer-links">
                         <li><a href="<?php echo site_url('/about'); ?>" class="footer-link">About Us</a></li>
                         <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="<?php echo site_url('/privacy-policy'); ?>" class="footer-link">Privacy Policy</a></li>
                         <li><a href="#" class="footer-link">Cookie Statement</a></li>
                     </ul>
                 </div>
