@@ -116,13 +116,13 @@ get_header(); ?>
     <div class="about-content-6">
         <div class="text-center">
             <div class="card-body py-5">
-                <h3 class="about-contact-heading fw-bold mb-4">
+                <h3 class="about-contact-heading fw-bold mb-3">
                     Ready to Join Our Creative Journey?
                 </h3>
                 <p class="about-contact-text text-muted mb-4">
-                    Whether you're curious or ready to build your dream, inspiration starts <span class="fw-bold"> here </span>
+                    Whether you're curious or ready to build your dream, <br>inspiration starts with us.</br>
                 </p>
-                <div class="about-instagram-container py-5">
+                <div class="about-instagram-container pt-3">
                     <a href="https://www.instagram.com/so.so.studio/" class="about-instagram-bounce" target="_blank" rel="noopener noreferrer">
                         <i class="bi bi-instagram fs-1"></i>
                     </a> 
