@@ -389,7 +389,8 @@ function register_cpt_instructions() {
 
     // Rugs
     add_cpt_instructions_meta_box('rug', 'Rug Instructions', [
-        'Upload a featured image for each rug.',
+        'Upload a <strong>Top Image</strong> — this will appear full-width at the top of the rug page.',
+        'Optionally upload up to <strong>three Bottom Images</strong> to show below the main image. If none are added, the top image will fill the screen.',
         'Use the fields below to add rug details (size, material, etc.).',
         'You can categorize rugs using the <strong>Rug Types</strong> taxonomy.',
         'Reorder rugs using drag-and-drop (Post Types Order plugin) in the reorder tab.',
