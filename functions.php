@@ -43,6 +43,9 @@ function sosostudio_enqueue_styles() {
 
     // Commission Form JS
     wp_enqueue_script('commission-form', get_template_directory_uri() . '/assets/js/commission-form.js', array(), '1.0', true);
+    
+    // Pass gallery URL to JS for commission form
+    wp_localize_script('commission-form', 'commissionFormData', array('galleryUrl' => site_url('/gallery')));
 
     // Contact Form JS
     wp_enqueue_script('contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), '1.0', true);

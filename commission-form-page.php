@@ -34,18 +34,42 @@ get_header(); ?>
                                 <div class="invalid-feedback">Please enter your phone number.</div>
                             </div>
                             <!-- Texture -->
+                            <?php
+                            // Get all rug categories
+                            $rug_categories = new WP_Query(array(
+                                'post_type'      => 'rug_category',
+                                'posts_per_page' => -1,
+                                'orderby'        => array('menu_order' => 'ASC', 'title' => 'ASC'),
+                                'order'          => 'ASC',
+                            ));
+                            ?>
+
                             <div class="col-md-6">
                                 <label for="texture" class="form-label">
                                     Texture <span class="text-danger">*</span>
-                                    <a href="<?php echo site_url('/gallery#gallery-categories-section'); ?>" target="_blank" class="texture-help-icon ms-2 text-decoration-none" title="View texture examples">
+                                    <a id="texture-help-link" href="<?php echo site_url('/gallery#gallery-categories-section'); ?>" 
+                                    target="_blank" class="texture-help-icon ms-2 text-decoration-none" 
+                                    title="View texture examples">
                                         <i class="bi bi-question-circle-fill" style="font-size: 1rem;"></i>
                                     </a>
                                 </label>
+
                                 <select id="texture" name="texture" class="form-select" required>
                                     <option value="">Choose...</option>
-                                    <option value="Flatwave">Flatwave</option>
-                                    <option value="Shag">Shag</option>
-                                    <option value="Tufted">Tufted</option>
+                                    <?php
+                                    if ($rug_categories->have_posts()):
+                                        while ($rug_categories->have_posts()): $rug_categories->the_post();
+                                            $title = get_the_title();
+                                            $slug = get_post_field('post_name', get_the_ID());
+
+                                            // Remove the word " rugs"
+                                            $short_title = preg_replace('/\s*rugs?$/i', '', $title);
+
+                                            echo '<option value="' . esc_attr($slug) . '">' . esc_html($short_title) . '</option>';
+                                        endwhile;
+                                        wp_reset_postdata();
+                                    endif;
+                                    ?>
                                 </select>
                                 <div class="invalid-feedback">Please select a texture.</div>
                             </div>

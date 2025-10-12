@@ -42,3 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ? link (for texture) automatically updates when a user selects a new texture 
+// It will automatically go to that section in the case of multiple gallery categories 
+document.addEventListener('DOMContentLoaded', function() {
+    // Gets texture select element
+    const textureSelect = document.getElementById('texture');
+    // Gets texture help icon link "?"
+    const helpLink = document.getElementById('texture-help-link');
+
+    if (!textureSelect || !helpLink) return;
+
+    // Listens for changes on texture dropdown
+    textureSelect.addEventListener('change', function() {
+        // When texture is selected
+        if (this.value) {
+            // Update link to go directly to the selected category section on the gallery page
+            helpLink.href = commissionFormData.galleryUrl + "#" + this.value;
+        } else {
+            // If no texture selected, go to the top of the gallery categories section
+            helpLink.href = commissionFormData.galleryUrl + "#gallery-categories-section";
+        }
+    });
+});
