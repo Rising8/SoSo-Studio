@@ -42,3 +42,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Retrieves from custom page design and shows preview design above the attachment image
+document.addEventListener('DOMContentLoaded', () => {
+  const savedDesign = sessionStorage.getItem('userDesign');
+
+  if (savedDesign) {
+    // Create wrapper for preview and buttons
+    const container = document.createElement('div');
+    container.className = 'design-preview-container';
+
+    // Create image preview
+    const preview = document.createElement('img');
+    preview.src = savedDesign;
+    preview.alt = "Your Canvas Design";
+    preview.className = 'design-preview-image';
+
+    // Create download button
+    const downloadBtn = document.createElement('button');
+    downloadBtn.textContent = 'Download Your Design';
+    downloadBtn.className = 'design-download-btn';
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = savedDesign;
+      link.download = 'my-canvas-design.png';
+      link.click();
+    });
+
+    // Create note with subtle edit reminder
+    const note = document.createElement('p');
+    note.className = 'design-note';
+    note.innerHTML = '💡 Please download and confirm your design and attach it below by clicking "Choose File". ';
+
+    const editSpan = document.createElement('span');
+    editSpan.className = 'design-edit-reminder';
+    editSpan.textContent = 'If it doesn’t look right, go back to the other tab to edit and redo your design.';
+    note.appendChild(editSpan);
+
+    // Append elements to container
+    container.appendChild(preview);
+    container.appendChild(downloadBtn);
+    container.appendChild(note);
+
+    // Insert container above upload input
+    const uploadInput = document.getElementById('reference');
+    if (uploadInput) {
+      uploadInput.parentElement.insertBefore(container, uploadInput);
+    } else {
+      document.body.prepend(container);
+    }
+
+    // Friendly alert
+    alert("Your design has been imported! You can preview it below or download it to attach to your commission request.");
+
+    // Clear the saved image after displaying it
+    sessionStorage.removeItem('userDesign');
+  }
+});

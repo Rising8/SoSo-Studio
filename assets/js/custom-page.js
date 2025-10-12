@@ -353,10 +353,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sends design to commission page -- needs to be updated later to get the design and send to the commission page and attach it in the commission form
+    // Sends design to commission page
     const sendBtn = document.getElementById('send-to-commission');
     sendBtn.addEventListener('click', () => {
-        // redirect to commission page - commissionPageURL is defined in custom-page.php in the script
-        window.location.href = commissionPageURL; 
-    }); 
+        // Deselect any active object so outlines don't show in the image
+        canvas.discardActiveObject();
+        canvas.renderAll();
+
+        // Convert canvas to image data (PNG)
+        const designData = canvas.toDataURL('image/png');
+
+        setTimeout(() => {
+            // Convert to final image
+            const designData = canvas.toDataURL({
+                format: 'png',
+                quality: 1.0,
+                multiplier: 1, 
+                enableRetinaScaling: true
+            });
+
+            // Save image to sessionStorage (temporary, cleared when browser closes)
+            sessionStorage.setItem('userDesign', designData);
+
+            // Redirect to commission form page
+            window.open(commissionPageURL, '_blank'); 
+        }, 100);
+    });
 });
