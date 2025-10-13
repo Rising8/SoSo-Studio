@@ -165,9 +165,9 @@ get_header(); ?>
     </div>
 </div>
 
-<!-- Script to link to commission page (used for custom-page.js) -->
+<!-- Script to link to commission page (used for custom-page.js -> send to commission function) -->
 <script>
-    const commissionPageURL = "<?php echo home_url('/commission'); ?>";
+    const commissionPageURL = "<?php echo home_url('/commission-form'); ?>";
 </script>
 
 <?php get_footer(); ?>

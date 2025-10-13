@@ -1390,6 +1390,54 @@ html {
   color: #4a2064;
 }
 
+/* Commission Form - Download Your Design from Custom Page */
+/* Container for the preview, button, and note */
+.design-preview-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Canvas design preview image */
+.design-preview-image {
+  max-width: 250px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Download button */
+.design-download-btn {
+  background-color: #b39ddb;
+  border-color: #b39ddb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.design-download-btn:hover {
+  background-color: #9c88cc;
+  border-color: #9c88cc;
+  color: #fff;
+}
+
+.design-note {
+  font-size: 0.9rem;
+  color: #000; 
+  margin-top: 8px;
+  text-align: center;
+}
+
+.design-edit-reminder {
+  font-style: italic;
+  color: #6c757d; 
+}
+
 /* Commission Form - Submit Button */
 .commission-form .btn-primary {
   background: linear-gradient(to right, #6a317d, #9c4dc3);
@@ -2455,9 +2503,3 @@ html {
     margin: 0 !important;
   }
 }
-
-
-
-
-
-
