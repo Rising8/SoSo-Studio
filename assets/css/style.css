@@ -1390,6 +1390,54 @@ html {
   color: #4a2064;
 }
 
+/* Commission Form - Download Your Design from Custom Page */
+/* Container for the preview, button, and note */
+.design-preview-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Canvas design preview image */
+.design-preview-image {
+  max-width: 250px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Download button */
+.design-download-btn {
+  background-color: #b39ddb;
+  border-color: #b39ddb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.design-download-btn:hover {
+  background-color: #9c88cc;
+  border-color: #9c88cc;
+  color: #fff;
+}
+
+.design-note {
+  font-size: 0.9rem;
+  color: #000; 
+  margin-top: 8px;
+  text-align: center;
+}
+
+.design-edit-reminder {
+  font-style: italic;
+  color: #6c757d; 
+}
+
 /* Commission Form - Submit Button */
 .commission-form .btn-primary {
   background: linear-gradient(to right, #6a317d, #9c4dc3);
@@ -2043,6 +2091,23 @@ html {
   color: #fff;
 }
 
+/* Single Rug Page - Image Layout */
+.single-rug .top-image img {
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.single-rug .bottom-images img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-rug .bottom-images img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
 .single-rug h1 {
   font-family: 'Marcellus', serif;
   font-size: 2.75rem;
@@ -2087,7 +2152,7 @@ html {
   color: #555;
 }
 
-/* Single Rug Page = Enquire CTA Button */
+/* Single Rug Page - Enquire CTA Button */
 .single-rug .btn-primary {
   background-color: #6f42c1;
   border-color: #6f42c1;
@@ -2455,9 +2520,3 @@ html {
     margin: 0 !important;
   }
 }
-
-
-
-
-
-
