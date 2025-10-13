@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadBtn.textContent = 'Download Your Design';
     downloadBtn.className = 'design-download-btn';
 
+    // On click, download the design and save it as my-canvas-design(n)
     downloadBtn.addEventListener('click', () => {
       const link = document.createElement('a');
       link.href = savedDesign;
