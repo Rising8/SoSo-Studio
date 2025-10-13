@@ -6,9 +6,40 @@
     <div class="row g-5 align-items-start">
         <div class="col-md-6">
             <?php 
-            if (has_post_thumbnail()) {
-                the_post_thumbnail('large', ['class' => 'img-fluid rounded shadow']);
-            }
+            // Get ACF fields for images
+            $top_image = get_field('top_image');
+            $bottom_images = [
+                get_field('bottom_image_1'),
+                get_field('bottom_image_2'),
+                get_field('bottom_image_3')
+            ];
+
+            // Check if all bottom images exist
+            $all_bottom_exist = !in_array(null, $bottom_images, true);
+
+            // Case 1: If all 3 bottom images exist, then split layout
+            if ($all_bottom_exist && $top_image) : ?>
+                <div class="top-image mb-4">
+                    <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
+
+                <div class="bottom-images d-flex gap-3 flex-wrap justify-content-center">
+                    <?php foreach ($bottom_images as $image) : ?>
+                        <div class="flex-fill" style="flex: 1 1 calc(33.333% - 1rem); max-width: calc(33.333% - 1rem);">
+                            <?php echo wp_get_attachment_image($image['ID'], 'medium', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+            <?php 
+            // Case 2: If not all bottom images exist and just show one big top image 
+            elseif ($top_image) :
+                echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']);
+            
+            // Fallback to featured image if ACF field missing
+            elseif (has_post_thumbnail()) :
+                the_post_thumbnail('large', ['class' => 'img-fluid rounded shadow w-100']);
+            endif;
             ?>
         </div>
 

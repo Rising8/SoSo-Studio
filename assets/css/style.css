@@ -2091,6 +2091,23 @@ html {
   color: #fff;
 }
 
+/* Single Rug Page - Image Layout */
+.single-rug .top-image img {
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.single-rug .bottom-images img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-rug .bottom-images img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
 .single-rug h1 {
   font-family: 'Marcellus', serif;
   font-size: 2.75rem;
@@ -2135,7 +2152,7 @@ html {
   color: #555;
 }
 
-/* Single Rug Page = Enquire CTA Button */
+/* Single Rug Page - Enquire CTA Button */
 .single-rug .btn-primary {
   background-color: #6f42c1;
   border-color: #6f42c1;
