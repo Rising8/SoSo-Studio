@@ -18,7 +18,7 @@ get_header(); ?>
                     <span class="commission-hero-m">m </span>
                         to Life
                 </h1>
-                <p class="lead text-muted">
+                <p class="lead text-muted text-center d-block mx-auto">
                     Design a custom rug that’s truly yours. Soft, unique and full of personality.
                 </p>
             </div>

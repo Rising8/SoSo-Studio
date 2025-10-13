@@ -14,16 +14,19 @@ get_header(); ?>
 
     <!-- About Page - About Us Video -->
     <div class="about-content-2">
-        <div class="d-flex justify-content-center pt-5">
+        <div class="d-flex justify-content-center pt-3">
             <!-- Link will be changed later, most likely into an Instagram Reel -->
-            <iframe width="800" height="450" 
-                src="https://www.youtube.com/embed/xpdkJGUYIYg?si=XIxvgjV8hLKPan3B" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
+            <div class="ratio ratio-16x9 w-100" style="max-width: 900px;">
+                <iframe
+                    src="https://www.youtube.com/embed/xpdkJGUYIYg?si=XIxvgjV8hLKPan3B"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+
         </div>
     </div>
 

@@ -10,11 +10,9 @@ get_header(); ?>
         <h1 class="landing-heading display-5 text-body-emphasis text-center pt-5 pb-3 d-block mx-auto">
             Rug Care and Maintenance Guide
         </h1>
-        <p class="lead text-muted">
-            Keep your rugs fresh, vibrant and long lasting with these expert tips
-        </p>
-        <p class="text-muted">
-            <em>Click below to download</em>
+        <p class="lead text-muted text-center d-block mx-auto">
+            Keep your rugs fresh, vibrant and long lasting with these expert tips <br>
+            <em class="download-click-p">Click below to download</em>
         </p>
         <a href="assets/pdf/Assessment-1-SolutionReport.pdf" class="download-pdf-button btn btn-lg mb-3" target="_blank" rel="noopener">
             <i class="fa-solid fa-file-arrow-down me-2"></i>Download PDF
@@ -67,13 +65,13 @@ get_header(); ?>
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/rugcare-page/not-todo-img.png" class="img-fluid not-todo-img" alt="Image description">
                     </div>
                 </div>
-                <div class="col-md-5 pt-4">
-                    <div class="row g-2">
-                        <div class="col-11">
+                <div class="col-10 col-md-5 pt-4 mx-auto mx-md-0">
+                    <div class="row g-2 justify-content-center">
+                        <div class="col-11 mx-auto">
                             <div class="bg-light border not-todo-box rounded-4 p-3">
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
-                                        <h5 class="mb-0 pt-2">Don’t let <br> spills sit</h5>
+                                        <h5 class="mb-0 pt-2">Don’t let <br class="d-none d-md-block"> spills sit</h5>
                                     </div>
                                     <div class="col-md-8">
                                         <p class="text-muted mb-0 pt-2">Wipe up liquids immediately to prevent stains from setting deep into the fibers</p>
@@ -81,7 +79,7 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-11">
+                        <div class="col-11 mx-auto">
                             <div class="bg-light border not-todo-box rounded-4 p-3">
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
@@ -93,7 +91,7 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-11">
+                        <div class="col-11 mx-auto">
                             <div class="bg-light border not-todo-box rounded-4 p-3">
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
@@ -105,7 +103,7 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-11">
+                        <div class="col-11 mx-auto">
                             <div class="bg-light border not-todo-box rounded-4 p-3">
                                 <div class="row align-items-center">
                                     <div class="col-md-4">
@@ -126,7 +124,7 @@ get_header(); ?>
     <!-- Rugcare Page - Cleaning Tips Video Section -->
     <div class="rugcare-content-4 pt-5">
         <h2 class="pt-3 text-center">Cleaning Tips You Can’t Miss</h2>
-        <div class="container py-5">
+        <div class="container cleaning-tips-container  py-5">
             <div class="row g-4 align-items-start">
                 <div class="col-md-4 pt-5">
                     <div class="cleaning-tips-box border p-3 mb-3 rounded-5">

@@ -118,7 +118,8 @@ get_header(); ?>
 
             <!-- Right -->
             <!-- Top Actions -->
-            <div class="col-md-2">
+            <div class="col-12 col-md-2 order-first order-md-0 mb-3 mb-md-0">
+
                 <!-- Toggle Button -->
                 <button class="btn rug-tips-button mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#rugTips" aria-expanded="false" aria-controls="rugTips">
                     💡 Custom Rug Tips
@@ -144,7 +145,8 @@ get_header(); ?>
                 <label for="shape-size" class="form-label small mb-1">Canvas Size</label>
                 <input type="range" id="shape-size" min="10" max="100" value="90" class="form-range" style="height: 6px;">
             </div>
-            <div class="nav nav-pills d-flex justify-content-center flex-wrap gap-3" id="custom-tools-tab" role="tablist">
+
+            <div class="nav nav-pills d-flex justify-content-md-center flex-nowrap flex-md-wrap gap-2" id="custom-tools-tab" role="tablist">
                 <button class="nav-link active" id="tab-change-shapes" data-bs-toggle="pill" data-bs-target="#tool-change-shapes" type="button" role="tab">
                     <i class="fa-solid fa-shapes me-2"></i>Change Canvas Shape
                 </button>
