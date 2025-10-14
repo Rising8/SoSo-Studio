@@ -2092,20 +2092,53 @@ html {
 }
 
 /* Single Rug Page - Image Layout */
-.single-rug .top-image img {
+.single-rug .top-image img,
+.single-rug .bottom-images img,
+.single-rug .two-image-layout img,
+.single-rug .bottom-two-images img,
+.single-rug .bottom-three-images img {
   object-fit: cover;
+  border-radius: 0.75rem;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Once loaded, fade them in smoothly */
+.single-rug img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect for depth */
+.single-rug img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Aspect ratios for consistency */
+.single-rug .top-image img {
   aspect-ratio: 16 / 9;
 }
 
-.single-rug .bottom-images img {
-  object-fit: cover;
+.single-rug .bottom-two-images img,
+.single-rug .bottom-three-images img {
   aspect-ratio: 1 / 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.single-rug .bottom-images img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+/* Two image side-by-side layout */
+.two-image-layout {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.two-image-layout .flex-fill {
+  flex: 1 1 50%;
+  max-width: 50%;
+  overflow: hidden;
 }
 
 .single-rug h1 {
@@ -2520,3 +2553,5 @@ html {
     margin: 0 !important;
   }
 }
+
+
