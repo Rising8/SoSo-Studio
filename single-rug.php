@@ -6,37 +6,57 @@
     <div class="row g-5 align-items-start">
         <div class="col-md-6">
             <?php 
-            // Get ACF fields for images
             $top_image = get_field('top_image');
-            $bottom_images = [
+            $bottom_images = array_filter([
                 get_field('bottom_image_1'),
                 get_field('bottom_image_2'),
                 get_field('bottom_image_3')
-            ];
+            ]);
 
-            // Check if all bottom images exist
-            $all_bottom_exist = !in_array(null, $bottom_images, true);
+            $bottom_count = count($bottom_images);
 
-            // Case 1: If all 3 bottom images exist, then split layout
-            if ($all_bottom_exist && $top_image) : ?>
-                <div class="top-image mb-4">
+            // CASE 1: Only top image
+            if ($top_image && $bottom_count === 0) : ?>
+                <div class="single-full-image mb-4">
                     <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
                 </div>
-
-                <div class="bottom-images d-flex gap-3 flex-wrap justify-content-center">
+            <?php 
+            // CASE 2: Top + one bottom image 
+            elseif ($top_image && $bottom_count === 1) : ?>
+                <div class="top-image mb-3">
+                    <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
+                <div class="bottom-single-image">
+                    <?php echo wp_get_attachment_image($bottom_images[0]['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
+            <?php 
+            // CASE 3: Top + two bottom images
+            elseif ($top_image && $bottom_count === 2) : ?>
+                <div class="top-image mb-3">
+                    <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
+                <div class="bottom-two-images d-flex gap-3">
+                    <?php foreach ($bottom_images as $image) : ?>
+                        <div class="flex-fill">
+                            <?php echo wp_get_attachment_image($image['ID'], 'medium', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php 
+            // CASE 4: Top + three bottom images
+            elseif ($top_image && $bottom_count === 3) : ?>
+                <div class="top-image mb-3">
+                    <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
+                <div class="bottom-three-images d-flex gap-3 flex-wrap justify-content-center">
                     <?php foreach ($bottom_images as $image) : ?>
                         <div class="flex-fill" style="flex: 1 1 calc(33.333% - 1rem); max-width: calc(33.333% - 1rem);">
                             <?php echo wp_get_attachment_image($image['ID'], 'medium', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             <?php 
-            // Case 2: If not all bottom images exist and just show one big top image 
-            elseif ($top_image) :
-                echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']);
-            
-            // Fallback to featured image if ACF field missing
+            // Fallback: if top image missing, use featured image
             elseif (has_post_thumbnail()) :
                 the_post_thumbnail('large', ['class' => 'img-fluid rounded shadow w-100']);
             endif;
