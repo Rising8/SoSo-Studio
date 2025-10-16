@@ -2739,30 +2739,40 @@ html {
   /* Gallery Page */
   .gallery-layout {
     height: 500px;
+    padding-top: 80px !important;
   }
 
   .gallery-row img {
-    width: 150px;
+    width: 120px;
   }
 
   .row-1 {
-    gap: 180px;
-    margin-top: 50px;
+    gap: 150px;
   }
 
   .row-2 {
     justify-content: center; 
     gap: 210px;
-    margin-top: -230px;
-    height: 239.91px;
+    margin-top: -250px;
+    height: 180px;
   }
 
   .row-3 {
-    display: none !important;
+    display: none;
   }
 
   .row-4 {
-    display: none !important;
+    display: none;
+  }
+
+  .gallery-hero-heading {
+    margin-top: -250px;
+  }
+
+  .gallery-filter .filter-btn {
+    padding: 0.5rem 1.2rem;
+    margin: 0.2rem;
+    font-size: 0.8rem;
   }
 
   .gallery-content-3{
@@ -2780,6 +2790,33 @@ html {
     left: 50%;
     transform: translateX(-50%);   
     display: block;
+  }
+
+  /* Single Rug */
+  .single-rug-content{
+    padding: 0px 20px 0px 20px;
+  }
+
+  .single-rug h1 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .single-rug .meta-details li {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .single-rug .cta-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .single-rug .cta-box p {
+    font-size: 1rem;
+  }
+
+  .single-rug .btn-primary {
+    font-size: 1rem;
   }
 
   /* Custom Page */

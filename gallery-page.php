@@ -138,7 +138,7 @@ get_header(); ?>
 
                         <!-- Text Content Column -->
                         <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 mt-5">
                                 <!-- Rug Title -->
                                 <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">
                                     <?php echo esc_html( $title ); ?> 

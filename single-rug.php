@@ -3,7 +3,7 @@
 <div class="single-rug container py-5">
     <a href="<?php echo site_url('/gallery'); ?>" class="btn btn-outline-primary mb-4">&larr; Back to Gallery</a>
 
-    <div class="row g-5 align-items-start">
+    <div class="single-rug-content row g-5 align-items-start">
         <div class="col-md-6">
             <?php 
             $top_image = get_field('top_image');
