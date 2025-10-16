@@ -1466,6 +1466,17 @@ html {
 
 
 /* === CUSTOM PAGE STYLING === */
+.canvas-wrapper {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+#custom-canvas {
+  width: 100%; 
+  height: auto; 
+}
+
 /* Custom Page - Left Buttons */
 #undo-btn,
 #redo-btn,
@@ -1498,6 +1509,22 @@ html {
   box-shadow: 0 5px 15px rgba(75,0,130,0.1);
   margin-top: 10px;
   height: 100px;
+}
+
+.custom-design .tab-content .tab-pane-upload, .tab-pane-text, .tab-pane-draw, .tab-pane-background {
+  height: 70px;
+}
+
+.custom-design .tab-content .tab-pane-text{
+  height: 70px;
+}
+
+.custom-design .tab-content .tab-pane-draw{
+  height: 70px;
+}
+
+.custom-design .tab-content .tab-pane-background{
+  height: 70px;
 }
 
 /* Custom Page - Tool Content Inputs */
@@ -1696,6 +1723,12 @@ html {
   width: 14px;
   height: 14px;
   box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.shape-option {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 auto; 
 }
 
 
@@ -2750,6 +2783,77 @@ html {
   }
 
   /* Custom Page */
+  .custom-wrapper .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .custom-wrapper .row > .col-12.col-md-2.text-center {
+    order: 1;
+  }
+
+  .custom-wrapper .row > .col-md-8 {
+    order: 2;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #custom-canvas {
+    display: block;
+    width: 300px !important;
+    height: 400px !important;
+    margin: 0 auto;  
+  }
+
+  .custom-wrapper .row > .col-md-2:first-child button {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 1rem;
+  }
+
+  .custom-wrapper .row > .col-md-2:first-child {
+    text-align: center;
+  }
+
+  .custom-wrapper .row > .col-md-2:first-child {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .custom-wrapper .row > .col-md-2:first-child {
+    flex-wrap: nowrap;                 
+    overflow-x: auto;               
+    -webkit-overflow-scrolling: touch; 
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .custom-wrapper .row > .col-md-2:first-child > .d-flex {
+    display: contents !important;
+  }
+
+  .canvas-tools-btn {
+    padding: 0 !important;       
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border-radius: 8px;
+  }
+
+  .canvas-tools-btn span{
+    font-size: 0 !important;
+  }
+
+  .canvas-tools-btn i{
+    font-size: 1em;            
+  }
+
   .tools-row {
     gap: 6px;                 
   }
@@ -2771,6 +2875,36 @@ html {
   .custom-toolbox {
     padding-top: .6rem;
     padding-bottom: .9rem;
+  }
+
+  .tool-content-option-container{
+    height: 115px !important;
+  }
+
+  .shape-option {
+    width: 40px; 
+    height: 40px;
+  }
+
+  .custom-design .tab-content .tab-pane-upload {
+    height: 70px;
+  }
+
+  .custom-design .tab-content .tab-pane-text {
+    height: 125px;
+  }
+
+  .custom-design .tab-content .tab-pane-draw {
+    width: 250px !important;
+    height: 120px !important;
+  }
+
+  .custom-design .tab-content .tab-pane-draw .brush-label {
+    padding-left: 60px !important;
+  }
+
+  .custom-design .tab-content .tab-pane-background {
+    height: 70px;
   }
 
   /* FAQ Page */
