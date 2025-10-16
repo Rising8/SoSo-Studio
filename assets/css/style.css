@@ -2128,17 +2128,12 @@ html {
   aspect-ratio: 1 / 1;
 }
 
-/* Two image side-by-side layout */
-.two-image-layout {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.two-image-layout .flex-fill {
-  flex: 1 1 50%;
-  max-width: 50%;
-  overflow: hidden;
+/* Two image layout */
+.bottom-single-image img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .single-rug h1 {

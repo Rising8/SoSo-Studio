@@ -20,19 +20,15 @@
                 <div class="single-full-image mb-4">
                     <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
                 </div>
-
             <?php 
-            // CASE 2: Top + one bottom image (side by side)
+            // CASE 2: Top + one bottom image 
             elseif ($top_image && $bottom_count === 1) : ?>
-                <div class="two-image-layout d-flex gap-3">
-                    <div class="flex-fill">
-                        <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
-                    </div>
-                    <div class="flex-fill">
-                        <?php echo wp_get_attachment_image($bottom_images[0]['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
-                    </div>
+                <div class="top-image mb-3">
+                    <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
                 </div>
-
+                <div class="bottom-single-image">
+                    <?php echo wp_get_attachment_image($bottom_images[0]['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                </div>
             <?php 
             // CASE 3: Top + two bottom images
             elseif ($top_image && $bottom_count === 2) : ?>
@@ -46,7 +42,6 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             <?php 
             // CASE 4: Top + three bottom images
             elseif ($top_image && $bottom_count === 3) : ?>
@@ -60,7 +55,6 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             <?php 
             // Fallback: if top image missing, use featured image
             elseif (has_post_thumbnail()) :
