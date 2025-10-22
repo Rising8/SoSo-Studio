@@ -2487,24 +2487,6 @@ html {
   text-shadow: 0 1px 10px rgba(0,0,0,.22);
 }
 
-.tandc-hero a {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.tandc-header-link {
-  color: #b39ddb;
-}
-
-.tandc-header-link:hover {
-  font-weight: bold;
-}
-
-.tandc-cta {
-  background-image: linear-gradient(180deg, rgba(10,10,15,.65) 0%, rgba(10,10,15,.75) 100%);
-}
-
 /* mobile perf: avoid fixed attachment */
 @media (max-width: 768px) {
   .tandc-hero { background-attachment: scroll; }
@@ -2525,6 +2507,7 @@ html {
 
 /* Bottom CTA */
 .tandc-cta {
+  background-image: linear-gradient(180deg, rgba(10,10,15,.65) 0%, rgba(10,10,15,.75) 100%);
   background-size: cover;
   background-position: center 70%;
   background-attachment: fixed;
@@ -2569,7 +2552,6 @@ html {
   color: rgba(255,255,255,.95);
 }
 
-/* CTA actions */
 .tandc-cta__actions {
   display: inline-flex;
   gap: .75rem;
