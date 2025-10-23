@@ -2442,6 +2442,140 @@ html {
   color:#4b0082;
 }
 
+/* === TERMS AND CONDITIONS PAGE STYLING === */
+/* Hero */
+.tandc-hero {
+  background-size: cover;
+  background-position: center 70%;
+  background-attachment: fixed;
+  position: relative;
+  isolation: isolate;         
+  padding: clamp(40px, 8vw, 100px) 0;
+  color: #fff;                   
+}
+
+/* light film to improve contrast (same density as bottom) */
+.tandc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.28) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* content on top of overlay */
+.tandc-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.tandc-hero__title {
+  font-size: clamp(32px, 6vw, 52px);
+  margin: 0 0 .35rem;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,.28); 
+}
+
+.tandc-hero__lead {
+  font-size: clamp(16px, 2.2vw, 18px);
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 1px 10px rgba(0,0,0,.22);
+}
+
+/* mobile perf: avoid fixed attachment */
+@media (max-width: 768px) {
+  .tandc-hero { background-attachment: scroll; }
+}
+
+/* Content area */
+.tandc-wrapper .tandc-content {
+  max-width: 900px;
+  margin-inline: auto;
+  color: #24121f;
+}
+
+.tandc-wrapper h2 {
+  font-size: clamp(20px, 3.8vw, 26px);
+  margin-top: 1.8rem;
+  margin-bottom: .6rem;
+}
+
+/* Bottom CTA */
+.tandc-cta {
+  background-image: linear-gradient(180deg, rgba(10,10,15,.65) 0%, rgba(10,10,15,.75) 100%);
+  background-size: cover;
+  background-position: center 70%;
+  background-attachment: fixed;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(40px, 8vw, 100px) 0;
+  overflow: clip;
+}
+
+/* same light overlay as hero for consistency */
+.tandc-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.28) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tandc-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.tandc-cta__title {
+  font-size: clamp(28px, 5.2vw, 44px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 14px rgba(0,0,0,.28);
+}
+
+.tandc-cta__lead {
+  max-width: 820px;
+  margin: 0 auto 22px;
+  font-size: clamp(16px, 2.3vw, 18px);
+  line-height: 1.65;
+  color: rgba(255,255,255,.95);
+}
+
+.tandc-cta__actions {
+  display: inline-flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Use existing site tone on dark bg */
+.tandc-cta .index-rug-button {
+  border: none;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+.tandc-cta .index-rug-button:hover,
+.tandc-cta .index-rug-button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.22);
+}
+
+/* mobile perf: avoid fixed attachment */
+@media (max-width: 768px) {
+  .tandc-cta { background-attachment: scroll; }
+}
+
 
 /* === FOOTER STYLING === */
 .footer-wrapper {

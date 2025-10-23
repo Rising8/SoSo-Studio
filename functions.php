@@ -422,6 +422,33 @@ function register_cpt_instructions() {
 }
 add_action('add_meta_boxes', 'register_cpt_instructions');
 
+// Add instructions meta box for Terms & Conditions Page
+function register_tandc_instructions_meta_box() {
+    add_meta_box(
+        'tandc_instructions',             // ID
+        'Terms & Conditions Instructions',// Title
+        'tandc_instructions_content',      // Callback function
+        'page',                            // Post type (pages)
+        'side',                            // Context (side/top/normal)
+        'high'                             // Priority
+    );
+}
+add_action('add_meta_boxes', 'register_tandc_instructions_meta_box');
+// Callback function to display instructions
+function tandc_instructions_content($post) {
+    $template = get_page_template_slug($post->ID);
+    if ($template !== 'terms-and-conditions.php') {
+        return;
+    }
+
+    echo '<ul style="padding-left:20px; font-size:14px; line-height:1.4;">';
+    echo '<li>Use <strong>&lt;h2&gt;</strong> for each section heading.</li>';
+    echo '<li>Use <strong>paragraphs</strong> for the content under each heading.</li>';
+    echo '<li>Separate each section clearly with headings so it’s easy to read.</li>';
+    echo '<li>Do not forget to add a hero image and CTA image using the custom fields.</li>';
+    echo '</ul>';
+}
+
 // Add instructions to a taxonomy term form (add/edit) 
  function add_taxonomy_instructions($taxonomy_slug, $add_instructions = [], $edit_instructions = []) {
 
