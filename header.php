@@ -33,8 +33,8 @@
                     </div>
                     <!-- Button -->
                     <div class="icon d-flex align-items-center">
-                        <a class="header-contact-btn rounded-pill px-4 py-2 fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
-                            LET'S TALK
+                        <a class="chatbox px-4 py-2 fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="fa-solid fa-comments"></i>
                         </a>
                     </div>
                 </div>

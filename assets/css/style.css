@@ -168,6 +168,15 @@ html {
 }
 
 /* Contact Header Styling */
+/* Mobile Contact Header Styling */
+.chatbox .fa-comments {
+  font-size: 2.5em !important;
+  background: linear-gradient(195deg, #875DA6, #8DC9BD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Desktop Contact Header Styling */
 .header-contact-btn {
   background: linear-gradient(135deg, #875DA6, #8DC9BD);
   color: #fff;
