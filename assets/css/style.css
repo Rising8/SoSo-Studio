@@ -1182,7 +1182,7 @@ html {
   --ss-accent-2: #ffdff4;
   --ss-text: #24121f;
   --ss-muted: #6b6b6b;
-  --ss-badge-size: 54px;
+  --ss-badge-size: 35px;
   --ss-container-max: 1100px;
   --ss-radius: 10px;
   --ss-gap: 1rem;
@@ -1222,6 +1222,43 @@ html {
   margin-bottom: 40px;
   border-radius: var(--ss-radius);
   z-index: 1;
+  position: relative;
+}
+
+.ss-arrow-1 {
+  width: 600px;  
+  position: absolute;
+  left: 40%;
+  bottom: -130px; 
+  transform: translateX(-50%);
+  height: auto;
+  margin: 0;   
+  padding: 0;
+  pointer-events: none; 
+}
+
+.ss-arrow-2 {
+  width: 600px;  
+  position: absolute;
+  left: 60%;
+  bottom: -140px; 
+  transform: translateX(-50%);
+  height: auto;
+  margin: 0;   
+  padding: 0;
+  pointer-events: none; 
+}
+
+.ss-arrow-3 {
+  width: 600px;  
+  position: absolute;
+  left: 35%;
+  bottom: -180px; 
+  transform: translateX(-50%);
+  height: auto;
+  margin: 0;   
+  padding: 0;
+  pointer-events: none; 
 }
 
 .ss-badge {
@@ -2957,6 +2994,18 @@ html {
 
   .commission-content-3{
     padding: 0px 20px 0px 20px;
+  }
+
+  .ss-arrow-1 {
+    display: none;
+  }
+
+  .ss-arrow-2 {
+    display: none;
+  }
+
+  .ss-arrow-3 {
+    display: none;
   }
 
   /* Workshop Page */

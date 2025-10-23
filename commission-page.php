@@ -33,7 +33,7 @@ get_header(); ?>
                 <p class="text-center text-muted mb-4">Four simple steps quick and easy.</p>
 
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-1">
-                    <div class="ss-badge" aria-hidden="true">1</div>
+                    <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Design (Optional)</h3>
                         <p class="ss-desc">Feeling creative? Use our design tool to sketch your marvellous creations.
@@ -46,11 +46,14 @@ get_header(); ?>
                                 Start Designing
                             </a>
                         </p>
+                        <img class="ss-arrow-1" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/arrow-line-1.png' ); ?>" alt="" role="presentation" aria-hidden="true"/>
                     </div>
                 </div>
 
+                
+
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-2">
-                    <div class="ss-badge" aria-hidden="true">2</div>
+                    <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Submit Request</h3>
                         <p class="ss-desc">Complete the request form and upload any designs, photos or inspirations you like. We'll help bring your ideas to life.</p>
@@ -59,19 +62,21 @@ get_header(); ?>
                             Request Form
                         </a>
                         </p>
+                        <img class="ss-arrow-2" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/arrow-line-2.png' ); ?>" alt="" role="presentation" aria-hidden="true"/>
                     </div>
                 </div>
 
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-3">
-                    <div class="ss-badge" aria-hidden="true">3</div>
+                    <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Review</h3>
                         <p class="ss-desc">We’ll review your request, discuss details and provide a quote or recommendations before crafting begins.</p>
+                        <img class="ss-arrow-3" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/arrow-line-3.png' ); ?>" alt="" role="presentation" aria-hidden="true"/>
                     </div>
                 </div>
 
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-4">
-                    <div class="ss-badge" aria-hidden="true">4</div>
+                    <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Crafting Process</h3>
                         <p class="ss-desc">Once confirmed, our artisans begin handcrafting your custom rug, turning your vision into a finished masterpiece.</p>
