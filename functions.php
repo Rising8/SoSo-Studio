@@ -423,24 +423,29 @@ function register_cpt_instructions() {
 add_action('add_meta_boxes', 'register_cpt_instructions');
 
 // Add instructions meta box for Terms & Conditions Page
-function register_tandc_instructions_meta_box() {
+function register_policy_instructions_meta_box() {
     add_meta_box(
-        'tandc_instructions',             // ID
-        'Terms & Conditions Instructions',// Title
-        'tandc_instructions_content',      // Callback function
+        'policy_instructions',             // ID
+        'Policy Editing Instructions',     // Title
+        'policy_instructions_content',      // Callback function
         'page',                            // Post type (pages)
         'side',                            // Context (side/top/normal)
         'high'                             // Priority
     );
 }
-add_action('add_meta_boxes', 'register_tandc_instructions_meta_box');
+add_action('add_meta_boxes', 'register_policy_instructions_meta_box');
 // Callback function to display instructions
-function tandc_instructions_content($post) {
+function policy_instructions_content($post) {
     $template = get_page_template_slug($post->ID);
-    if ($template !== 'terms-and-conditions.php') {
+    // 3 page templates these instructions will show on
+    $allowed_templates = [
+        'terms-and-conditions.php',
+        'privacy-policy.php',
+        'cookie-statement.php'
+    ];
+    if (!in_array($template, $allowed_templates)) {
         return;
     }
-
     echo '<ul style="padding-left:20px; font-size:14px; line-height:1.4;">';
     echo '<li>Use <strong>&lt;h2&gt;</strong> for each section heading.</li>';
     echo '<li>Use <strong>paragraphs</strong> for the content under each heading.</li>';
