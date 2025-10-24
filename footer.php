@@ -45,7 +45,7 @@
                     <h5 class="footer-font fw-bold mb-3">Support</h5>
                     <ul class="list-unstyled footer-font footer-links">
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="footer-link">Contact Us</a></li>
-                        <li><a href="<?php echo site_url('/commission'); ?>" class="footer-link">Commission Request</a></li>
+                        <li><a href="<?php echo site_url('/commission-form'); ?>" class="footer-link">Commission Request</a></li>
                         <li><a href="<?php echo site_url('/custom'); ?>" class="footer-link">Custom Request</a></li>
                         <li><a href="<?php echo site_url('/faq'); ?>" class="footer-link">FAQs</a></li>
                     </ul>

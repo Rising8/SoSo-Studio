@@ -172,6 +172,7 @@ html {
 .chatbox .fa-comments {
   font-size: 2.5em !important;
   background: linear-gradient(195deg, #875DA6, #8DC9BD);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
