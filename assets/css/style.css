@@ -2204,9 +2204,20 @@ html {
   aspect-ratio: 16 / 9;
 }
 
-.single-rug .bottom-two-images img,
-.single-rug .bottom-three-images img {
-  aspect-ratio: 1 / 1;
+/* Three image layout */
+.single-rug .bottom-two-images .flex-fill {
+  width: calc(50% - 0.5rem); /* 50% minus half the gap */
+}
+
+.single-rug .bottom-two-images img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Four image layout */
+.single-rug .bottom-three-images img {    
+  height: 200px;    
+  object-fit: cover;
 }
 
 /* Two image layout */
@@ -2273,6 +2284,15 @@ html {
   border-color: #5a379e;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(111, 66, 193, 0.2);
+}
+
+#imageZoomModal .modal-body {
+  max-height: 80vh; 
+  overflow: hidden;
+}
+
+#imageZoomModal img {
+  object-fit: contain;
 }
 
 
