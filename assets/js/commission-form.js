@@ -1,18 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Selects the form with the class -> commission-form
     const form = document.querySelector('.commission-form');
+    // Select the input field for the reference image
+    const referenceInput = document.getElementById('reference');
+
+    // Exit early if the form isn't found (debugging test)
+    if (!form) return;
 
     // Validation when a field loses its focus (blur)
     form.querySelectorAll('input, select, textarea').forEach(input => {
         input.addEventListener('blur', () => {
             // Mark field as touched for styling
             input.classList.add('was-validated'); 
-            if (!input.checkValidity()) {
-                // If the field is invalid, show a red border for an error
-                input.classList.add('is-invalid');
-            } else {
-                // If the field is valid, show green border for success
+
+            // If the field is optional and it is empty, then it will stay neutral (no color)
+            if (!input.required && input.value.trim() === '') {
                 input.classList.remove('is-invalid');
+                input.classList.remove('was-validated');
+                return;
+            }
+
+            // If field has input, then show red/green depending on validity
+            if (input.value.trim() !== '') {
+                if (!input.checkValidity()) {
+                    // If the field is invalid, show a red border for an error
+                    input.classList.add('is-invalid');
+                } else {
+                    // If the field is valid, show green border for success
+                    input.classList.remove('is-invalid');
+                }
+            } else if (input.required) {
+                // If the field is required but it is empty, then red border
+                input.classList.add('is-invalid');
             }
         });
     });
@@ -24,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         form.querySelectorAll('input, select, textarea').forEach(input => {
             // Mark all fields as touched for styling
             input.classList.add('was-validated');
+
+            // If the field is optional and it is empty, then it will skip validation styling
+            if (!input.required && input.value.trim() === '') {
+                input.classList.remove('is-invalid');
+                input.classList.remove('was-validated');
+                return;
+            }
+
             if (!input.checkValidity()) {
                 // Show invalid styling
                 input.classList.add('is-invalid');
@@ -39,6 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isFormValid) {
             e.preventDefault();
             e.stopPropagation();
+            return;
+        }
+
+        // Checks if reference image is attached before submitting
+        if (!referenceInput.value) {
+            // Ask user if they are sure they want to submit without an image
+            const confirmSubmit = confirm(
+                "You haven’t attached a reference image. Are you sure you want to submit without one?"
+            );
+
+            // If user cancels, stop submission and reset styling
+            if (!confirmSubmit) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Reset all validation styling (goes back to normal)
+                form.querySelectorAll('input, select, textarea').forEach(input => {
+                    input.classList.remove('was-validated', 'is-invalid');
+                });
+                return;
+            }
         }
     });
 });
