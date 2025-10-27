@@ -38,7 +38,11 @@
                 <div class="bottom-two-images d-flex gap-3">
                     <?php foreach ($bottom_images as $image) : ?>
                         <div class="flex-fill">
-                            <?php echo wp_get_attachment_image($image['ID'], 'medium', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                            <img 
+                                src="<?php echo esc_url($image['sizes']['medium']); ?>" 
+                                class="img-fluid rounded shadow w-100 zoomable-image" 
+                                data-full="<?php echo esc_url($image['url']); ?>" 
+                                alt="Rug Image">
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -51,7 +55,11 @@
                 <div class="bottom-three-images d-flex gap-3 flex-wrap justify-content-center">
                     <?php foreach ($bottom_images as $image) : ?>
                         <div class="flex-fill" style="flex: 1 1 calc(33.333% - 1rem); max-width: calc(33.333% - 1rem);">
-                            <?php echo wp_get_attachment_image($image['ID'], 'medium', false, ['class' => 'img-fluid rounded shadow w-100']); ?>
+                            <img 
+                                src="<?php echo esc_url($image['sizes']['medium']); ?>" 
+                                class="img-fluid rounded shadow w-100 zoomable-image" 
+                                data-full="<?php echo esc_url($image['url']); ?>" 
+                                alt="Rug Image">
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -94,3 +102,14 @@
 </div>
 
 <?php get_footer(); ?>
+
+<!-- Image Zoom Modal -->
+<div class="modal fade" id="imageZoomModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0">
+                <img src="" class="img-fluid w-100" id="zoomedImage" alt="Zoomed Image">
+            </div>
+        </div>
+    </div>
+</div>
