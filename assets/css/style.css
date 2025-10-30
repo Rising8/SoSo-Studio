@@ -3304,3 +3304,48 @@ html {
   }
 }
 
+
+
+.picture-types-left{
+  position: relative;
+}
+
+.big-pic-left{
+  padding: 100px 50px 100px 80px;
+}
+
+.top-pic-left{
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.bot-pic-left{
+  position: absolute;
+  top: 380px;
+  right: 150px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.picture-types-right{
+  position: relative;
+}
+
+.big-pic-right{
+  padding: 100px 50px 100px 130px;
+}
+
+.top-pic-right{
+  position: absolute;
+  top: 50px;
+  right: 425px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.bot-pic-right{
+  position: absolute;
+  top: 200px;
+  right: 100px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}

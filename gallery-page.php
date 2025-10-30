@@ -168,4 +168,45 @@ get_header(); ?>
     </div>
 </div>
 
+<!-- gallery types (new code) -->
+<div class="gallery-types pt-2">
+        <!-- Section Divider -->
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-style.png" class="img-fluid" alt="Image description">                
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="picture-types-left">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/big-pic-left.png" class="big-pic-left" alt="Left image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/top-pic-left.png" class="top-pic-left" alt="Left image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/bot-pic-left.png" class="bot-pic-left" alt="Left image">
+                </div>
+            </div>
+            <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
+                <div class="col-lg-8 ">
+                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Flatweave Rugs</h3>
+                    <p class="lead fs-6 fs-md-5 fs-lg-4">Flatweave rugs are lightweight, durable, and woven without any pile, making them perfect for high-traffic areas like hallways or living rooms. Their thin profile also makes them easy to clean and ideal for layering under furniture. With patterns often inspired by traditional designs, flatweave rugs bring a stylish and practical touch to any space.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-content-3">
+        <div class="row g-0">
+            <div class="col-md-6 gallery-category-bg d-flex align-items-center justify-content-center">
+                <div class="col-lg-8 ">
+                    <h3 class="display-5 text-body-emphasis lh-1 mb-3 fs-md-2 fs-lg-1">Tufted Rugs</h3>
+                    <p class="lead fs-6 fs-md-5 fs-lg-4">Tufted rugs are created by punching yarn into a fabric base, resulting in a thick, cushioned feel underfoot. They offer a great balance between style and comfort, with a wide range of patterns and textures available. These rugs are ideal for adding a decorative element to living rooms or dining areas.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="picture-types-right">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/big-pic-right.png" class="big-pic-right" alt="Left image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/top-pic-right.png" class="top-pic-right" alt="Left image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/gallery-page/bot-pic-right.png" class="bot-pic-right" alt="Left image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <?php get_footer(); ?>
