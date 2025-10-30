@@ -109,7 +109,7 @@ function register_showcase_post_type() {
             'search_items' => 'Search Showcases',
         ],
         'public' => true,
-        'rewrite' => ['slug' => 'showcases'],
+        'rewrite' => ['slug' => 'rugs'],
         'menu_icon' => 'dashicons-images-alt2',
         'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
         'show_in_rest' => true, 
