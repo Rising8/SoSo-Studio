@@ -2,10 +2,89 @@
 /**
  * Template Name: FAQ Page
  */
-get_header(); ?>
+get_header();
+
+function sosofaq_display_dynamic_faq_tabs() {
+    ob_start();
+    $categories = get_terms(array(
+        'taxonomy' => 'faq_category',
+        'hide_empty' => false,
+        'orderby' => 'name',
+        'order' => 'ASC'
+    ));
+
+    if (!empty($categories) && !is_wp_error($categories)) {
+        echo '<div class="container">';
+        echo '<ul class="nav faq-nav-pills justify-content-center mb-4" id="faqTabs" role="tablist">';
+        $tab_index = 0;
+        foreach ($categories as $cat) {
+            $active_class = $tab_index === 0 ? 'active' : '';
+            echo '<li class="nav-item">';
+            echo '<button class="nav-link rounded-pill ' . esc_attr($active_class) . '" data-bs-toggle="pill" data-bs-target="#tab-' . esc_attr($cat->slug) . '">' . esc_html($cat->name) . '</button>';
+            echo '</li>';
+            $tab_index++;
+        }
+        echo '</ul>';
+
+        echo '<div class="tab-content">';
+        $tab_index = 0;
+        foreach ($categories as $cat) {
+            $active_class = $tab_index === 0 ? 'show active' : '';
+            echo '<div class="tab-pane fade ' . esc_attr($active_class) . '" id="tab-' . esc_attr($cat->slug) . '">';
+            echo '<div class="accordion" id="accordion-' . esc_attr($cat->slug) . '">';
+            $faqs = new WP_Query(array(
+                'post_type' => 'faq',
+                'posts_per_page' => -1,
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'faq_category',
+                        'field'    => 'slug',
+                        'terms'    => $cat->slug,
+                    ),
+                ),
+            ));
+            while ($faqs->have_posts()) : $faqs->the_post();
+                $faq_id = get_the_ID();
+                $question = get_the_title();
+                $answer = apply_filters('the_content', get_the_content());
+
+                $dynamic_links = array(
+                    '{commission_link}' => site_url('/commission'),
+                );
+                $answer = str_replace(array_keys($dynamic_links), array_values($dynamic_links), $answer);
+
+                $collapse_id = $cat->slug . '-faq-' . $faq_id;
+                ?>
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button faq-accordion-btn collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#<?php echo esc_attr($collapse_id); ?>">
+                            <?php echo esc_html($question); ?>
+                        </button>
+                    </h2>
+                    <div id="<?php echo esc_attr($collapse_id); ?>" class="accordion-collapse collapse"
+                         data-bs-parent="#accordion-<?php echo esc_attr($cat->slug); ?>">
+                        <div class="accordion-body"><?php echo $answer; ?></div>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+            wp_reset_postdata();
+            echo '</div></div>';
+            $tab_index++;
+        }
+        echo '</div></div>';
+    } else {
+        echo '<p class="text-center">No FAQs found.</p>';
+    }
+    return ob_get_clean();
+}
+?>
 
 <div class="faq-wrapper py-5">
-    <!-- FAQ Page - Hero Section -->
     <div class="faq-content-1">
         <div class="container">
             <div class="text-center mb-4">
@@ -13,170 +92,11 @@ get_header(); ?>
                 <p class="lead text-muted text-center d-block mx-auto">Answers to your most common curiosities, rug related or not.</p>
             </div>
 
-            <!-- Tabs -->
-            <div class="container">
-                <!-- Category Tabs -->
-                <ul class="nav faq-nav-pills justify-content-center mb-4" id="faqTabs" role="tablist">
-                    <li class="nav-item">
-                        <button class="nav-link active rounded-pill" data-bs-toggle="pill" data-bs-target="#general">General</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#shipping">Shipping</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#care">Rug Care</button>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content">
-                    <!-- General Tab -->
-                    <div class="tab-pane fade show active" id="general">
-                        <div class="accordion" id="generalFAQ">
-                            <!-- General FAQ 1 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genA1">
-                                        What makes your rugs unique?
-                                    </button>
-                                </h2>
-                                <div id="genA1" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
-                                    <div class="accordion-body">
-                                        Each rug is handmade with love, no two are the same.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- General FAQ 2 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genA2">
-                                        Can I customise my own rug?
-                                    </button>
-                                </h2>
-                                <div id="genA2" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
-                                    <div class="accordion-body">
-                                        Absolutely! You can submit your design ideas via our <a href="<?php echo site_url('/commission'); ?>" class="faq-commission-link">Commission page</a> and we'll bring them to life.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- General FAQ 3 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genA3">
-                                        Do I need experience to attend a workshop?
-                                    </button>
-                                </h2>
-                                <div id="genA3" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
-                                    <div class="accordion-body">
-                                        Not at all! Our workshops are designed for beginners and all materials are included.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shipping Tab -->
-                    <div class="tab-pane fade" id="shipping">
-                        <div class="accordion" id="shippingFAQ">
-                            <!-- Shipping FAQ 1 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipA1">
-                                        How long does shipping take?
-                                    </button>
-                                </h2>
-                                <div id="shipA1" class="accordion-collapse collapse" data-bs-parent="#shippingFAQ">
-                                    <div class="accordion-body">
-                                        Shipping usually takes 5–10 business days depending on your location.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Shipping FAQ 2 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipA2">
-                                        Do you offer international delivery?
-                                    </button>
-                                </h2>
-                                <div id="shipA2" class="accordion-collapse collapse" data-bs-parent="#shippingFAQ">
-                                    <div class="accordion-body">
-                                        Yes, we ship worldwide! International shipping times may vary based on your country.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Shipping FAQ 3 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipA3">
-                                        How is my rug packaged?
-                                    </button>
-                                </h2>
-                                <div id="shipA3" class="accordion-collapse collapse" data-bs-parent="#shippingFAQ">
-                                    <div class="accordion-body">
-                                        Each rug is rolled securely, wrapped in protective material, and boxed for safe delivery.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Rug Care Tab -->
-                    <div class="tab-pane fade" id="care">
-                        <div class="accordion" id="careFAQ">
-                            <!-- Rug Care FAQ 1 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#careA1">
-                                        How do I clean my rug?
-                                    </button>
-                                </h2>
-                                <div id="careA1" class="accordion-collapse collapse" data-bs-parent="#careFAQ">
-                                    <div class="accordion-body">
-                                        Vacuum lightly, avoid soaking, and check out our rug care guide for full steps.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Rug Care FAQ 2 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#careA2">
-                                        Can I place it in a high-moisture area like a bathroom?
-                                    </button>
-                                </h2>
-                                <div id="careA2" class="accordion-collapse collapse" data-bs-parent="#careFAQ">
-                                    <div class="accordion-body">
-                                        We don’t recommend it — high humidity can affect the rug’s backing and durability.
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Rug Care FAQ 3 -->
-                            <div class="accordion-item mb-3 border-0 shadow-sm">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button faq-accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#careA3">
-                                        Are your rugs pet-friendly?
-                                    </button>
-                                </h2>
-                                <div id="careA3" class="accordion-collapse collapse" data-bs-parent="#careFAQ">
-                                    <div class="accordion-body">
-                                        Yes! Our rugs are durable, but we recommend trimming pet nails to avoid snags.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php echo sosofaq_display_dynamic_faq_tabs(); ?>
         </div>
     </div>
 
     <div class="faq-content-2">
-        <!-- Contact Section -->
         <div class="faq-contact-section text-center pt-5">
             <h2 class="mb-3">Need More Help?</h2>
             <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
