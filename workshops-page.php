@@ -13,7 +13,7 @@ get_header(); ?>
                 Dream Piece
             </h1>
             <p class="workshop-hero lead text-muted">A hands-on workshop to design and create your own unique rug.</p>
-            <a href="https://classbento.com.au/rug-tufting-workshop-perth-1" target="_blank" rel="noopener noreferrer">
+            <a href="https://classbento.com.au/rug-tufting-workshop-perth-2" target="_blank" rel="noopener noreferrer">
                 <!-- CTA Button Left - Links to Commission Page -->
                 <button class="index-rug-button btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5 mt-32" type="button">
                     Book Now
