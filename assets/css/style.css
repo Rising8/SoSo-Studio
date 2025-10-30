@@ -2119,16 +2119,14 @@ html {
 /* Gallery Page - Categories Section */
 .gallery-category-bg {
   background-color: rgb(250, 247, 253);
-}
-
-.gallery-category-bg {
   position: relative; 
 }
 
-.right-arrow {
+.right-arrow,
+.left-arrow {
   position: absolute;
-  margin-top: 18em;
-  margin-left: 18em;
+  bottom: 20px;
+
   font-size: 2rem;
   color: white;
   background: rgba(163, 150, 172, 0.12);
@@ -2138,27 +2136,61 @@ html {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.right-arrow:hover {
-  background: rgba(162, 114, 198, 0.3);
-  transform: translateY(3px);
+.right-arrow {
+  right: 20px;
 }
 
 .left-arrow {
-  position: absolute;
-  margin-top: 18em;
-  margin-right: 18em;
-  font-size: 2rem;
-  color: white;
-  background: rgba(163, 150, 172, 0.12);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 50%;
-  transition: background 0.3s ease, transform 0.2s ease;
+  left: 20px;
 }
 
+.right-arrow:hover,
 .left-arrow:hover {
   background: rgba(162, 114, 198, 0.3);
   transform: translateY(3px);
+}
+
+/* Gallery Categories Section - Stacked Images */
+.gallery-content-3 .stacked-images .top-image,
+.gallery-content-3 .stacked-images .bottom-image {
+  width: 100%;
+  max-width: 450px; 
+  margin: 0 auto;
+}
+
+.gallery-content-3 .stacked-images .top-image img,
+.gallery-content-3 .stacked-images .bottom-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  aspect-ratio: 16 / 9;
+  transition: transform 0.8s ease, opacity 0.8s ease, box-shadow 0.3s ease;
+}
+
+.gallery-content-3 .stacked-images .top-image {
+  padding-top: 1rem;
+}
+
+.gallery-content-3 .stacked-images .bottom-image {
+  padding-bottom: 1rem;
+}
+
+.gallery-content-3 .stacked-images.left .top-image {
+  transform: translateX(-45px); /* moves top image a bit left */
+}
+
+.gallery-content-3 .stacked-images.left .bottom-image {
+  transform: translateX(45px); /* moves bottom image a bit right */
+}
+
+.gallery-content-3 .stacked-images.right .top-image {
+  transform: translateX(45px); /* moves top image a bit right */
+}
+
+.gallery-content-3 .stacked-images.right .bottom-image {
+  transform: translateX(-45px); /* moves bottom image a bit left */
 }
 
 
@@ -2221,7 +2253,7 @@ html {
 }
 
 /* Two image layout */
-.bottom-single-image img {
+.bottom-image img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   transition: transform 0.8s ease, opacity 0.8s ease;
@@ -3302,50 +3334,4 @@ html {
   .footer-bottom{
     margin: 0 !important;
   }
-}
-
-
-
-.picture-types-left{
-  position: relative;
-}
-
-.big-pic-left{
-  padding: 100px 50px 100px 80px;
-}
-
-.top-pic-left{
-  position: absolute;
-  top: 50px;
-  right: 100px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.bot-pic-left{
-  position: absolute;
-  top: 380px;
-  right: 150px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.picture-types-right{
-  position: relative;
-}
-
-.big-pic-right{
-  padding: 100px 50px 100px 130px;
-}
-
-.top-pic-right{
-  position: absolute;
-  top: 50px;
-  right: 425px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.bot-pic-right{
-  position: absolute;
-  top: 200px;
-  right: 100px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
