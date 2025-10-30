@@ -80,7 +80,7 @@ get_header(); ?>
                 <div class="col-md-4">
                     <div class="about-soso-card card h-100 p-4">
                         <div class="card-body text-center">
-                            <h5 class="card-title py-2">Custom Rugs</h5>
+                            <h5 class="card-title py-2">Rug Commissions</h5>
                             <p class="card-text py-2">Design and create one-of-a-kind rugs tailored to your style and space.</p>
                             <a href="<?php echo site_url('/commission'); ?>" class="btn btn-primary rounded-pill px-3">Commission a Rug</a>
                         </div>
