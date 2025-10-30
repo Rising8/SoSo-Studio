@@ -193,7 +193,7 @@ get_header(); ?>
 
     <!-- Index Page - Workshop Section (Parallax) -->
     <div class="index-content-4 mt-3"
-        style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/landing-page/workshop-section.png' ); ?>');">
+        style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/landing-page/workshop-section.JPG' ); ?>');">
         <div class="parallax-inner">
             <div class="parallax-card">
                 <h3 class="parallax-title">Step Into Our Rug Workshop</h3>
