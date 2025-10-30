@@ -50,8 +50,6 @@ get_header(); ?>
                     </div>
                 </div>
 
-                
-
                 <div class="ss-step" role="listitem" aria-labelledby="ss-step-title-2">
                     <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
@@ -138,7 +136,7 @@ get_header(); ?>
                 <div class="d-flex flex-wrap justify-content-center gap-3">
                     <a href="<?= home_url(); ?>" class="btn btn-outline-primary px-4 py-2 rounded-pill">Back to Home</a>
                     <a href="<?= home_url('/gallery'); ?>" class="btn btn-outline-primary px-4 py-2 rounded-pill">View Gallery</a>
-                    <a href="<?= home_url('/commission-form'); ?>" class="btn btn-outline-primary px-4 py-2 rounded-pill">Request a Custom Rug</a>
+                    <a href="<?= home_url('/workshops'); ?>" class="btn btn-outline-primary px-4 py-2 rounded-pill">Attend a Workshop</a>
                 </div>
             </div>
         </section>
