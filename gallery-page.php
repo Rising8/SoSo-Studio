@@ -116,15 +116,16 @@ get_header(); ?>
                 $content  = apply_filters( 'the_content', $p->post_content ); // Rug description
                 $is_even  = ($i % 2 === 0); // Used for alternating layout, like a checkered box system
                 $has_next = ($i + 1 < $total); // Checks if there is a next rug
-                // Gets featured image, if none exists, it will fallback to placeholder
-                $img_html = has_post_thumbnail( $p->ID )
-                    ? get_the_post_thumbnail( $p->ID, 'large', array(
-                        'class' => 'img-fluid w-100',
-                        'alt'   => esc_attr( $title ),
-                    ))
-                    // Fallback image if featured image not set (replace path if you have a better default)
-                    : '<img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/img/placeholder.jpg' ) . '" class="img-fluid w-100" alt="">';
-                ?>
+                
+                // Get 2 image fields 
+                $top_image    = get_field('top_image', $p->ID);
+                $bottom_image = get_field('bottom_image', $p->ID);
+
+                // Fallbacks if empty
+                $placeholder = get_stylesheet_directory_uri() . '/assets/img/placeholder.jpg';
+                $top_img_url    = $top_image ? $top_image['url'] : $placeholder;
+                $bottom_img_url = $bottom_image ? $bottom_image['url'] : $placeholder;
+            ?>
 
                 <!-- Rug section -->            
                 <div class="gallery-content-3" id="<?php echo esc_attr( $slug ); ?>">
@@ -132,7 +133,18 @@ get_header(); ?>
 
                         <?php if ( $is_even ): // Image on the left for even rows ?>
                             <div class="col-md-6">
-                                <?php echo $img_html; ?>
+                                <div class="stacked-images left">
+                                    <?php if ($top_image): ?>
+                                        <div class="top-image mb-3">
+                                            <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100', 'alt' => esc_attr($title)]); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($bottom_image): ?>
+                                        <div class="bottom-image">
+                                            <?php echo wp_get_attachment_image($bottom_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100', 'alt' => esc_attr($title)]); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         <?php endif; ?>
 
@@ -144,7 +156,9 @@ get_header(); ?>
                                     <?php echo esc_html( $title ); ?> 
                                 </h3>
                                 <!-- Rug Description -->
-                                <div class="lead fs-6 fs-md-5 fs-lg-4"><?php echo $content; ?></div>
+                                <div class="lead fs-6 fs-md-5 fs-lg-4">
+                                    <?php echo $content; ?>
+                                </div>
                             </div>
 
                             <!-- If a next section exists, there will be an arrow to the next section -->
@@ -158,7 +172,18 @@ get_header(); ?>
 
                         <?php if ( ! $is_even ): // Image on the right for odd rows ?>
                             <div class="col-md-6">
-                                <?php echo $img_html; ?>
+                                <div class="stacked-images right">
+                                    <?php if ($top_image): ?>
+                                        <div class="top-image mb-3">
+                                            <?php echo wp_get_attachment_image($top_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100', 'alt' => esc_attr($title)]); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($bottom_image): ?>
+                                        <div class="bottom-image">
+                                            <?php echo wp_get_attachment_image($bottom_image['ID'], 'large', false, ['class' => 'img-fluid rounded shadow w-100', 'alt' => esc_attr($title)]); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         <?php endif; ?>
                     </div>
