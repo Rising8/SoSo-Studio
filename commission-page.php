@@ -68,7 +68,7 @@ get_header(); ?>
                     <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Review</h3>
-                        <p class="ss-desc">We’ll review your request, discuss details and provide a quote or recommendations before crafting begins.</p>
+                        <p class="ss-desc">We’ll review your request, discuss details and provide a quote via email or recommendations before crafting begins.</p>
                         <img class="ss-arrow-3" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/arrow-line-3.png' ); ?>" alt="" role="presentation" aria-hidden="true"/>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ get_header(); ?>
                     <div class="ss-badge" aria-hidden="true"></div>
                     <div class="ss-content">
                         <h3>Crafting Process</h3>
-                        <p class="ss-desc">Once confirmed, our artisans begin handcrafting your custom rug, turning your vision into a finished masterpiece.</p>
+                        <p class="ss-desc">Once confirmed, we'll begin handcrafting your custom rug, turning your vision into a finished masterpiece.</p>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@ get_header(); ?>
                             <a href="<?= home_url('/faq'); ?>" class="btn btn-outline-secondary mt-2 px-3">View More FAQs</a>
                             <p class="small text-muted mt-3">
                                 <i class="fa fa-shield-alt me-2"></i>
-                                Your design is safe with us. Every rug is crafted with care, privacy, and love.
+                                Your design is safe with us. Every rug is crafted with care, privacy and love.
                             </p>
                         </div>
                     </div>

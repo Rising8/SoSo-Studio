@@ -86,8 +86,7 @@ html {
 }
 
 .logo-studio {
-  color: white;
-  -webkit-text-stroke: 0.5px #000;
+  color: #875DA6;
   font-size: 1.1em;
 }
 
@@ -1151,28 +1150,9 @@ html {
 .commission-hero-e,
 .commission-hero-a,
 .commission-hero-m {
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-}
-
-.commission-hero-d {
-  color: red;
-}
-
-.commission-hero-r {
-  color: yellow;
-}
-
-.commission-hero-e {
-  color: green;
-}
-
-.commission-hero-a {
-  color: blue;
-}
-
-.commission-hero-m {
   color: violet;
 }
+
 
 /* Commission Page - Stepper Section Styles */
 /* CSS variables for easy theme control - commission page */

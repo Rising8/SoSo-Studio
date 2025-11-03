@@ -159,32 +159,16 @@ get_header(); ?>
                                 <i class="fa-solid fa-thumbs-up"></i>
                             </div> 
                             <h4 class="mb-0 text-body-emphasis">Handcrafted Quality</h4>
-                            <p class="text-body-secondary">Each rug is handmade with unique design and superior craftsmanship.</p>
+                            <p class="text-body-secondary">Each rug is handmade locally in Perth in our home studio.</p>
                         </div>
                         
                         <div class="col d-flex flex-column gap-2"> 
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-start fs-4 rounded-3"> 
                                 <i class="fa-solid fa-star"></i>
                             </div> 
-                            <h4 class="mb-0 text-body-emphasis">Premium Materials</h4>
-                            <p class="text-body-secondary">We use premium, sustainable materials for lasting durability and comfort.</p>
-                        </div>
-                        
-                        <div class="col d-flex flex-column gap-2"> 
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-start fs-4 rounded-3"> 
-                                <i class="fa-solid fa-paintbrush"></i>
-                            </div> 
                             <h4 class="mb-0 text-body-emphasis">Built to Last</h4>
-                            <p class="text-body-secondary">Our rugs are designed to endure everyday use while keeping their beauty.</p>
-                        </div> 
-
-                        <div class="col d-flex flex-column gap-2"> 
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-start fs-4 rounded-3"> 
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div> 
-                            <h4 class="mb-0 text-body-emphasis">100% Australian Made</h4>
-                            <p class="text-body-secondary">Proudly crafted in Australia, supporting local artisans and businesses.</p>
-                        </div>                       
+                            <p class="text-body-secondary">We use premium materials for lasting durability and comfort.</p>
+                        </div>     
                     </div>
                 </div>
             </div>

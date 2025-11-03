@@ -126,7 +126,7 @@ get_header(); ?>
                 </button>
 
                 <!-- Collapsible Tips -->
-                <div class="collapse mt-2" id="rugTips">
+                <div class="mt-2" id="rugTips">
                     <div class="alert custom-rug-tips">
                         <ul class="mb-0 small">
                             <li>Design your rug using the tools.</li>

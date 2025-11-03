@@ -78,9 +78,9 @@ get_header(); ?>
                                 <label for="rug-size" class="form-label">Rug Size <span class="text-danger">*</span></label>
                                 <select id="rug-size" name="rug-size" class="form-select" required>
                                     <option value="">Choose...</option>
-                                    <option value="Tiny">Tiny (40cmx40cm)</option>
+                                    <option value="Tiny">Small (40cmx40cm)</option>
                                     <option value="So-So">So-So (80cmx80cm)</option>
-                                    <option value="Big">Big (180cmx180cm)</option>
+                                    <option value="Big">Big Boy(180cmx180cm)</option>
                                     <option value="Custom">Something Different</option>
                                 </select>
                                 <div class="invalid-feedback">Please select a rug size.</div>
@@ -98,11 +98,7 @@ get_header(); ?>
                                 </div>
                                 <div class="invalid-feedback">Please provide both width and height.</div>
                             </div>                         
-                            <!-- Budget -->
-                            <div class="col-md-6">
-                                <label for="budget" class="form-label">Budget Range</label>
-                                <input type="text" id="budget" name="budget" class="form-control">
-                            </div>
+                         
                             <!-- Usage -->
                             <div class="col-md-6">
                                 <label for="usage" class="form-label">Where will the rug be used?</label>

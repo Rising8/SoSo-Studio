@@ -14,7 +14,8 @@
                             <span class="logo-studio-footer">Studio </span>
                         </div>
                     </div>
-                    <div class="col-md-9 text-start">
+                    <!-- Remove newsletter later -->
+                    <!-- <div class="col-md-9 text-start">
                         <h5 class="footer-font fw-bold mb-3">Newsletter</h5>
                         <form class="newsletter-form" novalidate>
                             <p class="newsletter-p">Monthly digest of what’s new and exciting from us.</p>
@@ -26,7 +27,7 @@
                             </div>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Column 2 -->

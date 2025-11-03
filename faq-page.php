@@ -99,7 +99,7 @@ function sosofaq_display_dynamic_faq_tabs() {
     <div class="faq-content-2">
         <div class="faq-contact-section text-center pt-5">
             <h2 class="mb-3">Need More Help?</h2>
-            <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
+            <p class="lead text-muted">Contact us for a personalised rug consultation or more advanced cleaning needs.</p>
             <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
         </div>
     </div>

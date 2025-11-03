@@ -48,15 +48,15 @@ get_header(); ?>
             <div class="col-auto">
                 <div class="p-3 border everyday-tips-box rounded-3">
                     <i class="fa-solid fa-shoe-prints fa-2x mb-2 pt-3 px-2"></i>
-                    <h4 class="everyday-tips- pt-3 px-2">Rotate <br> Regularly</h4>
-                    <p class="text-muted pt-3 px-2">Turn your rug every few months to ensure even wear. This simple step helps maintain its shape and beauty for years.</p>
+                    <h4 class="everyday-tips- pt-3 px-2">Avoid High <br> Traffic</h4>
+                    <p class="text-muted pt-3 px-2">Our rugs are designed primarily as ornamental pieces. While they are durable, we recommend placing them in low-traffic areas to preserve their quality and appearance.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Rugcare Page - What Not To Do Section -->
-    <div class="rugcare-content-3 py-5">
+    <!-- <div class="rugcare-content-3 py-5">
         <div class="container">
             <h2 class="text-center pb-2">What Not To Do</h2>
             <div class="row not-todo-content g-0">
@@ -119,7 +119,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Rugcare Page - Cleaning Tips Video Section -->
     <div class="rugcare-content-4 pt-5">
@@ -149,8 +149,8 @@ get_header(); ?>
                         <p class="text-muted pt-3 px-2">Ensure rugs are completely dry before placing them back to prevent mold and odor.</p>
                     </div>
                     <div class="cleaning-tips-box border p-3 rounded-5">
-                        <h4 class="pt-3 px-2">Regular <br> Maintenance</h4>
-                        <p class="text-muted pt-3 px-2">Vacuum weekly and rotate every few months for long-lasting freshness.</p>
+                        <h4 class="pt-3 px-2">Avoid <br> Direct Heat</h4>
+                        <p class="text-muted pt-3 px-2">Including hairdryers, steamers, or placing the rug near heaters.</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@ get_header(); ?>
         <!-- Contact Section -->
         <div class="rugcare-contact-section text-center pt-5">
             <h2 class="mb-3">Need More Help?</h2>
-            <p class="lead text-muted">Contact us for a personalized rug consultation or more advanced cleaning needs.</p>
+            <p class="lead text-muted">Contact us for a personalised rug consultation or more advanced cleaning needs.</p>
             <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn btn-outline-secondary mt-2 px-3 rounded-pill">Contact Us</a>
         </div>
     </div>
