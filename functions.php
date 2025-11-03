@@ -503,3 +503,66 @@ function register_rug_type_instructions() {
     );
 }
 add_action('admin_init', 'register_rug_type_instructions');
+
+// Register FAQ Custom Post Type
+function sosofaq_register_faq_cpt() {
+    register_post_type('faq', array(
+        'labels' => array(
+            'name' => __('FAQs'),
+            'singular_name' => __('FAQ'),
+        ),
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_icon' => 'dashicons-editor-help',
+        'supports' => array('title', 'editor', 'page-attributes'),
+    ));
+
+    // Register FAQ Categories 
+    register_taxonomy('faq_category', 'faq', array(
+        'labels' => array(
+            'name' => __('FAQ Categories'),
+            'singular_name' => __('FAQ Category'),
+        ),
+        'hierarchical' => false, 
+        'show_admin_column' => true,
+        'public' => true,
+    ));
+}
+add_action('init', 'sosofaq_register_faq_cpt');
+
+// Add instructions meta boxes for FAQ CPT
+function sosofaq_add_instructions_meta_boxes() {
+    // FAQs (CPT)
+    add_meta_box(
+        'faq_instructions',
+        'FAQ Instructions',
+        function() {
+            echo '<ul>';
+            echo '<li><strong>Title:</strong> Enter the question.</li>';
+            echo '<li><strong>Content Editor:</strong> Enter the answer.</li>';
+            echo '<li>Assign at least one category from the "FAQ Categories" box.</li>';
+            echo '<li>Use the "Order" field under "Page Attributes" to control display order within the category.</li>';
+            echo '</ul>';
+        },
+        'faq',
+        'side',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'sosofaq_add_instructions_meta_boxes');
+
+// Add instructions for FAQ Categories (taxonomy)
+function sosofaq_category_instructions_add($taxonomy) {
+    ?>
+    <div class="taxonomy-instructions" style="margin-bottom: 15px; font-size: 0.9em; color: #555;">
+        <p><strong>FAQ Category Instructions:</strong></p>
+        <ul>
+            <li>Give each category a descriptive name (e.g., "General", "Shipping", "Rug Care").</li>
+            <li>Keep category names consistent for easier filtering and tab display.</li>
+            <li>New categories automatically appear as tabs on the FAQ page.</li>
+        </ul>
+    </div>
+    <?php
+}
+add_action('faq_category_add_form_fields', 'sosofaq_category_instructions_add', 5, 2); 
+add_action('faq_category_edit_form_fields', 'sosofaq_category_instructions_add', 5, 2); 
