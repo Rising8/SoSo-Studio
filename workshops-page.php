@@ -13,7 +13,7 @@ get_header(); ?>
                 Dream Piece
             </h1>
             <p class="workshop-hero lead text-muted">A hands-on workshop to design and create your own unique rug.</p>
-            <a href="https://classbento.com.au/rug-tufting-workshop-perth-2" target="_blank" rel="noopener noreferrer">
+            <a href="https://classbento.com.au/so-so-studio" target="_blank" rel="noopener noreferrer">
                 <!-- CTA Button Left - Links to Commission Page -->
                 <button class="index-rug-button btn btn-outline-secondary btn-lg rounded-pill px-5 fs-6 fs-md-5 mt-32" type="button">
                     Book Now
@@ -71,7 +71,13 @@ get_header(); ?>
                                             <?php the_post_thumbnail('large', ['class' => 'card-img-top']); ?>
                                             <?php if ($date): ?>
                                                 <span class="workshop-date-badge">
-                                                    <?php echo esc_html(date_i18n('j F Y', strtotime($date))); ?>
+                                                    <?php
+                                                        if (strtotime($date)) {
+                                                            echo esc_html(date_i18n('j F Y', strtotime($date)));
+                                                        } else {
+                                                            echo esc_html($date);
+                                                        }
+                                                    ?>
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -81,9 +87,9 @@ get_header(); ?>
                                         <h3 class="card-title"><?php the_title(); ?></h3>
                                         <p class="workshop-card-text">
                                             <?php 
-                                                $excerpt = wp_trim_words(get_the_excerpt(), 26);
-                                                $full_content = get_the_excerpt(); 
-                                                $needs_toggle = (wp_trim_words($full_content, 26) !== $full_content);
+                                                $full_content = get_the_content();
+                                                $excerpt = wp_trim_words(strip_tags($full_content), 26);
+                                                $needs_toggle = (wp_trim_words(strip_tags($full_content), 26) !== strip_tags($full_content));
                                             ?>
                                             <span class="workshop-short-text"><?php echo wp_kses_post($excerpt); ?></span>
                                             <span class="workshop-full-text"><?php echo wp_kses_post($full_content); ?></span>
