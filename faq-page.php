@@ -51,7 +51,7 @@ function sosofaq_display_dynamic_faq_tabs() {
                 $answer = apply_filters('the_content', get_the_content());
 
                 $dynamic_links = array(
-                    '{commission_link}' => site_url('/commission'),
+                    '{commission_link}' => '<a href="' . esc_url(site_url('/commission')) . '" class="faq-commission-link">commission page</a>',
                 );
                 $answer = str_replace(array_keys($dynamic_links), array_values($dynamic_links), $answer);
 

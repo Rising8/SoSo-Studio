@@ -2505,10 +2505,6 @@ html {
 .faq-commission-link {
   color: #8e6fad; 
   text-decoration: underline;
-  text-decoration-color: #c7b0dd; 
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .faq-commission-link:hover {
@@ -2520,6 +2516,7 @@ html {
 .faq-contact-section h2 {
   color:#4b0082;
 }
+
 
 /* === TERMS AND CONDITIONS PAGE STYLING === */
 /* Hero */
