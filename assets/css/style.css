@@ -2216,6 +2216,12 @@ html {
   aspect-ratio: 16 / 9;
 }
 
+/* One image layout */
+.single-image img {
+  max-height: 500px;     
+  object-fit: contain;     
+}
+
 /* Three image layout */
 .single-rug .bottom-two-images .flex-fill {
   width: calc(50% - 0.5rem); /* 50% minus half the gap */
@@ -2237,6 +2243,12 @@ html {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.top-image img,
+.bottom-single-image img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .single-rug h1 {
