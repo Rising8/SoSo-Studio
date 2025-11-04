@@ -51,7 +51,11 @@ get_header(); ?>
 
             if ($workshop_query->have_posts()) : ?>
                 <div class="container">
-                    <div class="workshop-scroll-container d-flex flex-wrap flex-md-nowrap gap-4 overflow-auto pb-3">
+                    <?php 
+                        $workshop_count = $workshop_query->post_count; 
+                        $extra_class = ($workshop_count === 1) ? 'justify-content-center' : '';
+                    ?>
+                    <div class="workshop-scroll-container d-flex flex-wrap flex-md-nowrap gap-4 overflow-auto pb-3 <?php echo $extra_class; ?>">
                         <?php while ($workshop_query->have_posts()) : $workshop_query->the_post(); 
                             $date       = get_field('workshop_date') ?: '';
                             $duration   = get_field('workshop_duration') ?: '';
