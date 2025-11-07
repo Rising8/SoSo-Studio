@@ -20,17 +20,8 @@ get_header(); ?>
                 </button>
             </a>
         </div>
-        <div class="container text-center my-5 rounded-5">
-             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/workshop-page/workshop-hero1.png" alt="Background" class="workshop-hero-img img-fluid">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/workshop-page/workshop-hero2.png" alt="Background" class="workshop-hero-img img-fluid">
-                    </div>
-                </div>
-            </div>
+        <div class="container text-center my-3 rounded-5">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/workshop-page/workshop-page-hero.png" alt="Background" class="workshop-hero-img img-fluid">
         </div>
     </div>
 
