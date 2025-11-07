@@ -4,30 +4,16 @@
             <div class="row text-center text-md-start px-5">
 
                 <!-- Column 1 -->
-                <div class="col-md-6">
-                    <div class="pb-3 logo-footer d-flex align-items-center">
-                        <a href="<?php echo site_url('/'); ?>" class="me-2">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo" style="max-width: 50px;">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                    <div class="logo-footer d-flex align-items-center justify-content-center w-100 h-100">
+                        <a href="<?php echo site_url('/'); ?>" class="me-3">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo" class="footer-logo">
                         </a>
-                        <div class="logo-text text-center px-2">
-                            <span class="logo-soso-footer">SO SO <br></span>
-                            <span class="logo-studio-footer">Studio </span>
+                        <div class="logo-text text-center">
+                            <span class="logo-soso-footer d-block">SO SO</span>
+                            <span class="logo-studio-footer d-block">Studio</span>
                         </div>
                     </div>
-                    <!-- Remove newsletter later -->
-                    <!-- <div class="col-md-9 text-start">
-                        <h5 class="footer-font fw-bold mb-3">Newsletter</h5>
-                        <form class="newsletter-form" novalidate>
-                            <p class="newsletter-p">Monthly digest of what’s new and exciting from us.</p>
-                            <div class="input-group has-validation">
-                            <input type="email" class="form-control" placeholder="Email Address" required>
-                            <button class="btn btn-light" type="submit">Subscribe</button>
-                            <div class="invalid-feedback text-start">
-                                Please enter a valid email address.
-                            </div>
-                            </div>
-                        </form>
-                    </div> -->
                 </div>
                 
                 <!-- Column 2 -->
