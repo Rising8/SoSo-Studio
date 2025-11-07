@@ -112,7 +112,7 @@ get_header(); ?>
 
     <!-- About Page - Studio Vibes Image -->
     <div class="about-content-5 studio-vibes-img">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/about-page/vibes.png" alt="..." class="img-fluid scroll-image">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/about-page/soso-studio-vibes.png" alt="..." class="img-fluid scroll-image">
     </div>
 
     <!-- About Page - Contact Section -->
