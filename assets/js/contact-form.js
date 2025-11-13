@@ -1,79 +1,109 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Selects the contact modal
+document.addEventListener("DOMContentLoaded", function () {
     const modal = document.querySelector('#contactModal');
-    if (!modal) return; // If the modal doesn't exist, it will exit
+    if (!modal) return;
 
-    // Disables CF7 HTML5 in-built validation
-    modal.querySelectorAll('.wpcf7-form').forEach(form => {
-        form.setAttribute('novalidate', 'novalidate');
-    });
+    const form = modal.querySelector("#contactForm");
+    const successBox = modal.querySelector("#formSuccess");
+    if (!form || !successBox) return;
 
-    // Validators for each field (name and email)
-    const validators = {
-        'contact-form-name': value => value.trim() !== '' && /^[A-Za-z\s]+$/.test(value),
-        'contact-form-email': value => value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-    };
+    const nameInput = form.querySelector('#contact-form-name');
+    const emailInput = form.querySelector('#contact-form-email');
+    const goBackBtn = successBox.querySelector('[data-bs-dismiss="modal"]');
 
-    // Tracks if user has interacted with field
-    const touched = {};
+    // -- validation rules --
+    function validateName(input) {
+        const value = input.value.trim();
+        return value !== '' && /^[A-Za-z\s]+$/.test(value);
+    }
 
-    // Validates individual fields
-    const validateField = input => {
-        const val = input.value.trim();
-        const id = input.id;
-        const isValid = validators[id] ? validators[id](val) : true;
+    function validateEmail(input) {
+        const value = input.value.trim();
+        return value !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function setFieldState(input, isValid) {
         const feedback = input.closest('.mb-3')?.querySelector('.invalid-feedback');
-        
-        // Skips styling if not touched yet
-        if (!touched[id]) return true; 
-
         if (!isValid) {
-            // Field is invalid: add red border styling and remove green border styling, shows feedback
             input.classList.add('is-invalid');
             input.classList.remove('is-valid');
             if (feedback) feedback.style.display = 'block';
         } else {
-            // Field is valid: add green border styling and remove red border styling, hides feedback
             input.classList.remove('is-invalid');
             input.classList.add('is-valid');
             if (feedback) feedback.style.display = 'none';
         }
-        return isValid;
-    };
+    }
 
-    // Initialize fields
-    modal.querySelectorAll('#contact-form-name, #contact-form-email').forEach(input => {
-        // Initially the fields are not touched
-        touched[input.id] = false;
+    // 💡 Reset form + UI state
+    function resetFormState() {
+        form.reset();
+        form.style.display = "";          // show form again
+        successBox.style.display = "none";
 
-        // Tracks user interaction
-        input.addEventListener('input', () => {
-            // If user touches, mark as touch
-            touched[input.id] = true;
-            validateField(input);
+        // remove validation styles + hide feedback
+        [nameInput, emailInput].forEach(input => {
+            input.classList.remove('is-valid', 'is-invalid');
+            const feedback = input.closest('.mb-3')?.querySelector('.invalid-feedback');
+            if (feedback) feedback.style.display = 'none';
         });
+    }
 
-        // Also validate when the field loses focus
-        input.addEventListener('blur', () => validateField(input));
+    // live validation
+    nameInput.addEventListener('input', () => {
+        setFieldState(nameInput, validateName(nameInput));
     });
 
-    // Handles form submission
-    modal.querySelectorAll('.wpcf7-form').forEach(form => {
-        form.addEventListener('submit', e => {
-            let hasError = false;
+    emailInput.addEventListener('input', () => {
+        setFieldState(emailInput, validateEmail(emailInput));
+    });
 
-            // Validate each required field
-            ['contact-form-name', 'contact-form-email'].forEach(id => {
-                const field = form.querySelector(`#${id}`);
-                if (field) {
-                    // Marks fields as touched on submission
-                    touched[id] = true; 
-                    // Stops submission if invalid fields
-                    if (!validateField(field)) hasError = true;
-                }
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // stop page reload
+
+        // validate first
+        const isNameValid = validateName(nameInput);
+        const isEmailValid = validateEmail(emailInput);
+
+        setFieldState(nameInput, isNameValid);
+        setFieldState(emailInput, isEmailValid);
+
+        // if invalid or empty → don't send
+        if (!isNameValid || !isEmailValid) return;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
             });
-            // Prevents form submission if there are any errors
-            if (hasError) e.preventDefault(); 
+
+            if (response.ok) {
+                form.style.display = "none";        // hide form
+                successBox.style.display = "block"; // show success message
+            }
+        } catch (err) {
+            console.error("Form submission error:", err);
+            // you can show an error alert here if you want
+        }
+    });
+
+    // ✅ When "Go Back" is clicked: reset + close modal
+    if (goBackBtn) {
+        goBackBtn.addEventListener('click', () => {
+            resetFormState();
+
+            // also ensure modal closes (Bootstrap 5)
+            if (window.bootstrap) {
+                const bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+                bsModal.hide();
+            }
         });
+    }
+
+    // ✅ Also reset whenever modal is fully hidden (X button, backdrop click, etc.)
+    modal.addEventListener('hidden.bs.modal', () => {
+        resetFormState();
     });
 });

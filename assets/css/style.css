@@ -275,9 +275,8 @@ html {
   opacity: 1; 
 }
 
-/* CF7 Submit Button Styling */
-#contactModal .wpcf7-submit,
-.contact-form-7 input[type="submit"] {
+/* Submit Button Styling */
+.submit-form {
   background: linear-gradient(90deg, #a88beb, #f8ceec);
   border: none; 
   color: white;
@@ -286,12 +285,23 @@ html {
   padding: 0.75rem;
   font-size: 1rem;
   transition: all 0.3s ease;
+
 }
 
-#contactModal .wpcf7-submit:hover,
-.contact-form-7 input[type="submit"]:hover {
+.submit-form:hover {
   opacity: 0.85;
   transform: translateY(-2px);
+}
+
+/* Contact Form - Success Message */
+.alert-success {
+  background-color: white;
+  border: none;
+}
+
+.alert-success button,
+.alert-success button:hover {
+  background-color: #f3e8ff;
 }
 
 
