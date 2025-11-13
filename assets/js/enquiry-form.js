@@ -1,95 +1,150 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Gets the rug enquiry form
+document.addEventListener("DOMContentLoaded", function () {
     const rugModal = document.getElementById('rugEnquireModal');
-    const form = document.querySelector('.rug-enquire-form');
+    if (!rugModal) return;
 
-    // Pre-fill rug name and source page when the modal opens
-    if (rugModal) {
-        rugModal.addEventListener('show.bs.modal', event => {
-            const button = event.relatedTarget;
-            const rugName = button.getAttribute('data-rug-name');
-            const sourcePage = button.getAttribute('data-source-page');
+    const form = rugModal.querySelector("#rugEnquiryForm");
+    const successBox = rugModal.querySelector("#rugEnquirySuccess");
+    if (!form || !successBox) return;
 
-            // Sets the values in the modal form 
-            rugModal.querySelector('#rug-name').value = rugName || '';
-            rugModal.querySelector('#source-page').value = sourcePage || '';
-        });
-    }
+    const nameInput  = form.querySelector('#enquiry-form-name');
+    const emailInput = form.querySelector('#enquiry-form-email');
+    const phoneInput = form.querySelector('#enquiry-form-phone');
+    const rugNameInput = form.querySelector('#rug-name');
+    const sourcePageInput = form.querySelector('#source-page');
+    const goBackBtn = successBox.querySelector('[data-bs-dismiss="modal"]');
 
-    // Stops executing if the form is not present
-    if (!form) return;
-
-    // Disables HTML5 built-in validation
     form.setAttribute('novalidate', 'novalidate');
 
-    // Validation rules
-    const validators = {
-        // Name: Only letters and spaces allowed
-        'enquiry-form-name': value => /^[A-Za-z\s]+$/.test(value.trim()),
-        // Email: Standard email format
-        'enquiry-form-email': value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
-        // Phone: Optional but validated upon entering input
-        'enquiry-form-phone': value => {
-            const v = value.trim();
-            if (v === '') return true;
-            // Allows + at start, digits, spaces, dashes, parentheses, minimum 7 characters, maximum 15
-            return /^\+?[\d\s\-()]{7,15}$/.test(v);
+    rugModal.addEventListener('show.bs.modal', event => {
+        const button = event.relatedTarget;
+        if (!button) return;
+
+        const rugName   = button.getAttribute('data-rug-name');
+        const sourcePage = button.getAttribute('data-source-page');
+
+        if (rugNameInput) {
+            rugNameInput.value = rugName || '';
         }
-    };
+        if (sourcePageInput) {
+            sourcePageInput.value = sourcePage || window.location.href;
+        }
+    });
 
-    // List of fields that require validation
-    const fieldsToValidate = ['enquiry-form-name', 'enquiry-form-email', 'enquiry-form-phone'];
+    function validateName(input) {
+        const value = input.value.trim();
+        return value !== '' && /^[A-Za-z\s]+$/.test(value);
+    }
 
-    // Function to validate a single field
-    const validateField = input => {
-        const id = input.id;
-        const val = input.value.trim();
+    function validateEmail(input) {
+        const value = input.value.trim();
+        return value !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function validatePhone(input) {
+        const value = input.value.trim();
+        if (value === '') return true; // optional
+        // Allows +, digits, spaces, dashes, parentheses
+        return /^\+?[\d\s\-()]{7,15}$/.test(value);
+    }
+
+    function setFieldState(input, isValid) {
+        if (!input) return;
+
+        const value = input.value.trim();
         const feedback = input.closest('.mb-3')?.querySelector('.invalid-feedback');
 
-        // Skips validation for non-tracked fields
-        if (!fieldsToValidate.includes(id)) return true;
-
-        const isValid = validators[id](val);
+        if (input.id === 'enquiry-form-phone' && value === '') {
+            input.classList.remove('is-valid', 'is-invalid');
+            if (feedback) feedback.style.display = 'none';
+            return;
+        }
 
         if (!isValid) {
-            // Field is invalid: Shows red border and feedback
             input.classList.add('is-invalid');
             input.classList.remove('is-valid');
             if (feedback) feedback.style.display = 'block';
-        } else if (val !== '') { 
-            // Field is valid and the user typed something: Show green border
+        } else {
             input.classList.remove('is-invalid');
             input.classList.add('is-valid');
             if (feedback) feedback.style.display = 'none';
-        } else {
-            // Empty field: Remove all validation styling
-            input.classList.remove('is-invalid');
-            input.classList.remove('is-valid');
-            if (feedback) feedback.style.display = 'none';
         }
+    }
 
-        return isValid;
-    };
+    function resetRugEnquiryForm() {
+        form.reset();
+        form.style.display = ""; // show form again
+        successBox.style.display = "none";
 
-    // Initialize input fields 
-    fieldsToValidate.forEach(id => {
-        const input = form.querySelector(`#${id}`);
-        if (!input) return;
+        [nameInput, emailInput, phoneInput].forEach(input => {
+            if (!input) return;
+            input.classList.remove('is-valid', 'is-invalid');
+            const feedback = input.closest('.mb-3')?.querySelector('.invalid-feedback');
+            if (feedback) feedback.style.display = 'none';
+        });
+    }
 
-        // Validate on input and blur events for instant feedback
-        input.addEventListener('input', () => validateField(input));
-        input.addEventListener('blur', () => validateField(input));
+    if (nameInput) {
+        nameInput.addEventListener('input', () => {
+            setFieldState(nameInput, validateName(nameInput));
+        });
+    }
+
+    if (emailInput) {
+        emailInput.addEventListener('input', () => {
+            setFieldState(emailInput, validateEmail(emailInput));
+        });
+    }
+
+    if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+            setFieldState(phoneInput, validatePhone(phoneInput));
+        });
+    }
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const isNameValid  = validateName(nameInput);
+        const isEmailValid = validateEmail(emailInput);
+        const isPhoneValid = validatePhone(phoneInput);
+
+        setFieldState(nameInput, isNameValid);
+        setFieldState(emailInput, isEmailValid);
+        setFieldState(phoneInput, isPhoneValid);
+
+        if (!isNameValid || !isEmailValid || !isPhoneValid) return;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                form.style.display = "none";
+                successBox.style.display = "block";
+            }
+        } catch (err) {
+            console.error("Rug enquiry submission error:", err);
+        }
     });
 
-    // Form submission
-    form.addEventListener('submit', e => {
-        let hasError = false;
-        // Validate all required fields before submission
-        fieldsToValidate.forEach(id => {
-            const field = form.querySelector(`#${id}`);
-            if (field && !validateField(field)) hasError = true;
+
+    if (goBackBtn) {
+        goBackBtn.addEventListener('click', () => {
+            resetRugEnquiryForm();
+
+            if (window.bootstrap) {
+                const bsModal = bootstrap.Modal.getOrCreateInstance(rugModal);
+                bsModal.hide();
+            }
         });
-        // Prevents submission if any field is invalid
-        if (hasError) e.preventDefault();
+    }
+
+    rugModal.addEventListener('hidden.bs.modal', () => {
+        resetRugEnquiryForm();
     });
 });
