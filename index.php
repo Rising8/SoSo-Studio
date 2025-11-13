@@ -211,8 +211,8 @@ get_header(); ?>
                 </a>
             </div>
 
-            <!-- Smash Balloon Instagram Feed -->
-            <?php echo do_shortcode('[instagram feed="249"]'); ?>
+            <!-- Spotlight Instagram Feed -->
+            <?php echo do_shortcode('[instagram feed="314"]'); ?>
         </div>
     </div>
 </div>

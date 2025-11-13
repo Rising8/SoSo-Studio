@@ -707,81 +707,31 @@ html {
   border: 2px solid #dd2a7b;
 }
 
+/* Instagram Posts Grid */
+.FeedGridLayout__grid {
+    gap: 12px !important;
+}
+
 /* Individual Instagram Post */
-#sb_instagram #sbi_images {
-  box-sizing: border-box;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  width: 70%;
-  gap: 30px !important;
-  margin: 0 auto; 
+.FeedGridLayout__cell {
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 25px 2px rgba(135, 93, 166, 0.31);
+    transition: transform 0.3s ease;
+    display: block;
 }
 
-.sbi_item {
-  border-radius: 20px;
-  justify-content: center;
+.FeedGridLayout__cell:hover {
+    transform: scale(1.05);
 }
 
-.sbi .sbi_item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.FeedGridLayout__media-container {
+    border-radius: 1.5rem;
 }
 
-/* Load More Button */
-#sb_instagram .sbi_load_btn, 
-#sb_instagram .sbi_load_btn.sbi_load_more {
-  background: linear-gradient(45deg, #00b09b, #96c93d) !important;
-  /* background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4) !important; */
-  color: white !important;
-  padding: 14px 28px !important;
-  border-radius: 50px !important;
-  text-decoration: none !important;
-  margin-top: 30px !important;
-  text-align: center !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+/* Hiding Default Hover Effect */
+.MediaTile__overlay {
+    display: none
 }
-
-/* Hover effect for button */
-#sb_instagram .sbi_load_btn:hover {
-  background: linear-gradient(45deg, #96c93d, #00b09b) !important;
-  color: #fff !important;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15) !important;
-  transform: scale(1.05) !important;
-}
-
-/* Text inside the button */
-#sb_instagram .sbi_load_btn .sbi_btn_text {
-  font-size: 1rem !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-}
-
-/* Hiding Smash Balloon Instagram Defaults */
-/* Hides default Smash Balloon Header (username + icon) - remove this style if client wants to show sosostudio */
-.sbi_header_text {
-  display: none !important;
-}
-
-/* Hides default "Follow on Instagram" button */
-.sbi_follow_btn {
-  display: none !important;
-}
-
-/* Hides default Instagram header */
-.sb_instagram_header {
-  display: none !important;
-}
-
-/* Hides the default instagram posts white border and changes it to be transparent */
-#sb_instagram {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
 
 /* === ABOUT PAGE STYLING === */
 /* ===== About Page - Cards ===== */
