@@ -12,7 +12,7 @@ get_header(); ?>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8">
                     <h2 class="fs-3 fs-md-2 fs-lg-1 mb-4 text-center">Commission Request Form</h2>                 
-                    <form class="shadow p-4 rounded commission-form rounded-4 border">
+                    <form action="https://formspree.io/f/mnnlnvgy" method="POST" class="shadow p-4 rounded commission-form rounded-4 border">
                         <div class="row g-3">
                             <p class="required-note">* Required fields</p>
                             <!-- Name -->
@@ -24,7 +24,7 @@ get_header(); ?>
                             <!-- Email -->
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                                <input type="email" id="email" name="email" class="form-control" required>
+                                <input type="email" id="email" name="email" class="form-control" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
                                 <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                             <!-- Phone -->
@@ -134,6 +134,12 @@ get_header(); ?>
                             </ul>
                         </div>
                     </form>
+                    <!-- Success message -->
+                    <div id="commissionSuccess" class="alert alert-success mt-3 text-center" style="display: none;">
+                        <h5>Thanks!</h5>
+                        <p>Your commission request was sent successfully.</p>
+                        <button class="btn mt-2" id="commissionSuccessBack" data-bs-dismiss="modal">Submit another request</button>
+                    </div>
                 </div>
             </div>
         </div>

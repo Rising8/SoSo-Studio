@@ -3,9 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.commission-form');
     // Select the input field for the reference image
     const referenceInput = document.getElementById('reference');
+    // Success message + button
+    const successBox = document.getElementById('commissionSuccess');
+    const successBackBtn = document.getElementById('commissionSuccessBack');
 
     // Exit early if the form isn't found (debugging test)
     if (!form) return;
+
+    // Helper to reset validation styling
+    function resetValidationStyles() {
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+            input.classList.remove('was-validated', 'is-invalid');
+        });
+    }
+
+    // 🔹 "Submit another request" button: show form again (no reload)
+    if (successBackBtn && successBox) {
+        successBackBtn.addEventListener('click', () => {
+            successBox.style.display = "none";   // hide thanks box
+            form.style.display = "block";        // show form again
+            form.reset();                        // clear fields
+            resetValidationStyles();             // remove validation styles
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }
 
     // Validation when a field loses its focus (blur)
     form.querySelectorAll('input, select, textarea').forEach(input => {
@@ -13,20 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mark field as touched for styling
             input.classList.add('was-validated'); 
 
+            const value = input.value.trim();
+
             // If the field is optional and it is empty, then it will stay neutral (no color)
-            if (!input.required && input.value.trim() === '') {
+            if (!input.required && value === '') {
                 input.classList.remove('is-invalid');
                 input.classList.remove('was-validated');
                 return;
             }
 
-            // If field has input, then show red/green depending on validity
-            if (input.value.trim() !== '') {
+            // If field has input, then show red depending on validity
+            if (value !== '') {
                 if (!input.checkValidity()) {
                     // If the field is invalid, show a red border for an error
                     input.classList.add('is-invalid');
                 } else {
-                    // If the field is valid, show green border for success
+                    // If the field is valid, remove invalid styling
                     input.classList.remove('is-invalid');
                 }
             } else if (input.required) {
@@ -37,15 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Validation on submit
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
         let isFormValid = true;
 
         form.querySelectorAll('input, select, textarea').forEach(input => {
+            const value = input.value.trim();
+
             // Mark all fields as touched for styling
             input.classList.add('was-validated');
 
             // If the field is optional and it is empty, then it will skip validation styling
-            if (!input.required && input.value.trim() === '') {
+            if (!input.required && value === '') {
                 input.classList.remove('is-invalid');
                 input.classList.remove('was-validated');
                 return;
@@ -64,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // If any field is invalid, prevent form submission
         if (!isFormValid) {
-            e.preventDefault();
-            e.stopPropagation();
             return;
         }
 
@@ -78,18 +103,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // If user cancels, stop submission and reset styling
             if (!confirmSubmit) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                // Reset all validation styling (goes back to normal)
-                form.querySelectorAll('input, select, textarea').forEach(input => {
-                    input.classList.remove('was-validated', 'is-invalid');
-                });
+                resetValidationStyles();
                 return;
             }
         }
+
+        // At this point, form is valid and user confirmed (if no image) 
+        const formData = new FormData(form); 
+        try { 
+            const response = await fetch(form.action, { 
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" } 
+            }); 
+            
+            if (response.ok) {  
+                form.style.display = "none";      // hide the form
+                if (successBox) { 
+                    successBox.style.display = "block"; // show thanks box
+                } 
+                form.reset(); 
+                resetValidationStyles(); 
+            } else { 
+                console.error("Formspree error:", response.statusText); 
+            }
+        } catch (err) { 
+            console.error("Commission form submission error:", err); 
+        } 
     });
 });
+
 
 // Retrieves from custom page design and shows preview design above the attachment image
 document.addEventListener('DOMContentLoaded', () => {
