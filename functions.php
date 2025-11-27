@@ -50,6 +50,11 @@ function sosostudio_enqueue_styles() {
     // Contact Form JS
     wp_enqueue_script('contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array(), '1.0', true);
 
+    add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+    // Contact Form Submit JS
+    wp_enqueue_script('form-submit', get_template_directory_uri() . '/assets/js/form-submit.js', array(), '1.0', true);
+
     // Custom Page JS
     wp_enqueue_script('custom-page', get_template_directory_uri() . '/assets/js/custom-page.js', array('html2canvas', 'fabric-js'), '1.0', true);
 
