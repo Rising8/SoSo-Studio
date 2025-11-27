@@ -8,7 +8,7 @@
             </div>
             <div id="formContent" class="modal-body">
                 <!-- Contact Form 7 -->
-                <?php echo do_shortcode('[contact-form-7 id="3400e5b" title="Contact form 1"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="4985112" title="Contact form 1"]'); ?>
             </div>
             <div id="formSuccess" class="alert alert-success mt-3 text-center" style="display: none;">
                 <h5>Thanks!</h5>
